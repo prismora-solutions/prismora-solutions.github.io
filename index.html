@@ -1,144 +1,311 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>Prismora Solutions – Partenaire Data & BI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Prismora Solutions — rendre les données simples, claires et utiles pour vos décisions. Partenaire Data & BI basé en Gironde, Bordeaux & remote." />
+  <meta name="description" content="Vos chiffres, enfin lisibles. Vos décisions, plus simples. Prismora Solutions — Data & BI, Bordeaux & remote." />
 
-  <!-- Typo Google (gratuite) -->
+  <!-- Typo -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
 
-  <!-- Styles globaux -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3"/>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css?v=6"/>
 
-  <!-- Meta sociales (facultatif) -->
+  <!-- Social -->
   <meta property="og:title" content="Prismora Solutions – Partenaire Data & BI" />
-  <meta property="og:description" content="Rendre les données simples, claires et utiles pour vos décisions." />
+  <meta property="og:description" content="En 10 jours, une V1 utile et un rituel de décision clair." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://prismora-solutions.github.io/" />
   <meta name="theme-color" content="#0f4c5c" />
 </head>
 <body>
 
-  <!-- NAV (bleu pétrole) -->
+  <!-- NAV -->
   <nav class="nav">
     <div class="container wrap">
       <div class="brand">
-        <img src="assets/img/logo/logo_def.png" alt="Prismora Solutions" height="40">
+        <a href="index.html" class="brand-link" aria-label="Retour à l'accueil">
+          <img src="assets/img/logo/logo_def.png" alt="Prismora Solutions" height="40">
+        </a>
       </div>
-  
+
       <!-- Bouton hamburger (mobile) -->
       <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
         <span></span><span></span><span></span>
       </button>
-  
+
       <!-- Menu -->
       <div class="menu" id="site-menu">
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="methode.html">Méthode</a>
-        <a href="cas.html">Cas</a>
+        <a href="solutions.html">Solutions</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
-  
-  <!-- Script mini pour ouvrir/fermer le menu mobile -->
-  <script>
-    (function(){
-      const burger = document.querySelector('.burger');
-      const menu   = document.getElementById('site-menu');
-      if(!burger || !menu) return;
-  
-      burger.addEventListener('click', () => {
-        const open = menu.classList.toggle('open');
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-        burger.classList.toggle('open', open);
-        document.body.classList.toggle('no-scroll', open);
-      });
-  
-      // Ferme le menu quand on clique un lien
-      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        menu.classList.remove('open'); burger.classList.remove('open');
-        burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
-      }));
-    })();
-  </script>
 
-
-  <!-- HERO clair -->
+  <!-- HERO -->
   <header class="hero">
     <div class="container">
       <p class="kicker">Partenaire Data & BI</p>
-      <h1>Rendre les données simples, claires et utiles pour vos décisions.</h1>
+      <h1 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Vos chiffres, enfin lisibles. Vos décisions, plus simples.
+      </h1>
       <p class="lead">
-        Nous transformons vos chiffres en informations lisibles et actionnables, avec une approche humaine et pédagogique —
-        pour TPE, PME/ETI, collectivités et clients à distance.
+        En 10 jours, une première version utile et un rituel de décision clair — pour TPE, PME/ETI, collectivités, et missions ponctuelles en grands comptes/ESN.
       </p>
+
       <div class="cta-row">
-        <a class="cta" href="contact.html">Demander un échange (15 min)</a>
-        <a class="cta cta--ghost" href="offres.html">Découvrir nos offres</a>
+        <a class="cta" href="contact.html">Parler de votre besoin (15 min)</a>
+        <a class="cta cta--ghost" href="solutions.html">Découvrir nos solutions</a>
       </div>
+
+      <!-- Illustration (placeholder) -->
+      <div class="hero-visual">
+        <img src="assets/img/hero-illustration.svg" alt="Illustration : collaboration autour des données">
+      </div>
+
+      <!-- Ligne de confiance -->
+      <ul class="trust-line">
+        <li>Bordeaux & remote</li>
+        <li>Réponse sous 24h</li>
+        <li>V1 en 10 jours</li>
+      </ul>
     </div>
   </header>
 
-  <!-- SERVICES -->
+  <!-- MÉTHODE : Observer / Structurer / Activer -->
   <section class="section">
     <div class="container">
-      <p class="kicker">Nos services</p>
-      <h2>Ce que nous faisons, simplement.</h2>
+      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Notre philosophie</h2>
 
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Tableaux de bord</h3>
-          <p>Des vues claires de votre activité sans complexité inutile (Power BI, Excel, Looker).</p>
+      <div class="split">
+        <div class="text">
+          <h3>Observer</h3>
+          <p>Comprendre votre activité, écouter les usages, analyser les données existantes et vos priorités.</p>
         </div>
-        <div class="card">
-          <h3>Analyse & décisions</h3>
-          <p>Des informations utiles pour décider au bon moment et piloter sereinement.</p>
+        <div class="visual">
+          <img src="assets/img/method-observer.svg" alt="Illustration : Observer">
         </div>
-        <div class="card">
-          <h3>Formation & accompagnement</h3>
-          <p>Ateliers pratiques et coaching pour l’autonomie de vos équipes et dirigeants.</p>
+      </div>
+
+      <div class="split reverse">
+        <div class="text">
+          <h3>Structurer</h3>
+          <p>Mettre de l’ordre, organiser les données, définir des indicateurs clairs et fiables.</p>
+        </div>
+        <div class="visual">
+          <img src="assets/img/method-structurer.svg" alt="Illustration : Structurer">
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="text">
+          <h3>Activer</h3>
+          <p>Déployer des tableaux de bord utiles, automatiser, former et vous rendre autonomes.</p>
+        </div>
+        <div class="visual">
+          <img src="assets/img/method-activer.svg" alt="Illustration : Activer">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTEURS / CAS -->
+  <!-- POUR QUI ? -->
   <section class="section">
     <div class="container">
-      <p class="kicker">Cas & secteurs</p>
-      <h2>Des exemples concrets, anonymisés.</h2>
+      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Pour qui ?</h2>
+      <ul class="chips">
+        <li class="chip"><img src="assets/img/pour-qui-tpe.svg" alt="" aria-hidden="true"> TPE / Indépendants</li>
+        <li class="chip"><img src="assets/img/pour-qui-pme.svg" alt="" aria-hidden="true"> PME & ETI</li>
+        <li class="chip"><img src="assets/img/pour-qui-collectivites.svg" alt="" aria-hidden="true"> Collectivités</li>
+        <li class="chip"><img src="assets/img/pour-qui-esn.svg" alt="" aria-hidden="true"> Grandes entreprises & ESN (missions ponctuelles)</li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="grid grid-3">
+  <!-- AVANT / APRÈS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Ce qui change en vrai</h2>
+
+      <div class="grid grid-3 cards-lift">
         <div class="card">
-          <h3>Retail (TPE)</h3>
-          <p>Suivi CA & marge, top produits, saisonnalité.</p>
-          <p><a class="cta cta--ghost" href="cas.html">Voir les cas</a></p>
+          <span class="badge">Avant</span>
+          <h3>Fichiers dispersés</h3>
+          <p>Des versions différentes, du temps perdu à consolider.</p>
         </div>
         <div class="card">
-          <h3>Services B2B (PME)</h3>
-          <p>TJM, facturation, récurrence clients, charge.</p>
-          <p><a class="cta cta--ghost" href="cas.html">Voir les cas</a></p>
+          <span class="badge">Après</span>
+          <h3>Tableau de bord unique</h3>
+          <p>Des indicateurs partagés et à jour automatiquement.</p>
         </div>
         <div class="card">
-          <h3>Collectivités</h3>
-          <p>Engagements, mandats, reste à réaliser.</p>
-          <p><a class="cta cta--ghost" href="cas.html">Voir les cas</a></p>
+          <span class="badge">Résultat</span>
+          <h3>Réunions plus courtes</h3>
+          <p>Des décisions plus simples, au bon moment.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER clair -->
+  <!-- EXEMPLES ANONYMISÉS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Exemples (anonymisés)</h2>
+
+      <div class="grid grid-3 cards-lift">
+        <div class="card">
+          <img class="thumb" src="assets/img/case-retail.svg" alt="Cas Retail TPE">
+          <h3>Retail — TPE</h3>
+          <p><strong>Problème :</strong> marge floue.</p>
+          <p><strong>Solution :</strong> suivi CA & marge clair.</p>
+          <p><strong>Impact :</strong> +2 points de marge.</p>
+        </div>
+        <div class="card">
+          <img class="thumb" src="assets/img/case-pme.svg" alt="Cas PME B2B">
+          <h3>Services — PME B2B</h3>
+          <p><strong>Problème :</strong> facturation tardive.</p>
+          <p><strong>Solution :</strong> suivi prestations & relances.</p>
+          <p><strong>Impact :</strong> +15 jours de cash.</p>
+        </div>
+        <div class="card">
+          <img class="thumb" src="assets/img/case-collectivite.svg" alt="Cas Collectivité">
+          <h3>Collectivité</h3>
+          <p><strong>Problème :</strong> pilotage budgétaire diffus.</p>
+          <p><strong>Solution :</strong> vue engagements/mandats.</p>
+          <p><strong>Impact :</strong> décisions clarifiées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH / STACK -->
+  <section class="section">
+    <div class="container">
+      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Notre stack & méthode projet</h2>
+      <div class="split reverse">
+        <div class="text">
+          <ul class="stack">
+            <li><strong>Outils :</strong> SQL, Python, Power BI, Looker Studio, Excel avancé.</li>
+            <li><strong>Automatisation :</strong> pipelines, actualisation planifiée, gouvernance simple.</li>
+            <li><strong>Projet :</strong> audit → jalons → itérations → transfert de compétences.</li>
+          </ul>
+        </div>
+        <div class="visual">
+          <img src="assets/img/stack-tech.svg" alt="Illustration : Stack & pipelines">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEASER SOLUTIONS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Solutions & Offres</h2>
+      <div class="grid grid-3 cards-lift">
+        <div class="card">
+          <span class="badge badge-amber">V1 en 10 j</span>
+          <h3>Découverte</h3>
+          <p>Audit express + 1er tableau de bord utile.</p>
+        </div>
+        <div class="card">
+          <h3>Pilotage</h3>
+          <p>Automatisation des données + ateliers d’usage.</p>
+        </div>
+        <div class="card">
+          <h3>Autonomie</h3>
+          <p>Itérations, formation, documentation et transfert.</p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="solutions.html">Voir nos solutions en détail</a>
+        <a class="cta cta--ghost" href="contact.html">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREUVES & CONFIANCE -->
+  <section class="section">
+    <div class="container">
+      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Ce que disent nos clients</h2>
+      <div class="grid grid-3">
+        <div class="quote card">
+          <p>“On a compris notre marge en 2 semaines.”</p>
+          <small>Dirigeant — TPE Retail</small>
+        </div>
+        <div class="quote card">
+          <p>“Nos comités sont plus courts et plus utiles.”</p>
+          <small>Direction — PME Services</small>
+        </div>
+        <div class="quote card">
+          <p>“Les élus ont enfin une vue simple du budget.”</p>
+          <small>DAF — Collectivité</small>
+        </div>
+      </div>
+
+      <ul class="pills">
+        <li class="pill">Retail</li>
+        <li class="pill">Services</li>
+        <li class="pill">Collectivités</li>
+        <li class="pill">Éducation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BANDEAU CONTACT -->
+  <section class="section contact-band">
+    <div class="container contact-box">
+      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Parlons de votre besoin</h2>
+      <p class="lead">Un échange de 15 minutes peut tout changer.</p>
+      <div class="cta-row">
+        <a class="cta" href="contact.html">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <small>© Prismora Solutions — Bordeaux & Remote • Site hébergé gratuitement sur GitHub Pages</small>
     </div>
   </footer>
+
+  <!-- Scripts : burger + animation titres on-scroll -->
+  <script>
+    (function(){
+      const burger = document.querySelector('.burger');
+      const menu   = document.getElementById('site-menu');
+      if (burger && menu){
+        burger.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          burger.classList.toggle('open', open);
+          document.body.classList.toggle('no-scroll', open);
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          menu.classList.remove('open'); burger.classList.remove('open');
+          burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
+        }));
+      }
+
+      // Animation des titres (icône prisme + léger slide du texte)
+      const titles = document.querySelectorAll('.sect-title');
+      if ('IntersectionObserver' in window && titles.length){
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -20% 0px', threshold: 0.2 });
+        titles.forEach(t => io.observe(t));
+      }
+    })();
+  </script>
 </body>
 </html>
