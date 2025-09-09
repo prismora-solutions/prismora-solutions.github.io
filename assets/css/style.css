@@ -228,7 +228,7 @@ small{opacity:.85}
 .brand-line {
   display: flex;
   align-items: flex-end;
-  gap: 30px;        /* espace entre le logo et le texte */
+  gap: 50px;        /* espace entre le logo et le texte */
 }
 
 .brand-line .kicker {
