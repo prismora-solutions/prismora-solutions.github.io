@@ -46,7 +46,7 @@ a:hover{text-decoration:underline}
 /* --- Barre de navigation (clair, translucide) --- */
 .nav{
   position: sticky; top:0; z-index:20;
-  background: rgba(15, 76, 92, 0.12); /* bleu pétrole en transparence */
+  background: rgba(15, 76, 92, 0.20); /* bleu pétrole en transparence */
   color: var(--brand);                /* texte par défaut en bleu foncé */
   border-bottom: 1px solid rgba(15, 76, 92, 0.15);
   backdrop-filter: saturate(140%) blur(4px); /* léger flou, optionnel */
@@ -59,9 +59,13 @@ a:hover{text-decoration:underline}
 }
 .menu{display:flex;gap:8px;flex-wrap:wrap}
 .menu a{
-  color:#ffffff; padding:10px 12px; border-radius:8px; text-decoration:none; font-weight:600;
+  color: var(--brand);                 /* liens du menu en bleu foncé */
+  padding: 10px 12px; border-radius:8px; text-decoration:none; font-weight:600;
 }
-.menu a:hover{background:rgba(255,255,255,.12); text-decoration:none}
+.menu a:hover{
+  background: rgba(15, 76, 92, 0.10); /* léger fond bleu en hover */
+  text-decoration: none;
+}
 
 /* --- Hero clair --- */
 .hero{
