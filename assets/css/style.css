@@ -237,3 +237,18 @@ small{opacity:.85}
   font-size: 14px;  /* tu peux adapter la taille si besoin */
 }
 
+
+/* Vue mobile : logo au-dessus, kicker centré en dessous */
+@media (max-width: 768px) {
+  .brand-line {
+    flex-direction: column;
+    align-items: center; /* centre logo + kicker */
+    gap: 6px;            /* petit espace entre eux */
+  }
+
+  .brand-line .kicker {
+    text-align: center;
+    font-size: 13px;     /* un peu plus petit sur mobile */
+  }
+}
+
