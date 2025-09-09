@@ -43,29 +43,39 @@ a:hover{text-decoration:underline}
   background:transparent; color:var(--brand); border:2px solid var(--brand); box-shadow:none;
 }
 
-/* --- Barre de navigation (clair, translucide) --- */
-.nav{
+/* --- Barre de navigation --- */
+.nav {
   position: sticky; top:0; z-index:20;
-  background: rgba(15, 76, 92, 0.20); /* bleu pétrole en transparence */
-  color: var(--brand);                /* texte par défaut en bleu foncé */
+  background: linear-gradient(to right, #ffffff 0%, var(--brand) 100%);
   border-bottom: 1px solid rgba(15, 76, 92, 0.15);
-  backdrop-filter: saturate(140%) blur(4px); /* léger flou, optionnel */
 }
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px var(--m)}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800}
-.brand .logo{
-  width:24px;height:24px;border-radius:7px;
-  background:linear-gradient(135deg,#ffffff, var(--brand-2));
+
+.nav .wrap {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px var(--m);
 }
-.menu{display:flex;gap:8px;flex-wrap:wrap}
-.menu a{
-  color: var(--brand);                 /* liens du menu en bleu foncé */
-  padding: 10px 12px; border-radius:8px; text-decoration:none; font-weight:600;
+
+.brand {
+  display:flex; align-items:center; gap:10px; font-weight:800;
+  color: var(--brand); /* logo/texte à gauche sur fond blanc → bleu pétrole */
 }
-.menu a:hover{
-  background: rgba(15, 76, 92, 0.10); /* léger fond bleu en hover */
-  text-decoration: none;
+
+.brand .logo {
+  width:24px; height:24px; border-radius:7px;
+  background:linear-gradient(135deg,#ffffff,var(--brand-2));
 }
+
+/* Liens du menu à droite → texte en blanc */
+.menu {display:flex; gap:8px; flex-wrap:wrap}
+.menu a {
+  color:#ffffff;
+  padding:10px 12px; border-radius:8px; text-decoration:none; font-weight:600;
+}
+.menu a:hover {
+  background:rgba(255,255,255,0.15);
+  text-decoration:none;
+}
+
 
 /* --- Hero clair --- */
 .hero{
