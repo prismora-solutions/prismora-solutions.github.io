@@ -44,37 +44,65 @@ a:hover{text-decoration:underline}
 }
 
 /* --- Barre de navigation --- */
-.nav {
+/* --- NAV (desktop) --- */
+.nav{
   position: sticky; top:0; z-index:20;
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 24%, var(--brand) 100%);
-  border-bottom: 1px solid rgba(15, 76, 92, 0.15);
+  /* Dégradé blanc -> bleu pétrole */
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 28%, var(--brand) 100%);
+  border-bottom: 1px solid rgba(15,76,92,.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px var(--m)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand)}
+.brand img{display:block;height:40px}
+
+/* Menu desktop : liens à droite en blanc (zone bleue) */
+.menu{display:flex;gap:8px;flex-wrap:wrap}
+.menu a{
+  color:#ffffff; padding:10px 12px; border-radius:8px; text-decoration:none; font-weight:600;
+}
+.menu a:hover{background:rgba(255,255,255,.15); text-decoration:none}
+
+/* Bouton hamburger : caché sur desktop */
+.burger{display:none; align-items:center; justify-content:center; gap:5px;
+  width:44px; height:44px; border:0; background:transparent; border-radius:8px; cursor:pointer}
+.burger span{display:block; width:22px; height:2px; background:var(--brand); transition:transform .2s, opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* Empêche le scroll quand le menu mobile est ouvert */
+.no-scroll{overflow:hidden}
+
+@media (max-width: 900px) {
+  /* Bandeau plus fin sur mobile */
+  .nav .wrap{padding:8px var(--m)}
+  .brand img{height:30px}
+
+  /* Bouton hamburger visible */
+  .burger{display:inline-flex}
+
+  /* Menu en tiroir : caché par défaut, overlay propre */
+  .menu{
+    display:none; position:fixed; top:56px; right:12px;
+    background: var(--brand);
+    border-radius:12px; box-shadow: 0 14px 30px rgba(0,0,0,.18);
+    padding:12px; flex-direction:column; gap:6px; width: calc(100vw - 24px); max-width: 320px;
+  }
+  .menu a{
+    color:#ffffff; padding:12px 14px; border-radius:8px; font-weight:600;
+  }
+  .menu a:hover{background:rgba(255,255,255,.12)}
+
+  /* Ouvert */
+  .menu.open{display:flex}
+
+  /* Option : dégradé plus court pour laisser plus de blanc sous le logo */
+  .nav{
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 38%, var(--brand) 100%);
+  }
 }
 
-.nav .wrap {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:12px var(--m);
-}
-
-.brand {
-  display:flex; align-items:center; gap:10px; font-weight:800;
-  color: var(--brand); /* logo/texte à gauche sur fond blanc → bleu pétrole */
-}
-
-.brand .logo {
-  width:24px; height:24px; border-radius:7px;
-  background:linear-gradient(135deg,#ffffff,var(--brand-2));
-}
-
-/* Liens du menu à droite → texte en blanc */
-.menu {display:flex; gap:8px; flex-wrap:wrap}
-.menu a {
-  color:#ffffff;
-  padding:10px 12px; border-radius:8px; text-decoration:none; font-weight:600;
-}
-.menu a:hover {
-  background:rgba(255,255,255,0.15);
-  text-decoration:none;
-}
 
 
 /* --- Hero clair --- */
