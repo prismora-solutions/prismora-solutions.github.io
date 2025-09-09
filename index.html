@@ -29,7 +29,14 @@
       <div class="brand">
         <img src="assets/img/logo/logo_def.png" alt="Prismora Solutions" height="40">
       </div>
-      <div class="menu">
+  
+      <!-- Bouton hamburger (mobile) -->
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+  
+      <!-- Menu -->
+      <div class="menu" id="site-menu">
         <a href="index.html">Accueil</a>
         <a href="offres.html">Offres</a>
         <a href="methode.html">Méthode</a>
@@ -38,6 +45,29 @@
       </div>
     </div>
   </nav>
+  
+  <!-- Script mini pour ouvrir/fermer le menu mobile -->
+  <script>
+    (function(){
+      const burger = document.querySelector('.burger');
+      const menu   = document.getElementById('site-menu');
+      if(!burger || !menu) return;
+  
+      burger.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.classList.toggle('open', open);
+        document.body.classList.toggle('no-scroll', open);
+      });
+  
+      // Ferme le menu quand on clique un lien
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        menu.classList.remove('open'); burger.classList.remove('open');
+        burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
+      }));
+    })();
+  </script>
+
 
   <!-- HERO clair -->
   <header class="hero">
