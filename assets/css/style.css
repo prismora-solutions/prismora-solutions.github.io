@@ -43,11 +43,13 @@ a:hover{text-decoration:underline}
   background:transparent; color:var(--brand); border:2px solid var(--brand); box-shadow:none;
 }
 
-/* --- Barre de navigation (bleu pétrole) --- */
+/* --- Barre de navigation (clair, translucide) --- */
 .nav{
-  position:sticky; top:0; z-index:20;
-  background:var(--brand); color:#ffffff;
-  border-bottom:1px solid rgba(0,0,0,.06);
+  position: sticky; top:0; z-index:20;
+  background: rgba(15, 76, 92, 0.12); /* bleu pétrole en transparence */
+  color: var(--brand);                /* texte par défaut en bleu foncé */
+  border-bottom: 1px solid rgba(15, 76, 92, 0.15);
+  backdrop-filter: saturate(140%) blur(4px); /* léger flou, optionnel */
 }
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px var(--m)}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800}
