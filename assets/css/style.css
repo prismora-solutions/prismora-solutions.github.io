@@ -52,8 +52,8 @@ h3{margin:0 0 var(--s);font-weight:700;color:var(--brand)}
 /* Animations titres */
 @keyframes prism-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 @keyframes title-slide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.sect-title.is-visible .prism{animation:prism-spin 700ms ease-out 1}
-.sect-title.is-visible{animation:title-slide 420ms ease-out 1}
+.sect-title.is-visible .prism{animation:prism-spin 1.5s ease-out 1}
+.sect-title.is-visible{animation:title-slide 1.2s ease-out 1}
 @media (prefers-reduced-motion:reduce){
   .sect-title.is-visible,.sect-title .prism{animation:none !important}
 }
