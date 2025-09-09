@@ -225,3 +225,14 @@ small{opacity:.85}
   .hero-visual img{ max-width: 360px; }   /* un peu plus petite sur mobile */
 }
 
+.brand-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;        /* espace entre le logo et le texte */
+}
+
+.brand-line .kicker {
+  margin: 0;        /* supprime le margin-bottom de base */
+  font-size: 14px;  /* tu peux adapter la taille si besoin */
+}
+
