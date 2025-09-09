@@ -12,14 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/style.css?v=6"/>
-
-  <!-- Social -->
-  <meta property="og:title" content="Prismora Solutions – Partenaire Data & BI" />
-  <meta property="og:description" content="En 10 jours, une V1 utile et un rituel de décision clair." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://prismora-solutions.github.io/" />
+  <!-- Style (racine du repo) -->
+  <link rel="stylesheet" href="style.css?v=10"/>
   <meta name="theme-color" content="#0f4c5c" />
 </head>
 <body>
@@ -50,10 +44,12 @@
   <header class="hero">
     <div class="container">
       <p class="kicker">Partenaire Data & BI</p>
+
       <h1 class="sect-title">
         <span class="prism" aria-hidden="true"></span>
         Vos chiffres, enfin lisibles. Vos décisions, plus simples.
       </h1>
+
       <p class="lead">
         En 10 jours, une première version utile et un rituel de décision clair — pour TPE, PME/ETI, collectivités, et missions ponctuelles en grands comptes/ESN.
       </p>
@@ -80,7 +76,10 @@
   <!-- MÉTHODE : Observer / Structurer / Activer -->
   <section class="section">
     <div class="container">
-      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Notre philosophie</h2>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Notre philosophie
+      </h2>
 
       <div class="split">
         <div class="text">
@@ -117,7 +116,10 @@
   <!-- POUR QUI ? -->
   <section class="section">
     <div class="container">
-      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Pour qui ?</h2>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Pour qui ?
+      </h2>
       <ul class="chips">
         <li class="chip"><img src="assets/img/pour-qui-tpe.svg" alt="" aria-hidden="true"> TPE / Indépendants</li>
         <li class="chip"><img src="assets/img/pour-qui-pme.svg" alt="" aria-hidden="true"> PME & ETI</li>
@@ -130,7 +132,10 @@
   <!-- AVANT / APRÈS -->
   <section class="section">
     <div class="container">
-      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Ce qui change en vrai</h2>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Ce qui change en vrai
+      </h2>
 
       <div class="grid grid-3 cards-lift">
         <div class="card">
@@ -155,7 +160,10 @@
   <!-- EXEMPLES ANONYMISÉS -->
   <section class="section">
     <div class="container">
-      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Exemples (anonymisés)</h2>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Exemples (anonymisés)
+      </h2>
 
       <div class="grid grid-3 cards-lift">
         <div class="card">
@@ -186,7 +194,10 @@
   <!-- TECH / STACK -->
   <section class="section">
     <div class="container">
-      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Notre stack & méthode projet</h2>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Notre stack & méthode projet
+      </h2>
       <div class="split reverse">
         <div class="text">
           <ul class="stack">
@@ -205,7 +216,10 @@
   <!-- TEASER SOLUTIONS -->
   <section class="section">
     <div class="container">
-      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Solutions & Offres</h2>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Solutions & Offres
+      </h2>
       <div class="grid grid-3 cards-lift">
         <div class="card">
           <span class="badge badge-amber">V1 en 10 j</span>
@@ -231,7 +245,10 @@
   <!-- PREUVES & CONFIANCE -->
   <section class="section">
     <div class="container">
-      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Ce que disent nos clients</h2>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Ce que disent nos clients
+      </h2>
       <div class="grid grid-3">
         <div class="quote card">
           <p>“On a compris notre marge en 2 semaines.”</p>
@@ -259,7 +276,10 @@
   <!-- BANDEAU CONTACT -->
   <section class="section contact-band">
     <div class="container contact-box">
-      <h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Parlons de votre besoin</h2>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Parlons de votre besoin
+      </h2>
       <p class="lead">Un échange de 15 minutes peut tout changer.</p>
       <div class="cta-row">
         <a class="cta" href="contact.html">Me contacter</a>
@@ -277,6 +297,7 @@
   <!-- Scripts : burger + animation titres on-scroll -->
   <script>
     (function(){
+      /* Burger */
       const burger = document.querySelector('.burger');
       const menu   = document.getElementById('site-menu');
       if (burger && menu){
@@ -292,9 +313,13 @@
         }));
       }
 
-      // Animation des titres (icône prisme + léger slide du texte)
-      const titles = document.querySelectorAll('.sect-title');
-      if ('IntersectionObserver' in window && titles.length){
+      /* Animation titres au scroll */
+      function armTitles(){
+        const titles = document.querySelectorAll('.sect-title');
+        if (!('IntersectionObserver' in window) || !titles.length) {
+          titles.forEach(t => t.classList.add('is-visible'));
+          return;
+        }
         const io = new IntersectionObserver((entries) => {
           entries.forEach(e => {
             if (e.isIntersecting) {
@@ -305,6 +330,9 @@
         }, { rootMargin: '0px 0px -20% 0px', threshold: 0.2 });
         titles.forEach(t => io.observe(t));
       }
+      if (document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', armTitles);
+      } else { armTitles(); }
     })();
   </script>
 </body>
