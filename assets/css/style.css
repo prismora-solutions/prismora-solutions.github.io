@@ -46,7 +46,7 @@ a:hover{text-decoration:underline}
 /* --- Barre de navigation --- */
 .nav {
   position: sticky; top:0; z-index:20;
-  background: linear-gradient(to right, #ffffff 0%, var(--brand) 100%);
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 28%, var(--brand) 100%);
   border-bottom: 1px solid rgba(15, 76, 92, 0.15);
 }
 
