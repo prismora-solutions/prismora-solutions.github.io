@@ -64,9 +64,19 @@ a:hover{text-decoration:underline}
 .menu a:hover{background:rgba(255,255,255,.15); text-decoration:none}
 
 /* Bouton hamburger : caché sur desktop */
-.burger{display:none; align-items:center; justify-content:center; gap:5px;
-  width:44px; height:44px; border:0; background:transparent; border-radius:8px; cursor:pointer}
-.burger span{display:block; width:22px; height:2px; background:var(--brand); transition:transform .2s, opacity .2s}
+.burger{
+  display:none;
+  flex-direction:column;              /* <<< empile les 3 traits */
+  align-items:center; justify-content:center;
+  gap:5px;
+  width:44px; height:44px;
+  border:0; background:transparent; border-radius:8px; cursor:pointer
+}
+.burger span{
+  display:block; width:22px; height:2px;
+  background:#ffffff;                 /* <<< blanc = lisible sur la zone bleue */
+  transition:transform .2s, opacity .2s
+}
 .burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
@@ -97,13 +107,11 @@ a:hover{text-decoration:underline}
   /* Ouvert */
   .menu.open{display:flex}
 
-  /* Option : dégradé plus court pour laisser plus de blanc sous le logo */
+  /* Option : dégradé plus long côté blanc pour laisser respirer le logo */
   .nav{
     background: linear-gradient(to right, #ffffff 0%, #ffffff 38%, var(--brand) 100%);
   }
 }
-
-
 
 /* --- Hero clair --- */
 .hero{
