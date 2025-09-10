@@ -256,9 +256,20 @@ small{opacity:.85}
   gap: 40px;        /* espace entre le logo et le texte */
 }
 
-.brand-line .kicker {
-  margin: 0;        /* supprime le margin-bottom de base */
-  font-size: 14px;  /* tu peux adapter la taille si besoin */
+/* Kicker dans la ligne marque : caché au départ */
+.brand-line-hero .kicker{
+  margin: 0;                 /* pas d'espace parasite */
+  opacity: 0;                /* invisible au chargement */
+  transform: translateX(-8px);
+  transition: opacity 360ms ease, transform 360ms ease;
+  display: inline-block;     /* pour l’anim de translation */
+  align-self: flex-end;      /* aligné en bas si ligne horizontale */
+}
+
+/* État révélé */
+.brand-line-hero .kicker.is-revealed{
+  opacity: 1;
+  transform: translateX(0);
 }
 
 
