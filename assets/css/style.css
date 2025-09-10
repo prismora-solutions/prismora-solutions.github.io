@@ -300,12 +300,12 @@ small{opacity:.85}
   /* Valeurs par défaut au cas où (surchargées par style inline si présent) */
   --spin-duration: 1.2s;     /* durée d'un tour */
   --spin-iterations: 3;      /* nombre de tours */
-  animation: prismLogoSpin var(--spin-duration) linear var(--spin-iterations) forwards;
+  animation: prismLogoSpin 3s linear forwards; /* 3s = vitesse totale */
 }
 
 @keyframes prismLogoSpin{
   from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  to   { transform: rotate(1080deg); }
 }
 
 /* Logo texte : caché au départ, apparaît depuis la gauche après le spin */
