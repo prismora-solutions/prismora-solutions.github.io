@@ -276,11 +276,10 @@ small{opacity:.85}
   }
 }
 
-/* Ligne marque dans le hero (logo triangle + logo texte) */
 .brand-line-hero{
   display:flex;
-  align-items:flex-end;      /* texte calé en bas à côté du triangle */
-  gap: 8px;                  /* espace fin entre les deux logos */
+  align-items:flex-end;
+  gap: 8px;
   margin: var(--s) 0 var(--s);
 }
 
@@ -293,41 +292,45 @@ small{opacity:.85}
   }
 }
 
-/* Logo triangle : tourne au chargement, réglable via CSS vars inline */
-.logo-wrapper {
-  width: 80px;
-  height: 80px;
+/* Cadre carré qui centre parfaitement l’image */
+.logo-wrapper{
+  --size: 56px;
+  width: var(--size);
+  height: var(--size);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* L’image remplit le cadre et tourne autour de son centre */
 .logo-tri{
-  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   transform-origin: 50% 50%;
-  /* Valeurs par défaut au cas où (surchargées par style inline si présent) */
-  --spin-duration: 1.2s;     /* durée d'un tour */
-  --spin-iterations: 3;      /* nombre de tours */
-  animation: prismLogoSpin 1s linear forwards; /* 3s = vitesse totale */
+  /* Variables contrôlables via style inline */
+  --spin-duration: 1s; /* durée d’un tour */
+  --tours: 3;         /* nb de tours */
+  --tx: 0px;          /* micro-offset X pour recentrer visuellement */
+  --ty: 0px;          /* micro-offset Y */
+
+  animation: prismLogoSpin var(--spin-duration) linear var(--tours) forwards;
 }
 
+/* On garde 1 tour dans les keyframes, et on applique translate pour corriger le centrage visuel */
 @keyframes prismLogoSpin{
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(1080deg); }
+  from { transform: translate(var(--tx), var(--ty)) rotate(0deg); }
+  to   { transform: translate(var(--tx), var(--ty)) rotate(360deg); }
 }
 
-/* Logo texte : caché au départ, apparaît depuis la gauche après le spin */
+/* Apparition du logo texte (si tu l’avais) */
 .logo-txt{
-  display:block;
   opacity:0;
   transform: translateX(-10px);
   transition: opacity 400ms ease, transform 400ms ease;
 }
+.logo-txt.is-revealed{ opacity:1; transform: translateX(0); }
 
-.logo-txt.is-revealed{
-  opacity:1;
-  transform: translateX(0);
-}
 
 /* Paragraphe plus discret que .lead */
 .sub-lead{
