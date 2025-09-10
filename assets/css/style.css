@@ -301,6 +301,11 @@ small{opacity:.85}
     align-items:center;
     gap:6px;
   }
+
+  .brand-line-hero .kicker {
+    margin-left: 0;       /* annule le décalage horizontal */
+    text-align: center;   /* centre le texte */
+  }
 }
 
 /* Cadre carré qui centre parfaitement l’image */
@@ -320,7 +325,7 @@ small{opacity:.85}
   object-fit: contain;
   transform-origin: 50% 50%;
   /* Variables contrôlables via style inline */
-  --spin-duration: 1s; /* durée d’un tour */
+  --spin-duration: 0.6s; /* durée d’un tour */
   --tours: 3;         /* nb de tours */
   --tx: 0px;          /* micro-offset X pour recentrer visuellement */
   --ty: 0px;          /* micro-offset Y */
