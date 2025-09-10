@@ -308,7 +308,7 @@ small{opacity:.85}
   /* Valeurs par défaut au cas où (surchargées par style inline si présent) */
   --spin-duration: 1.2s;     /* durée d'un tour */
   --spin-iterations: 3;      /* nombre de tours */
-  animation: prismLogoSpin 3s linear forwards; /* 3s = vitesse totale */
+  animation: prismLogoSpin 8s linear forwards; /* 3s = vitesse totale */
 }
 
 @keyframes prismLogoSpin{
