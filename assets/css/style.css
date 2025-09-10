@@ -28,7 +28,7 @@ body{
 .section{padding:var(--xl) 0} /* + air entre sections */
 
 /* --- Titres & textes --- */
-.kicker{color:var(--brand);text-transform:uppercase;letter-spacing:.14em;font-size:12px;margin:0 0 var(--s)}
+.kicker{color:var(--brand);text-transform:uppercase;letter-spacing:.14em;font-size:12px;margin:0 0 var(--l)}
 h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:0 0 var(--m);color:var(--brand);font-weight:800}
 h2{font-size:clamp(24px,4vw,38px);margin:0 0 var(--m);color:var(--brand);font-weight:800}
 h3{margin:0 0 var(--s);font-weight:700;color:var(--brand)}
@@ -258,7 +258,6 @@ small{opacity:.85}
 
 /* Kicker dans la ligne marque : caché au départ */
 .brand-line-hero .kicker{
-  margin-left: 30px;
   margin: 0;                 /* pas d'espace parasite */
   opacity: 0;                /* invisible au chargement */
   transform: translateX(-8px);
