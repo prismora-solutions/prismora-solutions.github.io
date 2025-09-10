@@ -276,3 +276,58 @@ small{opacity:.85}
   }
 }
 
+/* Ligne marque dans le hero (logo triangle + logo texte) */
+.brand-line-hero{
+  display:flex;
+  align-items:flex-end;      /* texte calé en bas à côté du triangle */
+  gap: 8px;                  /* espace fin entre les deux logos */
+  margin: var(--s) 0 var(--s);
+}
+
+/* Mobile : on empile et on centre */
+@media (max-width: 768px){
+  .brand-line-hero{
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
+}
+
+/* Logo triangle : tourne au chargement, réglable via CSS vars inline */
+.logo-tri{
+  display:block;
+  transform-origin:center center;
+  /* Valeurs par défaut au cas où (surchargées par style inline si présent) */
+  --spin-duration: 1.2s;     /* durée d'un tour */
+  --spin-iterations: 3;      /* nombre de tours */
+  animation: prismLogoSpin var(--spin-duration) linear var(--spin-iterations) forwards;
+}
+
+@keyframes prismLogoSpin{
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Logo texte : caché au départ, apparaît depuis la gauche après le spin */
+.logo-txt{
+  display:block;
+  opacity:0;
+  transform: translateX(-10px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.logo-txt.is-revealed{
+  opacity:1;
+  transform: translateX(0);
+}
+
+/* Paragraphe plus discret que .lead */
+.sub-lead{
+  font-size: clamp(13px, 1.2vw, 15px);
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 820px;
+  margin: var(--s) 0 var(--m);
+}
+
+
