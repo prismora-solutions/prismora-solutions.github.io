@@ -245,6 +245,7 @@ small{opacity:.85}
   .hero-visual{ order: 2; }               /* image après le texte */
   .hero-text{ order: 1; }
   .hero-visual img{ max-width: 360px; }   /* un peu plus petite sur mobile */
+  .hero .lead{ margin-top: var(--s); margin-bottom: var(--s); }
 }
 
 .brand-line {
