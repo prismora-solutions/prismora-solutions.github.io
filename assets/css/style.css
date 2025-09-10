@@ -258,7 +258,7 @@ small{opacity:.85}
 
 /* Kicker dans la ligne marque : caché au départ */
 .brand-line-hero .kicker{
-  margin-left: 8px;
+  margin-left: 30px;
   margin: 0;                 /* pas d'espace parasite */
   opacity: 0;                /* invisible au chargement */
   transform: translateX(-8px);
