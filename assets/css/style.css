@@ -73,7 +73,8 @@ a:hover{text-decoration:underline}
 /* Rangée de CTA mieux espacée */
 .cta-row {
   display: flex;
-  gap: 14px;
+  justify-content: center;
+  gap: 16px;
   flex-wrap: wrap;
   margin: var(--m) 0 var(--l);
 }
