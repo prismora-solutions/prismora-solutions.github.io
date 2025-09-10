@@ -294,9 +294,18 @@ small{opacity:.85}
 }
 
 /* Logo triangle : tourne au chargement, réglable via CSS vars inline */
+.logo-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo-tri{
-  display:block;
-  transform-origin:center center;
+  max-width: 100%;
+  max-height: 100%;
+  transform-origin: 50% 50%;
   /* Valeurs par défaut au cas où (surchargées par style inline si présent) */
   --spin-duration: 1.2s;     /* durée d'un tour */
   --spin-iterations: 3;      /* nombre de tours */
