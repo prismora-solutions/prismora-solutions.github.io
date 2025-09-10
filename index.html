@@ -55,9 +55,16 @@
 
         <!-- Ligne marque (logos) -->
         <div class="brand-line-hero" id="brandLineHero">
-          <div class="logo-wrapper">
-            <img src="assets/img/logo/logo_triangle.png" class="logo-tri" alt="Logo Triangle" height="50">
+          <!-- Conteneur carré : on ne met PAS d’attribut height sur l’img -->
+          <div class="logo-wrapper" style="--size:56px;">
+            <img
+              src="assets/img/logo/logo_triangle.png"
+              class="logo-tri"
+              alt="Logo Triangle"
+              style="--spin-duration: .8s; --tours: 3; --tx: -1px; --ty: 0px;"
+            >
           </div>
+        
           <img
             class="logo-txt"
             src="assets/img/logo/logo_texte.png"
