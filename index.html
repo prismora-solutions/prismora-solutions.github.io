@@ -56,9 +56,9 @@
         <!-- Ligne marque (logos) -->
         <div class="brand-line-hero" id="brandLineHero">
           <!-- Conteneur carré : on ne met PAS d’attribut height sur l’img -->
-          <div class="logo-wrapper" style="--size:56px;">
+          <div class="logo-wrapper" style="--size:50px;">
             <img
-              src="assets/img/logo/logo_triangle2.png"
+              src="assets/img/logo/logo_triangle.png"
               class="logo-tri"
               alt="Logo Triangle"
               style="--spin-duration:.9s; --spin-iterations:3; --tx:-1px; --ty:0px;"
@@ -71,9 +71,10 @@
             alt="Logo Texte"
             height="50"
           >
+          <p class="kicker">Partenaire Data & BI</p>
         </div>
         
-        <p class="kicker">Partenaire Data & BI</p>
+
         
         <p class="sub-lead">
           Prismora Solutions aide les organisations à transformer leurs données en outils clairs et concrets pour décider plus sereinement.
@@ -364,13 +365,17 @@
       function brandLineSequence(){
         const tri = document.querySelector('.brand-line-hero .logo-tri');
         const txt = document.querySelector('.brand-line-hero .logo-txt');
-        if (!tri || !txt) return;
+        const kick = document.querySelector('.brand-line-hero .kicker');
+        if (!tri || !txt || !kick) return;
   
         // Quand le triangle a fini sa dernière rotation, on révèle le texte
         tri.addEventListener('animationend', () => {
           // On attend 60ms pour un ressenti plus naturel (optionnel)
           setTimeout(() => {
             txt.classList.add('is-revealed');
+          }, 60);
+          setTimeout(() => {
+            kick.classList.add('is-revealed');
           }, 60);
         }, { once: true });
       }
