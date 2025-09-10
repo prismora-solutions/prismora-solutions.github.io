@@ -237,7 +237,7 @@ small{opacity:.85}
 .hero .kicker{ margin-bottom: var(--s); }
 .hero .sect-title{ margin-bottom: var(--m); }
 .hero .lead{ margin-top: var(--s); margin-bottom: var(--m); }
-.hero .cta-row{ margin-top: var(--m); margin-bottom: var(--m); }
+.hero .cta-row{ margin-top: var(--l); margin-bottom: var(--m); }
 .hero .trust-line{ margin-top: var(--m); }
 
 /* === Responsive : pile en mobile (image sous le texte) === */
