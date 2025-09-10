@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Triangle Prismora">
+  <!-- Equilateral triangle split into 3 faces; transparent background -->
+  <!-- Points calculated for perfect centering and rotation -->
+  <polygon points="100.0,13.397459621556138 0,186.60254037844385 100.0,128.8675134594813" fill="#D8A64A"/>
+  <polygon points="100.0,13.397459621556138 200,186.60254037844385 100.0,128.8675134594813" fill="#2FB8C6"/>
+  <polygon points="0,186.60254037844385 200,186.60254037844385 100.0,128.8675134594813" fill="#0F4C5C"/>
+</svg>
