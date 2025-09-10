@@ -71,7 +71,26 @@ a:hover{text-decoration:underline}
 }
 
 /* Rangée de CTA mieux espacée */
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:var(--m) 0 var(--l)}
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: var(--m) 0 var(--l);
+}
+
+/* Mobile : boutons empilés et centrés */
+@media (max-width: 768px) {
+  .cta-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-row .cta {
+    width: 100%;
+    max-width: 280px; /* limite pour rester joli */
+    text-align: center;
+  }
+}
 
 /* --- NAV --- */
 .nav{
