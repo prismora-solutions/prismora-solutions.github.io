@@ -353,5 +353,31 @@
       } else { armTitles(); }
     })();
   </script>
+  <script>
+    (function(){
+      // ... (ton code burger + titres existe déjà ici)
+  
+      // Animation séquencée des logos : triangle puis texte
+      function brandLineSequence(){
+        const tri = document.querySelector('.brand-line-hero .logo-tri');
+        const txt = document.querySelector('.brand-line-hero .logo-txt');
+        if (!tri || !txt) return;
+  
+        // Quand le triangle a fini sa dernière rotation, on révèle le texte
+        tri.addEventListener('animationend', () => {
+          // On attend 60ms pour un ressenti plus naturel (optionnel)
+          setTimeout(() => {
+            txt.classList.add('is-revealed');
+          }, 60);
+        }, { once: true });
+      }
+  
+      if (document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', brandLineSequence);
+      } else {
+        brandLineSequence();
+      }
+    })();
+  </script>
 </body>
 </html>
