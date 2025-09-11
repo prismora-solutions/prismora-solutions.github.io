@@ -1,17 +1,22 @@
-/* style.css */
+/* style.css — Prismora Solutions
+   Nettoyé & commenté (doublons retirés, sections clarifiées)
+   Charte & chemins conservés
+============================================================ */
 
-/* === Palette Prismora (clair) === */
+/* ============ 1) Variables de thème & reset ============ */
 :root{
+  /* Palette Prismora (clair) */
   --bg:#ffffff;
   --text:#22343b;
   --brand:#0f4c5c;        /* bleu pétrole */
   --brand-2:#2bb4c8;      /* accent turquoise */
-  --accent:#d8a24a;       /* ocre doux (accents) */
+  --accent:#d8a24a;       /* ocre doux */
   --muted:#5f717a;
   --border:#e6edf0;
   --bg-soft:#f6fafb;
 
-  --xs:8px; --s:14px; --m:20px; --l:32px; --xl:64px; --xxl:96px; /* ++ air */
+  /* Échelles */
+  --xs:8px; --s:14px; --m:20px; --l:32px; --xl:64px; --xxl:96px;
   --radius:14px; --shadow:0 10px 28px rgba(15,76,92,.08);
 }
 
@@ -23,42 +28,33 @@ body{
   line-height:1.6;
 }
 
-/* --- Layout --- */
+/* ============ 2) Layout & typographies ============ */
 .container{max-width:1120px;margin:0 auto;padding:0 var(--m)}
-.section{padding:var(--xl) 0} /* + air entre sections */
+.section{padding:var(--xl) 0}
 
-/* --- Titres & textes --- */
 .kicker{color:var(--brand);text-transform:uppercase;letter-spacing:.14em;font-size:12px;margin:0 0 var(--l)}
 h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:0 0 var(--m);color:var(--brand);font-weight:800}
 h2{font-size:clamp(24px,4vw,38px);margin:0 0 var(--m);color:var(--brand);font-weight:800}
 h3{margin:0 0 var(--s);font-weight:700;color:var(--brand)}
 .lead{font-size:clamp(14px,2.2vw,14px);opacity:.96;max-width:860px;margin:var(--s) 0 var(--m)}
 
-/* Titres + prisme alignés à gauche (texte flush) */
+/* Titre de section + petit prisme à gauche */
 .sect-title{
-  position: relative;
-  display: inline-block;
-  padding-left: 0;
-  margin: 0 0 var(--m);
-  color: var(--brand);
-  font-weight: 800;
+  position: relative; display:inline-block; margin:0 0 var(--m);
+  color:var(--brand); font-weight:800;
 }
 .sect-title .prism{
-  position: absolute; left: -28px; top: 2px;
-  width: 22px; height: 22px; transform-origin: center;
-  background: url("assets/img/logo/prism-icon.svg") center/contain no-repeat;
+  position:absolute; left:-28px; top:2px;
+  width:22px; height:22px;
+  background:url("assets/img/logo/prism-icon.svg") center/contain no-repeat;
 }
 
-/* Animations titres */
-@keyframes prism-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+/* Entrée douce des titres */
 @keyframes title-slide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.sect-title.is-visible .prism{animation:prism-spin 1.5s ease-out 1}
 .sect-title.is-visible{animation:title-slide 1.2s ease-out 1}
-@media (prefers-reduced-motion:reduce){
-  .sect-title.is-visible,.sect-title .prism{animation:none !important}
-}
+@media (prefers-reduced-motion:reduce){.sect-title.is-visible{animation:none !important}}
 
-/* Liens & boutons */
+/* Liens & CTA */
 a{color:var(--brand);text-decoration:none}
 a:hover{text-decoration:underline}
 .cta{
@@ -66,37 +62,14 @@ a:hover{text-decoration:underline}
   background:var(--brand); color:#fff; font-weight:800; box-shadow:var(--shadow);
 }
 .cta:hover{filter:brightness(.97); text-decoration:none}
-.cta--ghost{
-  background:transparent; color:var(--brand); border:2px solid var(--brand);
+.cta--ghost{background:transparent; color:var(--brand); border:2px solid var(--brand)}
+.cta-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:var(--m) 0 var(--l)}
+@media (max-width:768px){
+  .cta-row{flex-direction:column;align-items:center;margin-top:var(--s);margin-bottom:var(--m)}
+  .cta-row .cta{width:100%;max-width:280px;text-align:center}
 }
 
-/* Rangée de CTA mieux espacée */
-.cta-row {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin: var(--m) 0 var(--l);
-}
-
-/* Mobile : boutons empilés et centrés */
-@media (max-width: 768px) {
-  .cta-row {
-    flex-direction: column;
-    align-items: center;
-
-    margin-top: var(--s);   /* plus serré au-dessus */
-    margin-bottom: var(--m);/* tu peux ajuster le bas aussi si besoin */
-  }
-
-  .cta-row .cta {
-    width: 100%;
-    max-width: 280px; /* limite pour rester joli */
-    text-align: center;
-  }
-}
-
-/* --- NAV --- */
+/* ============ 3) Navigation ============ */
 .nav{
   position:sticky; top:0; z-index:20;
   background:linear-gradient(to right, #ffffff 0%, #ffffff 28%, var(--brand) 100%);
@@ -107,7 +80,7 @@ a:hover{text-decoration:underline}
 .brand-link{display:inline-flex;align-items:center}
 .brand img{display:block;height:40px}
 
-/* menu desktop à droite (blanc) */
+/* Menu desktop */
 .menu{display:flex;gap:8px;flex-wrap:wrap}
 .menu a{color:#fff;padding:10px 12px;border-radius:8px;font-weight:600}
 .menu a:hover{background:rgba(255,255,255,.15)}
@@ -123,7 +96,7 @@ a:hover{text-decoration:underline}
 .burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 .no-scroll{overflow:hidden}
 
-/* --- HERO --- */
+/* ============ 4) Hero (2 colonnes) ============ */
 .hero{
   padding:var(--xl) 0 var(--xl);
   background:
@@ -131,16 +104,78 @@ a:hover{text-decoration:underline}
     linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%);
   border-bottom:1px solid var(--border);
 }
-.hero-visual{margin-top:var(--l)}
-.hero-visual img{display:block;width:100%;max-width:840px;margin:0 auto;height:auto}
+.hero-split{display:grid;grid-template-columns:1.15fr 0.85fr;align-items:center;gap:var(--xl)}
+.hero-visual img{display:block;width:100%;max-width:520px;height:auto;margin-inline:auto}
+
+.hero .kicker{margin-bottom:var(--s)}
+.hero .sect-title{margin-bottom:var(--m)}
+.hero .lead{margin-top:var(--s);margin-bottom:var(--m)}
+.hero .cta-row{margin-top:var(--l);margin-bottom:var(--m)}
+.hero .trust-line{margin-top:var(--m)}
+
+/* Responsive hero */
+@media (max-width:900px){
+  .nav .wrap{padding:8px var(--m)}
+  .brand img{height:30px}
+  .burger{display:inline-flex}
+  .menu{
+    display:none; position:fixed; top:56px; right:12px; background:var(--brand);
+    border-radius:12px; box-shadow:0 14px 30px rgba(0,0,0,.18);
+    padding:12px; flex-direction:column; gap:6px; width:calc(100vw - 24px); max-width:320px;
+  }
+  .menu a{color:#fff;padding:12px 14px;border-radius:8px;font-weight:600}
+  .menu a:hover{background:rgba(255,255,255,.12)}
+  .menu.open{display:flex}
+  .nav{background:linear-gradient(to right, #ffffff 0%, #ffffff 38%, var(--brand) 100%)}
+
+  .section{padding:44px 0}
+  .hero-split{grid-template-columns:1fr;gap:var(--l)}
+  .hero-visual{order:2}
+  .hero-text{order:1}
+  .hero-visual img{max-width:360px}
+}
+
+/* ============ 5) Ligne Marque (triangle + texte + kicker) ============ */
+/* Desktop : en ligne, alignés verticalement au centre */
+.brand-line{
+  display:flex; align-items:center; gap:40px;
+}
+
+/* Triangle — rotation supprimée, hauteur fixée à 50px */
+.logo-tri{
+  height:50px; width:auto; display:block;
+}
+
+/* Logo texte — apparaît en douceur (révélé par JS à +60ms) */
+.logo-txt{
+  opacity:0; transform:translateX(-10px);
+  transition:opacity 400ms ease, transform 400ms ease;
+}
+.logo-txt.is-revealed{opacity:1; transform:translateX(0)}
+
+/* Kicker — apparaît ensuite (révélé par JS à +400ms) */
+.brand-line-hero .kicker{
+  margin:0;
+  opacity:0; transform:translateX(-8px);
+  transition:opacity 360ms ease, transform 360ms ease;
+  display:inline-block;
+}
+.brand-line-hero .kicker.is-revealed{opacity:1; transform:translateX(0)}
+
+/* Mobile : empilé et centré */
+@media (max-width:768px){
+  .brand-line{flex-direction:column; align-items:center; gap:6px}
+  .brand-line-hero .kicker{text-align:center; font-size:13px}
+}
+
+/* ============ 6) Grilles, cartes & éléments UI ============ */
 .trust-line{display:flex;gap:12px;flex-wrap:wrap;margin-top:var(--m);padding:0;list-style:none}
 .trust-line li{
   background:var(--bg-soft); color:var(--brand); border:1px solid var(--border);
   padding:6px 10px; border-radius:999px; font-size:13px;
 }
 
-/* --- Grilles & cartes --- */
-.grid{display:grid;gap:var(--l)} /* + air entre cartes */
+.grid{display:grid;gap:var(--l)}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{
   background:#fff; border:1px solid var(--border); border-radius:var(--radius);
@@ -149,18 +184,13 @@ a:hover{text-decoration:underline}
 }
 .cards-lift .card:hover{transform:translateY(-2px); box-shadow:0 16px 36px rgba(15,76,92,.10); border-color:rgba(216,162,74,.4)}
 .card .thumb{display:block;width:100%;height:auto;max-height:120px;object-fit:contain;margin-bottom:12px}
-.badge{
-  display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px;
-  background:var(--bg-soft); color:var(--brand); border:1px solid var(--border); margin-bottom:10px;
-}
-.badge-amber{background:rgba(216,162,74,.12); color:#a57727; border-color:rgba(216,162,74,.35)}
+.badge{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:var(--bg-soft);color:var(--brand);border:1px solid var(--border);margin-bottom:10px}
+.badge-amber{background:rgba(216,162,74,.12);color:#a57727;border-color:rgba(216,162,74,.35)}
 
-/* --- Split: texte / image --- */
 .split{display:grid;gap:var(--xl);grid-template-columns:1.1fr 0.9fr;align-items:center;margin:var(--xl) 0}
 .split.reverse{grid-template-columns:0.9fr 1.1fr}
 .split .visual img{width:100%;height:auto;display:block;max-width:520px;margin-inline:auto}
 
-/* --- Chips & pills --- */
 .chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:var(--s) 0 0;list-style:none}
 .chip{
   display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;
@@ -170,184 +200,20 @@ a:hover{text-decoration:underline}
 .pills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin-top:var(--m);list-style:none}
 .pill{background:var(--bg-soft);border:1px solid var(--border);color:var(--brand);padding:6px 10px;border-radius:999px;font-size:13px}
 
-/* --- Stack list --- */
 .stack{margin:0;padding-left:18px}
 .stack li{margin-bottom:10px}
 
-/* --- Bandeau contact --- */
+/* ============ 7) Bandeau contact & footer ============ */
 .contact-band{background:linear-gradient(180deg, var(--bg-soft), #fff)}
 .contact-box{
   background:#fff;border:1px solid var(--border);border-radius:var(--radius);
   padding:var(--xl);box-shadow:var(--shadow);text-align:center
 }
 
-/* --- Footer --- */
 .footer{background:var(--bg-soft);border-top:1px solid var(--border);margin-top:var(--xl);padding:var(--l) 0;color:var(--muted)}
 small{opacity:.85}
 
-/* --- Responsive --- */
-@media (max-width: 900px){
-  .nav .wrap{padding:8px var(--m)}
-  .brand img{height:30px}
-  .burger{display:inline-flex}
-
-  .menu{
-    display:none; position:fixed; top:56px; right:12px;
-    background: var(--brand);
-    border-radius:12px; box-shadow:0 14px 30px rgba(0,0,0,.18);
-    padding:12px; flex-direction:column; gap:6px; width: calc(100vw - 24px); max-width: 320px;
-  }
-  .menu a{color:#fff;padding:12px 14px;border-radius:8px;font-weight:600}
-  .menu a:hover{background:rgba(255,255,255,.12)}
-  .menu.open{display:flex}
-
-  /* Dégradé : plus de blanc côté logo pour respirer */
-  .nav{background:linear-gradient(to right, #ffffff 0%, #ffffff 38%, var(--brand) 100%)}
-
-  /* Sections */
-  .section{padding:44px 0}
-  .split, .split.reverse{grid-template-columns:1fr}
-  .split .visual{order:2}
-  .split .text{order:1}
-  .hero-visual img{max-width:100%}
-  .trust-line{gap:8px}
-  .sect-title .prism{left:-20px;width:18px;height:18px}
-}
-
-/* === HERO en 2 colonnes : texte à gauche, image à droite === */
-.hero { padding: var(--xl) 0 var(--xl); }
-.hero-split{
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;   /* Texte un peu plus large */
-  align-items: center;
-  gap: var(--xl);
-}
-
-/* Colonne image : taille raisonnable, centrée verticalement */
-.hero-visual{ margin: 0; }                 /* annule l'ancien margin-top */
-.hero-visual img{
-  display: block;
-  width: 100%;
-  max-width: 520px;                        /* réduit l’illu pour qu’elle “réponde” au texte */
-  height: auto;
-  margin-inline: auto;                     /* centre l’image dans sa colonne */
-}
-
-/* Un peu d'air entre les éléments du bloc texte */
-.hero .kicker{ margin-bottom: var(--s); }
-.hero .sect-title{ margin-bottom: var(--m); }
-.hero .lead{ margin-top: var(--s); margin-bottom: var(--m); }
-.hero .cta-row{ margin-top: var(--l); margin-bottom: var(--m); }
-.hero .trust-line{ margin-top: var(--m); }
-
-/* === Responsive : pile en mobile (image sous le texte) === */
-@media (max-width: 900px){
-  .hero-split{ grid-template-columns: 1fr; gap: var(--l); }
-  .hero-visual{ order: 2; }               /* image après le texte */
-  .hero-text{ order: 1; }
-  .hero-visual img{ max-width: 360px; }   /* un peu plus petite sur mobile */
-  .hero .lead{ margin-top: var(--s); margin-bottom: var(--s); }
-}
-
-.brand-line {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 40px;        /* espace entre le logo et le texte */
-}
-
-/* Kicker dans la ligne marque : caché au départ */
-.brand-line-hero .kicker{
-  margin: 0;                 /* pas d'espace parasite */
-  opacity: 0;                /* invisible au chargement */
-  transform: translateX(-8px);
-  transition: opacity 360ms ease, transform 360ms ease;
-  display: inline-block;     /* pour l’anim de translation */
-  align-self: flex-end;      /* aligné en bas si ligne horizontale */
-}
-
-/* État révélé */
-.brand-line-hero .kicker.is-revealed{
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-/* Vue mobile : logo au-dessus, kicker centré en dessous */
-@media (max-width: 768px) {
-  .brand-line {
-    flex-direction: column;
-    align-items: center; /* centre logo + kicker */
-    gap: 6px;            /* petit espace entre eux */
-  }
-
-  .brand-line-hero {
-    flex-direction: column;
-    align-items: center; /* centre logo + kicker */
-    gap: 6px;            /* petit espace entre eux */
-  }
-
-  .brand-line-hero .kicker {
-    margin-left: 0;      /* annule le décalage desktop */
-    text-align: center;  /* centre le texte */
-    font-size: 13px;     /* un peu plus petit sur mobile */
-  }
-}
-/* Mobile : on empile et on centre */
-@media (max-width: 768px){
-  .brand-line-hero{
-    flex-direction:column;
-    align-items:center;
-    gap:6px;
-  }
-
-  .brand-line-hero .kicker {
-    margin-left: 0;       /* annule le décalage horizontal */
-    text-align: center;   /* centre le texte */
-  }
-}
-
-/* Cadre carré qui centre parfaitement l’image */
-.logo-wrapper{
-  --size: 56px;
-  width: var(--size);
-  height: var(--size);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* L’image remplit le cadre et tourne autour de son centre */
-.logo-tri{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform-origin: 50% 50%;
-  /* Variables contrôlables via style inline */
-  --spin-duration: 0.6s; /* durée d’un tour */
-  --tours: 3;         /* nb de tours */
-  --tx: 0px;          /* micro-offset X pour recentrer visuellement */
-  --ty: 0px;          /* micro-offset Y */
-
-  animation: prismLogoSpin var(--spin-duration) linear var(--tours) forwards;
-}
-
-/* On garde 1 tour dans les keyframes, et on applique translate pour corriger le centrage visuel */
-@keyframes prismLogoSpin{
-  from { transform: translate(var(--tx), var(--ty)) rotate(0deg); }
-  to   { transform: translate(var(--tx), var(--ty)) rotate(360deg); }
-}
-
-/* Apparition du logo texte (si tu l’avais) */
-.logo-txt{
-  opacity:0;
-  transform: translateX(-10px);
-  transition: opacity 400ms ease, transform 400ms ease;
-}
-.logo-txt.is-revealed{ opacity:1; transform: translateX(0); }
-
-
-/* Paragraphe plus discret que .lead */
+/* ============ 8) Détails divers ============ */
 .sub-lead{
   font-size: clamp(13px, 1.2vw, 15px);
   line-height: 1.6;
@@ -355,5 +221,3 @@ small{opacity:.85}
   max-width: 820px;
   margin: var(--s) 0 var(--m);
 }
-
-
