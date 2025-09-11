@@ -286,7 +286,7 @@ small{opacity:.85}
 }
 
 /* Observer : centrer le duo et réduire l'écart entre texte & image (desktop) */
-.section .split:first-of-type{
+.section .split{
   max-width: 700px;           /* centre le duo dans le container */
   margin-inline: auto;        /* ...en le ramenant au centre */
   gap: 0px;                  /* avant : var(--xl)=64px ; ici plus serré */
