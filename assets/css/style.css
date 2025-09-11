@@ -293,4 +293,10 @@ small{opacity:.85}
   justify-content: center;    /* recentre les 2 colonnes dans la grille */
 }
 
+/* Indentation douce de la liste sous le h2 (évite l'alignement pile sous le titre) */
+.split .text .liste-carre{
+  margin-left: 8px;
+}
+
+
 
