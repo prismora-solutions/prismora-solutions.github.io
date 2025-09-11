@@ -357,7 +357,7 @@ small{opacity:.85}
 
 .section .split .text h2::before{
   content: "";
-  width: 30px; height: 30px;      /* ajuste ici la taille de l'icône */
+  width: 30px; height: 30px;      /* ajuste ici la taille de l'icône, super*/
   background: url("assets/img/logo/logo_triangle.png") center / contain no-repeat;
 }
 
