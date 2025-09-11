@@ -36,8 +36,18 @@ body{
 .section{padding:var(--xl) 0}
 
 .kicker{color:var(--brand);text-transform:uppercase;letter-spacing:.14em;font-size:12px;margin:0 0 var(--l)}
-h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:0 0 var(--m);color:var(--brand);font-weight:800}
-h2{font-size:clamp(24px,4vw,38px);margin:0 0 var(--m);color:var(--brand);font-weight:800}
+h1{
+   font-size:clamp(26px,5vw,38px);
+   line-height:1.15;
+   margin:0 0 var(--m);
+   color:var(--brand);
+   font-weight:800}
+h2{
+   font-size:clamp(22px, 3.2vw, 34px);
+   margin:0 0 var(--m);
+   color:var(--brand);
+   font-weight:800
+}
 h3{margin:0 0 var(--s);font-weight:700;color:var(--brand)}
 .lead{font-size:clamp(14px,2.2vw,14px);opacity:.96;max-width:860px;margin:var(--s) 0 var(--m)}
 
