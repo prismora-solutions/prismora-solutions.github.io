@@ -346,20 +346,23 @@ small{opacity:.85}
 @media (max-width:768px){
   .section .split:nth-of-type(2)::after{ width:88%; justify-self:center; }
 }
-
 /* Triangle automatique avant les h2 (pas de HTML en plus) */
 .section .split .text h2{
-  display: inline-flex;           /* met l'icône et le texte sur la même ligne */
-  align-items: center;            /* alignement vertical propre */
-  gap: 10px;                      /* espace entre triangle et titre */
-  margin: 0 0 var(--m);           /* garde l'espace sous le titre */
+  display: inline-flex;        /* h2 + icône sur la même ligne */
+  align-items: center;         /* centrage vertical propre */
+  gap: 10px;                   /* espace entre triangle et titre */
+  margin: 0 0 var(--m);
 }
 
 .section .split .text h2::before{
   content: "";
-  width: 30px; height: 30px;      /* ajuste ici la taille de l'icône, super*/
-  background: url("assets/img/logo/logo_triangle.png") center / contain no-repeat;
+  display: inline-block;       /* <<< indispensable pour width/height */
+  width: 30px;
+  height: 30px;
+  background: url("/assets/img/logo/logo_triangle.png") center/contain no-repeat;
+  flex: 0 0 20px;              /* évite que l’icône se comprime */
 }
+
 
 
 
