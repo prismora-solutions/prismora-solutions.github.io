@@ -285,4 +285,12 @@ small{opacity:.85}
   border-radius: 2px;       /* carré légèrement adouci ; mets 0 pour angle vif */
 }
 
+/* Observer : centrer le duo et réduire l'écart entre texte & image (desktop) */
+.section .split:first-of-type{
+  max-width: 980px;           /* centre le duo dans le container */
+  margin-inline: auto;        /* ...en le ramenant au centre */
+  gap: 36px;                  /* avant : var(--xl)=64px ; ici plus serré */
+  justify-content: center;    /* recentre les 2 colonnes dans la grille */
+}
+
 
