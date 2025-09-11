@@ -298,5 +298,17 @@ small{opacity:.85}
   margin-left: 8px;
 }
 
+/* Observer (mobile) : empiler et réduire l'image */
+@media (max-width:768px){
+  .section .split:first-of-type{
+    grid-template-columns: 1fr;   /* une seule colonne */
+    gap: 14px;                    /* rapproche encore texte & image */
+  }
+  .section .split:first-of-type .visual img{
+    width: 220px;                 /* plus petit que la base 300px */
+  }
+}
+
+
 
 
