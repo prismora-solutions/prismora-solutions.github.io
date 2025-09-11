@@ -362,10 +362,10 @@ small{opacity:.85}
 .section .split .text h2::before{
   content: "";
   display: inline-block;       /* <<< indispensable pour width/height */
-  width: 100px;
-  height: 100px;
+  width: 30px;
+  height: 30px;
   background: url("/assets/img/logo/logo_triangle.png") center/contain no-repeat;
-  flex: 0 0 20px;              /* évite que l’icône se comprime */
+  flex: 0 0 auto;              /* évite que l’icône se comprime */
 }
 
 /* Ligne séparatrice automatique entre toutes les sections .section */
