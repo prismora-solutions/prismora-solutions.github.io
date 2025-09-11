@@ -1,4 +1,4 @@
-<!-- index.html -->
+<!-- index.html — Prismora Solutions -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,13 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
 
-  <!-- Style (racine du repo) -->
-  <link rel="stylesheet" href="assets/css/style.css?v=10"/>
+  <!-- Style (chemin conservé) -->
+  <link rel="stylesheet" href="assets/css/style.css?v=11"/>
   <meta name="theme-color" content="#0f4c5c" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ===================== NAV ===================== -->
   <nav class="nav">
     <div class="container wrap">
       <div class="brand">
@@ -27,12 +27,12 @@
         </a>
       </div>
 
-      <!-- Bouton hamburger (mobile) -->
+      <!-- Burger (mobile) -->
       <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
         <span></span><span></span><span></span>
       </button>
 
-      <!-- Menu -->
+      <!-- Menu (liens conservés) -->
       <div class="menu" id="site-menu">
         <a href="solutions.html">Solutions</a>
         <a href="contact.html">Contact</a>
@@ -40,42 +40,36 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ===================== HERO ===================== -->
   <header class="hero">
     <div class="container hero-split">
-      <!-- Colonne texte (gauche) -->
+      <!-- Colonne texte -->
       <div class="hero-text">
-        
         <h1 class="sect-title">
           <span class="prism" aria-hidden="true"></span>
           Vos données lisibles,<br>
           des décisions plus sereines.
-          <br>
         </h1>
 
-        <!-- Ligne marque (logos) -->
-        <div class="brand-line-hero" id="brandLineHero">
-          <!-- Conteneur carré : on ne met PAS d’attribut height sur l’img -->
-          <div class="logo-wrapper" style="--size:50px;">
-            <img
-              src="assets/img/logo/logo_triangle.png"
-              class="logo-tri"
-              alt="Logo Triangle"
-              style="--spin-duration:.3s; --spin-iterations:3; --tx:0px; --ty:0px;"
-            >
-          </div>
-        
+        <!-- === Ligne Marque (réécrite) ===
+             Desktop : triangle + texte + kicker sur une ligne
+             Mobile  : centrés et empilés                         -->
+        <div class="brand-line brand-line-hero" id="brandLineHero">
+          <img
+            class="logo-tri"
+            src="assets/img/logo/logo_triangle.png"
+            alt="Logo Triangle"
+            height="50"
+          />
           <img
             class="logo-txt"
             src="assets/img/logo/logo_texte.png"
-            alt="Logo Texte"
+            alt="Logo Texte Prismora"
             height="50"
-          >
+          />
           <p class="kicker">Partenaire Data & BI</p>
         </div>
-        
 
-        
         <p class="sub-lead">
           Prismora Solutions aide les organisations à transformer leurs données en outils clairs et concrets pour décider plus sereinement.
           Tableaux de bord, automatisations, accompagnement : des solutions adaptées aux TPE, PME/ETI, collectivités et missions ponctuelles en grands comptes.
@@ -86,16 +80,15 @@
           <a class="cta" href="contact.html">Échanger dès maintenant</a>
         </div>
       </div>
-  
-      <!-- Colonne image (droite) -->
+
+      <!-- Colonne image (visuel conservé) -->
       <div class="hero-visual">
         <img src="assets/img/hero-illustration.svg" alt="Collaboration et synthèse visuelle">
       </div>
     </div>
   </header>
 
-
-  <!-- MÉTHODE : Observer / Structurer / Activer -->
+  <!-- ===================== MÉTHODE ===================== -->
   <section class="section">
     <div class="container">
       <h2 class="sect-title">
@@ -135,7 +128,7 @@
     </div>
   </section>
 
-  <!-- POUR QUI ? -->
+  <!-- ===================== POUR QUI ===================== -->
   <section class="section">
     <div class="container">
       <h2 class="sect-title">
@@ -151,7 +144,7 @@
     </div>
   </section>
 
-  <!-- AVANT / APRÈS -->
+  <!-- ===================== AVANT / APRÈS ===================== -->
   <section class="section">
     <div class="container">
       <h2 class="sect-title">
@@ -179,7 +172,7 @@
     </div>
   </section>
 
-  <!-- EXEMPLES ANONYMISÉS -->
+  <!-- ===================== EXEMPLES ===================== -->
   <section class="section">
     <div class="container">
       <h2 class="sect-title">
@@ -213,7 +206,7 @@
     </div>
   </section>
 
-  <!-- TECH / STACK -->
+  <!-- ===================== STACK ===================== -->
   <section class="section">
     <div class="container">
       <h2 class="sect-title">
@@ -235,7 +228,7 @@
     </div>
   </section>
 
-  <!-- TEASER SOLUTIONS -->
+  <!-- ===================== SOLUTIONS ===================== -->
   <section class="section">
     <div class="container">
       <h2 class="sect-title">
@@ -264,7 +257,7 @@
     </div>
   </section>
 
-  <!-- PREUVES & CONFIANCE -->
+  <!-- ===================== PREUVES ===================== -->
   <section class="section">
     <div class="container">
       <h2 class="sect-title">
@@ -295,7 +288,7 @@
     </div>
   </section>
 
-  <!-- BANDEAU CONTACT -->
+  <!-- ===================== CONTACT ===================== -->
   <section class="section contact-band">
     <div class="container contact-box">
       <h2 class="sect-title">
@@ -309,17 +302,17 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container">
       <small>© Prismora Solutions — Bordeaux & Remote • Site hébergé gratuitement sur GitHub Pages</small>
     </div>
   </footer>
 
-  <!-- Scripts : burger + animation titres on-scroll -->
+  <!-- ===================== SCRIPTS ===================== -->
   <script>
+    /* ===== Burger + fermeture au clic ===== */
     (function(){
-      /* Burger */
       const burger = document.querySelector('.burger');
       const menu   = document.getElementById('site-menu');
       if (burger && menu){
@@ -334,57 +327,26 @@
           burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
         }));
       }
-
-      /* Animation titres au scroll */
-      function armTitles(){
-        const titles = document.querySelectorAll('.sect-title');
-        if (!('IntersectionObserver' in window) || !titles.length) {
-          titles.forEach(t => t.classList.add('is-visible'));
-          return;
-        }
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              e.target.classList.add('is-visible');
-              io.unobserve(e.target);
-            }
-          });
-        }, { rootMargin: '0px 0px -20% 0px', threshold: 0.2 });
-        titles.forEach(t => io.observe(t));
-      }
-      if (document.readyState === 'loading'){
-        document.addEventListener('DOMContentLoaded', armTitles);
-      } else { armTitles(); }
     })();
   </script>
+
   <script>
+    /* ===== Séquence d'apparition de la ligne marque =====
+       - logo texte : +60ms
+       - kicker     : +400ms
+       (la rotation du triangle a été supprimée) */
     (function(){
-      // ... (ton code burger + titres existe déjà ici)
-  
-      // Animation séquencée des logos : triangle puis texte
       function brandLineSequence(){
-        const tri = document.querySelector('.brand-line-hero .logo-tri');
-        const txt = document.querySelector('.brand-line-hero .logo-txt');
+        const txt  = document.querySelector('.brand-line-hero .logo-txt');
         const kick = document.querySelector('.brand-line-hero .kicker');
-        if (!tri || !txt || !kick) return;
-  
-        // Quand le triangle a fini sa dernière rotation, on révèle le texte
-        tri.addEventListener('animationend', () => {
-          // On attend 60ms pour un ressenti plus naturel (optionnel)
-          setTimeout(() => {
-            txt.classList.add('is-revealed');
-          }, 60);
-          setTimeout(() => {
-            kick.classList.add('is-revealed');
-          }, 460);
-        }, { once: true });
+        if (!txt || !kick) return;
+
+        setTimeout(() => { txt.classList.add('is-revealed'); }, 60);
+        setTimeout(() => { kick.classList.add('is-revealed'); }, 400);
       }
-  
       if (document.readyState === 'loading'){
         document.addEventListener('DOMContentLoaded', brandLineSequence);
-      } else {
-        brandLineSequence();
-      }
+      } else { brandLineSequence(); }
     })();
   </script>
 </body>
