@@ -380,6 +380,51 @@ small{opacity:.85}
   border-top: 1px solid var(--border);   /* même style que .hero { border-bottom } */
 }
 
+/* === POUR QUI ? — Grille 2×2 desktop / 1×4 mobile (style ocre arrondi) === */
+.who-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr)); /* 2 colonnes */
+  gap: var(--l);
+  margin-top: var(--m);
+}
 
+/* Cartes ocres arrondies (sans image pour l’instant) */
+.who-card{
+  background: rgba(216,162,74,.10);                 /* ocre doux */
+  border: 1px solid rgba(216,162,74,.35);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: calc(var(--l) + 6px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 220px;                                 /* hauteur homogène */
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.who-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(15,76,92,.10);
+  border-color: rgba(216,162,74,.45);
+}
+
+/* Titres & paragraphes */
+.who-title{
+  margin: 0 0 var(--s);
+  color: var(--brand);
+  font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 22px);
+}
+.who-desc{
+  margin: 0;
+  max-width: 46ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Mobile : 1 colonne (4 blocs empilés) */
+@media (max-width:768px){
+  .who-grid{ grid-template-columns: 1fr; }
+}
 
 
