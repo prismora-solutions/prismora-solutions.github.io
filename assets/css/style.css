@@ -256,3 +256,28 @@ small{opacity:.85}
   max-width: 820px;
   margin: calc(var(--s) + 6px) 0 calc(var(--m) + 6px);
 }
+
+/* Puces carrées bleu pétrole (charte) */
+.liste-carre{
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+.liste-carre li{
+  position: relative;
+  padding-left: 22px;     /* espace pour la puce */
+  margin: 6px 0;
+}
+.liste-carre li::before{
+  content: "";
+  position: absolute;
+  left: 0; 
+  top: 0.62em;             /* aligne la puce sur la ligne de texte */
+  transform: translateY(-50%);
+  width: 10px; 
+  height: 10px;
+  background: var(--brand); /* bleu pétrole de la charte */
+  border-radius: 2px;       /* carré légèrement adouci ; mets 0 pour angle vif */
+}
+
+
