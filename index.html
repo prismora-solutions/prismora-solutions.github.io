@@ -332,15 +332,21 @@
 
   <script>
     /* ===== Séquence d'apparition de la ligne marque =====
-       - logo texte : +60ms
-       - kicker     : +400ms
-       (la rotation du triangle a été supprimée) */
+       - triangle : 0ms (déclenche transition CSS plus lente)
+       - logo texte : +300ms (ajuste si besoin)
+       - kicker     : +700ms (ajuste si besoin)
+    */
     (function(){
       function brandLineSequence(){
+        const tri  = document.querySelector('.brand-line-hero .logo-tri');
         const txt  = document.querySelector('.brand-line-hero .logo-txt');
         const kick = document.querySelector('.brand-line-hero .kicker');
-        if (!txt || !kick) return;
-
+        if (!tri || !txt || !kick) return;
+  
+        // Déclenche l'apparition (CSS contrôle la durée)
+        tri.classList.add('is-revealed');
+  
+        // Décalages d’apparition (tu peux les changer à volonté)
         setTimeout(() => { txt.classList.add('is-revealed'); }, 300);
         setTimeout(() => { kick.classList.add('is-revealed'); }, 700);
       }
