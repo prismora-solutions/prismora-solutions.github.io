@@ -15,8 +15,8 @@
   --border:#e6edf0;
   --bg-soft:#f6fafb;
   --brandline-gap: 20px;                  /* Espace entre triangle & texte (desktop) */
-  --brandline-tri-duration: 700ms;        /* Durée apparition triangle */
-  --brandline-move-duration: 700ms;       /* Durée translation texte+kicker */
+  --brandline-tri-duration: 900ms;        /* Durée apparition triangle */
+  --brandline-move-duration: 1200ms;       /* Durée translation texte+kicker */
 
   /* Échelles */
   --xs:8px; --s:14px; --m:20px; --l:32px; --xl:64px; --xxl:96px;
