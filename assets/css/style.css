@@ -305,7 +305,7 @@ small{opacity:.85}
     gap: 14px;                    /* rapproche encore texte & image */
   }
   .section .split:first-of-type .visual img{
-    width: 220px; /* plus petit que la base 300px */
+    width: 180px; /* plus petit que la base 300px */
   }
 }
 
