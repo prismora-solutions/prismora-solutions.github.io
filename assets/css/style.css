@@ -14,6 +14,9 @@
   --muted:#5f717a;
   --border:#e6edf0;
   --bg-soft:#f6fafb;
+  --brandline-gap: 20px;                  /* Espace entre triangle & texte (desktop) */
+  --brandline-tri-duration: 700ms;        /* Durée apparition triangle */
+  --brandline-move-duration: 700ms;       /* Durée translation texte+kicker */
 
   /* Échelles */
   --xs:8px; --s:14px; --m:20px; --l:32px; --xl:64px; --xxl:96px;
@@ -138,7 +141,9 @@ a:hover{text-decoration:underline}
 /* ============ 5) Ligne Marque (triangle + texte + kicker) ============ */
 /* Desktop : en ligne, alignés verticalement au centre */
 .brand-line{
-  display:flex; align-items:center; gap:40px;
+  display:flex;
+  align-items:center;
+  gap: var(--brandline-gap);   /* <-- remplace l'ancien gap:40px; */
 }
 
 /* Triangle — rotation supprimée, hauteur fixée à 50px */
@@ -149,7 +154,9 @@ a:hover{text-decoration:underline}
 /* Logo texte — apparaît en douceur (révélé par JS à +60ms) */
 .logo-txt{
   opacity:0; transform:translateX(-10px);
-  transition:opacity 400ms ease, transform 400ms ease;
+  transition:
+    opacity var(--brandline-tri-duration) ease,
+    transform var(--brandline-tri-duration) ease;
 }
 .logo-txt.is-revealed{opacity:1; transform:translateX(0)}
 
@@ -157,8 +164,11 @@ a:hover{text-decoration:underline}
 .brand-line-hero .kicker{
   margin:0;
   opacity:0; transform:translateX(-8px);
-  transition:opacity 360ms ease, transform 360ms ease;
+  transition:
+    opacity var(--brandline-move-duration) ease,
+    transform var(--brandline-move-duration) ease;
   display:inline-block;
+  align-self:flex-end;    /* <-- le kicker descend aligné en bas */
 }
 .brand-line-hero .kicker.is-revealed{opacity:1; transform:translateX(0)}
 
