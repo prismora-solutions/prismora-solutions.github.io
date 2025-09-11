@@ -174,8 +174,17 @@ a:hover{text-decoration:underline}
 
 /* Mobile : empilé et centré */
 @media (max-width:768px){
-  .brand-line{flex-direction:column; align-items:center; gap:6px}
-  .brand-line-hero .kicker{text-align:center; font-size:13px}
+  .brand-line{
+     flex-direction:column;
+     align-items:center;
+     gap:6px
+  }
+  .brand-line-hero .kicker{
+     text-align:center;
+     font-size:13px;
+     align-self:center;  /* <-- override le align-self:flex-end défini pour le desktop */
+     margin-left:0;      /* <-- ajoute-le seulement si tu avais un décalage à gauche */
+  }
 }
 
 /* ============ 6) Grilles, cartes & éléments UI ============ */
