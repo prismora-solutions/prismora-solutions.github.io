@@ -347,5 +347,18 @@ small{opacity:.85}
   .section .split:nth-of-type(2)::after{ width:88%; justify-self:center; }
 }
 
+/* Triangle comme bullet devant le h2 (même ligne) */
+.text .h2-bullet{
+  display: inline-block;         /* le met en ligne */
+  height: 20px; width: auto;
+  margin-right: 10px;            /* espace avant le titre */
+  vertical-align: middle;        /* aligne sur le texte */
+}
+
+.text .h2-bullet + h2{
+  display: inline-block;         /* le h2 reste sur la même ligne */
+  vertical-align: middle;
+  margin: 0 0 var(--m);          /* garde l'espace sous le titre */
+}
 
 
