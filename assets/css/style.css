@@ -315,37 +315,42 @@ small{opacity:.85}
   }
 }
 
-/* Séparateur entre "Observer" (split 1) et "Structurer" */
-.section .split:nth-of-type(1){
-  position: relative; /* le ::after devient un item de la grille */
+/* Séparateurs entre blocs (après split 1 et split 2) */
+.section .container > .split:nth-of-type(1),
+.section .container > .split:nth-of-type(2){
+  position: relative;
 }
-.section .split:nth-of-type(1)::after{
-  /* ligne = 3e "item" de la grille, sur toute la largeur du duo texte+image */
+
+.section .container > .split:nth-of-type(1)::after,
+.section .container > .split:nth-of-type(2)::after{
   content: "";
-  grid-column: 1 / -1;       /* s'étend de la colonne texte à la colonne image */
+  display: block;                 /* devient un item de la grille */
+  grid-column: 1 / -1;            /* s’étend du texte à l’image */
   height: 1px;
   background: linear-gradient(90deg, rgba(15,76,92,.18), rgba(15,76,92,.06));
   border-radius: 999px;
-  margin: 22px 0 8px;        /* espace au-dessus/au-dessous de la ligne */
+  margin: 22px 0 8px;
+  order: 3;                       /* <<< clé : passer APRÈS texte (1) et visuel (2) */
 }
 
-/* Mobile : on garde la séparation mais on évite la pleine largeur */
+/* Mobile : plus court et centré */
 @media (max-width:768px){
-  .section .split:nth-of-type(1)::after{
-    width: 88%;              /* plus court que le bloc */
-    justify-self: center;    /* centré dans la grille */
+  .section .container > .split:nth-of-type(1)::after,
+  .section .container > .split:nth-of-type(2)::after{
+    width: 88%;
+    justify-self: center;
   }
 }
 
-.section .split:nth-of-type(2){ position: relative; }
-.section .split:nth-of-type(2)::after{
-  content:""; grid-column:1 / -1; height:1px;
-  background: linear-gradient(90deg, rgba(15,76,92,.18), rgba(15,76,92,.06));
-  border-radius:999px; margin:22px 0 8px;
-}
 @media (max-width:768px){
-  .section .split:nth-of-type(2)::after{ width:88%; justify-self:center; }
+  .section .split{
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+  .section .split .text{ order: 1; }
+  .section .split .visual{ order: 2; justify-self: center; }
 }
+
 /* Triangle automatique avant les h2 (pas de HTML en plus) */
 .section .split .text h2{
   display: inline-flex;        /* h2 + icône sur la même ligne */
