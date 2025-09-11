@@ -368,6 +368,31 @@ small{opacity:.85}
   flex: 0 0 20px;              /* évite que l’icône se comprime */
 }
 
+/* Séparateurs automatiques entre toutes les sections .section
+   (on garde la ligne du header via .hero { border-bottom } et
+   on ajoute une ligne AVANT chaque .section qui suit une autre .section) */
+.section + .section .container{
+  position: relative;
+}
+.section + .section .container::before{
+  content: "";
+  display: block;
+  height: 1px;
+  /* même style que tes séparateurs internes */
+  background: linear-gradient(90deg, rgba(15,76,92,.18), rgba(15,76,92,.06));
+  border-radius: 999px;
+
+  /* largeur limitée au container (pas plein écran) */
+  width: 94%;
+  margin: 28px auto 8px; /* espace au-dessus/au-dessous de la ligne */
+}
+
+/* Mobile : un peu plus court visuellement */
+@media (max-width:768px){
+  .section + .section .container::before{
+    width: 88%;
+  }
+}
 
 
 
