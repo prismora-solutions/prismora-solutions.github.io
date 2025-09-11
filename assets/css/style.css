@@ -368,6 +368,13 @@ small{opacity:.85}
   flex: 0 0 auto;              /* évite que l’icône se comprime */
 }
 
+@media (max-width: 768px){
+  .section .split .text h2::before{
+    width: 20px;
+    height: 20px;
+  }
+}
+
 /* Ligne séparatrice automatique entre toutes les sections .section */
 .section + .section{
   border-top: 1px solid var(--border);   /* même style que .hero { border-bottom } */
