@@ -295,7 +295,7 @@ small{opacity:.85}
 
 /* Indentation douce de la liste sous le h2 (évite l'alignement pile sous le titre) */
 .split .text .liste-carre{
-  margin-left: 20px;
+  margin-left: 100px;
 }
 
 /* Observer (mobile) : empiler et réduire l'image */
