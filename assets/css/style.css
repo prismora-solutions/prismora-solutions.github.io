@@ -350,7 +350,7 @@ small{opacity:.85}
 /* Triangle comme bullet devant le h2 (même ligne) */
 .text .h2-bullet{
   display: inline-block;         /* le met en ligne */
-  height: 20px; width: auto;
+  height: 40px; width: auto;
   margin-right: 10px;            /* espace avant le titre */
   vertical-align: middle;        /* aligne sur le texte */
 }
