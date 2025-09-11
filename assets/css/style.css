@@ -222,7 +222,7 @@ a:hover{text-decoration:underline}
 .badge{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:var(--bg-soft);color:var(--brand);border:1px solid var(--border);margin-bottom:10px}
 .badge-amber{background:rgba(216,162,74,.12);color:#a57727;border-color:rgba(216,162,74,.35)}
 
-.split{display:grid;gap:var(--xl);grid-template-columns:1.1fr 0.9fr;align-items:center;margin:var(--xl) 0}
+.split{display:grid;gap:var(--xl);grid-template-columns:1.1fr 0.9fr;align-items:center;margin:var(--l) 0}
 .split.reverse{grid-template-columns:0.9fr 1.1fr}
 .split .visual img{width:100%;height:auto;display:block;max-width:520px;margin-inline:auto}
 
