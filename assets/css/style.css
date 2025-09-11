@@ -357,8 +357,8 @@ small{opacity:.85}
 .section .split .text h2::before{
   content: "";
   display: inline-block;       /* <<< indispensable pour width/height */
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background: url("/assets/img/logo/logo_triangle.png") center/contain no-repeat;
   flex: 0 0 20px;              /* évite que l’icône se comprime */
 }
