@@ -483,4 +483,27 @@ small{opacity:.85}
 }
 
 
+/* === POUR QUI ? — Centrer visuellement la liste, texte aligné à gauche === */
+/* 1) La zone .text devient une petite grille qui centre son contenu */
+.who-card .text{
+  display: grid;               /* << clé */
+  justify-items: center;       /* centre horizontalement le contenu (le UL) */
+  align-items: start;          /* garde l'ancrage en haut */
+  width: 100%;
+}
+
+/* 2) On contrôle la largeur du UL et on garde les lignes à gauche */
+.who-card .text .liste-carre{
+  display: block;
+  width: min(42ch, 92%);       /* colonne lisible, pas pleine carte */
+  text-align: left;            /* texte aligné à gauche */
+  margin-top: var(--s);
+  margin-inline: 0;            /* neutralise d'éventuelles marges héritées */
+  padding-inline: 0;           /* idem pour padding si défini ailleurs */
+}
+
+/* confort de lecture */
+.who-card .text .liste-carre li{ line-height: 1.6; }
+
+
 
