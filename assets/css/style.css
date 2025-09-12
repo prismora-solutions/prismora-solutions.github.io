@@ -489,7 +489,7 @@ small{opacity:.85}
 /* 2) On contrôle la largeur du UL et on garde les lignes à gauche */
 .who-card .text .liste-carre{
   display: block;
-  width: min(42ch, 92%);       /* colonne lisible, pas pleine carte */
+  width: min(42ch, 100%);       /* colonne lisible, pas pleine carte */
   text-align: left;            /* texte aligné à gauche */
   margin-top: var(--s);
   margin-inline: 0;            /* neutralise d'éventuelles marges héritées */
