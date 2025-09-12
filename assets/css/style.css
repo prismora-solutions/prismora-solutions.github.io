@@ -442,6 +442,15 @@ small{opacity:.85}
   line-height: 1.6;
 }
 
+.who-card .who-title{
+  text-align: center;                 /* on garde le titre centré */
+}
+
+.who-card .text{
+  align-self: stretch;                /* occupe toute la largeur intérieure de la carte */
+  text-align: left;                   /* aligne le contenu à gauche */
+}
+
 /* Mobile : 1 colonne, cartes NON plein écran (centrées et réduites) */
 @media (max-width:768px){
   .who-grid{
