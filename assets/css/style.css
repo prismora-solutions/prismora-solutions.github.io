@@ -446,26 +446,21 @@ small{opacity:.85}
   text-align: center;                 /* on garde le titre centré */
 }
 
-/* POUR QUI ? — Centrer la colonne des puces dans la carte,
-   mais garder le texte aligné à gauche */
+/* POUR QUI ? — Liste centrée dans la carte, texte à gauche */
 .who-card .text{
-  max-width: 40ch;            /* colonne volontairement plus étroite */
-  width: 100%;                /* prend 100% jusqu’à max-width */
-  margin: var(--s) auto 0;    /* centre la colonne dans la carte */
-  text-align: left;           /* le texte reste bien aligné à gauche */
-  align-self: center;         /* neutralise le align-items:center du parent */
+  width: 100%;
+  align-self: stretch;               /* occupe la largeur de la carte */
+  text-align: left;                  /* garde les lignes alignées à gauche */
 }
 
-/* un peu d’air au-dessus de la liste */
-.who-card .text .liste-carre{
-  margin-top: var(--s);
+/* On centre la LISTE (et on la rend plus étroite) */
+.who-card .text > .liste-carre{
+  width: min(40ch, 92%);             /* colonne lisible */
+  margin: var(--s) auto 0;           /* <<< centre la liste sous le titre */
 }
 
-/* lisibilité des items (optionnel) */
-.who-card .text .liste-carre li{
-  line-height: 1.6;
-}
-
+/* confort de lecture */
+.who-card .text > .liste-carre li{ line-height: 1.6; }
 
 /* Mobile : 1 colonne, cartes NON plein écran (centrées et réduites) */
 @media (max-width:768px){
