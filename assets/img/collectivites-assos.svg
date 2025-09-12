@@ -1,0 +1,101 @@
+<!-- SVG carré — Collectivités & Associations (charte Prismora) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title>Collectivités &amp; Associations — icône</title>
+  <desc>Maison commune stylisée avec drapeau, groupe de personnes, bloc-notes avec coche et pièces : service public, concertation, budget.</desc>
+
+  <!-- ====== PALETTE & TRAITS (charte) ====== -->
+  <style>
+    :root{
+      --brand: #0f4c5c;   /* bleu pétrole */
+      --brand2:#2bb4c8;   /* turquoise */
+      --accent:#d8a24a;   /* ocre */
+      --ink:#18343b;      /* encre sombre */
+      --paper:#ffffff;
+      --muted:#e6edf0;
+      --bg:#f4fafb;
+    }
+    .ink{ stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+    .ink2{ stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <!-- ====== FOND ARRONDI ====== -->
+  <rect x="8" y="8" width="240" height="240" rx="24" fill="var(--bg)"></rect>
+  <rect x="8" y="8" width="240" height="240" rx="24" fill="none" class="ink" opacity="0.08"></rect>
+
+  <!-- ====== MAISON COMMUNE (mairie / salle des associations) ====== -->
+  <g transform="translate(26,64)">
+    <!-- Toit -->
+    <path d="M12,28 L64,0 L116,28" fill="var(--accent)" class="ink"></path>
+    <!-- Drapeau -->
+    <g transform="translate(92,-10)">
+      <line x1="0" y1="0" x2="0" y2="22" class="ink"></line>
+      <path d="M0,0 L18,6 L0,12 Z" fill="var(--brand2)" class="ink2"></path>
+    </g>
+    <!-- Corps -->
+    <rect x="8" y="28" width="112" height="76" rx="10" fill="var(--paper)" class="ink"></rect>
+    <!-- Colonnes / porte -->
+    <rect x="56" y="50" width="16" height="54" rx="6" fill="var(--muted)" class="ink"></rect>
+    <rect x="32" y="60" width="12" height="44" rx="6" fill="#f6fbfc" class="ink2"></rect>
+    <rect x="84" y="60" width="12" height="44" rx="6" fill="#f6fbfc" class="ink2"></rect>
+  </g>
+
+  <!-- ====== GROUPE (concertation / citoyens / bénévoles) ====== -->
+  <g transform="translate(34,160)">
+    <!-- centre -->
+    <circle cx="40" cy="0" r="12" fill="var(--paper)" class="ink"></circle>
+    <rect x="28" y="14" width="24" height="14" rx="7" fill="var(--muted)" class="ink"></rect>
+    <!-- gauche -->
+    <g transform="translate(-22,6)">
+      <circle cx="40" cy="0" r="10" fill="var(--paper)" class="ink"></circle>
+      <rect x="30" y="12" width="20" height="12" rx="6" fill="var(--muted)" class="ink2"></rect>
+    </g>
+    <!-- droite -->
+    <g transform="translate(22,6)">
+      <circle cx="40" cy="0" r="10" fill="var(--paper)" class="ink"></circle>
+      <rect x="30" y="12" width="20" height="12" rx="6" fill="var(--muted)" class="ink2"></rect>
+    </g>
+  </g>
+
+  <!-- ====== BLOC-NOTES (décisions / démarches) ====== -->
+  <g transform="translate(152,86)">
+    <rect x="0" y="0" width="80" height="96" rx="10" fill="var(--paper)" class="ink"></rect>
+    <!-- Spirale -->
+    <g transform="translate(12,-8)">
+      <rect x="0" y="0" width="56" height="10" rx="5" fill="var(--muted)" class="ink2"></rect>
+      <circle cx="10" cy="5" r="2.2" fill="var(--brand)"></circle>
+      <circle cx="28" cy="5" r="2.2" fill="var(--brand)"></circle>
+      <circle cx="46" cy="5" r="2.2" fill="var(--brand)"></circle>
+    </g>
+    <!-- Lignes + coches -->
+    <g class="ink2">
+      <rect x="10" y="24" width="16" height="12" rx="3" fill="var(--muted)"></rect>
+      <line x1="32" y1="30" x2="68" y2="30"></line>
+      <rect x="10" y="46" width="16" height="12" rx="3" fill="var(--muted)"></rect>
+      <line x1="32" y1="52" x2="68" y2="52"></line>
+      <rect x="10" y="68" width="16" height="12" rx="3" fill="var(--muted)"></rect>
+      <line x1="32" y1="74" x2="68" y2="74"></line>
+    </g>
+    <!-- coche -->
+    <path d="M12,54 l5,6 9,-10" fill="none" stroke="var(--brand)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+  </g>
+
+  <!-- ====== BUDGET (pièces) ====== -->
+  <g transform="translate(160,178)">
+    <ellipse cx="20" cy="24" rx="24" ry="8" fill="var(--accent)" class="ink2" opacity="0.35"></ellipse>
+    <g transform="translate(0,0)">
+      <rect x="0" y="0" width="40" height="20" rx="6" fill="var(--accent)" class="ink"></rect>
+      <line x1="6" y1="6" x2="34" y2="6" class="ink2" opacity="0.5"></line>
+      <line x1="6" y1="14" x2="34" y2="14" class="ink2" opacity="0.5"></line>
+    </g>
+    <g transform="translate(8,-12)">
+      <rect x="0" y="0" width="40" height="20" rx="6" fill="var(--accent)" class="ink"></rect>
+    </g>
+  </g>
+
+  <!-- ====== ACCENTS LUDIQUES ====== -->
+  <g fill="#ffd369" opacity="0.9">
+    <circle cx="214" cy="56" r="3"></circle>
+    <circle cx="44" cy="48" r="3"></circle>
+    <circle cx="222" cy="214" r="3" opacity="0.7"></circle>
+  </g>
+</svg>
