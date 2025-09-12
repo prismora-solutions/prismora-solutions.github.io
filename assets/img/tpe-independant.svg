@@ -1,0 +1,68 @@
+<!-- SVG carré — TPE / Indépendants (charte Prismora) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title>TPE / Indépendants — icône</title>
+  <desc>Petite boutique stylisée avec auvent, vitrine, mini graphique et coche — clair et pro pour TPE.</desc>
+
+  <!-- ====== PALETTE & TRAITS (charte) ====== -->
+  <style>
+    :root{
+      --brand: #0f4c5c;   /* bleu pétrole */
+      --brand2:#2bb4c8;   /* turquoise */
+      --accent:#d8a24a;   /* ocre */
+      --ink:#18343b;      /* encre sombre */
+      --paper:#ffffff;
+      --muted:#e6edf0;
+    }
+    .ink{ stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+    .thick{ stroke-width: 8; }
+  </style>
+
+  <!-- ====== FOND ARRONDI ====== -->
+  <rect x="8" y="8" width="240" height="240" rx="24" fill="#f4fafb"></rect>
+  <rect x="8" y="8" width="240" height="240" rx="24" fill="none" class="ink" opacity="0.08"></rect>
+
+  <!-- ====== BOUTIQUE ====== -->
+  <!-- Auvent -->
+  <g transform="translate(44,62)">
+    <rect x="0" y="0" width="168" height="28" rx="8" fill="var(--paper)" class="ink"></rect>
+    <!-- Franges de l'auvent (alternance accent / brand2) -->
+    <path d="M10,28 v16 a12,12 0 0 0 24,0 V28" fill="var(--accent)" class="ink"></path>
+    <path d="M42,28 v16 a12,12 0 0 0 24,0 V28" fill="var(--brand2)" class="ink"></path>
+    <path d="M74,28 v16 a12,12 0 0 0 24,0 V28" fill="var(--accent)" class="ink"></path>
+    <path d="M106,28 v16 a12,12 0 0 0 24,0 V28" fill="var(--brand2)" class="ink"></path>
+    <path d="M138,28 v16 a12,12 0 0 0 24,0 V28" fill="var(--accent)" class="ink"></path>
+  </g>
+
+  <!-- Corps de boutique -->
+  <g transform="translate(44,106)">
+    <rect x="0" y="0" width="168" height="98" rx="12" fill="var(--paper)" class="ink"></rect>
+    <!-- Vitrine -->
+    <rect x="12" y="14" width="90" height="54" rx="8" fill="var(--muted)" class="ink"></rect>
+    <line x1="12" y1="38" x2="102" y2="38" class="ink" opacity="0.25"></line>
+    <!-- Porte -->
+    <rect x="116" y="14" width="40" height="78" rx="8" fill="#f6fbfc" class="ink"></rect>
+    <circle cx="148" cy="54" r="3.5" fill="var(--brand)"></circle>
+  </g>
+
+  <!-- ====== MINI GRAPHIQUE + COCHE (résultats concrets) ====== -->
+  <g transform="translate(72,170)">
+    <!-- Barres -->
+    <rect x="0" y="18" width="14" height="18" rx="3" fill="var(--brand)" class="ink"></rect>
+    <rect x="20" y="10" width="14" height="26" rx="3" fill="var(--accent)" class="ink"></rect>
+    <rect x="40" y="2" width="14" height="34" rx="3" fill="var(--brand2)" class="ink"></rect>
+    <!-- Ligne d'évolution -->
+    <path d="M-4,36 C6,24 32,20 54,10" fill="none" stroke="var(--brand2)" stroke-width="6" stroke-linecap="round"></path>
+    <!-- Coche -->
+    <g transform="translate(92,8)">
+      <rect x="0" y="0" width="30" height="22" rx="6" fill="var(--paper)" class="ink"></rect>
+      <path d="M6,12 l6,6 12,-12" fill="none" stroke="var(--brand)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+  </g>
+
+  <!-- ====== PETITS ÉCLATS LUDIQUES ====== -->
+  <g fill="#ffd369" opacity="0.9">
+    <circle cx="60" cy="54" r="3"></circle>
+    <circle cx="198" cy="58" r="3"></circle>
+    <circle cx="206" cy="210" r="3" opacity="0.7"></circle>
+  </g>
+</svg>
