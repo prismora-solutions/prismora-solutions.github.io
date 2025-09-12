@@ -419,7 +419,7 @@ small{opacity:.85}
 /* À terme, place <img class="who-illus" src="...">.
    En attendant, on montre juste un placeholder sobre. */
 .who-illus{
-  width: 56px; height: 56px;
+  width: 80px; height: 80px;
   border-radius: 12px;
   background: rgba(216,162,74,.16);
   border: 1px dashed rgba(216,162,74,.45);
@@ -455,7 +455,7 @@ small{opacity:.85}
     min-height: 220px;
     padding: var(--l);
   }
-  .who-illus{ width: 48px; height: 48px; }
+  .who-illus{ width: 60px; height: 60px; }
 }
 
 
