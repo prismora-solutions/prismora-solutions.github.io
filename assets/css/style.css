@@ -380,17 +380,24 @@ small{opacity:.85}
   border-top: 1px solid var(--border);   /* même style que .hero { border-bottom } */
 }
 
-/* === POUR QUI ? — Grille 2×2 desktop / 1×4 mobile (style ocre arrondi) === */
+/* === POUR QUI ? — Grille 2×2 (desktop) / 1×4 (mobile), cartes centrées et moins larges === */
+
+/* Grille : 2 colonnes de largeur bornée, centrées dans le container */
 .who-grid{
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr)); /* 2 colonnes */
-  gap: var(--l);
+  grid-template-columns: repeat(2, minmax(280px, 420px)); /* colonnes bornées -> pas pleine largeur */
+  justify-content: center;                                /* centre la grille globalement */
+  align-items: stretch;
+  column-gap: var(--xl);                                  /* espacement horizontal régulier */
+  row-gap: var(--l);                                      /* espacement vertical régulier */
   margin-top: var(--m);
 }
 
-/* Cartes ocres arrondies (sans image pour l’instant) */
+/* Carte ocre arrondie : largeur bornée, centrée via la grille */
 .who-card{
-  background: rgba(216,162,74,.10);                 /* ocre doux */
+  width: 100%;
+  max-width: 420px;                                       /* largeur visuelle cible */
+  background: rgba(216,162,74,.10);
   border: 1px solid rgba(216,162,74,.35);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -399,7 +406,7 @@ small{opacity:.85}
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 220px;                                 /* hauteur homogène */
+  min-height: 240px;                                      /* un poil plus haut pour l’illustration */
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
 .who-card:hover{
@@ -408,12 +415,25 @@ small{opacity:.85}
   border-color: rgba(216,162,74,.45);
 }
 
-/* Titres & paragraphes */
+/* --- Slot illustration (prévu pour une petite image) --- */
+/* À terme, place <img class="who-illus" src="...">.
+   En attendant, on montre juste un placeholder sobre. */
+.who-illus{
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  background: rgba(216,162,74,.16);
+  border: 1px dashed rgba(216,162,74,.45);
+  margin-bottom: var(--s);
+  display: block;
+  object-fit: contain;
+}
+
+/* Titres & texte internes */
 .who-title{
-  margin: 0 0 var(--s);
+  margin: 0 0 6px;
   color: var(--brand);
   font-weight: 800;
-  font-size: clamp(18px, 2.2vw, 22px);
+  font-size: clamp(18px, 2.2vw, 21px);
 }
 .who-desc{
   margin: 0;
@@ -422,9 +442,21 @@ small{opacity:.85}
   line-height: 1.6;
 }
 
-/* Mobile : 1 colonne (4 blocs empilés) */
+/* Mobile : 1 colonne, cartes NON plein écran (centrées et réduites) */
 @media (max-width:768px){
-  .who-grid{ grid-template-columns: 1fr; }
+  .who-grid{
+    grid-template-columns: 1fr;   /* empile */
+    justify-items: center;        /* centre chaque carte */
+    row-gap: var(--m);
+  }
+  .who-card{
+    width: 92%;                   /* pas toute la largeur */
+    max-width: 420px;
+    min-height: 220px;
+    padding: var(--l);
+  }
+  .who-illus{ width: 48px; height: 48px; }
 }
+
 
 
