@@ -499,5 +499,38 @@ small{opacity:.85}
 /* confort de lecture */
 .who-card .text .liste-carre li{ line-height: 1.6; }
 
+/* === DEMONSTRATIONS — Cas concrets === */
+.cases-grid{ margin-top: var(--m); }
+
+.case-card .case-title{
+  margin: 0 0 6px; color: var(--brand); font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 21px);
+}
+.case-card .case-sub{
+  margin: 0 0 12px; color: var(--muted);
+}
+
+.case-media{
+  margin: 8px 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.case-video, .case-thumb{
+  display: block; width: 100%; height: auto;
+}
+
+/* Liste interne plus compacte */
+.case-bullets li{ margin: 4px 0; }
+
+/* Responsive : déjà géré par .grid-3 mais on resserre un peu les cartes sur mobile */
+@media (max-width:768px){
+  .case-card{ padding: var(--l); }
+}
+
+
 
 
