@@ -446,21 +446,19 @@ small{opacity:.85}
   text-align: center;                 /* on garde le titre centré */
 }
 
-/* POUR QUI ? — Liste centrée dans la carte, texte à gauche */
+/* POUR QUI ? — Centrer le bloc UL, texte des items aligné à gauche */
 .who-card .text{
+  display: flex;                 /* << clé : on centre le contenu */
+  justify-content: center;
   width: 100%;
-  align-self: stretch;               /* occupe la largeur de la carte */
-  text-align: left;                  /* garde les lignes alignées à gauche */
 }
 
-/* On centre la LISTE (et on la rend plus étroite) */
-.who-card .text > .liste-carre{
-  width: min(40ch, 92%);             /* colonne lisible */
-  margin: var(--s) auto 0;           /* <<< centre la liste sous le titre */
+.who-card .text .liste-carre{
+  flex: 0 1 42ch;                /* colonne à largeur confortable */
+  width: 100%;
+  text-align: left;              /* lignes alignées à gauche */
+  margin-top: var(--s);
 }
-
-/* confort de lecture */
-.who-card .text > .liste-carre li{ line-height: 1.6; }
 
 /* Mobile : 1 colonne, cartes NON plein écran (centrées et réduites) */
 @media (max-width:768px){
@@ -477,6 +475,29 @@ small{opacity:.85}
   }
   .who-illus{ width: 80px; height: 80px; }
 }
+
+
+/* === POUR QUI ? — Centrer visuellement la liste, texte aligné à gauche === */
+/* 1) La zone .text devient une petite grille qui centre son contenu */
+.who-card .text{
+  display: grid;               /* << clé */
+  justify-items: center;       /* centre horizontalement le contenu (le UL) */
+  align-items: start;          /* garde l'ancrage en haut */
+  width: 100%;
+}
+
+/* 2) On contrôle la largeur du UL et on garde les lignes à gauche */
+.who-card .text .liste-carre{
+  display: block;
+  width: min(42ch, 100%);       /* colonne lisible, pas pleine carte */
+  text-align: left;            /* texte aligné à gauche */
+  margin-top: var(--s);
+  margin-inline: 0;            /* neutralise d'éventuelles marges héritées */
+  padding-inline: 0;           /* idem pour padding si défini ailleurs */
+}
+
+/* confort de lecture */
+.who-card .text .liste-carre li{ line-height: 1.6; }
 
 
 
