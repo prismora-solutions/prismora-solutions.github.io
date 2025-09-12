@@ -23,7 +23,13 @@
     <div class="container wrap">
       <div class="brand">
         <a href="index.html" class="brand-link" aria-label="Retour à l'accueil">
-          <img src="assets/img/logo/logo_triangle.png" alt="Prismora Solutions" height="40">
+          <!-- Logo responsive : desktop = logo_def.png / mobile = logo_triangle.png -->
+          <picture>
+            <!-- Desktop (>= 769px) : logo texte -->
+            <source media="(min-width: 769px)" srcset="assets/img/logo/logo_def.png">
+            <!-- Mobile (par défaut) : triangle -->
+            <img src="assets/img/logo/logo_triangle.png" alt="Prismora Solutions" height="40">
+          </picture>
         </a>
       </div>
 
