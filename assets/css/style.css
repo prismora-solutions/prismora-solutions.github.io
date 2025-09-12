@@ -449,10 +449,11 @@ small{opacity:.85}
 /* POUR QUI ? — Centrer la colonne des puces dans la carte,
    mais garder le texte aligné à gauche */
 .who-card .text{
-  align-self: center;                 /* la colonne se centre dans la carte */
-  text-align: left;                   /* le contenu reste aligné à gauche */
-  width: min(92%, 46ch);              /* largeur confortable, pas pleine carte */
-  margin-inline: auto;                /* centre horizontalement le bloc */
+  max-width: 40ch;            /* colonne volontairement plus étroite */
+  width: 100%;                /* prend 100% jusqu’à max-width */
+  margin: var(--s) auto 0;    /* centre la colonne dans la carte */
+  text-align: left;           /* le texte reste bien aligné à gauche */
+  align-self: center;         /* neutralise le align-items:center du parent */
 }
 
 /* un peu d’air au-dessus de la liste */
