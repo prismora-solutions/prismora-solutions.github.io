@@ -446,24 +446,18 @@ small{opacity:.85}
   text-align: center;                 /* on garde le titre centré */
 }
 
-/* ✅ POUR QUI ? — Centrer visuellement la liste, garder le texte à gauche */
+/* POUR QUI ? — Centrer le bloc UL, texte des items aligné à gauche */
 .who-card .text{
-  /* on centre le contenu enfant (inline-block) */
-  text-align: center;
-  align-self: center;          /* la zone "text" se centre dans la carte */
+  display: flex;                 /* << clé : on centre le contenu */
+  justify-content: center;
   width: 100%;
 }
 
-.who-card .text > .liste-carre{
-  display: inline-block;       /* permet le centrage via text-align:center du parent */
-  text-align: left;            /* chaque ligne reste alignée à gauche */
-  max-width: 42ch;             /* colonne lisible */
-  width: 100%;                 /* s’adapte jusqu’à 42ch */
-  margin: var(--s) auto 0;     /* centré sous le titre */
-}
-
-.who-card .text > .liste-carre li{
-  line-height: 1.6;
+.who-card .text .liste-carre{
+  flex: 0 1 42ch;                /* colonne à largeur confortable */
+  width: 100%;
+  text-align: left;              /* lignes alignées à gauche */
+  margin-top: var(--s);
 }
 
 /* Mobile : 1 colonne, cartes NON plein écran (centrées et réduites) */
