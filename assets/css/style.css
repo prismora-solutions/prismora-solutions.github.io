@@ -368,7 +368,23 @@ small{opacity:.85}
 }
 
 @media (max-width: 768px){
-  .section .split .text h2::before{
+  .section .container h2::before{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.section .container h2::before{
+  content: "";
+  display: inline-block;       /* <<< indispensable pour width/height */
+  width: 30px;
+  height: 30px;
+  background: url("/assets/img/logo/logo_triangle.png") center/contain no-repeat;
+  flex: 0 0 auto;              /* évite que l’icône se comprime */
+}
+
+@media (max-width: 768px){
+  .section .container h2::before{
     width: 20px;
     height: 20px;
   }
