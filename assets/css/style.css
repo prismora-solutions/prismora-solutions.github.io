@@ -589,27 +589,34 @@ small{opacity:.85}
   .stack-scroller{ margin-top: var(--s); }
 }
 
-/* ===== Section Stack : remettre une grille standard (ne pas hériter de .section-method) ===== */
+/* ===== Section Stack : grille 2 colonnes robuste ===== */
 #stack .split{
-  max-width: 1120px;                 /* pleine largeur de ton container */
-  margin-inline: 0;                  /* pas de recentrage étroit */
-  gap: var(--xl);                    /* espace normal entre colonnes */
+  display: grid;                               /* << clé : on remet la grille */
+  grid-template-columns: minmax(420px,1fr) minmax(280px,360px);
+  align-items: center;
+  gap: var(--xl);
+  max-width: 1120px;
+  margin-inline: 0;
   justify-content: initial;
 }
 
-#stack .text .liste-carre{ margin-left: 0; }   /* on enlève l’indentation locale */
-#stack .stack-scroller{ margin-top: var(--m); }/* un peu d’air sous la liste */
+#stack .text .liste-carre{ margin-left: 0; }      /* pas d’indentation locale */
+#stack .stack-scroller{ margin-top: var(--m); }   /* air sous la liste */
 
-#stack .visual img{
-  width: 320px;                      /* illustration bien visible */
-  max-width: 100%;
-}
+/* La colonne visuelle reste visible même si l’image tarde */
+#stack .visual{ justify-self: end; min-width: 280px; }
+#stack .visual img{ width: 100%; max-width: 340px; height: auto; display: block; }
+
 @media (max-width:768px){
-  #stack .split{ grid-template-columns: 1fr; row-gap: var(--m); }
-  #stack .visual{ order: 2; justify-self: center; }
+  #stack .split{
+    grid-template-columns: 1fr;                 /* pile en mobile */
+    row-gap: var(--m);
+  }
+  #stack .visual{ order: 2; justify-self: center; min-width: 0; }
   #stack .text  { order: 1; }
-  #stack .visual img{ width: 220px; }
+  #stack .visual img{ width: 220px; max-width: 80vw; }
 }
+
 
 
 
