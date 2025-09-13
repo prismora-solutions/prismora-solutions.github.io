@@ -368,10 +368,17 @@ small{opacity:.85}
 }
 
 @media (max-width: 768px){
-  .section .container h2::before{
+  .section .split .text h2::before{
     width: 20px;
     height: 20px;
   }
+}
+
+.section .container h2{
+  display: inline-flex;        /* h2 + icône sur la même ligne */
+  align-items: center;         /* centrage vertical propre */
+  gap: 10px;                   /* espace entre triangle et titre */
+  margin: 0 0 var(--m);
 }
 
 .section .container h2::before{
