@@ -309,21 +309,13 @@
           <li><strong>Automatisation :</strong> rafraîchissements planifiés, contrôles qualité, historisation.</li>
           <li><strong>Projet :</strong> audit rapide → jalons clairs → itérations courtes → transfert de compétences.</li>
         </ul>
-
-        <!-- Bande d’outils qui défile (sans JS) -->
-        <div class="stack-scroller" aria-label="Technologies utilisées">
-          <ul class="stack-track">
-            <!-- Série A -->
-            <li><img class="stack-logo" src="assets/img/Python-Symbole.jpg" alt="Python" loading="lazy"></li>
-            <li><img class="stack-logo" src="assets/img/pandas.png" alt="pandas" loading="lazy"></li>
-            <li><img class="stack-logo" src="assets/img/power-bi-logo.png" alt="Power BI" loading="lazy"></li>
-            <li><img class="stack-logo" src="assets/img/mysql.jpg" alt="MySQL" loading="lazy"></li>
-            <!-- Série B (duplication pour boucle infinie) -->
-            <li aria-hidden="true"><img class="stack-logo" src="assets/img/Python-Symbole.jpg" alt="" loading="lazy"></li>
-            <li aria-hidden="true"><img class="stack-logo" src="assets/img/pandas.png" alt="" loading="lazy"></li>
-            <li aria-hidden="true"><img class="stack-logo" src="assets/img/power-bi-logo.png" alt="" loading="lazy"></li>
-            <li aria-hidden="true"><img class="stack-logo" src="assets/img/mysql.jpg" alt="" loading="lazy"></li>
-          </ul>
+        <!-- Bande d’outils auto (charge automatiquement les images du dossier indiqué) -->
+        <div class="stack-scroller"
+             aria-label="Technologies utilisées"
+             data-gh-owner="prismora-solutions"
+             data-gh-repo="prismora-solutions.github.io"
+             data-dir="assets/img/stack">
+          <ul class="stack-track" id="stack-track"></ul>
         </div>
       </div>
 
@@ -463,5 +455,87 @@
       } else { brandLineSequence(); }
     })();
   </script>
+  <script>
+  /* ===== Stack auto-loader (GitHub Contents API) ===== */
+  (function () {
+    const scroller = document.querySelector('.stack-scroller');
+    if (!scroller) return;
+  
+    const owner = scroller.dataset.ghOwner;
+    const repo  = scroller.dataset.ghRepo;
+    const dir   = scroller.dataset.dir || 'assets/img/stack';
+    const api   = `https://api.github.com/repos/${owner}/${repo}/contents/${dir}`;
+    const track = scroller.querySelector('#stack-track');
+    const cacheKey = `stack_${owner}_${repo}_${dir}`;
+    const exts = /\.(png|jpe?g|svg|webp)$/i;
+  
+    const fallback = [
+      'assets/img/Python-Symbole.jpg',
+      'assets/img/pandas.png',
+      'assets/img/power-bi-logo.png',
+      'assets/img/mysql.jpg'
+    ];
+  
+    function niceAltFromPath(p){
+      const n = p.split('/').pop().replace(exts,'').replace(/[-_]+/g,' ').trim();
+      return n.charAt(0).toUpperCase() + n.slice(1);
+    }
+  
+    function build(list){
+      track.innerHTML = '';
+      list.forEach((src, i) => {
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        img.className = 'stack-logo';
+        img.loading = 'lazy';
+        img.src = src;
+        img.alt = i < 50 ? niceAltFromPath(src) : ''; // alt vide pour la duplication
+        li.appendChild(img);
+        track.appendChild(li);
+      });
+      // Duplication pour boucle infinie
+      const clone = track.cloneNode(true);
+      clone.querySelectorAll('img').forEach(img => img.alt = '');
+      track.append(...clone.childNodes);
+    }
+  
+    async function load(){
+      try {
+        // cache 24h
+        const now = Date.now();
+        const cached = localStorage.getItem(cacheKey);
+        if (cached){
+          const { t, list } = JSON.parse(cached);
+          if (now - t < 24*60*60*1000 && Array.isArray(list) && list.length){
+            build(list);
+            return;
+          }
+        }
+  
+        const res = await fetch(api, { headers: { 'Accept': 'application/vnd.github+json' }});
+        if (!res.ok) throw new Error('GitHub API error');
+        const data = await res.json();
+  
+        const list = data
+          .filter(it => it.type === 'file' && exts.test(it.name))
+          .map(it => it.download_url);
+  
+        if (!list.length) throw new Error('No images in folder');
+  
+        localStorage.setItem(cacheKey, JSON.stringify({ t: now, list }));
+        build(list);
+      } catch (e){
+        // Fallback local si API indispo ou vide
+        build(fallback);
+      }
+    }
+  
+    // Démarre
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', load);
+    } else { load(); }
+  })();
+  </script>
+
 </body>
 </html>
