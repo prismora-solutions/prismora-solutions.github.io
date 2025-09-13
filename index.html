@@ -218,7 +218,7 @@
   <div class="container">
     <h1 class="sect-title">
       <span class="prism" aria-hidden="true"></span>
-      Démonstrations & cas concrets
+      Démos & cas concrets
     </h1>
 
     <div class="grid grid-3 cards-lift cases-grid">
@@ -293,28 +293,48 @@
   </div>
 </section>
 
+<!-- ===================== STACK ===================== -->
+<section class="section" id="stack">
+  <div class="container">
+    <h1 class="sect-title">
+      <span class="prism" aria-hidden="true"></span>
+      Notre stack & méthode projet
+    </h1>
 
-  <!-- ===================== STACK ===================== -->
-  <section class="section">
-    <div class="container">
-      <h1 class="sect-title">
-        <span class="prism" aria-hidden="true"></span>
-        Notre stack & méthode projet
-      </h1>
-      <div class="split reverse">
-        <div class="text">
-          <ul class="stack">
-            <li><strong>Outils :</strong> SQL, Python, Power BI, Looker Studio, Excel avancé.</li>
-            <li><strong>Automatisation :</strong> pipelines, actualisation planifiée, gouvernance simple.</li>
-            <li><strong>Projet :</strong> audit → jalons → itérations → transfert de compétences.</li>
+    <div class="split reverse">
+      <!-- Colonne texte -->
+      <div class="text">
+        <ul class="liste-carre">
+          <li><strong>Outils :</strong> SQL/MySQL, Python (pandas), Power BI, Looker Studio, Excel.</li>
+          <li><strong>Automatisation :</strong> rafraîchissements planifiés, contrôles qualité, historisation.</li>
+          <li><strong>Projet :</strong> audit rapide → jalons clairs → itérations courtes → transfert de compétences.</li>
+        </ul>
+
+        <!-- Bande d’outils qui défile (sans JS) -->
+        <div class="stack-scroller" aria-label="Technologies utilisées">
+          <ul class="stack-track">
+            <!-- Série A -->
+            <li><img class="stack-logo" src="assets/img/Python-Symbole.jpg" alt="Python" loading="lazy"></li>
+            <li><img class="stack-logo" src="assets/img/pandas.png" alt="pandas" loading="lazy"></li>
+            <li><img class="stack-logo" src="assets/img/power-bi-logo.png" alt="Power BI" loading="lazy"></li>
+            <li><img class="stack-logo" src="assets/img/mysql.jpg" alt="MySQL" loading="lazy"></li>
+            <!-- Série B (duplication pour boucle infinie) -->
+            <li aria-hidden="true"><img class="stack-logo" src="assets/img/Python-Symbole.jpg" alt="" loading="lazy"></li>
+            <li aria-hidden="true"><img class="stack-logo" src="assets/img/pandas.png" alt="" loading="lazy"></li>
+            <li aria-hidden="true"><img class="stack-logo" src="assets/img/power-bi-logo.png" alt="" loading="lazy"></li>
+            <li aria-hidden="true"><img class="stack-logo" src="assets/img/mysql.jpg" alt="" loading="lazy"></li>
           </ul>
         </div>
-        <div class="visual">
-          <img src="assets/img/stack-tech.svg" alt="Illustration : Stack & pipelines">
-        </div>
+      </div>
+
+      <!-- Colonne visuelle -->
+      <div class="visual">
+        <img src="assets/img/stack-tech.svg" alt="Illustration : Stack & pipelines">
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ===================== SOLUTIONS ===================== -->
   <section class="section">
