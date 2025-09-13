@@ -285,35 +285,34 @@ small{opacity:.85}
   border-radius: 2px;       /* carré légèrement adouci ; mets 0 pour angle vif */
 }
 
-/* Observer : centrer le duo et réduire l'écart entre texte & image (desktop) */
-.section .split{
-  max-width: 800px;           /* centre le duo dans le container */
-  margin-inline: auto;        /* ...en le ramenant au centre */
-  gap: 0px;                  /* avant : var(--xl)=64px ; ici plus serré */
-  justify-content: center;    /* recentre les 2 colonnes dans la grille */
+/* Méthode (Analyser/Structurer/Activer) — règles locales */
+.section-method .split{
+  max-width: 800px;
+  margin-inline: auto;
+  gap: 0;
+  justify-content: center;
 }
-
-/* Indentation douce de la liste sous le h2 (évite l'alignement pile sous le titre) */
-.split .text .liste-carre{
+/* Indentation de la liste uniquement dans la section Méthode */
+.section-method .split .text .liste-carre{
   margin-left: 35px;
 }
 
 /* Observer (mobile) : empiler et réduire l'image */
 /* Mobile : les 3 blocs (Observer, Structurer, Activer) */
 @media (max-width:768px){
-  .section .split{
-    grid-template-columns: 1fr;  /* empile */
-    row-gap: 12px;               /* espace vertical texte <-> image */
+  .section-method .split{
+    grid-template-columns: 1fr;
+    row-gap: 12px;
   }
-  .section .split .text{ order: 1; }          /* texte au-dessus */
-  .section .split .visual{ order: 2; 
-                           justify-self: center; }
-  .section .split .visual img{
-    width: 180px;               /* même taille pour tous */
-    max-width: 180px;           /* neutralise la limite par défaut (520px) */
-    margin: 6px 0 0;            /* petit souffle sous la liste */
+  .section-method .split .text{ order: 1; }
+  .section-method .split .visual{ order: 2; justify-self: center; }
+  .section-method .split .visual img{
+    width: 180px;
+    max-width: 180px;
+    margin: 6px 0 0;
   }
 }
+
 
 /* Séparateurs entre blocs (après split 1 et split 2) */
 .section .container > .split:nth-of-type(1),
@@ -589,6 +588,29 @@ small{opacity:.85}
   .stack-logo{ height: 28px; }
   .stack-scroller{ margin-top: var(--s); }
 }
+
+/* ===== Section Stack : remettre une grille standard (ne pas hériter de .section-method) ===== */
+#stack .split{
+  max-width: 1120px;                 /* pleine largeur de ton container */
+  margin-inline: 0;                  /* pas de recentrage étroit */
+  gap: var(--xl);                    /* espace normal entre colonnes */
+  justify-content: initial;
+}
+
+#stack .text .liste-carre{ margin-left: 0; }   /* on enlève l’indentation locale */
+#stack .stack-scroller{ margin-top: var(--m); }/* un peu d’air sous la liste */
+
+#stack .visual img{
+  width: 320px;                      /* illustration bien visible */
+  max-width: 100%;
+}
+@media (max-width:768px){
+  #stack .split{ grid-template-columns: 1fr; row-gap: var(--m); }
+  #stack .visual{ order: 2; justify-self: center; }
+  #stack .text  { order: 1; }
+  #stack .visual img{ width: 220px; }
+}
+
 
 
 
