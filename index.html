@@ -455,87 +455,79 @@
       } else { brandLineSequence(); }
     })();
   </script>
+
   <script>
-  /* ===== Stack auto-loader (GitHub Contents API) ===== */
+  /* ===== Stack auto-loader (GitHub Contents API, sans noms en dur) ===== */
   (function () {
-    const scroller = document.querySelector('.stack-scroller');
+    const scroller = document.querySelector('.stack-scroller[data-dir]');
     if (!scroller) return;
   
-    const owner = scroller.dataset.ghOwner;
-    const repo  = scroller.dataset.ghRepo;
+    const owner = scroller.dataset.ghOwner || '';
+    const repo  = scroller.dataset.ghRepo  || '';
     const dir   = scroller.dataset.dir || 'assets/img/stack';
+    const speed = Number(scroller.dataset.speed || 28);
     const api   = `https://api.github.com/repos/${owner}/${repo}/contents/${dir}`;
     const track = scroller.querySelector('#stack-track');
-    const cacheKey = `stack_${owner}_${repo}_${dir}`;
-    const exts = /\.(png|jpe?g|svg|webp)$/i;
+    const exts  = /\.(png|jpe?g|svg|webp)$/i;
   
-    const fallback = [
-      'assets/img/Python-Symbole.jpg',
-      'assets/img/pandas.png',
-      'assets/img/power-bi-logo.png',
-      'assets/img/mysql.jpg'
-    ];
-  
-    function niceAltFromPath(p){
-      const n = p.split('/').pop().replace(exts,'').replace(/[-_]+/g,' ').trim();
-      return n.charAt(0).toUpperCase() + n.slice(1);
+    function niceAlt(name){
+      return name.replace(exts,'').replace(/[-_]+/g,' ').trim().replace(/^./, c => c.toUpperCase());
     }
-  
-    function build(list){
-      track.innerHTML = '';
-      list.forEach((src, i) => {
-        const li = document.createElement('li');
+    function addLogos(urls){
+      // 1re série
+      urls.forEach(u => {
+        const li  = document.createElement('li');
         const img = document.createElement('img');
         img.className = 'stack-logo';
-        img.loading = 'lazy';
-        img.src = src;
-        img.alt = i < 50 ? niceAltFromPath(src) : ''; // alt vide pour la duplication
+        img.loading   = 'lazy';
+        img.src       = u.download_url || u;           // API → download_url ; au cas où
+        img.alt       = niceAlt((u.name || u).split('/').pop());
         li.appendChild(img);
         track.appendChild(li);
       });
-      // Duplication pour boucle infinie
-      const clone = track.cloneNode(true);
-      clone.querySelectorAll('img').forEach(img => img.alt = '');
-      track.append(...clone.childNodes);
+      // 2e série (pour la boucle infinie) — alt vides
+      urls.forEach(u => {
+        const li  = document.createElement('li');
+        const img = document.createElement('img');
+        img.className = 'stack-logo';
+        img.loading   = 'lazy';
+        img.src       = u.download_url || u;
+        img.alt       = '';
+        li.appendChild(img);
+        track.appendChild(li);
+      });
+  
+      // Vitesse personnalisée
+      track.style.animationDuration = speed + 's';
+  
+      // S’il y a trop peu d’images, on coupe l’anim
+      if (urls.length < 3) track.style.animation = 'none';
     }
   
     async function load(){
-      try {
-        // cache 24h
-        const now = Date.now();
-        const cached = localStorage.getItem(cacheKey);
-        if (cached){
-          const { t, list } = JSON.parse(cached);
-          if (now - t < 24*60*60*1000 && Array.isArray(list) && list.length){
-            build(list);
-            return;
-          }
-        }
-  
+      try{
         const res = await fetch(api, { headers: { 'Accept': 'application/vnd.github+json' }});
-        if (!res.ok) throw new Error('GitHub API error');
+        if (!res.ok) throw new Error('GitHub API ' + res.status);
         const data = await res.json();
   
-        const list = data
-          .filter(it => it.type === 'file' && exts.test(it.name))
-          .map(it => it.download_url);
+        const files = (Array.isArray(data) ? data : [])
+          .filter(f => f.type === 'file' && exts.test(f.name));
   
-        if (!list.length) throw new Error('No images in folder');
+        if (!files.length) { scroller.hidden = true; return; }
   
-        localStorage.setItem(cacheKey, JSON.stringify({ t: now, list }));
-        build(list);
-      } catch (e){
-        // Fallback local si API indispo ou vide
-        build(fallback);
+        addLogos(files);
+      }catch(e){
+        console.warn('Stack loader: API indisponible → masquer la bande', e);
+        scroller.hidden = true; // pas d’images → on cache proprement
       }
     }
   
-    // Démarre
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', load);
     } else { load(); }
   })();
   </script>
+
 
 </body>
 </html>
