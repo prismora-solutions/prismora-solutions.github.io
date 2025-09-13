@@ -1,0 +1,118 @@
+<!-- SVG carré — Stacks & Pipelines (charte Prismora) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title>Stacks &amp; Pipelines — illustration</title>
+  <desc>Sources de données, pipeline, engrenage ETL, entrepôt (base) et tableau de bord reliés.</desc>
+
+  <!-- ====== PALETTE & TRAITS (charte) ====== -->
+  <style>
+    :root{
+      --brand: #0f4c5c;   /* bleu pétrole */
+      --brand2:#2bb4c8;   /* turquoise */
+      --accent:#d8a24a;   /* ocre */
+      --ink:#18343b;      /* encre sombre */
+      --paper:#ffffff;
+      --muted:#e6edf0;
+      --bg:#f4fafb;
+    }
+    .ink  { stroke: var(--ink);  stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+    .ink2 { stroke: var(--ink);  stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .flow { stroke: var(--brand2); stroke-width: 6; fill: none; stroke-linecap: round; }
+    .accent { fill: var(--accent); }
+  </style>
+
+  <!-- ====== FOND ARRONDI ====== -->
+  <rect x="8" y="8" width="240" height="240" rx="24" fill="var(--bg)"></rect>
+  <rect x="8" y="8" width="240" height="240" rx="24" fill="none" class="ink" opacity="0.08"></rect>
+
+  <!-- ====== SOURCES (cartes empilées) ====== -->
+  <g transform="translate(22,38)">
+    <!-- carte 1 -->
+    <rect x="0" y="0" width="64" height="40" rx="8" fill="var(--paper)" class="ink2"></rect>
+    <rect x="10" y="12" width="44" height="8" rx="4" fill="var(--muted)"></rect>
+    <rect x="10" y="26" width="28" height="6" rx="3" fill="var(--muted)"></rect>
+    <!-- carte 2 décalée -->
+    <g transform="translate(10,44)">
+      <rect x="0" y="0" width="64" height="40" rx="8" fill="var(--paper)" class="ink2"></rect>
+      <rect x="10" y="12" width="44" height="8" rx="4" fill="var(--muted)"></rect>
+      <rect x="10" y="26" width="28" height="6" rx="3" fill="var(--muted)"></rect>
+    </g>
+    <!-- carte 3 décalée -->
+    <g transform="translate(20,88)">
+      <rect x="0" y="0" width="64" height="40" rx="8" fill="var(--paper)" class="ink2"></rect>
+      <rect x="10" y="12" width="44" height="8" rx="4" fill="var(--muted)"></rect>
+      <rect x="10" y="26" width="28" height="6" rx="3" fill="var(--muted)"></rect>
+    </g>
+  </g>
+
+  <!-- ====== PIPELINE PRINCIPAL ====== -->
+  <!-- conduites horizontales depuis les sources -->
+  <path d="M96,60 H150" class="flow"></path>
+  <path d="M96,104 H150" class="flow"></path>
+  <path d="M96,148 H150" class="flow"></path>
+
+  <!-- jonctions vers l'engrenage (collecte) -->
+  <circle cx="150" cy="60" r="3.5" fill="var(--brand2)"></circle>
+  <circle cx="150" cy="104" r="3.5" fill="var(--brand2)"></circle>
+  <circle cx="150" cy="148" r="3.5" fill="var(--brand2)"></circle>
+
+  <!-- ====== ETL : ENGRENAGE ====== -->
+  <g transform="translate(158,104)">
+    <circle cx="0" cy="0" r="22" fill="var(--paper)" class="ink"></circle>
+    <g class="ink" fill="none" stroke-width="6">
+      <path d="M0,-32 v-10"></path>
+      <path d="M0,32 v10"></path>
+      <path d="M-28,-16 l-9,-6"></path>
+      <path d="M28,16 l9,6"></path>
+      <path d="M-28,16 l-9,6"></path>
+      <path d="M28,-16 l9,-6"></path>
+    </g>
+    <circle cx="0" cy="0" r="6" fill="var(--brand)"></circle>
+  </g>
+
+  <!-- ====== PIPE VERS BASE DE DONNÉES ====== -->
+  <path d="M180,104 C204,104 212,120 212,140" class="flow"></path>
+  <!-- base (cylindre) -->
+  <g transform="translate(196,140)">
+    <ellipse cx="16" cy="0" rx="20" ry="8" fill="var(--muted)" class="ink2"></ellipse>
+    <rect x="-4" y="0" width="40" height="30" rx="6" fill="var(--paper)" class="ink"></rect>
+    <ellipse cx="16" cy="30" rx="20" ry="8" fill="var(--muted)" class="ink2"></ellipse>
+  </g>
+
+  <!-- ====== SORTIE VERS TABLEAU DE BORD ====== -->
+  <path d="M158,126 C120,170 120,188 140,200" class="flow"></path>
+  <g transform="translate(56,188)">
+    <!-- dashboard -->
+    <rect x="0" y="0" width="84" height="48" rx="10" fill="var(--paper)" class="ink"></rect>
+    <!-- barres -->
+    <rect x="12" y="28" width="10" height="14" rx="3" fill="var(--brand)" class="ink2"></rect>
+    <rect x="26" y="22" width="10" height="20" rx="3" fill="var(--accent)" class="ink2"></rect>
+    <rect x="40" y="16" width="10" height="26" rx="3" fill="var(--brand2)" class="ink2"></rect>
+    <!-- courbe -->
+    <path d="M12,32 C28,20 44,22 62,14" fill="none" stroke="var(--brand2)" stroke-width="4" class="ink2"></path>
+  </g>
+
+  <!-- ====== FLECHES (sens du flux) ====== -->
+  <g fill="var(--brand2)">
+    <path d="M148,60 l8,0 -6,6 z"></path>
+    <path d="M148,104 l8,0 -6,6 z"></path>
+    <path d="M148,148 l8,0 -6,6 z"></path>
+  </g>
+
+  <!-- ====== ACCENTS LUDIQUES ====== -->
+  <g fill="#ffd369" opacity="0.9">
+    <circle cx="44" cy="36" r="3"></circle>
+    <circle cx="226" cy="54" r="3"></circle>
+    <circle cx="212" cy="220" r="3" opacity="0.7"></circle>
+  </g>
+
+  <!-- ====== POINTS DE CONTRÔLE QUALITÉ (ocres) ====== -->
+  <g class="ink2" transform="translate(112,78)">
+    <rect x="0" y="0" width="18" height="12" rx="3" class="accent"></rect>
+  </g>
+  <g class="ink2" transform="translate(112,122)">
+    <rect x="0" y="0" width="18" height="12" rx="3" class="accent"></rect>
+  </g>
+  <g class="ink2" transform="translate(112,166)">
+    <rect x="0" y="0" width="18" height="12" rx="3" class="accent"></rect>
+  </g>
+</svg>
