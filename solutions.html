@@ -1,13 +1,13 @@
-<!-- solutions.html — Prismora Solutions -->
+<!-- solutions.html — Prismora Solutions (page services légère & structurée) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>Solutions — Prismora Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Solutions data & BI pragmatiques : Découverte, Pilotage, Autonomie. Approche crescendo selon vos besoins." />
+  <meta name="description" content="Nos solutions data & BI : audit flash, collecte, modélisation, KPIs, dashboards, automatisation, adoption, formation, TMA, PMO data, sécurité, migrations, intégrations, PoC, data lead fractionné." />
 
-  <!-- Typo + Style (mêmes liens que la home) -->
+  <!-- Même stack que la home -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
@@ -16,7 +16,7 @@
 </head>
 <body>
 
-  <!-- ===================== NAV (identique à index) ===================== -->
+  <!-- ===================== NAV ===================== -->
   <nav class="nav">
     <div class="container wrap">
       <div class="brand">
@@ -45,143 +45,260 @@
       <div class="hero-text">
         <h1 class="sect-title">
           <span class="prism" aria-hidden="true"></span>
-          Nos solutions, tout simplement
+          Ce que nous proposons
         </h1>
         <p class="sub-lead">
-          Une approche <strong>crescendo</strong> selon votre contexte : démarrer vite,
-          structurer pour durer, puis rendre vos équipes autonomes.
-          Pas de jargon inutile, des résultats utiles.
+          Une offre <strong>crescendo</strong> selon votre contexte : démarrer vite, fiabiliser vos données,
+          décider avec des indicateurs partagés, automatiser, puis transmettre.
         </p>
         <div class="cta-row">
-          <a class="cta" href="#solutions">Voir les solutions</a>
-          <a class="cta cta--ghost" href="contact.html">Parler de votre besoin</a>
+          <a class="cta" href="#catalogue">Découvrir les services</a>
+          <a class="cta cta--ghost" href="contact.html">Décrire votre besoin</a>
         </div>
       </div>
-      <!-- Emplacement visuel (SVG à ajouter quand tu veux) -->
+      <!-- Slot visuel si tu veux une illu dédiée -->
       <div class="hero-visual">
-        <img src="assets/img/solutions/solutions-hero.svg" alt="Illustration : solutions data pragmatiques">
+        <img src="assets/img/solutions/solutions-hero.svg" alt="Illustration : nos solutions data">
       </div>
     </div>
   </header>
 
-  <!-- ===================== SOLUTIONS (CRESCENDO) ===================== -->
-  <section class="section" id="solutions">
+  <!-- ===================== CATALOGUE — 15 CARTES, GROUPÉES ===================== -->
+  <section class="section" id="catalogue">
     <div class="container">
+
+      <!-- ===== Groupe A : Démarrer vite ===== -->
       <h1 class="sect-title">
         <span class="prism" aria-hidden="true"></span>
-        Trois approches, selon votre avancée
+        Démarrer vite
       </h1>
-
       <div class="grid grid-3 cards-lift">
-        <!-- 1) Découverte -->
+        <!-- 1) Audit flash -->
         <article class="card">
-          <span class="badge badge-amber">V1 en 10 j</span>
-          <!-- Emplacement SVG -->
-          <img src="assets/img/solutions/decouverte.svg" alt="" width="72" height="72" style="display:block;margin:0 auto var(--s)" aria-hidden="true">
-          <h3>Découverte</h3>
-          <p>Audit express + premier tableau de bord utile.</p>
+          <img src="assets/img/solutions/icons/audit.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Audit flash (10 jours)</h3>
+          <p>Comprendre usages & priorités, identifier les quick wins.</p>
           <ul class="liste-carre">
-            <li>Recueil rapide des besoins</li>
-            <li>Connexion aux données existantes</li>
-            <li>Tableau de bord prioritaire livré</li>
+            <li>Entretiens, cartographie sources</li>
+            <li>Maquette d’un 1er dashboard</li>
           </ul>
-          <div class="cta-row" style="margin-top:var(--m)">
-            <a class="cta cta--ghost" href="contact.html">Je veux démarrer</a>
-          </div>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Audit%20flash">Je suis intéressé</a></div>
         </article>
 
-        <!-- 2) Pilotage -->
+        <!-- 14) PoC -->
         <article class="card">
-          <!-- Emplacement SVG -->
-          <img src="assets/img/solutions/pilotage.svg" alt="" width="72" height="72" style="display:block;margin:0 auto var(--s)" aria-hidden="true">
-          <h3>Pilotage</h3>
-          <p>Indicateurs partagés et données à jour.</p>
+          <img src="assets/img/solutions/icons/poc.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Preuve de valeur (PoC)</h3>
+          <p>Démontrer l’intérêt en 2–4 semaines sur 1 cas prioritaire.</p>
           <ul class="liste-carre">
-            <li>Nettoyage & organisation des données</li>
-            <li>Indicateurs clairs et communs</li>
-            <li>Actualisations planifiées & contrôles</li>
+            <li>Prototype concret</li>
+            <li>Bilan court & décision</li>
           </ul>
-          <div class="cta-row" style="margin-top:var(--m)">
-            <a class="cta cta--ghost" href="contact.html">Voir si c’est adapté</a>
-          </div>
-        </article>
-
-        <!-- 3) Autonomie -->
-        <article class="card">
-          <!-- Emplacement SVG -->
-          <img src="assets/img/solutions/autonomie.svg" alt="" width="72" height="72" style="display:block;margin:0 auto var(--s)" aria-hidden="true">
-          <h3>Autonomie</h3>
-          <p>Monter en puissance, puis transmettre.</p>
-          <ul class="liste-carre">
-            <li>Mises à jour, itérations, améliorations</li>
-            <li>Formation courte & guide d’usage</li>
-            <li>Transfert de compétences</li>
-          </ul>
-          <div class="cta-row" style="margin-top:var(--m)">
-            <a class="cta cta--ghost" href="contact.html">Organiser un échange</a>
-          </div>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=PoC">Je suis intéressé</a></div>
         </article>
       </div>
-    </div>
-  </section>
 
-  <!-- ===================== POUR QUI ? (SYNTHÈSE) ===================== -->
-  <section class="section">
-    <div class="container">
-      <h1 class="sect-title">
+      <!-- ===== Groupe B : Données fiables ===== -->
+      <h1 class="sect-title" style="margin-top:var(--xl)">
         <span class="prism" aria-hidden="true"></span>
-        Pour qui ?
+        Données fiables
       </h1>
+      <div class="grid grid-3 cards-lift">
+        <!-- 2) Collecte & consolidation -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/collecte.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Collecte & consolidation</h3>
+          <p>Connecter Excel/ERP/CRM et centraliser ce qui compte.</p>
+          <ul class="liste-carre">
+            <li>Flux documentés</li>
+            <li>Connecteurs prêts</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Collecte">Je suis intéressé</a></div>
+        </article>
 
-      <div class="grid grid-4">
-        <div class="card">
-          <h3>TPE / Indépendants</h3>
+        <!-- 3) Modélisation & qualité -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/modelisation.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Modélisation & qualité</h3>
+          <p>Relations propres, règles de contrôle, données fiables.</p>
           <ul class="liste-carre">
-            <li>Démarrage rapide</li>
-            <li>Tableaux clairs</li>
-            <li>Gains concrets</li>
+            <li>Modèle versionné</li>
+            <li>Règles de contrôle</li>
           </ul>
-        </div>
-        <div class="card">
-          <h3>PME & ETI</h3>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Modelisation%20%26%20qualite">Je suis intéressé</a></div>
+        </article>
+      </div>
+
+      <!-- ===== Groupe C : Mesure & décision ===== -->
+      <h1 class="sect-title" style="margin-top:var(--xl)">
+        <span class="prism" aria-hidden="true"></span>
+        Mesure & décision
+      </h1>
+      <div class="grid grid-3 cards-lift">
+        <!-- 4) KPIs & gouvernance -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/kpi.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>KPIs & gouvernance</h3>
+          <p>Mêmes définitions pour tous, décisions comparables.</p>
           <ul class="liste-carre">
-            <li>Indicateurs partagés</li>
-            <li>Automatisations</li>
-            <li>Pilotage régulier</li>
+            <li>Fiches KPI</li>
+            <li>Charte de mesure</li>
           </ul>
-        </div>
-        <div class="card">
-          <h3>Collectivités & Assos</h3>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=KPIs%20%26%20gouvernance">Je suis intéressé</a></div>
+        </article>
+
+        <!-- 5) Tableaux de bord & dataviz -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/dashboards.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Tableaux de bord & dataviz</h3>
+          <p>Vues utiles pour décider, suivre et agir (sobre & clair).</p>
           <ul class="liste-carre">
-            <li>Suivi budgétaire</li>
-            <li>Décisions éclairées</li>
-            <li>Transparence</li>
+            <li>Dashboards publiés</li>
+            <li>Guide d’usage 2 pages</li>
           </ul>
-        </div>
-        <div class="card">
-          <h3>Grands groupes & ESN</h3>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Dashboards">Je suis intéressé</a></div>
+        </article>
+      </div>
+
+      <!-- ===== Groupe D : Opérations & intégration ===== -->
+      <h1 class="sect-title" style="margin-top:var(--xl)">
+        <span class="prism" aria-hidden="true"></span>
+        Opérations & intégration
+      </h1>
+      <div class="grid grid-3 cards-lift">
+        <!-- 6) Automatisation & pipelines -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/pipelines.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Automatisation & pipelines</h3>
+          <p>Données à jour sans reporting manuel.</p>
           <ul class="liste-carre">
-            <li>Missions ponctuelles</li>
-            <li>Intégration rapide</li>
-            <li>Livrables alignés SI</li>
+            <li>Planification</li>
+            <li>Journal d’exécution</li>
           </ul>
-        </div>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Automatisation">Je suis intéressé</a></div>
+        </article>
+
+        <!-- 11) Sécurité & conformité -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/securite.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Sécurité & conformité</h3>
+          <p>Accès par profils, confidentialité, RGPD.</p>
+          <ul class="liste-carre">
+            <li>Matrice d’accès</li>
+            <li>Fiche risques</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Sécurité">Je suis intéressé</a></div>
+        </article>
+
+        <!-- 12) Migration & modernisation -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/migration.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Migration & modernisation</h3>
+          <p>Passer d’Excel dispersés à un socle robuste.</p>
+          <ul class="liste-carre">
+            <li>Plan de migration</li>
+            <li>Avant / après</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Migration">Je suis intéressé</a></div>
+        </article>
+
+        <!-- 13) Intégrations & diffusion -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/integrations.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Intégrations & diffusion</h3>
+          <p>Teams, SharePoint, portail interne, exports.</p>
+          <ul class="liste-carre">
+            <li>Points d’accès</li>
+            <li>Documentation courte</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Intégrations">Je suis intéressé</a></div>
+        </article>
+
+        <!-- 9) Maintenance & évolutions -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/tma.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Maintenance & évolutions</h3>
+          <p>Correctifs rapides et petites améliorations.</p>
+          <ul class="liste-carre">
+            <li>Journal d’interventions</li>
+            <li>Changelog</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Maintenance">Je suis intéressé</a></div>
+        </article>
+      </div>
+
+      <!-- ===== Groupe E : Accompagnement & autonomie ===== -->
+      <h1 class="sect-title" style="margin-top:var(--xl)">
+        <span class="prism" aria-hidden="true"></span>
+        Accompagnement & autonomie
+      </h1>
+      <div class="grid grid-3 cards-lift">
+        <!-- 7) Ateliers & adoption -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/ateliers.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Ateliers & adoption</h3>
+          <p>Rituels courts, usage réel côté équipes.</p>
+          <ul class="liste-carre">
+            <li>Supports & trames</li>
+            <li>Suivi d’adoption</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Ateliers">Je suis intéressé</a></div>
+        </article>
+
+        <!-- 8) Formation & transfert -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/formation.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Formation & transfert</h3>
+          <p>Prise en main réelle, montée en autonomie.</p>
+          <ul class="liste-carre">
+            <li>Supports + replay court</li>
+            <li>Check-list d’autonomie</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Formation">Je suis intéressé</a></div>
+        </article>
+
+        <!-- 10) Pilotage de projet -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/pmo.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Pilotage de projet (PMO data)</h3>
+          <p>Jalons tenus, arbitrages rapides, docs utiles.</p>
+          <ul class="liste-carre">
+            <li>Plan de jalons</li>
+            <li>CR synthétiques</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=PMO%20data">Je suis intéressé</a></div>
+        </article>
+
+        <!-- 15) Data lead fractionné -->
+        <article class="card">
+          <img src="assets/img/solutions/icons/data-lead.svg" alt="" aria-hidden="true" width="64" height="64" style="display:block;margin:0 auto var(--s)">
+          <h3>Data lead fractionné</h3>
+          <p>Le cap & la gouvernance quelques jours/mois.</p>
+          <ul class="liste-carre">
+            <li>Roadmap & arbitrages</li>
+            <li>Amélioration continue</li>
+          </ul>
+          <div class="cta-row"><a class="cta cta--ghost" href="contact.html?service=Data%20lead">Je suis intéressé</a></div>
+        </article>
+      </div>
+
+      <!-- CTA global sous le catalogue -->
+      <div class="cta-row" style="margin-top:var(--xl)">
+        <a class="cta" href="contact.html">Décrire mon besoin</a>
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
       </div>
     </div>
   </section>
 
-  <!-- ===================== MÉTHODE (CONDENSÉE) ===================== -->
+  <!-- ===================== RAPPEL MÉTHODE (ultra court) ===================== -->
   <section class="section">
     <div class="container">
       <h1 class="sect-title">
         <span class="prism" aria-hidden="true"></span>
         Comment on travaille
       </h1>
-
       <div class="grid grid-3 cards-lift">
         <article class="card">
-          <!-- Emplacement SVG -->
-          <img src="assets/img/observer.svg" alt="" width="60" height="60" style="display:block;margin:0 auto var(--s)" aria-hidden="true">
           <h3>Analyser</h3>
           <ul class="liste-carre">
             <li>Contexte, usages, priorités</li>
@@ -189,27 +306,20 @@
           </ul>
         </article>
         <article class="card">
-          <img src="assets/img/structurer.svg" alt="" width="60" height="60" style="display:block;margin:0 auto var(--s)" aria-hidden="true">
           <h3>Structurer</h3>
           <ul class="liste-carre">
-            <li>Données fiables et organisées</li>
-            <li>Indicateurs clairs et partagés</li>
+            <li>Données fiables & organisées</li>
+            <li>Indicateurs clairs & partagés</li>
           </ul>
         </article>
         <article class="card">
-          <img src="assets/img/activer.svg" alt="" width="60" height="60" style="display:block;margin:0 auto var(--s)" aria-hidden="true">
           <h3>Activer</h3>
           <ul class="liste-carre">
-            <li>Tableaux utiles & mises à jour</li>
+            <li>Dashboards utiles & mises à jour</li>
             <li>Formation & transfert</li>
           </ul>
         </article>
       </div>
-
-      <p class="lead" style="margin-top:var(--l)">
-        Besoin simple ou SI complexe : on part de l’existant et on livre vite,
-        puis on durcit ce qui marche.
-      </p>
     </div>
   </section>
 
@@ -220,22 +330,21 @@
         <span class="prism" aria-hidden="true"></span>
         Parlons de votre besoin
       </h1>
-      <p class="lead">Un échange de 15 minutes suffit pour cadrer le prochain pas.</p>
+      <p class="lead">Un échange court suffit pour cadrer le prochain pas.</p>
       <div class="cta-row">
         <a class="cta" href="contact.html">Me contacter</a>
-        <a class="cta cta--ghost" href="index.html#solutions">Revenir à l’accueil</a>
       </div>
     </div>
   </section>
 
-  <!-- ===================== FOOTER (identique) ===================== -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container">
       <small>© Prismora Solutions — Bordeaux & Remote • Site hébergé gratuitement sur GitHub Pages</small>
     </div>
   </footer>
 
-  <!-- ===================== JS (burger only) ===================== -->
+  <!-- ===================== JS (burger identique à la home) ===================== -->
   <script>
     (function(){
       const burger = document.querySelector('.burger');
