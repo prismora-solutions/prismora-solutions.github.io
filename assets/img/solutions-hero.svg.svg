@@ -1,0 +1,101 @@
+<!-- SVG carré — "Nos solutions / Ce que nous proposons" (charte Prismora) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title>Nos solutions — offre crescendo</title>
+  <desc>Illustration en 5 étapes montantes : démarrer vite, fiabiliser, décider, automatiser, transmettre.</desc>
+
+  <!-- ====== PALETTE & TRAITS (charte) ====== -->
+  <style>
+    :root{
+      --brand: #0f4c5c;   /* bleu pétrole */
+      --brand2:#2bb4c8;   /* turquoise */
+      --accent:#d8a24a;   /* ocre */
+      --ink:#18343b;      /* encre sombre */
+      --paper:#ffffff;
+      --muted:#e6edf0;
+      --bg:#f4fafb;
+    }
+    .ink  { stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+    .ink2 { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <!-- ====== FOND ARRONDI ====== -->
+  <rect x="8" y="8" width="240" height="240" rx="24" fill="var(--bg)"></rect>
+  <rect x="8" y="8" width="240" height="240" rx="24" fill="none" class="ink" opacity="0.08"></rect>
+
+  <!-- ====== MARCHE CRESCENDO (5 marches) ====== -->
+  <g transform="translate(28,164)">
+    <!-- marches (de gauche à droite, montantes) -->
+    <rect x="0" y="28" width="40" height="20" rx="6" fill="var(--muted)" class="ink2"></rect>
+    <rect x="44" y="14" width="40" height="34" rx="6" fill="var(--muted)" class="ink2"></rect>
+    <rect x="88" y="0" width="40" height="48" rx="6" fill="var(--muted)" class="ink2"></rect>
+    <rect x="132" y="-14" width="40" height="62" rx="6" fill="var(--muted)" class="ink2"></rect>
+    <rect x="176" y="-28" width="40" height="76" rx="6" fill="var(--muted)" class="ink2"></rect>
+  </g>
+
+  <!-- ====== FIL CONDUCTEUR (ligne de progression) ====== -->
+  <path d="M36,190 C68,164 110,154 152,138 184,126 198,110 214,94" fill="none" stroke="var(--brand2)" stroke-width="6" stroke-linecap="round"></path>
+
+  <!-- ====== ÉTAPE 1 — Démarrer vite (fusée) ====== -->
+  <g transform="translate(36,168)">
+    <g class="ink2">
+      <path d="M0,0 c8,-12 26,-12 34,0 v10 h-34z" fill="var(--paper)"></path>
+      <circle cx="17" cy="-4" r="4" fill="var(--brand2)"></circle>
+    </g>
+    <path d="M8,12 l-6,8" class="ink2" stroke="var(--accent)"></path>
+    <path d="M14,12 l-6,8" class="ink2" stroke="var(--accent)"></path>
+  </g>
+
+  <!-- ====== ÉTAPE 2 — Fiabiliser (bouclier + coche) ====== -->
+  <g transform="translate(88,146)">
+    <path d="M0,0 l14,-6 14,6 v10 c0,10 -8,16 -14,20 -6,-4 -14,-10 -14,-20z" fill="var(--paper)" class="ink2"></path>
+    <path d="M10,10 l6,6 10,-12" fill="none" stroke="var(--brand)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+  </g>
+
+  <!-- ====== ÉTAPE 3 — Décider (mini dashboard) ====== -->
+  <g transform="translate(132,120)">
+    <rect x="-16" y="-10" width="40" height="28" rx="6" fill="var(--paper)" class="ink2"></rect>
+    <!-- barres -->
+    <rect x="-10" y="6" width="6" height="8" rx="2" fill="var(--brand)" class="ink2"></rect>
+    <rect x="-2" y="2" width="6" height="12" rx="2" fill="var(--accent)" class="ink2"></rect>
+    <rect x="6" y="-2" width="6" height="16" rx="2" fill="var(--brand2)" class="ink2"></rect>
+    <!-- petite courbe -->
+    <path d="M-10,4 C-4,0 2,2 12,-2" fill="none" stroke="var(--brand2)" stroke-width="3" class="ink2"></path>
+  </g>
+
+  <!-- ====== ÉTAPE 4 — Automatiser (engrenage) ====== -->
+  <g transform="translate(176,98)">
+    <circle cx="0" cy="0" r="12" fill="var(--paper)" class="ink2"></circle>
+    <g class="ink2" fill="none" stroke-width="4">
+      <path d="M0,-18 v-6"></path><path d="M0,18 v6"></path>
+      <path d="M-16,-8 l-6,-4"></path><path d="M16,8 l6,4"></path>
+      <path d="M-16,8 l-6,4"></path><path d="M16,-8 l6,-4"></path>
+    </g>
+    <circle cx="0" cy="0" r="3" fill="var(--brand)"></circle>
+  </g>
+
+  <!-- ====== ÉTAPE 5 — Transmettre (flèche vers interlocuteur) ====== -->
+  <g transform="translate(216,74)">
+    <!-- destinataire -->
+    <circle cx="0" cy="0" r="8" fill="var(--paper)" class="ink2"></circle>
+    <rect x="-10" y="8" width="20" height="10" rx="5" fill="var(--muted)" class="ink2"></rect>
+    <!-- flèche -->
+    <path d="M-28,4 h18" fill="none" stroke="var(--brand2)" stroke-width="4" stroke-linecap="round"></path>
+    <path d="M-12,4 l-6,-6 v12 z" fill="var(--brand2)"></path>
+  </g>
+
+  <!-- ====== ACCENTS LUDIQUES ====== -->
+  <g fill="#ffd369" opacity="0.9">
+    <circle cx="48" cy="54" r="3"></circle>
+    <circle cx="224" cy="60" r="3"></circle>
+    <circle cx="210" cy="214" r="3" opacity="0.7"></circle>
+  </g>
+
+  <!-- ====== MARQUEURS D'ÉTAPE (ocres) ====== -->
+  <g>
+    <circle cx="48" cy="180" r="4" fill="var(--accent)"></circle>
+    <circle cx="100" cy="156" r="4" fill="var(--accent)"></circle>
+    <circle cx="144" cy="132" r="4" fill="var(--accent)"></circle>
+    <circle cx="188" cy="108" r="4" fill="var(--accent)"></circle>
+    <circle cx="216" cy="74" r="4" fill="var(--accent)"></circle>
+  </g>
+</svg>
