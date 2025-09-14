@@ -685,6 +685,26 @@ small{opacity:.85}
   #catalogue .card.card--split .card-body .liste-carre{ margin-top: var(--s); }
 }
 
+/* === Solutions — pictos plus grands en desktop === */
+@media (min-width: 769px){
+  /* un peu plus large pour la colonne picto */
+  #catalogue .card.card--split{
+    grid-template-columns: 120px 1fr;   /* avant : 100px 1fr */
+  }
+
+  /* figer la taille du picto et neutraliser les règles globales d'img */
+  #catalogue .card.card--split .card-ico{
+    display: block;
+    width: 96px;                        /* ou 90px si tu veux pile 90 */
+    height: 96px;
+    max-width: none;                    /* empêche max-width:100% global */
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
 /* Mobile : icône centrée */
 @media (max-width: 768px){
   /* on repasse la carte en bloc (pas en grid) au cas où */
