@@ -211,7 +211,7 @@ a:hover{text-decoration:underline}
 }
 
 .grid{display:grid;gap:var(--l)}
-.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-2{grid-template-columns:repeat(2,minmax(280px,1fr))}
 .card{
   background:#fff; border:1px solid var(--border); border-radius:var(--radius);
   padding:calc(var(--m) + 4px); box-shadow:var(--shadow);
@@ -548,7 +548,7 @@ small{opacity:.85}
 /* Liste interne plus compacte */
 .case-bullets li{ margin: 4px 0; }
 
-/* Responsive : déjà géré par .grid-3 mais on resserre un peu les cartes sur mobile */
+/* Responsive : déjà géré par .grid-2 mais on resserre un peu les cartes sur mobile */
 @media (max-width:768px){
   .case-card{ padding: var(--l); }
 }
