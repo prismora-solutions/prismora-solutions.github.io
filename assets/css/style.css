@@ -665,6 +665,34 @@ small{opacity:.85}
   .stack-logo{ height: 22px; }
 }
 
+/* === Solutions — cartes en 2 colonnes sur desktop === */
+@media (min-width: 769px){
+  /* transforme la carte en grille 2 colonnes */
+  #catalogue .card.card--split{
+    display: grid;
+    grid-template-columns: 100px 1fr;   /* picto à gauche, texte à droite */
+    column-gap: var(--l);
+    align-items: center;                /* centre verticalement le bloc texte */
+  }
+  /* icône : taille demandée + centrage dans la colonne gauche */
+  #catalogue .card.card--split .card-ico{
+    width: 90px; height: 90px;
+    display: block;
+    justify-self: center;
+  }
+  /* le texte reste aligné à gauche dans la colonne droite */
+  #catalogue .card.card--split .card-body{ text-align: left; }
+  #catalogue .card.card--split .card-body .liste-carre{ margin-top: var(--s); }
+}
+
+/* mobile : rien ne change, mais on garde un picto un peu plus petit si besoin */
+@media (max-width: 768px){
+  #catalogue .card.card--split .card-ico{
+    width: 72px; height: 72px;          /* optionnel : laisse comme c’est si tu veux */
+    margin: 0 auto var(--s);
+  }
+}
+
 
 
 
