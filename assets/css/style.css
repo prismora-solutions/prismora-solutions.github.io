@@ -685,13 +685,20 @@ small{opacity:.85}
   #catalogue .card.card--split .card-body .liste-carre{ margin-top: var(--s); }
 }
 
-/* mobile : rien ne change, mais on garde un picto un peu plus petit si besoin */
+/* Mobile : icône centrée */
 @media (max-width: 768px){
+  /* on repasse la carte en bloc (pas en grid) au cas où */
+  #catalogue .card.card--split{ display: block; }
+
+  /* l’icône doit être block pour que margin:auto centre correctement */
   #catalogue .card.card--split .card-ico{
-    width: 72px; height: 72px;          /* optionnel : laisse comme c’est si tu veux */
-    margin: 0 auto var(--s);
+    display: block;               /* <-- clé du centrage */
+    width: 72px; 
+    height: 72px;
+    margin: 0 auto var(--s);      /* centre horizontalement */
   }
 }
+
 
 
 
