@@ -547,6 +547,12 @@ small{opacity:.85}
 /* Liste interne plus compacte */
 .case-bullets li{ margin: 4px 0; }
 
+
+/* <= ~640px : 1 colonne pour éviter l’overflow (560px + gap) */
+@media (max-width: 640px){
+  .grid-2{ grid-template-columns: 1fr; }
+}
+
 /* Responsive : déjà géré par .grid-2 mais on resserre un peu les cartes sur mobile */
 @media (max-width:768px){
   .case-card{ padding: var(--l); }
