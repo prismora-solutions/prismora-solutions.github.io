@@ -254,7 +254,7 @@ small{opacity:.85}
 
 /* ============ 8) Détails divers ============ */
 .sub-lead{
-  font-size: clamp(14px, 1.35vw, 16px);
+  font-size: clamp(13.5px, 1.28vw, 15.5px);
   line-height: 1.6;
   opacity: 0.9;
   max-width: 820px;
