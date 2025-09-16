@@ -203,8 +203,8 @@ a:hover{text-decoration:underline}
 }
 
 .method-ico{
-  width:110px;
-  height:110px;
+  width:200px;
+  height:200px;
   display:block;
   object-fit:cover;      /* photo lisible */
   border-radius:12px;    /* même style que le site */
