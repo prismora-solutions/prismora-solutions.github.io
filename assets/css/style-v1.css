@@ -1,0 +1,720 @@
+/* style.css — Prismora Solutions
+============================================================ */
+
+/* ============ 1) Variables de thème & reset ============ */
+:root{
+  /* Palette Prismora (clair) */
+  --bg:#ffffff;
+  --text:#22343b;
+  --brand:#0f4c5c;        /* bleu pétrole */
+  --brand-2:#2bb4c8;      /* accent turquoise */
+  --accent:#d8a24a;       /* ocre doux */
+  --muted:#5f717a;
+  --border:#e6edf0;
+  --bg-soft:#f6fafb;
+  --brandline-gap: 20px;                  /* Espace entre triangle & texte (desktop) */
+  --brandline-tri-duration: 900ms;        /* Durée apparition triangle */
+  --brandline-move-duration: 3000ms;       /* Durée translation texte+kicker */
+
+  /* Échelles */
+  --xs:8px; --s:14px; --m:20px; --l:32px; --xl:64px; --xxl:96px;
+  --radius:14px; --shadow:0 10px 28px rgba(15,76,92,.08);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.6;
+}
+
+/* ============ 2) Layout & typographies ============ */
+.container{max-width:1120px;margin:0 auto;padding:0 var(--m)}
+.section{padding:var(--xl) 0}
+
+.kicker{color:var(--brand);text-transform:uppercase;letter-spacing:.14em;font-size:12px;margin:0 0 var(--l)}
+h1{
+   font-size:clamp(26px,5vw,38px);
+   line-height:1.15;
+   margin:0 0 var(--m);
+   color:var(--brand);
+   font-weight:800}
+h2{
+   font-size:clamp(21px, 2.9vw, 32px);
+   margin:0 0 var(--m);
+   color:var(--brand);
+   font-weight:800
+}
+h3{margin:0 0 var(--s);font-weight:700;color:var(--brand)}
+.lead{font-size:clamp(14px,2.2vw,14px);opacity:.96;max-width:860px;margin:var(--s) 0 var(--m)}
+
+/* Titre de section + petit prisme à gauche */
+.sect-title{
+  position: relative; display:inline-block; margin:0 0 var(--m);
+  color:var(--brand); font-weight:800;
+}
+.sect-title .prism{
+  position:absolute; left:-28px; top:2px;
+  width:22px; height:22px;
+  background:url("assets/img/logo/prism-icon.svg") center/contain no-repeat;
+}
+
+/* Entrée douce des titres */
+@keyframes title-slide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sect-title.is-visible{animation:title-slide 1.2s ease-out 1}
+@media (prefers-reduced-motion:reduce){.sect-title.is-visible{animation:none !important}}
+
+/* Liens & CTA */
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.cta{
+  display:inline-block; padding:14px 20px; border-radius:12px;
+  background:var(--brand); color:#fff; font-weight:800; box-shadow:var(--shadow);
+}
+.cta:hover{filter:brightness(.97); text-decoration:none}
+.cta--ghost{background:transparent; color:var(--brand); border:2px solid var(--brand)}
+.cta-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:var(--m) 0 var(--l)}
+@media (max-width:768px){
+  .cta-row{flex-direction:column;align-items:center;margin-top:var(--s);margin-bottom:var(--m)}
+  .cta-row .cta{width:100%;max-width:280px;text-align:center}
+}
+
+/* ============ 3) Navigation ============ */
+.nav{
+  position:sticky; top:0; z-index:20;
+  background:linear-gradient(to right, #ffffff 0%, #ffffff 28%, var(--brand) 100%);
+  border-bottom:1px solid rgba(15,76,92,.15);
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px var(--m)}
+.brand-link{display:inline-flex;align-items:center}
+.brand img{display:block;height:40px}
+
+/* Menu desktop */
+.menu{display:flex;gap:8px;flex-wrap:wrap}
+.menu a{color:#fff;padding:10px 12px;border-radius:8px;font-weight:600}
+.menu a:hover{background:rgba(255,255,255,.15)}
+
+/* Burger */
+.burger{
+  display:none; flex-direction:column; align-items:center; justify-content:center;
+  gap:5px; width:44px;height:44px;border:0;background:transparent;border-radius:8px;cursor:pointer
+}
+.burger span{display:block;width:22px;height:2px;background:#ffffff;transition:transform .2s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.no-scroll{overflow:hidden}
+
+/* ============ 4) Hero (2 colonnes) ============ */
+.hero{
+  padding:var(--xl) 0 var(--xl);
+  background:
+    radial-gradient(1200px 420px at 80% -10%, rgba(43,180,200,.10), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%);
+  border-bottom:1px solid var(--border);
+}
+.hero-split{display:grid;grid-template-columns:1.15fr 0.85fr;align-items:center;gap:var(--xl)}
+.hero-visual img{display:block;width:100%;max-width:520px;height:auto;margin-inline:auto}
+
+.hero .kicker{margin-bottom:var(--s)}
+.hero .sect-title{
+   margin-bottom: calc(var(--m) + 6px);
+}
+.hero .lead{margin-top:var(--s);margin-bottom:var(--m)}
+.hero .cta-row{
+   margin-top: calc(var(--l) + 6px);
+   margin-bottom:var(--m)
+}
+.hero .trust-line{margin-top:var(--m)}
+
+/* Responsive hero */
+@media (max-width:900px){
+  .nav .wrap{padding:8px var(--m)}
+  .brand img{height:30px}
+  .burger{display:inline-flex}
+  .menu{
+    display:none; position:fixed; top:56px; right:12px; background:var(--brand);
+    border-radius:12px; box-shadow:0 14px 30px rgba(0,0,0,.18);
+    padding:12px; flex-direction:column; gap:6px; width:calc(100vw - 24px); max-width:320px;
+  }
+  .menu a{color:#fff;padding:12px 14px;border-radius:8px;font-weight:600}
+  .menu a:hover{background:rgba(255,255,255,.12)}
+  .menu.open{display:flex}
+  .nav{background:linear-gradient(to right, #ffffff 0%, #ffffff 38%, var(--brand) 100%)}
+
+  .section{padding:44px 0}
+  .hero-split{grid-template-columns:1fr;gap:var(--l)}
+  .hero-visual{order:2}
+  .hero-text{order:1}
+  .hero-visual img{max-width:360px}
+}
+
+/* ============ 5) Ligne Marque (triangle + texte + kicker) ============ */
+/* Desktop : en ligne, alignés verticalement au centre */
+.brand-line{
+  display:flex;
+  align-items:center;
+  gap: var(--brandline-gap);   /* <-- remplace l'ancien gap:40px; */
+  margin: 8px 0 14px;
+}
+
+/* Triangle — rotation supprimée, hauteur fixée à 50px */
+.logo-tri{
+  height:50px; width:auto; display:block;
+}
+
+/* Logo texte — apparaît en douceur (révélé par JS à +60ms) */
+.logo-txt{
+  opacity:0; transform:translateX(-10px);
+  transition:
+    opacity var(--brandline-tri-duration) ease,
+    transform var(--brandline-tri-duration) ease;
+}
+.logo-txt.is-revealed{opacity:1; transform:translateX(0)}
+
+/* Kicker — apparaît ensuite (révélé par JS à +400ms) */
+.brand-line-hero .kicker{
+  margin:0;
+  opacity:0; transform:translateX(-8px);
+  transition:
+    opacity var(--brandline-move-duration) ease,
+    transform var(--brandline-move-duration) ease;
+  display:inline-block;
+  align-self:flex-end;    /* <-- le kicker descend aligné en bas */
+}
+.brand-line-hero .kicker.is-revealed{opacity:1; transform:translateX(0)}
+
+/* Mobile : empilé et centré */
+@media (max-width:768px){
+  .brand-line{
+     flex-direction:column;
+     align-items:center;
+     gap:6px
+  }
+  .brand-line-hero .kicker{
+     text-align:center;
+     font-size:13px;
+     align-self:center;  /* <-- override le align-self:flex-end défini pour le desktop */
+     margin-left:0;      /* <-- ajoute-le seulement si tu avais un décalage à gauche */
+  }
+}
+
+/* ============ 6) Grilles, cartes & éléments UI ============ */
+.trust-line{display:flex;gap:12px;flex-wrap:wrap;margin-top:var(--m);padding:0;list-style:none}
+.trust-line li{
+  background:var(--bg-soft); color:var(--brand); border:1px solid var(--border);
+  padding:6px 10px; border-radius:999px; font-size:13px;
+}
+
+.grid{display:grid;gap:var(--l)}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-2{grid-template-columns:repeat(2,minmax(280px,1fr))}
+.card{
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:calc(var(--m) + 4px); box-shadow:var(--shadow);
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.cards-lift .card:hover{transform:translateY(-2px); box-shadow:0 16px 36px rgba(15,76,92,.10); border-color:rgba(216,162,74,.4)}
+.card .thumb{display:block;width:100%;height:auto;max-height:120px;object-fit:contain;margin-bottom:12px}
+.badge{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:var(--bg-soft);color:var(--brand);border:1px solid var(--border);margin-bottom:10px}
+.badge-amber{background:rgba(216,162,74,.12);color:#a57727;border-color:rgba(216,162,74,.35)}
+
+.split{display:grid;gap:var(--xl);grid-template-columns:1.1fr 0.9fr;align-items:center;margin:var(--l) 0}
+.split.reverse{grid-template-columns:0.9fr 1.1fr}
+.split .visual img{
+   width: 250px;
+   height:auto;
+   display:block;
+   max-width:520px;
+   margin-inline:auto}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:var(--s) 0 0;list-style:none}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;
+  background:rgba(216,162,74,.10); border:1px solid rgba(216,162,74,.35); color:#7a5a1d; font-weight:600;
+}
+.chip img{width:18px;height:18px;display:block}
+.pills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin-top:var(--m);list-style:none}
+.pill{background:var(--bg-soft);border:1px solid var(--border);color:var(--brand);padding:6px 10px;border-radius:999px;font-size:13px}
+
+.stack{margin:0;padding-left:18px}
+.stack li{margin-bottom:10px}
+
+/* ============ 7) Bandeau contact & footer ============ */
+.contact-band{background:linear-gradient(180deg, var(--bg-soft), #fff)}
+.contact-box{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+  padding:var(--xl);box-shadow:var(--shadow);text-align:center
+}
+
+.footer{background:var(--bg-soft);border-top:1px solid var(--border);margin-top:var(--xl);padding:var(--l) 0;color:var(--muted)}
+small{opacity:.85}
+
+/* ============ 8) Détails divers ============ */
+.sub-lead{
+  font-size: clamp(13.5px, 1.28vw, 15.5px);
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 820px;
+  margin: calc(var(--s) + 6px) 0 calc(var(--m) + 6px);
+}
+
+/* Puces carrées bleu pétrole (charte) */
+.liste-carre{
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+.liste-carre li{
+  position: relative;
+  padding-left: 22px;     /* espace pour la puce */
+  margin: 6px 0;
+}
+.liste-carre li::before{
+  content: "";
+  position: absolute;
+  left: 0; 
+  top: 0.62em;             /* aligne la puce sur la ligne de texte */
+  transform: translateY(-50%);
+  width: 10px; 
+  height: 10px;
+  background: var(--brand); /* bleu pétrole de la charte */
+  border-radius: 2px;       /* carré légèrement adouci ; mets 0 pour angle vif */
+}
+
+/* Méthode (Analyser/Structurer/Activer) — règles locales */
+.section-method .split{
+  max-width: 800px;
+  margin-inline: auto;
+  gap: 0;
+  justify-content: center;
+}
+/* Indentation de la liste uniquement dans la section Méthode */
+.section-method .split .text .liste-carre{
+  margin-left: 35px;
+}
+
+/* Observer (mobile) : empiler et réduire l'image */
+/* Mobile : les 3 blocs (Observer, Structurer, Activer) */
+@media (max-width:768px){
+  .section-method .split{
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+  .section-method .split .text{ order: 1; }
+  .section-method .split .visual{ order: 2; justify-self: center; }
+  .section-method .split .visual img{
+    width: 180px;
+    max-width: 180px;
+    margin: 6px 0 0;
+  }
+}
+
+
+/* Séparateurs entre blocs (après split 1 et split 2) */
+.section .container > .split:nth-of-type(1),
+.section .container > .split:nth-of-type(2){
+  position: relative;
+}
+
+.section .container > .split:nth-of-type(1)::after,
+.section .container > .split:nth-of-type(2)::after{
+  content: "";
+  display: block;                 /* devient un item de la grille */
+  grid-column: 1 / -1;            /* s’étend du texte à l’image */
+  height: 1px;
+  background: linear-gradient(90deg, rgba(15,76,92,.18), rgba(15,76,92,.06));
+  border-radius: 999px;
+  margin: 22px 0 8px;
+  order: 3;                       /* <<< clé : passer APRÈS texte (1) et visuel (2) */
+}
+
+/* Mobile : plus court et centré */
+@media (max-width:768px){
+  .section .container > .split:nth-of-type(1)::after,
+  .section .container > .split:nth-of-type(2)::after{
+    width: 88%;
+    justify-self: center;
+  }
+}
+
+@media (max-width:768px){
+  .section .split{
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+  .section .split .text{ order: 1; }
+  .section .split .visual{ order: 2; justify-self: center; }
+}
+
+/* Triangle automatique avant les h2 (pas de HTML en plus) */
+.section .split .text h2{
+  display: inline-flex;        /* h2 + icône sur la même ligne */
+  align-items: center;         /* centrage vertical propre */
+  gap: 10px;                   /* espace entre triangle et titre */
+  margin: 0 0 var(--m);
+}
+
+.section .split .text h2::before{
+  content: "";
+  display: inline-block;       /* <<< indispensable pour width/height */
+  width: 30px;
+  height: 30px;
+  background: url("/assets/img/logo/logo_triangle.png") center/contain no-repeat;
+  flex: 0 0 auto;              /* évite que l’icône se comprime */
+}
+
+@media (max-width: 768px){
+  .section .split .text h2::before{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.section .container h2{
+  display: inline-flex;        /* h2 + icône sur la même ligne */
+  align-items: center;         /* centrage vertical propre */
+  gap: 10px;                   /* espace entre triangle et titre */
+  margin: 0 0 var(--m);
+}
+
+.section .container h2::before{
+  content: "";
+  display: inline-block;       /* <<< indispensable pour width/height */
+  width: 30px;
+  height: 30px;
+  background: url("/assets/img/logo/logo_triangle.png") center/contain no-repeat;
+  flex: 0 0 auto;              /* évite que l’icône se comprime */
+}
+
+@media (max-width: 768px){
+  .section .container h2::before{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Ligne séparatrice automatique entre toutes les sections .section */
+.section + .section{
+  border-top: 1px solid var(--border);   /* même style que .hero { border-bottom } */
+}
+
+/* === POUR QUI ? — Grille 2×2 (desktop) / 1×4 (mobile), cartes centrées et moins larges === */
+
+/* Grille : 2 colonnes de largeur bornée, centrées dans le container */
+.who-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 420px)); /* colonnes bornées -> pas pleine largeur */
+  justify-content: center;                                /* centre la grille globalement */
+  align-items: stretch;
+  column-gap: var(--xl);                                  /* espacement horizontal régulier */
+  row-gap: var(--l);                                      /* espacement vertical régulier */
+  margin-top: var(--m);
+}
+
+/* Carte ocre arrondie : largeur bornée, centrée via la grille */
+.who-card{
+  width: 100%;
+  max-width: 420px;                                       /* largeur visuelle cible */
+  background: rgba(216,162,74,.10);
+  border: 1px solid rgba(216,162,74,.35);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: calc(var(--l) + 6px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 240px;                                      /* un poil plus haut pour l’illustration */
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.who-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(15,76,92,.10);
+  border-color: rgba(216,162,74,.45);
+}
+
+/* --- Slot illustration (prévu pour une petite image) --- */
+/* À terme, place <img class="who-illus" src="...">.
+   En attendant, on montre juste un placeholder sobre. */
+.who-illus{
+  width: 100px; height: 100px;
+  border-radius: 12px;
+  background: rgba(216,162,74,.16);
+  border: 1px dashed rgba(216,162,74,.45);
+  margin-bottom: var(--s);
+  display: block;
+  object-fit: contain;
+}
+
+/* Titres & texte internes */
+.who-title{
+  margin: 0 0 6px;
+  color: var(--brand);
+  font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 21px);
+}
+.who-desc{
+  margin: 0;
+  max-width: 46ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.who-card .who-title{
+  text-align: center;                 /* on garde le titre centré */
+}
+
+/* POUR QUI ? — Centrer le bloc UL, texte des items aligné à gauche */
+.who-card .text{
+  display: flex;                 /* << clé : on centre le contenu */
+  justify-content: center;
+  width: 100%;
+}
+
+.who-card .text .liste-carre{
+  flex: 0 1 42ch;                /* colonne à largeur confortable */
+  width: 100%;
+  text-align: left;              /* lignes alignées à gauche */
+  margin-top: var(--s);
+}
+
+/* Mobile : 1 colonne, cartes NON plein écran (centrées et réduites) */
+@media (max-width:768px){
+  .who-grid{
+    grid-template-columns: 1fr;   /* empile */
+    justify-items: center;        /* centre chaque carte */
+    row-gap: var(--m);
+  }
+  .who-card{
+    width: 92%;                   /* pas toute la largeur */
+    max-width: 420px;
+    min-height: 220px;
+    padding: var(--l);
+  }
+  .who-illus{ width: 80px; height: 80px; }
+}
+
+
+/* === POUR QUI ? — Centrer visuellement la liste, texte aligné à gauche === */
+/* 1) La zone .text devient une petite grille qui centre son contenu */
+.who-card .text{
+  display: grid;               /* << clé */
+  justify-items: center;       /* centre horizontalement le contenu (le UL) */
+  align-items: start;          /* garde l'ancrage en haut */
+  width: 100%;
+}
+
+/* 2) On contrôle la largeur du UL et on garde les lignes à gauche */
+.who-card .text .liste-carre{
+  display: block;
+  width: min(42ch, 100%);       /* colonne lisible, pas pleine carte */
+  text-align: left;            /* texte aligné à gauche */
+  margin-top: var(--s);
+  margin-inline: 0;            /* neutralise d'éventuelles marges héritées */
+  padding-inline: 0;           /* idem pour padding si défini ailleurs */
+}
+
+/* confort de lecture */
+.who-card .text .liste-carre li{ line-height: 1.6; }
+
+/* === DEMONSTRATIONS — Cas concrets === */
+.cases-grid{ margin-top: var(--m); }
+
+.case-card .case-title{
+  margin: 0 0 6px; color: var(--brand); font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 21px);
+}
+.case-card .case-sub{
+  margin: 0 0 12px; color: var(--muted);
+}
+
+.case-media{
+  margin: 8px 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.case-video, .case-thumb{
+  display: block; width: 100%; height: auto;
+}
+
+/* Liste interne plus compacte */
+.case-bullets li{ margin: 4px 0; }
+
+
+/* <= ~640px : 1 colonne pour éviter l’overflow (560px + gap) */
+@media (max-width: 640px){
+  .grid-2{ grid-template-columns: 1fr; }
+}
+
+/* Responsive : déjà géré par .grid-2 mais on resserre un peu les cartes sur mobile */
+@media (max-width:768px){
+  .case-card{ padding: var(--l); }
+}
+
+/* ============ 9) Stack : bande d’outils défilante ============ */
+.stack-scroller{
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  margin-top: var(--m);
+  padding-block: 10px;
+}
+
+/* Effet fondu sur les bords (lisible, discret) */
+.stack-scroller::before,
+.stack-scroller::after{
+  content:"";
+  position:absolute; top:0; bottom:0; width:48px; pointer-events:none;
+}
+.stack-scroller::before{
+  left:0;
+  background: linear-gradient(90deg, var(--bg-soft), rgba(246,250,251,0));
+}
+.stack-scroller::after{
+  right:0;
+  background: linear-gradient(270deg, var(--bg-soft), rgba(246,250,251,0));
+}
+
+/* Piste qui défile en continu — on duplique les logos dans le HTML */
+.stack-track{
+  display:flex; align-items:center; gap:28px;
+  list-style:none; margin:0; padding:0 14px;
+  width:max-content;
+  animation: stack-marquee 28s linear infinite;
+}
+@keyframes stack-marquee{
+  from{ transform: translateX(0); }
+  to{   transform: translateX(-50%); } /* la moitié car on a 2 séries identiques */
+}
+
+/* Logos : taille normalisée, rendu propre sur fond clair */
+.stack-logo{
+  height: 38px; width:auto; display:block;
+  filter: saturate(0.95) contrast(1.05);
+}
+
+/* Pause au survol (utile en desktop) */
+.stack-scroller:hover .stack-track{ animation-play-state: paused; }
+
+/* Accessibilité : pas d’anim si l’utilisateur préfère réduire les mouvements */
+@media (prefers-reduced-motion: reduce){
+  .stack-track{ animation: none; transform: none; }
+}
+
+/* Mobile : un peu plus compact, vitesse adaptée */
+@media (max-width:768px){
+  .stack-track{ gap:18px; animation-duration: 24s; }
+  .stack-logo{ height: 28px; }
+  .stack-scroller{ margin-top: var(--s); }
+}
+
+/* ===== Section Stack : grille 2 colonnes robuste ===== */
+#stack .split{
+  display: grid;
+  grid-template-columns: minmax(420px,1fr) minmax(280px,360px);
+  align-items: center;
+  gap: var(--xl);
+  max-width: 1120px;
+  margin-inline: 0;
+  justify-content: initial;
+}
+
+/* IMPORTANT : autoriser le rétrécissement pour éviter les débordements */
+#stack .text,
+#stack .visual{ min-width: 0; }
+
+#stack .text .liste-carre{ margin-left: 0; }
+#stack .stack-scroller{ width: 100%; margin-top: var(--m); }
+
+#stack .visual{ justify-self: end; min-width: 280px; }
+#stack .visual img{ width: 100%; max-width: 340px; height: auto; display: block; }
+
+
+@media (max-width:768px){
+  #stack .split{
+    grid-template-columns: 1fr;
+    row-gap: var(--m);
+    justify-items: stretch;     /* la bande prend bien toute la largeur */
+  }
+  #stack .text{ order: 1; }
+  #stack .visual{
+    order: 2;
+    justify-self: center;       /* on centre l’illustration */
+    min-width: 0;
+    margin-top: var(--m);
+  }
+  #stack .visual img{
+    width: clamp(180px, 70vw, 240px);
+    max-width: 100%;
+  }
+
+  /* Bande défilante : compact & fluide en mobile */
+  .stack-scroller{ margin-top: var(--s); padding-block: 8px; }
+  .stack-scroller::before,
+  .stack-scroller::after{ width: 24px; }   /* fondu moins large */
+  .stack-track{ gap: 14px; animation-duration: 22s; }
+  .stack-logo{ height: 22px; }
+}
+
+/* === Solutions — cartes en 2 colonnes sur desktop === */
+@media (min-width: 769px){
+  /* transforme la carte en grille 2 colonnes */
+  #catalogue .card.card--split{
+    display: grid;
+    grid-template-columns: 100px 1fr;   /* picto à gauche, texte à droite */
+    column-gap: var(--l);
+    align-items: center;                /* centre verticalement le bloc texte */
+  }
+  /* icône : taille demandée + centrage dans la colonne gauche */
+  #catalogue .card.card--split .card-ico{
+    width: 90px; height: 90px;
+    display: block;
+    justify-self: center;
+  }
+  /* le texte reste aligné à gauche dans la colonne droite */
+  #catalogue .card.card--split .card-body{ text-align: left; }
+  #catalogue .card.card--split .card-body .liste-carre{ margin-top: var(--s); }
+}
+
+/* === Solutions — pictos plus grands en desktop === */
+@media (min-width: 769px){
+  /* un peu plus large pour la colonne picto */
+  #catalogue .card.card--split{
+    grid-template-columns: 120px 1fr;   /* avant : 100px 1fr */
+  }
+
+  /* figer la taille du picto et neutraliser les règles globales d'img */
+  #catalogue .card.card--split .card-ico{
+    display: block;
+    width: 96px;                        /* ou 90px si tu veux pile 90 */
+    height: 96px;
+    max-width: none;                    /* empêche max-width:100% global */
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+/* Mobile : icône centrée */
+@media (max-width: 768px){
+  /* on repasse la carte en bloc (pas en grid) au cas où */
+  #catalogue .card.card--split{ display: block; }
+
+  /* l’icône doit être block pour que margin:auto centre correctement */
+  #catalogue .card.card--split .card-ico{
+    display: block;               /* <-- clé du centrage */
+    width: 72px; 
+    height: 72px;
+    margin: 0 auto var(--s);      /* centre horizontalement */
+  }
+}
