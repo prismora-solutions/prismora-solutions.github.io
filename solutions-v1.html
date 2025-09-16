@@ -1,0 +1,355 @@
+<!-- solutions.html — Prismora Solutions (page services légère & structurée) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Solutions — Prismora Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nos solutions data & BI : audit flash, collecte, modélisation, KPIs, dashboards, automatisation, adoption, formation, TMA, PMO data, sécurité, migrations, intégrations, PoC, data lead fractionné." />
+
+  <!-- Même stack que la home -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css?v=12"/>
+  <meta name="theme-color" content="#0f4c5c" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <div class="container wrap">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="Retour à l'accueil">
+          <picture>
+            <source media="(min-width: 769px)" srcset="assets/img/logo/logo_def.png">
+            <img src="assets/img/logo/logo_triangle.png" alt="Prismora Solutions" height="40">
+          </picture>
+        </a>
+      </div>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="menu" id="site-menu">
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO COURT ===================== -->
+  <header class="hero">
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Ce que nous proposons
+        </h1>
+        <p class="sub-lead">
+          <strong style="font-size: 1.2em;">Des solutions adaptées à vos besoins et à votre activité.</strong><br><br>
+          Après un premier diagnostic, nous choisissons ensemble ce qui est utile maintenant : mise en place des premiers éléments, 
+          fiabilisation des données, choix d’indicateurs partagés, automatisation, puis transmission et autonomie.<br><br>
+          Découvrez ci-dessous notre offre détaillée, vous pouvez également décrire votre projet via le formulaire de contact.
+        </p>
+        <div class="cta-row">
+          <a class="cta" href="contact.html">Décrire votre besoin</a>
+        </div>
+      </div>
+      <!-- Slot visuel si tu veux une illu dédiée -->
+      <div class="hero-visual">
+        <img src="assets/img/photos/solutions.png" alt="Illustration : nos solutions data" height="150">
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== CATALOGUE — 15 CARTES, GROUPÉES ===================== -->
+  <section class="section" id="catalogue">
+    <div class="container">
+
+      <!-- ===== Groupe A : Démarrer vite ===== -->
+      <h2>Poser les bases</h2>
+      <div class="grid grid-2 cards-lift">
+        <!-- 1) Audit flash -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/diagnostic.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Diagnostic initial</h3>
+            <p>Comprendre votre activité et vos priorités.</p>
+            <ul class="liste-carre">
+              <li>Echange et recueil des besoins</li>
+              <li>Cartographie des données clés</li>
+              <li>Premier tableau de bord utile</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 14) PoC -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/essai-concret.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Essai concret</h3>
+            <p>Démontrer l’intérêt sur 1 cas prioritaire.</p>
+            <ul class="liste-carre">
+              <li>Mini-prototype sur vos données</li>
+              <li>Essai en conditions réelles</li>
+              <li>Bilan clair : continuer, ajuster ou différer</li>           
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== Groupe B : Données fiables ===== -->
+      <br>
+      <h2>Données fiables </h2>
+      <div class="grid grid-2 cards-lift">
+        <!-- 2) Collecte & consolidation -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/collecte.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Collecte & consolidation</h3>
+            <p>Rassembler vos données en une base unique et fiable.</p>
+            <ul class="liste-carre">
+              <li>Brancher vos sources existantes</li>
+              <li>Tout réunir au même endroit</li>
+              <li>Tracer l’origine des chiffres</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3) Modélisation & qualité -->
+        <article class="card card--split">
+          <img class="card-ico"  src="assets/img/photos/modelisation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Modélisation & qualité</h3>
+            <p>Organiser et fiabiliser vos données.</p>
+            <ul class="liste-carre">
+              <li>Mettre de l’ordre et des liens clairs</li>
+              <li>Repérer et corriger les incohérences</li>
+              <li>Garder une base fiable et à jour</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== Groupe C : Mesure & décision ===== -->
+      <br>
+      <h2>Mesure & décision</h2>
+      <div class="grid grid-2 cards-lift">
+        <!-- 4) KPIs & gouvernance -->
+        <article class="card card--split">
+          <img class="card-ico"  src="assets/img/photos/kpi.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>KPIs & gouvernance</h3>
+            <p>Mêmes définitions pour tous, décisions comparables.</p>
+              <ul class="liste-carre">
+                <li>Indicateurs clairs et partagés</li>
+                <li>Fiches KPI simples</li>
+                <li>Référentiel partagé et versionné</li>
+              </ul>
+          </div>
+        </article>
+
+        <!-- 5) Tableaux de bord & dataviz -->
+        <article class="card card--split">
+          <img class="card-ico"  src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Tableaux de bord & dataviz</h3>
+            <p>Des vues claires pour décider, suivre et passer à l’action.</p>
+            <ul class="liste-carre">
+              <li>Dashboards lisibles et orientés action</li>
+              <li>Filtres et légendes explicites</li>
+              <li>Guide d’usage simple</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== Groupe D : Opérations & intégration ===== -->
+      <br>
+      <h2>Opérations & intégration</h2>
+      <div class="grid grid-2 cards-lift">
+        <!-- 6) Automatisation & pipelines -->
+        <article class="card card--split">
+          <img class="card-ico"  src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Automatisation & pipelines</h3>
+            <p>Des données toujours à jour, sans reporting manuel.</p>
+            <ul class="liste-carre">
+              <li>Imports et mises à jour automatiques</li>
+              <li>Suivi visuel des traitements et alertes</li>
+              <li>Accès direct aux données fraîches</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 11) Sécurité & conformité -->
+        <article class="card card--split">
+          <img class="card-ico"  src="assets/img/photos/rgpd.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Sécurité & conformité</h3>
+            <p>Accès maîtrisés, confidentialité respectée, cadre RGPD.</p>
+            <ul class="liste-carre">
+              <li>Rôles et permissions clairs</li>
+              <li>Mesures simples de prévention des risques</li>
+              <li>Données stockées et partagées conforme RGPD</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 12) Migration & modernisation -->
+        <article class="card card--split">
+          <img class="card-ico"  src="assets/img/photos/modernisation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Migration & modernisation</h3>
+            <p>Du tableur éclaté vers une solution centralisée et durable.</p>
+            <ul class="liste-carre">
+              <li>Feuille de route vers l’outil cible</li>
+              <li>Avant / après : gains visibles</li>
+              <li>Données consolidées et évolutives</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 13) Intégrations & diffusion -->
+        <article class="card card--split">
+          <img class="card-ico"  src="assets/img/photos/integration.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Intégrations & diffusion</h3>
+            <p>Des données accessibles facilement aux équipes.</p>
+            <ul class="liste-carre">
+              <li>Accès centralisé et simple</li>
+              <li>Exports clairs et réutilisables</li>
+              <li>Guide court pour partager et comprendre</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 9) Maintenance & évolutions -->
+        <article class="card card--split">
+          <img class="card-ico"  src="assets/img/photos/evolution.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Maintenance & évolutions</h3>
+            <p>Corrections rapides et améliorations légères selon les besoins.</p>
+            <ul class="liste-carre">
+              <li>Suivi des corrections apportées</li>
+              <li>Historique simple des mises à jour</li>
+              <li>Évolutions progressives à la demande</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== Groupe E : Accompagnement & autonomie ===== -->
+      <br>
+      <h2>Accompagnement & autonomie</h2>
+      <div class="grid grid-2 cards-lift">
+        <!-- 7) Ateliers & adoption -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/atelier.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Ateliers & adoption</h3>
+            <p>Sessions courtes pour tester, ajuster et ancrer les usages.</p>
+            <ul class="liste-carre">
+              <li>Supports prêts à l’emploi</li>
+              <li>Ateliers ciblés sur les besoins</li>
+              <li>Feedback rapide et améliorations</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 8) Formation & transfert -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/formation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Formation & transfert</h3>
+            <p>Prise en main guidée pour gagner en autonomie.</p>
+            <ul class="liste-carre">
+              <li>Parcours de prise en main</li>
+              <li>Guides & modèles simples</li>
+              <li>Check-list d’autonomie</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 10) Pilotage de projet (PMO data) -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/projet.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Pilotage de projet (PMO data)</h3>
+            <p>Un cadre simple pour avancer, décider et documenter.</p>
+            <ul class="liste-carre">
+              <li>Plan de jalons clair</li>
+              <li>Suivi d’avancement visuel</li>
+              <li>CR courts avec décisions</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 15) Data lead fractionné -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/datalead.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Data lead fractionné</h3>
+            <p>Donner le cap, prioriser et faire progresser l’existant.</p>
+            <ul class="liste-carre">
+              <li>Feuille de route pragmatique</li>
+              <li>Priorisation des chantiers</li>
+              <li>Améliorations continues</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- CTA global sous le catalogue -->
+      <div class="cta-row" style="margin-top:var(--xl)">
+        <a class="cta" href="contact.html">Décrire mon besoin</a>
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="section contact-band">
+    <div class="container contact-box">
+      <h1 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Parlons de votre besoin
+      </h1>
+      <p class="lead">Un échange court suffit pour cadrer le prochain pas.</p>
+      <div class="cta-row">
+        <a class="cta" href="contact.html">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <small>© Prismora Solutions — Bordeaux & Remote • Site hébergé gratuitement sur GitHub Pages</small>
+    </div>
+  </footer>
+
+  <!-- ===================== JS (burger identique à la home) ===================== -->
+  <script>
+    (function(){
+      const burger = document.querySelector('.burger');
+      const menu   = document.getElementById('site-menu');
+      if (burger && menu){
+        burger.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          burger.classList.toggle('open', open);
+          document.body.classList.toggle('no-scroll', open);
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          menu.classList.remove('open'); burger.classList.remove('open');
+          burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
+        }));
+      }
+    })();
+  </script>
+</body>
+</html>
