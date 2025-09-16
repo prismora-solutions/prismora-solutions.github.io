@@ -1,4 +1,4 @@
-<!-- index.html — Prismora Solutions -->
+<!-- index.html — Prismora Solutions (V2) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,14 +6,10 @@
   <title>Prismora Solutions – Partenaire Data & BI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Vos chiffres, enfin lisibles. Vos décisions, plus simples. Prismora Solutions — Data & BI, Bordeaux & remote." />
-
-  <!-- Typo -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
-
-  <!-- Style (chemin conservé) -->
-  <link rel="stylesheet" href="assets/css/style.css?v=12"/>
+  <link rel="stylesheet" href="assets/css/style.css?v=13"/>
   <meta name="theme-color" content="#0f4c5c" />
 </head>
 <body>
@@ -23,22 +19,17 @@
     <div class="container wrap">
       <div class="brand">
         <a href="index.html" class="brand-link" aria-label="Retour à l'accueil">
-          <!-- Logo responsive : desktop = logo_def.png / mobile = logo_triangle.png -->
           <picture>
-            <!-- Desktop (>= 769px) : logo texte -->
             <source media="(min-width: 769px)" srcset="assets/img/logo/logo_def.png">
-            <!-- Mobile (par défaut) : triangle -->
             <img src="assets/img/logo/logo_triangle.png" alt="Prismora Solutions" height="40">
           </picture>
         </a>
       </div>
 
-      <!-- Burger (mobile) -->
       <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
         <span></span><span></span><span></span>
       </button>
 
-      <!-- Menu (liens conservés) -->
       <div class="menu" id="site-menu">
         <a href="solutions.html">Offres & Solutions</a>
         <a href="contact.html">Contact</a>
@@ -49,7 +40,6 @@
   <!-- ===================== HERO ===================== -->
   <header class="hero">
     <div class="container hero-split">
-      <!-- Colonne texte -->
       <div class="hero-text">
         <h1 class="sect-title">
           <span class="prism" aria-hidden="true"></span>
@@ -57,44 +47,30 @@
           des décisions plus sereines.
         </h1>
 
-        <!-- === Ligne Marque (réécrite) ===
-             Desktop : triangle + texte + kicker sur une ligne
-             Mobile  : centrés et empilés                         -->
         <div class="brand-line brand-line-hero" id="brandLineHero">
-          <img
-            class="logo-tri"
-            src="assets/img/logo/logo_triangle.png"
-            alt="Logo Triangle"
-            height="50"
-          />
-          <img
-            class="logo-txt"
-            src="assets/img/logo/logo_texte.png"
-            alt="Logo Texte Prismora"
-            height="50"
-          />
+          <img class="logo-tri" src="assets/img/logo/logo_triangle.png" alt="Logo Triangle" height="50"/>
+          <img class="logo-txt" src="assets/img/logo/logo_texte.png" alt="Logo Texte Prismora" height="50"/>
           <p class="kicker">Partenaire Data & BI</p>
         </div>
 
         <p class="sub-lead">
-          Prismora Solutions aide les organisations à transformer leurs données en outils clairs et concrets pour décider plus sereinement.<br><br>
+          Prismora Solutions aide les organisations à transformer leurs données en outils clairs et concrets pour décider plus sereinement.
           Tableaux de bord, automatisations, accompagnement : des solutions adaptées aux TPE, PME/ETI, collectivités et missions ponctuelles en grands comptes.
         </p>
 
         <div class="cta-row">
-          <a class="cta cta--ghost" href="solutions.html">Découvrir nos solutions</a>
+          <a class="cta cta--ghost" href="#profils">Découvrir par profil</a>
           <a class="cta" href="contact.html">Échanger dès maintenant</a>
         </div>
       </div>
 
-      <!-- Colonne image (visuel conservé) -->
       <div class="hero-visual">
         <img src="assets/img/photos/consultant3.png" alt="Collaboration et synthèse visuelle">
       </div>
     </div>
   </header>
 
-  <!-- ===================== MÉTHODE ===================== -->
+  <!-- ===================== MÉTHODE (condensée) ===================== -->
   <section class="section section-method">
     <div class="container">
       <h1 class="sect-title">
@@ -102,257 +78,124 @@
         Notre méthode
       </h1>
 
-      <div class="split">
-        <div class="text">
-          <h2>Analyser</h2>
-            <ul class="liste-carre">
-              <li>Comprendre votre activité</li>
-              <li>Recueillir vos besoins</li>
-              <li>Analyser les données existantes</li>
-              <li>Définir vos priorités</li>
-            </ul>
-        </div>
-        <div class="visual">
-          <img src="assets/img/photos/observer.png" alt="Illustration : Observer">
-        </div>
+      <!-- 2 cartes alignées (Analyser/Structurer) + 1 centrée dessous (Activer) ; en mobile : 3 empilées -->
+      <div class="method-grid">
+        <article class="card method-card">
+          <img class="method-ico" src="assets/img/photos/observer.png" alt="" aria-hidden="true">
+          <h3>Analyser</h3>
+          <ul class="liste-carre">
+            <li>Comprendre votre activité</li>
+            <li>Recueillir vos besoins</li>
+            <li>Analyser l’existant</li>
+            <li>Définir les priorités</li>
+          </ul>
+        </article>
+
+        <article class="card method-card">
+          <img class="method-ico" src="assets/img/photos/structurer.png" alt="" aria-hidden="true">
+          <h3>Structurer</h3>
+          <ul class="liste-carre">
+            <li>Organiser & fiabiliser</li>
+            <li>Indicateurs clairs</li>
+            <li>Dashboards utiles</li>
+            <li>MAJ & alertes auto</li>
+          </ul>
+        </article>
+
+        <article class="card method-card method-card--wide">
+          <img class="method-ico" src="assets/img/photos/activer.png" alt="" aria-hidden="true">
+          <h3>Activer</h3>
+          <ul class="liste-carre">
+            <li>Ateliers d’usage</li>
+            <li>Formation & transfert</li>
+            <li>Itérations rapides</li>
+            <li>Autonomie durable</li>
+          </ul>
+        </article>
       </div>
-      <div class="split">
-        <div class="text">
-          <h2>Structurer</h2>
-            <ul class="liste-carre">
-              <li>Organiser et fiabiliser les données</li>
-              <li>Définir des indicateurs clairs</li>
-              <li>Déployer des tableaux de bord utiles</li>
-              <li>Automatiser mises à jour et alertes</li>
-            </ul>
-        </div>
-        <div class="visual">
-          <img src="assets/img/photos/structurer.png" alt="Illustration : Structurer">
-        </div>
-      </div>
-      <div class="split">
-        <div class="text">
-          <h2>Activer</h2>
-            <ul class="liste-carre">
-              <li>Développer votre activité</li>
-              <li>Soutenir votre croissance</li>
-              <li>Former et vous rendre autonomes.</li>
-              <li>Améliorer en continu selon vos retours</li>
-            </ul>
-        </div>
-        <div class="visual">
-          <img src="assets/img/photos/activer.png" alt="Illustration : Activer">
-        </div>
+
+      <div class="cta-row" style="margin-top:var(--m)">
+        <a class="cta" href="#profils">Découvrir par profil</a>
       </div>
     </div>
   </section>
 
-  <!-- ===================== POUR QUI ===================== -->
-  <section class="section">
+  <!-- ===================== POUR QUI ? (profils + mini cas d’usage) ===================== -->
+  <section class="section" id="profils">
     <div class="container">
       <h1 class="sect-title">
         <span class="prism" aria-hidden="true"></span>
-        Pour qui ?
+        Choisir mon profil
       </h1>
+
       <div class="who-grid">
         <!-- TPE / Indépendants -->
         <article class="who-card">
-          <!-- Slot illustration (image à ajouter plus tard) -->
           <img class="who-illus" src="assets/img/tpe-independant.svg" alt="" aria-hidden="true">
           <h3 class="who-title">TPE / Indépendants</h3>
           <div class="text">
             <ul class="liste-carre">
-              <li>Démarrage rapide</li>
-              <li>Tableaux clairs</li>
-              <li>Premiers gains concrets</li>
+              <li><strong>Phrase :</strong> “Bilan 1×/an → je veux marge & trésorerie chaque mois.”</li>
+              <li><strong>Avant :</strong> fichiers éclatés, vision annuelle.</li>
+              <li><strong>Après :</strong> suivi mensuel simple (CA, marge, trésorerie).</li>
+              <li><strong>Gain :</strong> décisions rapides, moins d’imprévus.</li>
             </ul>
           </div>
-          <!-- <p class="who-desc">Démarrage rapide, tableaux clairs, premiers gains concrets.</p> -->
+          <div class="cta-row">
+            <a class="cta" href="solutions-tpe.html">Voir Solutions TPE</a>
+          </div>
         </article>
-        
+
         <!-- PME & ETI -->
         <article class="who-card">
           <img class="who-illus" src="assets/img/pme-eti.svg" alt="" aria-hidden="true">
           <h3 class="who-title">PME & ETI</h3>
           <div class="text">
             <ul class="liste-carre">
-              <li>Indicateurs partagés</li>
-              <li>Automatisations</li>
-              <li>Pilotage régulier</li>
+              <li><strong>Phrase :</strong> “On multiplie les fichiers → KPIs partagés & à jour.”</li>
+              <li><strong>Avant :</strong> chiffres contradictoires.</li>
+              <li><strong>Après :</strong> indicateurs unifiés + MAJ auto.</li>
+              <li><strong>Gain :</strong> comités plus courts, arbitrages plus nets.</li>
             </ul>
           </div>
+          <div class="cta-row">
+            <a class="cta" href="solutions-pme-eti.html">Voir Solutions PME/ETI</a>
+          </div>
         </article>
-        
+
         <!-- Collectivités -->
         <article class="who-card">
           <img class="who-illus" src="assets/img/collectivites-assos.svg" alt="" aria-hidden="true">
           <h3 class="who-title">Collectivités</h3>
           <div class="text">
             <ul class="liste-carre">
-              <li>Suivi budgétaire</li>
-              <li>Décisions éclairées</li>
-              <li>Transparence et reporting</li>
+              <li><strong>Phrase :</strong> “Un suivi budgétaire clair pour élus & services.”</li>
+              <li><strong>Avant :</strong> données dispersées, restitutions lourdes.</li>
+              <li><strong>Après :</strong> tableau de bord lisible (budget, subventions, projets).</li>
+              <li><strong>Gain :</strong> pilotage partagé, décisions argumentées.</li>
             </ul>
           </div>
+          <div class="cta-row">
+            <a class="cta" href="solutions-collectivites.html">Voir Solutions Collectivités</a>
+          </div>
         </article>
-        
-        <!-- Grandes entreprises & ESN -->
+
+        <!-- Grands groupes & ESN -->
         <article class="who-card">
           <img class="who-illus" src="assets/img/groupes-esn.svg" alt="" aria-hidden="true">
           <h3 class="who-title">Grands groupes & ESN</h3>
           <div class="text">
             <ul class="liste-carre">
-              <li>Missions ponctuelles</li>
-              <li>Intégration rapide</li>
-              <li>Livrables alignés SI</li>
+              <li><strong>Phrase :</strong> “Renfort ponctuel / cadrage data / intégration.”</li>
+              <li><strong>Avant :</strong> chantiers éclatés, priorités floues.</li>
+              <li><strong>Après :</strong> cadrage, priorisation, lotissement.</li>
+              <li><strong>Gain :</strong> delivery sécurisé, valeur plus vite.</li>
             </ul>
           </div>
+          <div class="cta-row">
+            <a class="cta" href="solutions-grands-comptes.html">Voir Solutions Grands comptes</a>
+          </div>
         </article>
-
-      </div>
-    </div>
-  </section>
-
-<!-- ===================== DEMONSTRATIONS ===================== -->
-<section class="section" id="demos">
-  <div class="container">
-    <h1 class="sect-title">
-      <span class="prism" aria-hidden="true"></span>
-      Démos & cas concrets
-    </h1>
-
-    <div class="grid grid-3 cards-lift cases-grid">
-      <!-- 1) PME & ETI — Vidéo Retail 360 -->
-      <article class="card case-card">
-        <span class="badge badge-amber">PME & ETI</span>
-        <h3 class="case-title">Pilotage Retail 360 — Ventes • Coûts • Marges</h3>
-        <p class="case-sub">Un tableau de bord clair pour décider plus vite.</p>
-
-        <div class="case-media">
-          <video
-            class="case-video"
-            src="assets/video/retail360.mp4"
-            preload="metadata"
-            playsinline
-            controls
-            aria-label="Démonstration vidéo - Pilotage Retail 360">
-              Votre navigateur ne supporte pas la lecture vidéo HTML5.
-          </video>
-        </div>
-
-        <ul class="liste-carre case-bullets">
-          <li><strong>Avant :</strong> fichiers dispersés, marge floue.</li>
-          <li><strong>Après :</strong> indicateurs partagés et à jour.</li>
-          <li><strong>Gain :</strong> réunions plus courtes, décisions plus nettes.</li>
-        </ul>
-      </article>
-
-      <!-- 2) Collectivité — Immobilier (capture + bientôt vidéo) -->
-      <article class="card case-card">
-        <span class="badge">Collectivités</span>
-        <h3 class="case-title">Vue Marché Immobilier — Département</h3>
-        <p class="case-sub">Carte, top communes, évolution des transactions.</p>
-
-        <div class="case-media">
-          <video
-            class="case-video"
-            src="assets/video/collectivites.mp4"
-            preload="metadata"
-            playsinline
-            controls
-            aria-label="Démo - Marché Immobilier">
-              Votre navigateur ne supporte pas la lecture vidéo HTML5.
-          </video>
-        </div>
-
-        <ul class="liste-carre case-bullets">
-          <li><strong>Avant :</strong> données foncières brutes, peu lisibles.</li>
-          <li><strong>Après :</strong> vues synthétiques pour élus & agents.</li>
-          <li><strong>Gain :</strong> transparence et pilotage budgétaire.</li>
-        </ul>
-      </article>
-
-      <!-- 3) TPE — Suivi CA & Trésorerie (Excel) -->
-      <article class="card case-card">
-        <span class="badge">TPE / Indépendants</span>
-        <h3 class="case-title">Suivi simple — CA, Charges, Trésorerie</h3>
-        <p class="case-sub">Un fichier Excel clair, prêt à l’emploi.</p>
-
-        <div class="case-media">
-          <img class="case-thumb" src="assets/img/cases/tpe_excel.jpg"
-               alt="Aperçu tableau Excel CA/Charges/Trésorerie">
-        </div>
-
-        <ul class="liste-carre case-bullets">
-          <li><strong>Avant :</strong> tableur brut, vision partielle.</li>
-          <li><strong>Après :</strong> vues mensuelles + marge nette.</li>
-          <li><strong>Gain :</strong> autonomie et anticipation.</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== STACK ===================== -->
-<section class="section" id="stack">
-  <div class="container">
-    <h1 class="sect-title">
-      <span class="prism" aria-hidden="true"></span>
-      Nos outils & méthode projet
-    </h1>
-
-    <div class="split">
-      <!-- Colonne texte -->
-      <div class="text">
-        <ul class="liste-carre">
-          <li><strong>Outils :</strong> SQL/MySQL, Python (pandas), Power BI, Looker Studio, Excel.</li>
-          <li><strong>Automatisation :</strong> rafraîchissements planifiés, contrôles qualité, historisation.</li>
-          <li><strong>Projet :</strong> audit rapide → jalons clairs → itérations courtes → transfert de compétences.</li>
-        </ul>
-        <!-- Bande d’outils auto (charge automatiquement les images du dossier indiqué) -->
-        <div class="stack-scroller"
-             aria-label="Technologies utilisées"
-             data-gh-owner="prismora-solutions"
-             data-gh-repo="prismora-solutions.github.io"
-             data-dir="assets/img/stack">
-          <ul class="stack-track" id="stack-track"></ul>
-        </div>
-      </div>
-
-      <!-- Colonne visuelle -->
-      <div class="visual">
-        <img src="assets/img/photos/stack2.png" alt="Illustration : Stack & pipelines">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- ===================== SOLUTIONS ===================== -->
-  <section class="section">
-    <div class="container">
-      <h1 class="sect-title">
-        <span class="prism" aria-hidden="true"></span>
-        Solutions & Offres
-      </h1>
-      <div class="grid grid-3 cards-lift">
-        <div class="card">
-          <span class="badge badge-amber">V1 en 10 j</span>
-          <h3>Découverte</h3>
-          <p>Audit express + 1er tableau de bord utile.</p>
-        </div>
-        <div class="card">
-          <h3>Pilotage</h3>
-          <p>Automatisation des données + ateliers d’usage.</p>
-        </div>
-        <div class="card">
-          <h3>Autonomie</h3>
-          <p>Itérations, formation, documentation et transfert.</p>
-        </div>
-      </div>
-      <div class="cta-row">
-        <a class="cta" href="solutions.html">Voir nos solutions en détail</a>
-        <a class="cta cta--ghost" href="contact.html">Demander un devis</a>
       </div>
     </div>
   </section>
@@ -395,9 +238,9 @@
         <span class="prism" aria-hidden="true"></span>
         Parlons de votre besoin
       </h1>
-      <p class="lead">Un échange de 15 minutes peut tout changer.</p>
+      <p class="lead">Un échange court suffit pour cadrer le prochain pas.</p>
       <div class="cta-row">
-        <a class="cta" href="contact.html">Me contacter</a>
+        <a class="cta" href="contact.html">Remplir le formulaire</a>
       </div>
     </div>
   </section>
@@ -411,7 +254,7 @@
 
   <!-- ===================== SCRIPTS ===================== -->
   <script>
-    /* ===== Burger + fermeture au clic ===== */
+    // Burger
     (function(){
       const burger = document.querySelector('.burger');
       const menu   = document.getElementById('site-menu');
@@ -428,25 +271,15 @@
         }));
       }
     })();
-  </script>
 
-  <script>
-    /* ===== Séquence d'apparition de la ligne marque =====
-       - triangle : 0ms (déclenche transition CSS plus lente)
-       - logo texte : +300ms (ajuste si besoin)
-       - kicker     : +700ms (ajuste si besoin)
-    */
+    // Ligne marque
     (function(){
       function brandLineSequence(){
         const tri  = document.querySelector('.brand-line-hero .logo-tri');
         const txt  = document.querySelector('.brand-line-hero .logo-txt');
         const kick = document.querySelector('.brand-line-hero .kicker');
         if (!tri || !txt || !kick) return;
-  
-        // Déclenche l'apparition (CSS contrôle la durée)
         tri.classList.add('is-revealed');
-  
-        // Décalages d’apparition (tu peux les changer à volonté)
         setTimeout(() => { txt.classList.add('is-revealed'); }, 500);
         setTimeout(() => { kick.classList.add('is-revealed'); }, 900);
       }
@@ -455,79 +288,5 @@
       } else { brandLineSequence(); }
     })();
   </script>
-
-  <script>
-  /* ===== Stack auto-loader (GitHub Contents API, sans noms en dur) ===== */
-  (function () {
-    const scroller = document.querySelector('.stack-scroller[data-dir]');
-    if (!scroller) return;
-  
-    const owner = scroller.dataset.ghOwner || '';
-    const repo  = scroller.dataset.ghRepo  || '';
-    const dir   = scroller.dataset.dir || 'assets/img/stack';
-    const speed = Number(scroller.dataset.speed || 28);
-    const api   = `https://api.github.com/repos/${owner}/${repo}/contents/${dir}`;
-    const track = scroller.querySelector('#stack-track');
-    const exts  = /\.(png|jpe?g|svg|webp)$/i;
-  
-    function niceAlt(name){
-      return name.replace(exts,'').replace(/[-_]+/g,' ').trim().replace(/^./, c => c.toUpperCase());
-    }
-    function addLogos(urls){
-      // 1re série
-      urls.forEach(u => {
-        const li  = document.createElement('li');
-        const img = document.createElement('img');
-        img.className = 'stack-logo';
-        img.loading   = 'lazy';
-        img.src       = u.download_url || u;           // API → download_url ; au cas où
-        img.alt       = niceAlt((u.name || u).split('/').pop());
-        li.appendChild(img);
-        track.appendChild(li);
-      });
-      // 2e série (pour la boucle infinie) — alt vides
-      urls.forEach(u => {
-        const li  = document.createElement('li');
-        const img = document.createElement('img');
-        img.className = 'stack-logo';
-        img.loading   = 'lazy';
-        img.src       = u.download_url || u;
-        img.alt       = '';
-        li.appendChild(img);
-        track.appendChild(li);
-      });
-  
-      // Vitesse personnalisée
-      track.style.animationDuration = speed + 's';
-  
-      // S’il y a trop peu d’images, on coupe l’anim
-      if (urls.length < 3) track.style.animation = 'none';
-    }
-  
-    async function load(){
-      try{
-        const res = await fetch(api, { headers: { 'Accept': 'application/vnd.github+json' }});
-        if (!res.ok) throw new Error('GitHub API ' + res.status);
-        const data = await res.json();
-  
-        const files = (Array.isArray(data) ? data : [])
-          .filter(f => f.type === 'file' && exts.test(f.name));
-  
-        if (!files.length) { scroller.hidden = true; return; }
-  
-        addLogos(files);
-      }catch(e){
-        console.warn('Stack loader: API indisponible → masquer la bande', e);
-        scroller.hidden = true; // pas d’images → on cache proprement
-      }
-    }
-  
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', load);
-    } else { load(); }
-  })();
-  </script>
-
-
 </body>
 </html>
