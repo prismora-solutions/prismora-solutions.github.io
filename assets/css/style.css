@@ -186,22 +186,43 @@ a:hover{text-decoration:underline}
 /* ============ 7) Méthode condensée (cartes) ============ */
 .method-grid{
   display:grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: var(--l);
-  max-width: 900px;
+  max-width: 1120px;
   margin-inline: auto;
+  align-items: stretch; /* assure des hauteurs homogènes sur la ligne */
 }
-.method-card{ text-align:left }
-.method-ico{ width:56px; height:56px; display:block; object-fit:contain; margin-bottom:8px }
-.method-card--wide{
-  grid-column: 1 / -1;
-  justify-self: center;
-  max-width: min(720px, 100%);
+
+.method-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:stretch;
+  text-align:left;
+  height:100%;
 }
-@media (max-width:768px){
+
+.method-ico{
+  width:110px;
+  height:110px;
+  display:block;
+  object-fit:cover;      /* photo lisible */
+  border-radius:12px;    /* même style que le site */
+  margin: 2px auto var(--s); /* centrée en haut */
+}
+
+/* Titre rapproché de l'image */
+.method-card h3{
+  margin-top: 4px;
+  margin-bottom: var(--s);
+}
+
+/* Mobile : cartes empilées + images toujours grandes et centrées */
+@media (max-width: 900px){
   .method-grid{ grid-template-columns: 1fr; }
-  .method-card--wide{ grid-column:auto; justify-self:stretch; }
+  .method-ico{ width:120px; height:120px; } /* encore un peu plus grand en mobile */
 }
+
 
 /* ============ 8) POUR QUI ? (profils) ============ */
 .who-grid{
