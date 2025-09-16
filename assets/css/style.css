@@ -52,7 +52,7 @@ h3{margin:0 0 var(--s);font-weight:700;color:var(--brand)}
 
 /* Titre de section + petit prisme à gauche */
 .sect-title{
-  position:relative; display:inline-block; margin:0 0 var(--l);
+  position:relative; display:inline-block; margin:0 0 var(--xl);
   color:var(--brand); font-weight:800;
 }
 .sect-title .prism{
