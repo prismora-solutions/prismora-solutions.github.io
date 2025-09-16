@@ -134,4 +134,35 @@
   </section>
 
   <!-- CTA FINAL -->
-  <
+  <section class="section contact-band">
+    <div class="container contact-box">
+      <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Parlons de votre besoin</h1>
+      <p class="lead">Un échange court suffit pour cadrer le prochain pas.</p>
+      <div class="cta-row"><a class="cta" href="contact.html">Nous contacter</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><small>© Prismora Solutions — Bordeaux & Remote • GitHub Pages</small></div>
+  </footer>
+
+  <script>
+    (function(){
+      const burger = document.querySelector('.burger');
+      const menu   = document.getElementById('site-menu');
+      if (burger && menu){
+        burger.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          burger.classList.toggle('open', open);
+          document.body.classList.toggle('no-scroll', open);
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          menu.classList.remove('open'); burger.classList.remove('open');
+          burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
+        }));
+      }
+    })();
+  </script>
+</body>
+</html>
