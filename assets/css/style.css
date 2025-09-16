@@ -220,7 +220,7 @@ a:hover{text-decoration:underline}
 /* Mobile : cartes empilées + images toujours grandes et centrées */
 @media (max-width: 900px){
   .method-grid{ grid-template-columns: 1fr; }
-  .method-ico{ width:120px; height:120px; } /* encore un peu plus grand en mobile */
+  .method-ico{ width:180px; height:180px; } /* encore un peu plus grand en mobile */
 }
 
 
