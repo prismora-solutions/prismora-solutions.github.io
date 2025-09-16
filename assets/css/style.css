@@ -37,7 +37,7 @@ body{
 h1{
   font-size:clamp(26px,5vw,38px);
   line-height:1.15;
-  margin:0 0 var(--m);
+  margin:0 0 var(--l);
   color:var(--brand);
   font-weight:800
 }
