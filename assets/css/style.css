@@ -355,3 +355,114 @@ small{opacity:.85}
   .section .split .text{ order:1 }
   .section .split .visual{ order:2; justify-self:center }
 }
+
+
+/* ===== STACK ===== */
+.stack{margin:0;padding-left:18px}
+.stack li{margin-bottom:10px}
+
+.stack-scroller{
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  margin-top: var(--m);
+  padding-block: 10px;
+}
+
+/* Effet fondu sur les bords (lisible, discret) */
+.stack-scroller::before,
+.stack-scroller::after{
+  content:"";
+  position:absolute; top:0; bottom:0; width:48px; pointer-events:none;
+}
+.stack-scroller::before{
+  left:0;
+  background: linear-gradient(90deg, var(--bg-soft), rgba(246,250,251,0));
+}
+.stack-scroller::after{
+  right:0;
+  background: linear-gradient(270deg, var(--bg-soft), rgba(246,250,251,0));
+}
+
+/* Piste qui défile en continu — on duplique les logos dans le HTML */
+.stack-track{
+  display:flex; align-items:center; gap:28px;
+  list-style:none; margin:0; padding:0 14px;
+  width:max-content;
+  animation: stack-marquee 28s linear infinite;
+}
+@keyframes stack-marquee{
+  from{ transform: translateX(0); }
+  to{   transform: translateX(-50%); } /* la moitié car on a 2 séries identiques */
+}
+
+/* Logos : taille normalisée, rendu propre sur fond clair */
+.stack-logo{
+  height: 38px; width:auto; display:block;
+  filter: saturate(0.95) contrast(1.05);
+}
+
+/* Pause au survol (utile en desktop) */
+.stack-scroller:hover .stack-track{ animation-play-state: paused; }
+
+/* Accessibilité : pas d’anim si l’utilisateur préfère réduire les mouvements */
+@media (prefers-reduced-motion: reduce){
+  .stack-track{ animation: none; transform: none; }
+}
+
+/* Mobile : un peu plus compact, vitesse adaptée */
+@media (max-width:768px){
+  .stack-track{ gap:18px; animation-duration: 24s; }
+  .stack-logo{ height: 28px; }
+  .stack-scroller{ margin-top: var(--s); }
+}
+
+/* ===== Section Stack : grille 2 colonnes robuste ===== */
+#stack .split{
+  display: grid;
+  grid-template-columns: minmax(420px,1fr) minmax(280px,360px);
+  align-items: center;
+  gap: var(--xl);
+  max-width: 1120px;
+  margin-inline: 0;
+  justify-content: initial;
+}
+
+/* IMPORTANT : autoriser le rétrécissement pour éviter les débordements */
+#stack .text,
+#stack .visual{ min-width: 0; }
+
+#stack .text .liste-carre{ margin-left: 0; }
+#stack .stack-scroller{ width: 100%; margin-top: var(--m); }
+
+#stack .visual{ justify-self: end; min-width: 280px; }
+#stack .visual img{ width: 100%; max-width: 340px; height: auto; display: block; }
+
+
+@media (max-width:768px){
+  #stack .split{
+    grid-template-columns: 1fr;
+    row-gap: var(--m);
+    justify-items: stretch;     /* la bande prend bien toute la largeur */
+  }
+  #stack .text{ order: 1; }
+  #stack .visual{
+    order: 2;
+    justify-self: center;       /* on centre l’illustration */
+    min-width: 0;
+    margin-top: var(--m);
+  }
+  #stack .visual img{
+    width: clamp(180px, 70vw, 240px);
+    max-width: 100%;
+  }
+
+  /* Bande défilante : compact & fluide en mobile */
+  .stack-scroller{ margin-top: var(--s); padding-block: 8px; }
+  .stack-scroller::before,
+  .stack-scroller::after{ width: 24px; }   /* fondu moins large */
+  .stack-track{ gap: 14px; animation-duration: 22s; }
+  .stack-logo{ height: 22px; }
+}
