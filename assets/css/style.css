@@ -386,46 +386,6 @@ small{opacity:.85}
   .stack-scroller{ margin-top: var(--s); }
 }
 
-/* ===== Section Stack : grille 2 colonnes robuste ===== */
-#stack .split{
-  display: grid;
-  grid-template-columns: minmax(420px,1fr) minmax(280px,360px);
-  align-items: center;
-  gap: var(--xl);
-  max-width: 1120px;
-  margin-inline: 0;
-  justify-content: initial;
-}
-
-/* IMPORTANT : autoriser le rétrécissement pour éviter les débordements */
-#stack .text,
-#stack .visual{ min-width: 0; }
-
-#stack .text .liste-carre{ margin-left: 0; }
-#stack .stack-scroller{ width: 100%; margin-top: var(--m); }
-
-#stack .visual{ justify-self: end; min-width: 280px; }
-#stack .visual img{ width: 100%; max-width: 340px; height: auto; display: block; }
-
-
-@media (max-width:768px){
-  #stack .split{
-    grid-template-columns: 1fr;
-    row-gap: var(--m);
-    justify-items: stretch;     /* la bande prend bien toute la largeur */
-  }
-  #stack .text{ order: 1; }
-  #stack .visual{
-    order: 2;
-    justify-self: center;       /* on centre l’illustration */
-    min-width: 0;
-    margin-top: var(--m);
-  }
-  #stack .visual img{
-    width: clamp(180px, 70vw, 240px);
-    max-width: 100%;
-  }
-
   /* Bande défilante : compact & fluide en mobile */
   .stack-scroller{ margin-top: var(--s); padding-block: 8px; }
   .stack-scroller::before,
