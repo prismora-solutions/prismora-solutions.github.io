@@ -196,7 +196,7 @@ a:hover{text-decoration:underline}
 .method-grid{
   display:grid;
   gap:var(--l);
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   justify-content: center;   /* centre les colonnes si la ligne n’est pas pleine */
 }
 
