@@ -387,9 +387,9 @@ small{opacity:.85}
 }
 
   /* Bande défilante : compact & fluide en mobile */
-  .stack-scroller{ margin-top: var(--s); padding-block: 8px; }
+  /*.stack-scroller{ margin-top: var(--s); padding-block: 8px; }
   .stack-scroller::before,
-  .stack-scroller::after{ width: 24px; }   /* fondu moins large */
+  .stack-scroller::after{ width: 24px; }
   .stack-track{ gap: 14px; animation-duration: 22s; }
   .stack-logo{ height: 22px; }
-}
+}*/
