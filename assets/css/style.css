@@ -401,3 +401,22 @@ small{opacity:.85}
   .stack-track{ gap: 14px; animation-duration: 22s; }
   .stack-logo{ height: 22px; }
 }*/
+
+/* Mobile STACK : forcer le texte en 1, le bandeau en 2 */
+@media (max-width:900px){
+  .section-method .hero-split{
+    display:grid;                 /* on garde la grille */
+    grid-template-columns:1fr;
+    grid-auto-flow:row;
+  }
+  .section-method .hero-split .hero-text{ 
+    grid-row:1;                   /* au-dessus */
+    order:1;                      /* fallback si .hero-split passe en flex ailleurs */
+  }
+  .section-method .hero-split .stack-scroller{
+    grid-row:2;                   /* en dessous du <p> */
+    order:2; 
+    margin-top: var(--m);         /* petit espace sous le texte */
+  }
+}
+
