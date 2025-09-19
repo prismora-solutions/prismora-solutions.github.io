@@ -138,6 +138,7 @@
           <img src="assets/img/photos/stack2.png" alt="stack">
         </div>
       </div>
+    <br>
     <div class="container">
       <div class="method-grid">
        <article class="card method-card">
@@ -241,77 +242,76 @@
       } else { brandLineSequence(); }
     })();
   </script>
-
-    /* ===== Stack auto-loader (GitHub Contents API, sans noms en dur) ===== */
-    <script>
-    (function () {
-      const scroller = document.querySelector('.stack-scroller[data-dir]');
-      if (!scroller) return;
-    
-      const owner = scroller.dataset.ghOwner || '';
-      const repo  = scroller.dataset.ghRepo  || '';
-      const dir   = scroller.dataset.dir || 'assets/img/stack';
-      const speed = Number(scroller.dataset.speed || 28);
-      const api   = `https://api.github.com/repos/${owner}/${repo}/contents/${dir}`;
-      const track = scroller.querySelector('#stack-track');
-      const exts  = /\.(png|jpe?g|svg|webp)$/i;
-    
-      function niceAlt(name){
-        return name.replace(exts,'').replace(/[-_]+/g,' ').trim().replace(/^./, c => c.toUpperCase());
+  <script>
+  /* ===== Stack auto-loader (GitHub Contents API, sans noms en dur) ===== */
+  (function () {
+    const scroller = document.querySelector('.stack-scroller[data-dir]');
+    if (!scroller) return;
+  
+    const owner = scroller.dataset.ghOwner || '';
+    const repo  = scroller.dataset.ghRepo  || '';
+    const dir   = scroller.dataset.dir || 'assets/img/stack';
+    const speed = Number(scroller.dataset.speed || 28);
+    const api   = `https://api.github.com/repos/${owner}/${repo}/contents/${dir}`;
+    const track = scroller.querySelector('#stack-track');
+    const exts  = /\.(png|jpe?g|svg|webp)$/i;
+  
+    function niceAlt(name){
+      return name.replace(exts,'').replace(/[-_]+/g,' ').trim().replace(/^./, c => c.toUpperCase());
+    }
+    function addLogos(urls){
+      // 1re série
+      urls.forEach(u => {
+        const li  = document.createElement('li');
+        const img = document.createElement('img');
+        img.className = 'stack-logo';
+        img.loading   = 'lazy';
+        img.src       = u.download_url || u;           // API → download_url ; au cas où
+        img.alt       = niceAlt((u.name || u).split('/').pop());
+        li.appendChild(img);
+        track.appendChild(li);
+      });
+      // 2e série (pour la boucle infinie) — alt vides
+      urls.forEach(u => {
+        const li  = document.createElement('li');
+        const img = document.createElement('img');
+        img.className = 'stack-logo';
+        img.loading   = 'lazy';
+        img.src       = u.download_url || u;
+        img.alt       = '';
+        li.appendChild(img);
+        track.appendChild(li);
+      });
+  
+      // Vitesse personnalisée
+      track.style.animationDuration = speed + 's';
+  
+      // S’il y a trop peu d’images, on coupe l’anim
+      if (urls.length < 3) track.style.animation = 'none';
+    }
+  
+    async function load(){
+      try{
+        const res = await fetch(api, { headers: { 'Accept': 'application/vnd.github+json' }});
+        if (!res.ok) throw new Error('GitHub API ' + res.status);
+        const data = await res.json();
+  
+        const files = (Array.isArray(data) ? data : [])
+          .filter(f => f.type === 'file' && exts.test(f.name));
+  
+        if (!files.length) { scroller.hidden = true; return; }
+  
+        addLogos(files);
+      }catch(e){
+        console.warn('Stack loader: API indisponible → masquer la bande', e);
+        scroller.hidden = true; // pas d’images → on cache proprement
       }
-      function addLogos(urls){
-        // 1re série
-        urls.forEach(u => {
-          const li  = document.createElement('li');
-          const img = document.createElement('img');
-          img.className = 'stack-logo';
-          img.loading   = 'lazy';
-          img.src       = u.download_url || u;           // API → download_url ; au cas où
-          img.alt       = niceAlt((u.name || u).split('/').pop());
-          li.appendChild(img);
-          track.appendChild(li);
-        });
-        // 2e série (pour la boucle infinie) — alt vides
-        urls.forEach(u => {
-          const li  = document.createElement('li');
-          const img = document.createElement('img');
-          img.className = 'stack-logo';
-          img.loading   = 'lazy';
-          img.src       = u.download_url || u;
-          img.alt       = '';
-          li.appendChild(img);
-          track.appendChild(li);
-        });
-    
-        // Vitesse personnalisée
-        track.style.animationDuration = speed + 's';
-    
-        // S’il y a trop peu d’images, on coupe l’anim
-        if (urls.length < 3) track.style.animation = 'none';
-      }
-    
-      async function load(){
-        try{
-          const res = await fetch(api, { headers: { 'Accept': 'application/vnd.github+json' }});
-          if (!res.ok) throw new Error('GitHub API ' + res.status);
-          const data = await res.json();
-    
-          const files = (Array.isArray(data) ? data : [])
-            .filter(f => f.type === 'file' && exts.test(f.name));
-    
-          if (!files.length) { scroller.hidden = true; return; }
-    
-          addLogos(files);
-        }catch(e){
-          console.warn('Stack loader: API indisponible → masquer la bande', e);
-          scroller.hidden = true; // pas d’images → on cache proprement
-        }
-      }
-    
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', load);
-      } else { load(); }
-    })();
-    </script>
+    }
+  
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', load);
+    } else { load(); }
+  })();
+  </script>
 </body>
 </html>
