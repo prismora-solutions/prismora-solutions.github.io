@@ -335,7 +335,7 @@ small{opacity:.85}
   border-radius: 12px;
   background: var(--bg-soft);
   margin-top: var(--m);
-  padding-block: 10px;
+  padding-block: 20px;
 }
 
 /* Effet fondu sur les bords (lisible, discret) */
