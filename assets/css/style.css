@@ -184,14 +184,22 @@ a:hover{text-decoration:underline}
 .split .visual img{width:250px; height:auto; display:block; max-width:520px; margin-inline:auto}
 
 /* ============ 7) Méthode condensée (cartes) ============ */
-.method-grid{
+/* .method-grid{
   display:grid;
   grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: var(--l);
   max-width: 1120px;
   margin-inline: auto;
-  align-items: stretch; /* assure des hauteurs homogènes sur la ligne */
+  align-items: stretch; /* assure des hauteurs homogènes sur la ligne 
+}*/
+
+.method-grid{
+  display:grid;
+  gap:var(--l);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px)); /* largeur min/max d’une carte */
+  justify-content: center;   /* centre les colonnes si la ligne n’est pas pleine */
 }
+
 
 .method-card{
   display:flex;
