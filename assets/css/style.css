@@ -420,3 +420,15 @@ small{opacity:.85}
   }
 }
 
+/* Mobile : les grilles .grid-2 passent en une seule colonne */
+@media (max-width: 768px){
+  .grid-2{
+    grid-template-columns: 1fr;   /* 1 colonne plein écran */
+  }
+  /* Optionnel : petit confort visuel en mobile */
+  .grid{
+    gap: var(--m);
+  }
+}
+
+
