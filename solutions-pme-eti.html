@@ -1,11 +1,11 @@
-<!-- solutions-pme-eti.html — Prismora Solutions (V2) -->
+<!-- solutions-pme-eti.html — Prismora Solutions  -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>Solutions PME & ETI — Prismora Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="PME & ETI : KPIs partagés, dashboards utiles, automatisations et PMO data. Audit flash, référentiel KPI, dataviz, pipelines & gouvernance." />
+  <meta name="description" content="PME & ETI : KPIs partagés, dashboards inter-équipes, pipelines automatisés, gouvernance et PMO data. Diagnostic, dataviz, intégrations SI, sécurité/SSO, TMA & évolutions." />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAV (mêmes classes/structure que TPE) -->
   <nav class="nav">
     <div class="container wrap">
       <div class="brand">
@@ -37,84 +37,179 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (structure identique à la page TPE) -->
   <header class="hero">
     <div class="container hero-split">
       <div class="hero-text">
-        <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Solutions PME & ETI</h1>
+        <h1 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Solutions PME & ETI
+        </h1>
         <p class="sub-lead">
-          Passer de fichiers multiples à des <strong>KPIs partagés et à jour</strong>.
-          Parcours type : audit flash, référentiel KPI, dashboards utiles, <strong>automatisations</strong>, puis PMO data si le projet se structure.
+          <strong style="font-size: 1.2em;">Unifier vos chiffres, fiabiliser la donnée et accélérer la décision.</strong><br><br>
+          Vous gérez plusieurs équipes, outils et fichiers. Les définitions varient, les chiffres diffèrent selon les services,
+          et la mise à jour manuelle prend du temps. Résultat : arbitrages lents, manque de visibilité partagée, risques
+          de contre-performances.<br><br>
+          <strong>Prismora Solutions</strong> met en place un <strong>socle data commun</strong> (référentiel KPI, collecte & modélisation,
+          dashboards inter-équipes, automatisations et sécurité/SSO) — pour <strong>décider plus vite avec les mêmes chiffres</strong>.
         </p>
-        <div class="cta-row">
-          <a class="cta" href="contact.html">Décrire mon besoin</a>
-          <a class="cta cta--ghost" href="index.html#profils">Choisir un autre profil</a>
-        </div>
       </div>
       <div class="hero-visual">
-        <img src="assets/img/photos/solutions.png" alt="Illustration PME & ETI — KPIs partagés & automatisations">
+        <img
+          src="assets/img/photos/solutions.png"
+          alt="Illustration PME & ETI — socle data, KPIs partagés, automatisations"
+          style="max-width: 320px !important; width: 100%; height: auto;"
+        >
       </div>
     </div>
   </header>
 
-  <!-- PARCOURS -->
+  <!-- PARCOURS / MISE EN PLACE (même bloc que TPE, ton adapté PME/ETI) -->
   <section class="section">
-    <div class="container">
-      <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Parcours recommandé</h1>
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Mise en place</h1>
+        <div class="hero-text">
+          <p class="sub-lead">
+            <strong>Objectif :</strong> une donnée fiable, partagée et actionnable à l’échelle de l’entreprise.<br><br>
+            <strong>Parcours type :</strong> diagnostic stratégique, référentiel KPI & data catalog, collecte & modélisation
+            (datawarehouse léger), dataviz multi-équipes, <strong>orchestration des mises à jour</strong> et sécurité/SSO.
+            Selon votre contexte, nous ajoutons le <strong>PMO data</strong>, la <strong>TMA</strong> et les <strong>intégrations SI</strong>.
+          </p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="contact.html">Échanger sur votre contexte</a>
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+      </div>
+    </div>
 
+    <!-- Cartes : même grille, contenus renforcés pour PME/ETI -->
+    <div class="container">
       <div class="grid grid-2 cards-lift">
-        <!-- Diagnostic initial -->
+
+        <!-- Diagnostic stratégique -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/diagnostic.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Diagnostic initial</h3>
-            <p>Cartographier l’existant et prioriser.</p>
+            <h3>Diagnostic stratégique</h3>
+            <p>Cartographier process, sources et enjeux métiers.</p>
             <ul class="liste-carre">
-              <li>Process & sources</li>
-              <li>Risques & opportunités</li>
-              <li>Plan d’attaque court</li>
+              <li>Périmètre, risques & quick wins</li>
+              <li>Roadmap priorisée 90 jours</li>
+              <li>Feuille de route socle data</li>
             </ul>
           </div>
         </article>
 
-        <!-- KPIs & gouvernance -->
+        <!-- Référentiel KPI & Data Catalog -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/kpi.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>KPIs & gouvernance</h3>
-            <p>Mêmes définitions pour tous.</p>
+            <h3>Référentiel KPI & Data Catalog</h3>
+            <p>Mêmes définitions, traçabilité et ownership.</p>
             <ul class="liste-carre">
-              <li>Fiches KPI simples</li>
-              <li>Référentiel partagé</li>
-              <li>Comparabilité</li>
+              <li>Fiches KPI normalisées</li>
+              <li>Glossaire & responsabilités</li>
+              <li>Catalogue des données clés</li>
             </ul>
           </div>
         </article>
 
-        <!-- Tableaux de bord & dataviz -->
+        <!-- Collecte & Intégration (ETL/ELT) -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/collecte.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Collecte & Intégration</h3>
+            <p>Rassembler vos sources dans une base fiable.</p>
+            <ul class="liste-carre">
+              <li>Connecteurs ERP/CRM & fichiers</li>
+              <li>Historisation & logs</li>
+              <li>Qualité & contrôles d’entrée</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Modélisation & Datawarehouse léger -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/modelisation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Modélisation & DWH léger</h3>
+            <p>Schémas clairs pour des questions rapides.</p>
+            <ul class="liste-carre">
+              <li>Modèle métier (étoile/galaxie)</li>
+              <li>Contrôles & règles de gestion</li>
+              <li>Performance & maintenabilité</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Dataviz multi-équipes -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Tableaux de bord & dataviz</h3>
-            <p>Vues claires orientées action.</p>
+            <h3>Tableaux de bord inter-équipes</h3>
+            <p>Vues direction, commerce, ops & finance.</p>
             <ul class="liste-carre">
-              <li>Dashboards lisibles</li>
-              <li>Filtres & légendes</li>
-              <li>Guide d’usage</li>
+              <li>Parcours, filtres & métadonnées</li>
+              <li>Storytelling décisionnel</li>
+              <li>Guide d’usage & bonnes pratiques</li>
             </ul>
           </div>
         </article>
 
-        <!-- Automatisation & pipelines -->
+        <!-- Orchestration & Automatisation -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Automatisation & pipelines</h3>
-            <p>Données à jour sans reporting manuel.</p>
+            <h3>Orchestration & automatisation</h3>
+            <p>Données à jour, alertes & SLA.</p>
             <ul class="liste-carre">
-              <li>Imports programmés</li>
-              <li>Alertes</li>
-              <li>Traçabilité</li>
+              <li>Planification & monitoring</li>
+              <li>Alerte sur incident/retard</li>
+              <li>Traçabilité bout-à-bout</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Sécurité, SSO & conformité -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/rgpd.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Sécurité, SSO & conformité</h3>
+            <p>Accès maîtrisés, RGPD et partage contrôlé.</p>
+            <ul class="liste-carre">
+              <li>Rôles, permissions, SSO</li>
+              <li>Masquage, règles d’accès</li>
+              <li>Registre & politiques</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Intégrations & Diffusion (SI) -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/integration.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Intégrations & diffusion</h3>
+            <p>Faire circuler la donnée vers les équipes.</p>
+            <ul class="liste-carre">
+              <li>Exports & API internes</li>
+              <li>Portails & hubs data</li>
+              <li>Accès self-service guidé</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- TMA & évolutions -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/evolution.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>TMA & évolutions</h3>
+            <p>Corrections, petites features et suivi.</p>
+            <ul class="liste-carre">
+              <li>Backlog & priorisation</li>
+              <li>Historique des mises à jour</li>
+              <li>Amélioration continue</li>
             </ul>
           </div>
         </article>
@@ -127,25 +222,113 @@
             <p>Cadre, jalons, reporting d’avancement.</p>
             <ul class="liste-carre">
               <li>Plan de jalons</li>
-              <li>Suivi visuel</li>
-              <li>CR courts</li>
+              <li>Comités & CR courts</li>
+              <li>Tableau de suivi visuel</li>
             </ul>
           </div>
         </article>
+
+        <!-- Adoption & formation -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/formation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Adoption & formation</h3>
+            <p>Acculturation des équipes & transferts.</p>
+            <ul class="liste-carre">
+              <li>Parcours d’onboarding</li>
+              <li>Kits d’usage & fiches KPI</li>
+              <li>Sessions ciblées</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Data lead fractionné -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/datalead.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Data lead fractionné</h3>
+            <p>Cap, priorisation & gouvernance quelques jours/mois.</p>
+            <ul class="liste-carre">
+              <li>Vision & roadmap pragmatique</li>
+              <li>Arbitrages & rituels</li>
+              <li>Coaching produit & data</li>
+            </ul>
+          </div>
+        </article>
+
       </div>
 
       <div class="cta-row" style="margin-top: var(--m);">
-        <a class="cta" href="contact.html">Parler de mon contexte</a>
+        <a class="cta" href="contact.html">Décrire votre besoin</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- EXEMPLES (structure identique à TPE, visuels anonymisés) -->
+  <section class="section">
+    <div class="container">
+      <h1 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Exemples concrets
+      </h1>
+      <p class="sub-lead">
+        Quelques aperçus anonymisés de dispositifs déployés en PME & ETI : un socle commun,
+        des vues par direction, et des alertes utiles pour agir vite.<br><br>
+        Chaque mise en œuvre est adaptée à votre SI (ERP/CRM, fichiers, exports), à vos enjeux et à votre rythme.
+      </p>
+
+      <div class="grid grid-2 cards-lift" style="margin-top: var(--m);">
+        <!-- Exemple 1 -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/exemple-pme1.png" alt="Capture anonymisée : cockpit direction" aria-hidden="true">
+          <div class="card-body">
+            <h3>Cockpit Direction</h3>
+            <p>CA, marge, cash & atterrissage mensuel consolidés multi-entités.</p>
+          </div>
+        </article>
+
+        <!-- Exemple 2 -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/exemple-pme2.png" alt="Capture anonymisée : pipeline commercial" aria-hidden="true">
+          <div class="card-body">
+            <h3>Pipeline Commercial</h3>
+            <p>Suivi du pipe, conversion, cycle de vente et forecast.</p>
+          </div>
+        </article>
+
+        <!-- Exemple 3 -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/exemple-pme3.png" alt="Capture anonymisée : qualité de données" aria-hidden="true">
+          <div class="card-body">
+            <h3>Qualité de données</h3>
+            <p>Contrôles, alertes et traçabilité pour fiabiliser les chiffres.</p>
+          </div>
+        </article>
+
+        <!-- Exemple 4 -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/exemple-pme4.png" alt="Capture anonymisée : opérations & stocks" aria-hidden="true">
+          <div class="card-body">
+            <h3>Ops & Stocks</h3>
+            <p>Rotation, ruptures, couverture & alertes opérationnelles.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="sub-lead" style="margin-top: var(--m);">
+        L’objectif : <strong>mêmes chiffres pour tous</strong>, une <strong>lecture claire</strong> et une
+        <strong>mise à jour automatisée</strong> qui sécurise vos décisions.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA FINAL (même pattern que TPE) -->
   <section class="section contact-band">
     <div class="container contact-box">
-      <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Parlons de votre besoin</h1>
-      <p class="lead">Un échange court suffit pour cadrer le prochain pas.</p>
-      <div class="cta-row"><a class="cta" href="contact.html">Nous contacter</a></div>
+      <div class="cta-row">
+        <a class="cta" href="contact.html">Échanger sur votre contexte</a>
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+      </div>
     </div>
   </section>
 
@@ -153,6 +336,7 @@
     <div class="container"><small>© Prismora Solutions — Bordeaux & Remote • GitHub Pages</small></div>
   </footer>
 
+  <!-- Burger menu (identique TPE) -->
   <script>
     (function(){
       const burger = document.querySelector('.burger');
