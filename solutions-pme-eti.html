@@ -271,37 +271,35 @@
       </h1>
   
       <p class="sub-lead">
-        Deux formats pour se projeter rapidement :<br>
-        • un <strong>cas réel anonymisé</strong> (garage, Streamlit) — vues CA, catégories, meilleurs articles, carte clients ;<br>
-        • une <strong>démo courte</strong> (retail, Power&nbsp;BI) — cockpit direction & commerce.
+        Deux façons de se projeter rapidement&nbsp;: un <strong>cas réel anonymisé</strong> (garage, Streamlit) et une <strong>démo vidéo courte</strong> (retail, Power&nbsp;BI).
       </p>
   
-      <!-- Ligne 1 : 2 cartes principales -->
+      <!-- Ligne 1 : 2 cartes équilibrées -->
       <div class="grid grid-2 cards-lift" style="margin-top: var(--m);">
         <!-- Cas #1 : Garage (Streamlit) -->
         <article class="card card--split">
-          <img class="card-ico" src="assets/img/examples/garage-streamlit/garage-01-ca.png" alt="Capture anonymisée : CA annuel & mensuel (garage)" aria-hidden="true">
+          <img src="assets/img/examples/garage-streamlit/garage-01-ca.png"
+               alt="Capture anonymisée : CA annuel & mensuel (garage)"
+               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
           <div class="card-body">
             <h3>Garage multi-activités (Streamlit)</h3>
-            <p>Pilotage du CA, répartition par catégories, top articles, carte clients. Données anonymisées.</p>
-            <div class="grid grid-2" style="gap: var(--s); margin-top: var(--s);">
-              <img src="assets/img/examples/garage-streamlit/garage-01-ca.png" alt="CA annuel & mensuel" style="border-radius:12px">
-              <img src="assets/img/examples/garage-streamlit/garage-02-categories.png" alt="Répartition par catégories" style="border-radius:12px">
-              <img src="assets/img/examples/garage-streamlit/garage-03-top20.png" alt="Top 20 articles" style="border-radius:12px">
-              <img src="assets/img/examples/garage-streamlit/garage-04-carte.png" alt="Carte clients & top communes" style="border-radius:12px">
-            </div>
+            <p>Pilotage du CA, répartition par catégories, top articles et carte clients. Données anonymisées.</p>
             <p style="margin-top: var(--s);">
-              <a class="cta cta--ghost" href="assets/img/examples/garage-streamlit/garage-01-ca.png" target="_blank" rel="noopener">Voir le cas complet (6 écrans)</a>
+              <a class="cta cta--ghost" href="assets/img/examples/garage-streamlit/garage-01-ca.png" target="_blank" rel="noopener">
+                Voir la galerie (6 écrans)
+              </a>
             </p>
           </div>
         </article>
   
         <!-- Cas #2 : Réseau retail (Power BI) -->
         <article class="card card--split">
-          <img class="card-ico" src="assets/img/examples/powerbi/retail-thumb.jpg" alt="Miniature vidéo : cockpit direction & commerce" aria-hidden="true">
+          <img src="assets/img/examples/powerbi/retail-thumb.jpg"
+               alt="Miniature vidéo : cockpit direction & commerce"
+               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
           <div class="card-body">
             <h3>Réseau retail (Power&nbsp;BI)</h3>
-            <p>Cockpit direction & commerce : CA, marge, pipeline, forecast. Démo vidéo (≈&nbsp;2&nbsp;min).</p>
+            <p>Cockpit direction & commerce : CA, marge, pipeline, forecast. Démo vidéo (~2&nbsp;min).</p>
             <p style="margin-top: var(--s);">
               <a class="cta cta--ghost" href="https://exemple-lien-video" target="_blank" rel="noopener">Voir la démo</a>
             </p>
@@ -309,27 +307,40 @@
         </article>
       </div>
   
-      <!-- Légendes courtes pour le cas Garage -->
-      <div class="subtle" style="margin-top: var(--m);">
-        <ul class="liste-carre">
-          <li><strong>CA annuel & mensuel</strong> — progression & saisonnalité</li>
-          <li><strong>Catégories</strong> — top 5 & poids relatif</li>
-          <li><strong>Top 20 articles</strong> — quantités, CA, marge</li>
-          <li><strong>Carte clients</strong> — top communes & indicateurs clés</li>
-          <li><strong>Focus pneus</strong> — mix produits & marges (écran additionnel)</li>
-          <li><strong>Synthèse ventes & stock</strong> — historique par référence (écran additionnel)</li>
-        </ul>
+      <!-- Bande de vignettes pour le cas Garage (claires, scannables) -->
+      <div class="grid grid-4" style="gap: var(--s); margin-top: var(--m);">
+        <a href="assets/img/examples/garage-streamlit/garage-01-ca.png" target="_blank" rel="noopener" title="CA annuel & mensuel">
+          <img src="assets/img/examples/garage-streamlit/garage-01-ca.png" alt="CA annuel & mensuel"
+               style="width:100%;height:auto;border-radius:12px;" />
+        </a>
+        <a href="assets/img/examples/garage-streamlit/garage-02-categories.png" target="_blank" rel="noopener" title="Répartition par catégories">
+          <img src="assets/img/examples/garage-streamlit/garage-02-categories.png" alt="Répartition par catégories"
+               style="width:100%;height:auto;border-radius:12px;" />
+        </a>
+        <a href="assets/img/examples/garage-streamlit/garage-03-top20.png" target="_blank" rel="noopener" title="Top 20 articles">
+          <img src="assets/img/examples/garage-streamlit/garage-03-top20.png" alt="Top 20 articles"
+               style="width:100%;height:auto;border-radius:12px;" />
+        </a>
+        <a href="assets/img/examples/garage-streamlit/garage-04-carte.png" target="_blank" rel="noopener" title="Carte clients">
+          <img src="assets/img/examples/garage-streamlit/garage-04-carte.png" alt="Carte clients"
+               style="width:100%;height:auto;border-radius:12px;" />
+        </a>
       </div>
+  
+      <!-- Résumé très court (évite la redite) -->
+      <ul class="liste-carre" style="margin-top: var(--m);">
+        <li><strong>CA & saisonnalité</strong> • <strong>Catégories</strong> • <strong>Top articles</strong> • <strong>Carte clients</strong></li>
+      </ul>
   
       <!-- Conclusion / ouverture -->
       <p class="sub-lead" style="margin-top: var(--m);">
-        L’objectif : <strong>les mêmes chiffres pour tous</strong>, une <strong>lecture claire</strong> et une
-        <strong>mise à jour simple</strong> qui sécurise les décisions.
+        Objectif : <strong>les mêmes chiffres pour tous</strong>, une <strong>lecture claire</strong> et une <strong>mise à jour simple</strong> qui sécurise les décisions.
         <br><br>
-        Envie d’un aperçu adapté à votre activité&nbsp;? Partagez le contexte et les priorités&nbsp;: un premier échange suffit pour cadrer les étapes utiles.
+        Envie d’un aperçu proche de votre réalité&nbsp;? Décrire le contexte et les priorités suffit pour cadrer les prochaines étapes.
       </p>
     </div>
-  </section>
+  </section>  
+
 
 
   <!-- CTA FINAL (même pattern que TPE) -->
