@@ -431,4 +431,26 @@ small{opacity:.85}
   }
 }
 
+/* === Lightbox (galerie) === */
+.lightbox{
+  position:fixed; inset:0; background:rgba(0,0,0,.8);
+  display:none; align-items:center; justify-content:center;
+  z-index:9999; padding:2rem;
+}
+.lightbox.open{ display:flex; }
+.lb-viewport{ max-width:92vw; max-height:86vh; text-align:center; }
+#lb-image{ max-width:92vw; max-height:80vh; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,.5); }
+#lb-caption{ color:#fff; margin-top:.5rem; opacity:.9; }
+
+.lb-close,.lb-prev,.lb-next{
+  position:fixed; top:20px; background:rgba(255,255,255,.12); color:#fff;
+  border:0; font-size:28px; line-height:1; border-radius:10px;
+  padding:.4rem .7rem; cursor:pointer; backdrop-filter: blur(4px);
+}
+.lb-close{ right:20px; }
+.lb-prev{ left:20px; top:50%; transform:translateY(-50%); }
+.lb-next{ right:20px; top:50%; transform:translateY(-50%); }
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{ background:rgba(255,255,255,.2); }
+
+
 
