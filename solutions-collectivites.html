@@ -1,20 +1,20 @@
-<!-- solutions-collectivites.html — Prismora Solutions (V2) -->
+<!-- solutions-collectivites.html — Prismora Solutions  -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>Solutions Collectivités — Prismora Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Collectivités : suivi budgétaire clair pour élus & services. Diagnostic, tableaux de bord (budget, subventions, projets), référentiel KPI, intégrations & transfert." />
+  <meta name="description" content="PME & ETI : KPIs partagés, dashboards inter-équipes, pipelines automatisés, gouvernance et PMO data. Diagnostic, dataviz, intégrations SI, sécurité/SSO, TMA & évolutions." />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/css/style.css?v=13"/>
+  <link rel="stylesheet" href="assets/css/style.css?v=14"/>
   <meta name="theme-color" content="#0f4c5c" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAV (mêmes classes/structure que TPE) -->
   <nav class="nav">
     <div class="container wrap">
       <div class="brand">
@@ -37,126 +37,331 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (structure identique à la page TPE) -->
   <header class="hero">
     <div class="container hero-split">
       <div class="hero-text">
-        <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Solutions Collectivités</h1>
+        <h1 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Solutions PME & ETI
+        </h1>
         <p class="sub-lead">
-          Un <strong>suivi budgétaire clair</strong> pour les élus & les services. Du cadrage aux tableaux de bord (budget, subventions, projets),
-          avec référentiel KPI, intégrations adaptées et <strong>transfert</strong> pour l’autonomie.
+          <strong style="font-size: 1.2em;">Unifier vos chiffres, fiabiliser vos données et accélérer vos décisions.</strong><br><br>
+          Vous gérez plusieurs équipes, outils et fichiers. Les définitions varient, les chiffres diffèrent selon les services,
+          et la mise à jour manuelle prend du temps. Résultat : arbitrages lents, manque de visibilité partagée, risques
+          de contre-performances.<br><br>
+          <strong>Prismora Solutions</strong> vous accompagne pour donner de la visibilité à votre entreprise, grâce à une approche progressive adaptée à votre structure.<br><br>
+          Découvrez ci-dessous 2 exemples concrets, puis les étapes de mise en oeuvre du projet ajustables à votre activité.
         </p>
-        <div class="cta-row">
-          <a class="cta" href="contact.html">Décrire mon besoin</a>
-          <a class="cta cta--ghost" href="index.html#profils">Choisir un autre profil</a>
-        </div>
       </div>
       <div class="hero-visual">
-        <img src="assets/img/photos/solutions.png" alt="Illustration Collectivités — suivis et tableaux de bord">
+        <img
+          src="assets/img/photos/pme-eti.png"
+          alt="Illustration PME & ETI — socle data, KPIs partagés, automatisations"
+          style="max-width: 280px !important; width: 100%; height: auto;"
+        >
       </div>
     </div>
   </header>
 
-  <!-- PARCOURS -->
+  <!-- EXEMPLES (2 cas concrets : Streamlit + Power BI) -->
   <section class="section">
     <div class="container">
-      <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Parcours recommandé</h1>
+      <h1 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Exemples concrets
+      </h1>
+  
+      <p class="sub-lead"> 
+        Deux <strong>tableaux de bord</strong>, déployés et opérationnels :<br><br>
+        • <strong>Cas réel</strong> (garage, interface Streamlit)&nbsp;: pilotage du CA, répartition par catégories, top articles et carte clients.<br>
+        • <strong>Démo vidéo</strong> (retail, interface Power&nbsp;BI)&nbsp;: cockpit direction &amp; commerce. (CA, Marge nette, Coûts)</p>
+  
+      <!-- Ligne 1 : 2 cartes équilibrées -->
+      <div class="grid grid-2 cards-lift" style="margin-top: var(--m);">
+        <!-- Cas #1 : Garage (Streamlit) -->
+        <article class="card card--split">
+          <img src="assets/img/exemples/garage-01-ca.png"
+               alt="Capture anonymisée : CA annuel & mensuel (garage)"
+               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
+          <div class="card-body">
+            <h3>Garage multi-activités (Streamlit)</h3>
+            <p>Pilotage du CA, répartition par catégories, top articles et carte clients.</p>
+            <p style="margin-top: var(--s);">
+              <a class="cta cta--ghost" href="#"
+                 data-open-gallery="garage"
+                 aria-haspopup="dialog">
+                Voir la galerie
+              </a>
+            </p>
+          </div>
+        </article>
+  
+        <!-- Cas #2 : Réseau retail (Power BI) -->
+        <article class="card card--split">
+          <img src="assets/img/exemples/retail.png"
+               alt="Miniature vidéo : cockpit direction & commerce"
+               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
+          <div class="card-body">
+            <h3>Réseau retail (Power&nbsp;BI)</h3>
+            <p>Cockpit direction & commerce : Démo vidéo</p>
+            <p style="margin-top: var(--s);">
+              <a class="cta cta--ghost" href="assets/video/retail360.mp4"
+                data-open-video aria-haspopup="dialog">Voir la démo</a>
+            </p>
+          </div>
+        </article>
+      </div>
+  
+      <!-- Bande de vignettes pour le cas Garage (claires, scannables) -->
+      <div class="gallery-sources">
+        <div class="grid grid-4" style="gap: var(--s); margin-top: var(--m);">
+          <a href="assets/img/exemples/garage-01-ca.png" data-gallery="garage" title="CA annuel & mensuel">
+            <img src="assets/img/exemples/garage-01-ca.png" alt="CA annuel & mensuel"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-02-categories.png" data-gallery="garage" title="Répartition par catégories">
+            <img src="assets/img/exemples/garage-02-categories.png" alt="Répartition par catégories"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-03-top20.png" data-gallery="garage" title="Top 20 articles">
+            <img src="assets/img/exemples/garage-03-top20.png" alt="Top 20 articles"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-04-carte.png" data-gallery="garage" title="Carte clients">
+            <img src="assets/img/exemples/garage-04-carte.png" alt="Carte clients"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-05-carte.png" data-gallery="garage" title="Carte clients">
+            <img src="assets/img/exemples/garage-05-carte.png" alt="Carte clients"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-06-carte.png" data-gallery="garage" title="Carte clients">
+            <img src="assets/img/exemples/garage-06-carte.png" alt="Carte clients"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-07-carte.png" data-gallery="garage" title="Carte clients">
+            <img src="assets/img/exemples/garage-07-carte.png" alt="Carte clients"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>  
 
+  <!-- PARCOURS / MISE EN PLACE (même bloc que TPE, ton adapté PME/ETI) -->
+  <section class="section">
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Mise en place</h1>
+        <div class="hero-text">
+          <p class="sub-lead">
+            <strong>Objectif :</strong> mettre en place un socle de données fiable et partagé, 
+            qui serve de base aux décisions de l’entreprise.<br><br>
+            Le parcours avance par étapes simples : compréhension des besoins, structuration des chiffres, 
+            définition des bons indicateurs et mise en visibilité dans des tableaux de bord adaptés 
+            à chaque équipe.<br><br>
+            Le dispositif est évolutif et s’adapte à chaque contexte : outils existants, 
+            priorités et moyens. L’ambition est de choisir la solution la plus pertinente 
+            et de faire évoluer progressivement les usages, en gardant la maîtrise, 
+            sans complexité inutile.
+          </p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="contact.html">Échanger sur votre projet</a>
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+      </div>
+    </div>
+
+    <!-- Cartes : même grille, contenus renforcés pour PME/ETI -->
+    <div class="container">
+      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Poser les bases</h2>
       <div class="grid grid-2 cards-lift">
-        <!-- Diagnostic initial -->
+        <!-- Diagnostic stratégique → Diagnostic éclair (1–2 jours) -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/diagnostic.png" alt="" aria-hidden="true">
           <div class="card-body">
             <h3>Diagnostic initial</h3>
-            <p>Comprendre les besoins & le contexte.</p>
+            <p>Comprendre vos chiffres et cibler les actions à mener.</p>
             <ul class="liste-carre">
-              <li>Cartographie des données</li>
-              <li>Priorisation</li>
-              <li>Plan court</li>
+              <li>Recueil des besoins et des priorités</li>
+              <li>Inventaire des sources de données existantes</li>
+              <li>Plan d’actions simple et partagé</li>
             </ul>
           </div>
         </article>
-
-        <!-- Tableaux de bord & dataviz -->
+        <!-- Essai concret -->
         <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
+          <img class="card-ico" src="assets/img/photos/essai-concret.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Tableaux de bord & dataviz</h3>
-            <p>Budget, subventions, projets (vue claire).</p>
+            <h3>Étude de l’environnement logiciel</h3>
+            <p>Choix de l'outil adapté</p>
             <ul class="liste-carre">
-              <li>Vues lisibles</li>
-              <li>Filtres pertinents</li>
-              <li>Guide d’usage</li>
+              <li>Analyse de l’existant (Logiciels métiers, ERP, Office, etc.)</li>
+              <li>Contraintes & budget (licences, compétences internes)</li>
+              <li>Recommandation outillée (Power BI, Looker, Solution OpenSource)</li>
             </ul>
           </div>
         </article>
+      </div>
 
-        <!-- KPIs & gouvernance -->
+      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Données fiables</h2>
+      <div class="grid grid-2 cards-lift"> 
+        <!-- Modélisation & qualité -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/modelisation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Modélisation & qualité</h3>
+            <p>Structurer vos données et sécuriser les calculs.</p>
+            <ul class="liste-carre">
+              <li>Modèle métier clair (ventes, clients, stocks)</li>
+              <li>Règles de calcul documentées (CA net, marge, délais)</li>
+              <li>Contrôles de cohérence (doublons, formats, manquants)</li>
+            </ul>
+          </div>
+        </article>
+        
+        <!-- Automatisation légère -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Automatisation</h3>
+            <p>Actualiser vos chiffres sans manipulations répétitives.</p>
+            <ul class="liste-carre">
+              <li>Imports planifiés depuis vos sources</li>
+              <li>Vérifications automatiques & journal des mises à jour</li>
+              <li>Alerte en cas d’oubli ou d’anomalie</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>KPI & Tableaux de Bord</h2>
+      <div class="grid grid-2 cards-lift">
+        <!-- Référentiel KPI  → KPIs communs & mini-glossaire -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/kpi.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>KPIs & gouvernance</h3>
-            <p>Définitions partagées et comparables.</p>
+            <h3>Indicateurs clés (KPI)</h3>
+            <p>Un socle de KPI partagés, complété par des besoins spécifiques.</p>
             <ul class="liste-carre">
-              <li>Fiches KPI</li>
-              <li>Référentiel commun</li>
-              <li>Qualité des données</li>
+              <li>Indicateurs transverses (CA, marge, stock, etc.)</li>
+              <li>KPIs adaptés à chaque service (commerce, finance, opérations...)</li>
+              <li>Définitions claires et glossaire commun</li>
             </ul>
           </div>
         </article>
+        <!-- Dataviz multi-équipes → Tableaux de bord clairs par équipe -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Tableaux de bord clairs par équipe</h3>
+            <p>Une vue direction, une vue commerce, une vue finance — lisibles.</p>
+            <ul class="liste-carre">
+              <li>Filtres utiles (périodes, agences, familles)</li>
+              <li>Indicateurs et alertes visuelles</li>
+              <li>Export PDF en un clic</li>
+            </ul>
+          </div>
+        </article>
+      </div>
 
-        <!-- Intégrations & diffusion -->
+      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Conformité & intégration</h2>
+      <div class="grid grid-2 cards-lift">
+      <!-- Sécurité, SSO & conformité → RGPD & partages maîtrisés -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/rgpd.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>RGPD & partages maîtrisés</h3>
+            <p>Partager vos données en toute sécurité</p>
+            <ul class="liste-carre">
+              <li>Droits d’accès par service</li>
+              <li>Partages conformes</li>
+              <li>Traçabilité des exports partagés</li>
+            </ul>
+          </div>
+        </article>
+        
+        <!-- Intégrations & diffusion → Connexions multi-outils (simples) -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/integration.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Intégrations & diffusion</h3>
-            <p>Données accessibles aux équipes.</p>
+            <h3>Connexions multi-outils</h3>
+            <p>Relier vos outils sans tout refaire.</p>
             <ul class="liste-carre">
-              <li>Accès centralisé</li>
-              <li>Exports réutilisables</li>
-              <li>Partage simplifié</li>
+              <li>Exports comptables/CRM/point de vente</li>
+              <li>Liaisons légères (Power Query, Google Sheets, CSV)</li>
+              <li>Portail d’accès basique (liens & notices)</li>
             </ul>
           </div>
         </article>
+      </div>
 
-        <!-- Formation & transfert -->
+      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Adoption & Suivi</h2>
+      <div class="grid grid-2 cards-lift">
+        
+        <!-- Adoption & formation (identique, texte clarifié) -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/formation.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Formation & transfert</h3>
-            <p>Autonomie des équipes à l’issue.</p>
+            <h3>Adoption & formation</h3>
+            <p>Rendre vos équipes autonomes rapidement.</p>
             <ul class="liste-carre">
-              <li>Parcours de prise en main</li>
-              <li>Guides & modèles</li>
-              <li>Check-list d’autonomie</li>
+              <li>Parcours de Prise en Main</li>
+              <li>Guides d'usage & modèles réutilisables</li>
+              <li>Bonnes pratiques pour l’usage quotidien</li>
+            </ul>
+          </div>
+        </article>
+        
+        <!-- TMA & évolutions → Suivi & petites évolutions -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/evolution.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Suivi & petites évolutions</h3>
+            <p>Corriger, faire évoluer et garder le cap.</p>
+            <ul class="liste-carre">
+              <li>Corrections et ajustements rapides</li>
+              <li>Petites features à la demande</li>
+              <li>Bilan régulier (mensuel, trimestriel)</li>
             </ul>
           </div>
         </article>
       </div>
 
-      <p class="sub-lead" style="margin-top: var(--m);">
-        Besoin renforcé de conformité&nbsp;? Nous couvrons <strong>Sécurité & conformité (RGPD)</strong> (rôles, permissions, partages).
-      </p>
-
-      <div class="cta-row" style="margin-top: var(--m);">
-        <a class="cta" href="contact.html">Parler de mon contexte</a>
+      <div class="container hero-split">
+        <div class="hero-text">
+          <p class="sub-lead" style="margin-top: var(--m);">
+            <br>L’ensemble forme un parcours cohérent : de la clarification des besoins jusqu’à l’adoption par vos équipes.  
+            Pas d’usine à gaz : uniquement les briques nécessaires, adaptées à votre environnement et à vos objectifs.<br>  
+            L’essentiel : <strong>un pilotage plus clair et plus fiable</strong>, avec des solutions qui grandissent à votre rythme.<br><br>
+            <strong>Par où commencer ?</strong> Décrivez votre situation et vos besoins pour cadrer les prochaines étapes.
+          </p>
+        </div>
+        <div class="cta-row">
+          <a class="cta" href="contact.html">Échanger sur votre projet</a>
+          <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="section contact-band">
+  <!-- CTA FINAL (même pattern que TPE) -->
+  <!-- <section class="section contact-band">
     <div class="container contact-box">
-      <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Parlons de votre besoin</h1>
-      <p class="lead">Un échange court suffit pour cadrer le prochain pas.</p>
-      <div class="cta-row"><a class="cta" href="contact.html">Nous contacter</a></div>
+      <div class="cta-row">
+        <a class="cta" href="contact.html">Échanger sur votre projet</a>
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+      </div>
     </div>
-  </section>
+  </section> -->
 
   <footer class="footer">
     <div class="container"><small>© Prismora Solutions — Bordeaux & Remote • GitHub Pages</small></div>
   </footer>
 
+  <!-- Burger menu (identique TPE) -->
   <script>
     (function(){
       const burger = document.querySelector('.burger');
@@ -175,5 +380,124 @@
       }
     })();
   </script>
+
+    <!-- Lightbox Galerie -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Galerie d'images">
+    <button class="lb-close" aria-label="Fermer">×</button>
+    <button class="lb-prev" aria-label="Précédent">‹</button>
+    <button class="lb-next" aria-label="Suivant">›</button>
+    <figure class="lb-viewport">
+      <img id="lb-image" src="" alt="">
+      <figcaption id="lb-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script>
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const imgEl = document.getElementById('lb-image');
+    const capEl = document.getElementById('lb-caption');
+    const btnClose = lb.querySelector('.lb-close');
+    const btnPrev  = lb.querySelector('.lb-prev');
+    const btnNext  = lb.querySelector('.lb-next');
+  
+    // Récupère toutes les ancres de la galerie "garage"
+    const thumbs = Array.from(document.querySelectorAll('a[data-gallery="garage"]'))
+      .map(a => ({ href: a.getAttribute('href'), title: a.getAttribute('title') || a.querySelector('img')?.alt || '' }));
+  
+    let index = 0;
+  
+    function open(i){
+      index = (i+thumbs.length)%thumbs.length;
+      const {href, title} = thumbs[index];
+      imgEl.src = href;
+      imgEl.alt = title;
+      capEl.textContent = title;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      imgEl.src = ''; capEl.textContent = '';
+    }
+    function prev(){ open(index-1); }
+    function next(){ open(index+1); }
+  
+    // Ouvrir depuis le bouton "Voir la galerie"
+    document.querySelectorAll('[data-open-gallery="garage"]').forEach(btn=>{
+      btn.addEventListener('click', e=>{ e.preventDefault(); open(0); });
+    });
+  
+    // Ouvrir depuis une vignette (au bon index)
+    document.querySelectorAll('a[data-gallery="garage"]').forEach((a,i)=>{
+      a.addEventListener('click', e=>{ e.preventDefault(); open(i); });
+    });
+  
+    // Contrôles
+    btnClose.addEventListener('click', close);
+    btnPrev .addEventListener('click', prev);
+    btnNext .addEventListener('click', next);
+    lb.addEventListener('click', e=>{ if(e.target===lb) close(); }); // clic fond
+  
+    // Clavier
+    window.addEventListener('keydown', e=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowLeft') prev();
+      if(e.key==='ArrowRight') next();
+    });
+  })();
+  </script>  
+  <!-- Lightbox Vidéo -->
+  <div id="videobox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Démo vidéo">
+    <button class="lb-close" aria-label="Fermer">×</button>
+    <figure class="lb-viewport" style="width:min(92vw,1120px);">
+      <video id="vb-player" controls playsinline style="width:100%;height:auto;border-radius:12px;"></video>
+      <figcaption id="vb-caption" style="color:#fff;margin-top:.5rem;opacity:.9"></figcaption>
+    </figure>
+  </div>
+  <script>
+  (function(){
+    const vbox   = document.getElementById('videobox');
+    const player = document.getElementById('vb-player');
+    const cap    = document.getElementById('vb-caption');
+    const btnX   = vbox.querySelector('.lb-close');
+  
+    function openVideo(src, title){
+      player.src = src;
+      cap.textContent = title || 'Démo vidéo';
+      vbox.classList.add('open');
+      vbox.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      player.play()?.catch(()=>{ /* ignore autoplay block */ });
+    }
+    function closeVideo(){
+      player.pause();
+      player.currentTime = 0;
+      player.removeAttribute('src');
+      player.load();
+      vbox.classList.remove('open');
+      vbox.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+    // Ouvrir depuis le bouton
+    document.querySelectorAll('[data-open-video]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        openVideo(a.getAttribute('href'), a.getAttribute('title') || a.textContent.trim());
+      });
+    });
+    // Fermer (croix, clic fond, Échap)
+    btnX.addEventListener('click', closeVideo);
+    vbox.addEventListener('click', e=>{ if(e.target===vbox) closeVideo(); });
+    window.addEventListener('keydown', e=>{
+      if(e.key==='Escape' && vbox.classList.contains('open')) closeVideo();
+    });
+  })();
+  </script>
+
 </body>
 </html>
