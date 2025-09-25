@@ -452,5 +452,6 @@ small{opacity:.85}
 .lb-next{ right:20px; top:50%; transform:translateY(-50%); }
 .lb-close:hover,.lb-prev:hover,.lb-next:hover{ background:rgba(255,255,255,.2); }
 
-
+/* Cache les vignettes utilisées comme sources de la lightbox */
+.gallery-sources { display: none !important; }
 
