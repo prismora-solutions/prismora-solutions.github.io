@@ -1,11 +1,11 @@
-<!-- solutions-freelance.html — Prismora Solutions (V2) -->
+<!-- solutions-freelance.html — Prismora Solutions (V3) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Missions Freelance — ESN & Intégrateurs — Prismora Solutions</title>
+  <title>Missions Freelance — ESN & intégrateurs — Prismora Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Freelance pour ESN & intégrateurs : PMO data, data lead fractionné, automatisations & pipelines, modernisation/migrations, sécurité & conformité, dataviz & adoption." />
+  <meta name="description" content="Freelance pour ESN & intégrateurs : PMO/AMOA light, dataviz, KPIs, automatisations légères (CSV/API, Python/SQL), intégrations simples, co-intervention avec vos leads sur les chantiers lourds." />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <!-- NAV (trame identique autres pages) -->
+  <!-- NAV (mêmes classes que les autres pages) -->
   <nav class="nav">
     <div class="container wrap">
       <div class="brand">
@@ -46,8 +46,8 @@
           Missions Freelance — ESN & intégrateurs
         </h1>
         <p class="sub-lead">
-          <strong>Renfort modulable</strong> pour <strong>cadrer</strong>, <strong>délivrer</strong> et <strong>fiabiliser</strong> vos dispositifs data/BI.<br>
-          Interventions typiques : PMO data, data lead fractionné, automatisations & pipelines, migration/modernisation, sécurité & conformité.
+          <strong>Renfort modulable</strong> pour <strong>cadrer</strong>, <strong>rendre lisible</strong> et <strong>délivrer</strong> sans complexité inutile.<br>
+          Interventions en <strong>autonomie</strong> (PMO/AMOA light, KPI, dataviz, automatisations légères) ou en <strong>co-intervention</strong> avec vos leads sur les chantiers plus lourds.
         </p>
         <div class="cta-row">
           <a class="cta" href="contact.html">Décrire mon besoin</a>
@@ -60,86 +60,93 @@
     </div>
   </header>
 
+  <!-- BANDEAU POSITIONNEMENT (disclaimer franc & pro) -->
+  <section class="section" style="padding-block: var(--s);">
+    <div class="container">
+      <p class="sub-lead" style="margin:0;">
+        Certaines missions sont réalisées <strong>en autonomie</strong> (PMO/AMOA light, KPI/dataviz, automatisations légères).
+        D’autres se font <strong>en co-intervention</strong> avec vos experts (lead data, IT, DPO) pour l’architecture, la sécurité avancée ou des pipelines complexes.
+      </p>
+    </div>
+  </section>
+
   <!-- PARCOURS RECOMMANDÉ (quick wins côté ESN) -->
   <section class="section">
     <div class="container">
       <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Parcours recommandé</h1>
 
       <div class="grid grid-2 cards-lift">
-        <!-- PMO data -->
+        <!-- PMO/AMOA light -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/projet.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Pilotage de projet (PMO data)</h3>
-            <p>Cadrage, jalons, reporting.</p>
+            <h3>PMO / AMOA light</h3>
+            <p>Cadrage simple, jalons, suivi des risques, CR courts.</p>
             <ul class="liste-carre">
-              <li>Lotissement & priorisation</li>
-              <li>Suivi visuel</li>
-              <li>CR courts</li>
+              <li>Backlog priorisé (lot 1 utile)</li>
+              <li>Rituels courts & décisions</li>
+              <li>Visibilité sponsors</li>
             </ul>
           </div>
         </article>
 
-        <!-- Data lead fractionné -->
+        <!-- Appui lead data (co-pilotage) -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/datalead.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Data lead fractionné</h3>
-            <p>Cap, roadmap, gouvernance légère.</p>
+            <h3>Appui lead data (co-pilotage)</h3>
+            <p>Tenir la roadmap et la priorisation <em>avec</em> votre lead.</p>
             <ul class="liste-carre">
-              <li>Feuille de route pragmatique</li>
-              <li>Arbitrages</li>
-              <li>Améliorations continues</li>
+              <li>Vision produit & gouvernance</li>
+              <li>Arbitrages build/buy</li>
+              <li>Coaching analystes</li>
             </ul>
           </div>
         </article>
 
-        <!-- Automatisation & pipelines -->
+        <!-- Automatisations légères -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Automatisation & pipelines</h3>
-            <p>Synchronisations & données fraîches.</p>
+            <h3>Automatisations légères</h3>
+            <p>CSV/API → Python/SQL → planification (GH Actions/cron).</p>
             <ul class="liste-carre">
-              <li>Imports programmés</li>
-              <li>Alertes</li>
-              <li>Traçabilité</li>
+              <li>Ingestion & contrôles</li>
+              <li>Logs & alertes simples</li>
+              <li>Publication propre</li>
             </ul>
           </div>
         </article>
 
-        <!-- Migration & modernisation -->
+        <!-- Migration & modernisation pragmatiques -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/modernisation.png" alt="" aria-hidden="true">
           <div class="card-body">
             <h3>Migration & modernisation</h3>
-            <p>Du tableur vers une base durable.</p>
+            <p>Du tableur vers une base claire (PostgreSQL/MySQL).</p>
             <ul class="liste-carre">
-              <li>Architecture cible</li>
-              <li>Plan de migration</li>
+              <li>Modèle “suffisant”</li>
+              <li>Plan de bascule & recettage</li>
               <li>Gains visibles</li>
             </ul>
           </div>
         </article>
 
-        <!-- Sécurité & conformité -->
+        <!-- RGPD & partages maîtrisés (avec DPO/IT) -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/rgpd.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Sécurité & conformité</h3>
-            <p>Accès maîtrisés, cadre RGPD.</p>
+            <h3>RGPD & partages maîtrisés</h3>
+            <p>RBAC/RLS de base, périmètres et partages conformes.</p>
             <ul class="liste-carre">
+              <li>Matrice d’accès</li>
               <li>Rôles & permissions</li>
-              <li>Prévention des risques</li>
-              <li>Partages conformes</li>
+              <li>Traçabilité</li>
             </ul>
+            <small>Avec votre référent IT/DPO.</small>
           </div>
         </article>
       </div>
-
-      <p class="sub-lead" style="margin-top: var(--m);">
-        Besoin d’exposer la donnée en interne ? <strong>Intégrations & diffusion</strong> disponibles selon vos outils.
-      </p>
 
       <div class="cta-row" style="margin-top: var(--m);">
         <a class="cta" href="contact.html">Parler de mon contexte</a>
@@ -147,7 +154,7 @@
     </div>
   </section>
 
-  <!-- MISE EN PLACE (texte pédagogique façon PME/ETI) -->
+  <!-- MISE EN PLACE (texte pédagogique, trame PME/ETI) -->
   <section class="section">
     <div class="container hero-split">
       <div class="hero-text">
@@ -170,7 +177,7 @@
     </div>
   </section>
 
-  <!-- CHAMPS D’INTERVENTION (reclassement du catalogue) -->
+  <!-- CHAMPS D’INTERVENTION (reclassement du catalogue existant) -->
   <section class="section" id="catalogue-freelance">
     <div class="container">
       <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Champs d’intervention</h1>
@@ -194,7 +201,7 @@
           <img class="card-ico" src="assets/img/photos/essai-concret.png" alt="" aria-hidden="true">
           <div class="card-body">
             <h3>Essai concret</h3>
-            <p>Démontrer l’intérêt sur 1 cas prioritaire.</p>
+            <p>POC ciblé pour démontrer l’intérêt.</p>
             <ul class="liste-carre">
               <li>Mini-prototype</li>
               <li>Essai en conditions réelles</li>
@@ -204,13 +211,13 @@
         </article>
       </div>
 
-      <!-- Groupe B : Cadrage & Gouvernance -->
-      <br><h2>Cadrage & Gouvernance</h2>
+      <!-- Groupe B : Cadrage & gouvernance -->
+      <br><h2>Cadrage & gouvernance</h2>
       <div class="grid grid-2 cards-lift">
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/projet.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Pilotage de projet (PMO data)</h3>
+            <h3>PMO / AMOA light</h3>
             <p>Cadre, jalons, reporting.</p>
             <ul class="liste-carre">
               <li>Plan de jalons</li>
@@ -222,7 +229,7 @@
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/datalead.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Data lead fractionné</h3>
+            <h3>Appui lead data (co-pilotage)</h3>
             <p>Cap, priorisation, feuille de route.</p>
             <ul class="liste-carre">
               <li>Roadmap pragmatique</li>
@@ -297,11 +304,11 @@
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Automatisation & pipelines</h3>
+            <h3>Automatisations légères</h3>
             <p>Données à jour sans reporting manuel.</p>
             <ul class="liste-carre">
-              <li>Imports automatiques</li>
-              <li>Alertes</li>
+              <li>Imports planifiés CSV/API</li>
+              <li>Alertes simples</li>
               <li>Accès aux données fraîches</li>
             </ul>
           </div>
@@ -309,13 +316,14 @@
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/rgpd.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Sécurité & conformité</h3>
+            <h3>RGPD & partages maîtrisés</h3>
             <p>Accès maîtrisés, cadre RGPD.</p>
             <ul class="liste-carre">
               <li>Rôles & permissions</li>
               <li>Prévention des risques</li>
               <li>Partages conformes</li>
             </ul>
+            <small>Avec votre référent IT/DPO.</small>
           </div>
         </article>
         <article class="card card--split">
@@ -392,7 +400,7 @@
     </div>
   </section>
 
-  <!-- STACK (lite) -->
+  <!-- STACK (lite) — reprise du markup À propos -->
   <section class="section section-method">
     <div class="container hero-split">
       <div class="hero-text"> 
@@ -452,7 +460,7 @@
               <li>Jira / Trello / GitHub</li>
               <li>Cadrage → jalons → itérations</li>
               <li>KPIs ciblés</li>
-              <li>Gouvernance & docs - RGPD</li>
+              <li>Gouvernance & docs — RGPD</li>
             </ul>
           </div>
         </article>
@@ -465,7 +473,7 @@
     </div>
   </section>
 
-  <!-- MÉTHODE (lite) -->
+  <!-- MÉTHODE (lite) — reprise du markup À propos -->
   <section class="section section-method">
     <div class="container hero-split">
       <div class="hero-text">
@@ -519,14 +527,14 @@
     </div>
   </section>
 
-  <!-- MODES D’ENGAGEMENT (rappel court) -->
+  <!-- MODES D’ENGAGEMENT (phase d’essai) -->
   <section class="section">
     <div class="container hero-split">
       <div class="hero-text">
         <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Modes d’engagement</h1>
         <p class="sub-lead">
           <strong>Formats :</strong> régie (TJM) ou forfait par lots. Remote prioritaire, on-site possible selon contexte.<br>
-          <strong>Embarquement :</strong> rapide après accès aux environnements et aux sources de données.
+          <strong>Phase d’essai :</strong> 1–2 itérations pour valider notre mode de travail (pipeline léger + mini-dashboard + fiches KPI).
         </p>
       </div>
       <div class="cta-row">
@@ -621,7 +629,7 @@
         const files = (Array.isArray(data) ? data : [])
           .filter(f => f.type === 'file' && exts.test(f.name));
         if (!files.length) { scroller.hidden = true; return; }
-        addLos: addLogos(files);
+        addLogos(files);
       }catch(e){
         console.warn('Stack loader: API indisponible → masquer la bande', e);
         scroller.hidden = true;
