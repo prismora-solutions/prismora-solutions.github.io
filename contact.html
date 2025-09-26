@@ -61,7 +61,7 @@
         </p>
       </div>
 
-      <div class="hero-visual">
+      <div class="hero-visual" style="max-width:240px; margin-inline:auto">
         <img src="assets/img/photos/consultant3.png" alt="Collaboration et synthèse visuelle">
       </div>
     </div>
@@ -89,10 +89,10 @@
     /* (au cas où ta feuille globale impose des labels en ligne) */
     .contact-form label { display: block; }
     #btn-submit{
-      font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
-      line-height: 1.2;
-      padding: 0.95rem 1.25rem;   /* un peu plus de “respiration” */
-      font-weight: 700;           /* optionnel : plus “impact” */
+      font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.10rem);
+      line-height: 1.15;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
     }
     @media (max-width:900px){.contact-layout{grid-template-columns:1fr}}
     .contact-aside{align-self:start}
@@ -182,8 +182,6 @@
             <div class="cta-row full">
               <button id="btn-submit" class="cta" type="submit" disabled>Envoyer votre demande</button>
             </div>
-  
-            <p class="form-note full">* Champs obligatoires. Vous recevrez un email de confirmation si l’adresse est valide.</p>
           </div>
         </form>
       </section>
