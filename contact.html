@@ -2,24 +2,39 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact — Prismora Solutions</title>
+  <title>Prismora Solutions – Partenaire Data & BI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vos chiffres, enfin lisibles. Vos décisions, plus simples. Prismora Solutions — Data & BI, Bordeaux & remote." />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/css/style.css?v=3"/>
+  <link rel="stylesheet" href="assets/css/style.css?v=13"/>
   <meta name="theme-color" content="#0f4c5c" />
 </head>
 <body>
+
+  <!-- ===================== NAV ===================== -->
   <nav class="nav">
     <div class="container wrap">
-      <div class="brand"><span class="logo"></span> Prismora Solutions</div>
-      <div class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="methode.html">Méthode</a>
-        <a href="cas.html">Cas</a>
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="Retour à l'accueil">
+          <picture>
+            <source media="(min-width: 769px)" srcset="assets/img/logo/logo_def.png">
+            <img src="assets/img/logo/logo_triangle.png" alt="Prismora Solutions" height="40">
+          </picture>
+        </a>
+      </div>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="menu" id="site-menu">
+        <a href="prismora-solutions.html">A propos</a>
+        <a href="solutions-freelance.html">Freelance</a>
+        <a href="index.html#profils">Pour Qui ?</a>
         <a href="contact.html">Contact</a>
+
       </div>
     </div>
   </nav>
@@ -51,8 +66,48 @@
     </div>
   </main>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="container"><small>© Prismora Solutions</small></div>
+    <div class="container">
+      <small>© Prismora Solutions 2025 — Bordeaux & Remote</small>
+    </div>
   </footer>
+  
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Burger
+    (function(){
+      const burger = document.querySelector('.burger');
+      const menu   = document.getElementById('site-menu');
+      if (burger && menu){
+        burger.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          burger.classList.toggle('open', open);
+          document.body.classList.toggle('no-scroll', open);
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          menu.classList.remove('open'); burger.classList.remove('open');
+          burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
+        }));
+      }
+    })();
+
+    // Ligne marque
+    (function(){
+      function brandLineSequence(){
+        const tri  = document.querySelector('.brand-line-hero .logo-tri');
+        const txt  = document.querySelector('.brand-line-hero .logo-txt');
+        const kick = document.querySelector('.brand-line-hero .kicker');
+        if (!tri || !txt || !kick) return;
+        tri.classList.add('is-revealed');
+        setTimeout(() => { txt.classList.add('is-revealed'); }, 500);
+        setTimeout(() => { kick.classList.add('is-revealed'); }, 900);
+      }
+      if (document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', brandLineSequence);
+      } else { brandLineSequence(); }
+    })();
+  </script>
 </body>
 </html>
