@@ -71,6 +71,23 @@
   <style>
     /* Mise en page locale, sans impacter le reste du site */
     .contact-layout{display:grid;grid-template-columns:minmax(480px,1fr) 320px;gap:var(--xl,2rem);align-items:start}
+    /* Assure l’étendue sur toute la largeur de la colonne du formulaire */
+    .contact-form .full { grid-column: 1 / -1; }
+    /* Forcer le label au-dessus du champ */
+    .contact-form .full > label { 
+      display: block; 
+      margin-bottom: .35rem; 
+    }
+    /* Le textarea occupe 100% de la colonne et se redimensionne en hauteur seulement */
+    .contact-form textarea{
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+      resize: vertical;       /* triangle = hauteur uniquement, pas la largeur */
+      min-height: 180px;      /* ajuste si tu veux un peu plus haut */
+    }
+    /* (au cas où ta feuille globale impose des labels en ligne) */
+    .contact-form label { display: block; }
     @media (max-width:900px){.contact-layout{grid-template-columns:1fr}}
     .contact-aside{align-self:start}
     .contact-form .req{font-size:.85em;font-style:italic;opacity:.75}
@@ -132,9 +149,12 @@
               <input type="text" name="delai" placeholder="ex. sous 1 mois">
             </label>
   
-            <label class="full">Votre message <span class="req">(obligatoire)</span>
-              <textarea name="message" rows="7" required placeholder="Quelques lignes sur votre contexte, vos priorités et votre délai."></textarea>
-            </label>
+            <div class="full">
+              <label for="message">Votre message <span class="req">(obligatoire)</span></label>
+              <textarea id="message" name="message" rows="8" required
+                placeholder="Quelques lignes sur votre contexte, vos priorités et votre délai."></textarea>
+            </div>
+
   
             <label>Budget indicatif
               <select name="budget">
