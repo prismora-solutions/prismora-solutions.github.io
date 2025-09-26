@@ -67,104 +67,112 @@
     </div>
   </header>
 
-  <!-- ===================== FORMULAIRE ===================== -->
+  <!-- ===== CONTACT – BLOC PRINCIPAL (remplace votre <main class="section"> ... </main>) ===== -->
+  <style>
+    /* Mise en page locale, sans impacter le reste du site */
+    .contact-layout{display:grid;grid-template-columns:minmax(480px,1fr) 320px;gap:var(--xl,2rem);align-items:start}
+    @media (max-width:900px){.contact-layout{grid-template-columns:1fr}}
+    .contact-aside{align-self:start}
+    .contact-form .req{font-size:.85em;font-style:italic;opacity:.75}
+    .contact-form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--m,1rem)}
+    @media (max-width:700px){.contact-form .form-grid{grid-template-columns:1fr}}
+    .contact-form .full{grid-column:1 / -1}
+    .contact-form textarea{resize:vertical;min-height:160px}
+    .contact-form .cta-row{display:flex;gap:var(--m,1rem);flex-wrap:wrap;align-items:center}
+  </style>
+  
   <main class="section">
-    <div class="container">
-      <div class="grid grid-2">
-        <!-- Colonne gauche : Formulaire -->
-        <section aria-labelledby="form-title">
-          <h2 id="form-title" class="visually-hidden">Formulaire de contact</h2>
-
-          <!-- Remplace ACTION_URL par l'URL de ton Apps Script (déployé en Application Web) -->
-          <form class="form" action="ACTION_URL" method="POST" accept-charset="utf-8" novalidate>
-
-            <!-- Honeypot anti-spam (ne pas supprimer) -->
-            <div style="position:absolute;left:-9999px;height:0;overflow:hidden;">
-              <label>Votre site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-            </div>
-
-            <div class="grid grid-2">
-              <label>Votre nom (obligatoire)
-                <input type="text" name="nom" required autocomplete="name" />
-              </label>
-              <label>Votre email (obligatoire)
-                <input type="email" name="email" required autocomplete="email" />
-              </label>
-            </div>
-
-            <label>Organisation (facultatif)
-              <input type="text" name="organisation" />
+    <div class="container contact-layout">
+      <!-- Colonne gauche : FORMULAIRE -->
+      <section aria-labelledby="form-title">
+        <h2 id="form-title" class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Formulaire de contact
+        </h2>
+  
+        <!-- Remplacez ACTION_URL par l’URL de votre Apps Script (Application Web) -->
+        <form class="form contact-form" action="ACTION_URL" method="POST" accept-charset="utf-8" novalidate>
+          <!-- Honeypot anti-spam -->
+          <div style="position:absolute;left:-9999px;height:0;overflow:hidden;">
+            <label>Votre site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+  
+          <div class="form-grid">
+            <label>Votre nom <span class="req">(obligatoire)</span>
+              <input type="text" name="nom" required autocomplete="name">
             </label>
-
-            <div class="grid grid-2">
-              <label>Vous êtes
-                <select name="profil">
-                  <option value="">—</option>
-                  <option>TPE</option>
-                  <option>PME-ETI</option>
-                  <option>Collectivité</option>
-                  <option>ESN-Intégrateur</option>
-                </select>
-              </label>
-
-              <label>Objet
-                <select name="objet">
-                  <option>Diagnostic</option>
-                  <option>Tableaux de bord</option>
-                  <option>Automatisation</option>
-                  <option>Mission freelance</option>
-                  <option>Autre</option>
-                </select>
-              </label>
-            </div>
-
-            <label>Votre message (obligatoire)
-              <textarea name="message" rows="7" required placeholder="Quelques lignes sur votre contexte, vos priorités et votre délai souhaité."></textarea>
+  
+            <label>Votre email <span class="req">(obligatoire)</span>
+              <input type="email" name="email" required autocomplete="email">
             </label>
-
-            <div class="grid grid-2">
-              <label>Budget indicatif
-                <select name="budget">
-                  <option value="">—</option>
-                  <option>≤ 1 000 €</option>
-                  <option>1 000 – 3 000 €</option>
-                  <option>3 000 – 6 000 €</option>
-                  <option>≥ 6 000 €</option>
-                </select>
-              </label>
-              <label>Délai souhaité
-                <input type="text" name="delai" placeholder="ex. sous 1 mois" />
-              </label>
-            </div>
-
-            <label class="checkbox">
-              <input type="checkbox" name="consent" required />
+  
+            <label>Organisation <span class="req">(facultatif)</span>
+              <input type="text" name="organisation">
+            </label>
+  
+            <label>Vous êtes
+              <select name="profil">
+                <option value="">—</option>
+                <option>TPE</option><option>PME-ETI</option>
+                <option>Collectivité</option><option>ESN-Intégrateur</option>
+              </select>
+            </label>
+  
+            <label>Objet
+              <select name="objet">
+                <option>Diagnostic</option>
+                <option>Tableaux de bord</option>
+                <option>Automatisation</option>
+                <option>Mission freelance</option>
+                <option>Autre</option>
+              </select>
+            </label>
+  
+            <label>Délai souhaité
+              <input type="text" name="delai" placeholder="ex. sous 1 mois">
+            </label>
+  
+            <label class="full">Votre message <span class="req">(obligatoire)</span>
+              <textarea name="message" rows="7" required placeholder="Quelques lignes sur votre contexte, vos priorités et votre délai."></textarea>
+            </label>
+  
+            <label>Budget indicatif
+              <select name="budget">
+                <option value="">—</option>
+                <option>≤ 1 000 €</option>
+                <option>1 000 – 3 000 €</option>
+                <option>3 000 – 6 000 €</option>
+                <option>≥ 6 000 €</option>
+              </select>
+            </label>
+  
+            <div></div><!-- espace seconde colonne -->
+  
+            <label class="checkbox full">
+              <input type="checkbox" name="consent" required>
               <span>J’accepte que mes informations soient utilisées pour me recontacter (aucun partage externe).</span>
             </label>
-
-            <div class="cta-row">
+  
+            <div class="cta-row full">
               <button id="btn-submit" class="cta" type="submit" disabled>Échanger sur votre projet</button>
               <a class="cta cta--ghost" href="mailto:prismora.solutions@gmail.com">Ou nous écrire directement</a>
             </div>
-
-            <p class="form-note">* Champs obligatoires. Vous recevrez un email de confirmation si l’adresse est valide.</p>
-          </form>
-        </section>
-
-        <!-- Colonne droite : Rassurance / Infos -->
-        <aside class="card" aria-labelledby="infos-title">
-          <h2 id="infos-title" class="h3">Infos utiles</h2>
-          <ul class="checklist">
-            <li>Retour sous <strong>24–48 h ouvrées</strong></li>
-            <li>Bordeaux & <strong>remote</strong> partout en France</li>
-            <li>RGPD : données utilisées <strong>uniquement</strong> pour répondre</li>
-            <li>Pas de démarchage, pas de spam</li>
-          </ul>
-          <hr>
-          <p><strong>Pas de téléphone public</strong> — nous privilégions un premier échange écrit pour cadrer au mieux votre besoin.</p>
-          <p>Besoin d’un NDA ? Ajoutez-le en pièce jointe à votre email, ou précisez-le dans le message.</p>
-        </aside>
-      </div>
+  
+            <p class="form-note full">* Champs obligatoires. Vous recevrez un email de confirmation si l’adresse est valide.</p>
+          </div>
+        </form>
+      </section>
+  
+      <!-- Colonne droite : INFOS (compact) -->
+      <aside class="card contact-aside" aria-labelledby="infos-title">
+        <h3 id="infos-title" class="h3">Infos utiles</h3>
+        <ul class="checklist">
+          <li>Retour sous <strong>24–48 h ouvrées</strong></li>
+          <li>Bordeaux & <strong>remote</strong> partout en France</li>
+          <li>RGPD : données utilisées <strong>uniquement</strong> pour répondre</li>
+          <li>Pas de démarchage, pas de spam</li>
+        </ul>
+      </aside>
     </div>
   </main>
 
@@ -254,6 +262,31 @@
       if (document.readyState === 'loading'){
         document.addEventListener('DOMContentLoaded', brandLineSequence);
       } else { brandLineSequence(); }
+    })();
+  </script>
+
+  <script>
+    /* Activation différée du bouton + validation basique */
+    (function(){
+      const btn = document.getElementById('btn-submit');
+      const form = document.querySelector('form.contact-form');
+      if (!btn || !form) return;
+      setTimeout(()=> btn.disabled=false, 1200);
+  
+      form.addEventListener('submit', (e)=>{
+        const f = (n)=>form.querySelector(`[name="${n}"]`);
+        const nom=f('nom'), email=f('email'), msg=f('message'), consent=f('consent');
+        const emailOk = (email.value||'').match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        let ok = true;
+        function mark(el, valid){ el && el.setAttribute('aria-invalid', valid?'false':'true'); }
+  
+        if(!nom.value.trim()){ok=false; mark(nom,false)} else mark(nom,true);
+        if(!emailOk){ok=false; mark(email,false)} else mark(email,true);
+        if(!msg.value.trim()){ok=false; mark(msg,false)} else mark(msg,true);
+        if(!consent.checked){ok=false; mark(consent,false)} else mark(consent,true);
+  
+        if(!ok){ e.preventDefault(); alert('Merci de compléter les champs obligatoires.'); }
+      });
     })();
   </script>
 </body>
