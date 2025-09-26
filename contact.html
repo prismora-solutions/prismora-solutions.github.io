@@ -1,10 +1,11 @@
+<!-- contact.html — Prismora Solutions (V2) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>Prismora Solutions – Partenaire Data & BI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Vos chiffres, enfin lisibles. Vos décisions, plus simples. Prismora Solutions — Data & BI, Bordeaux & remote." />
+  <meta name="description" content="Vos chiffres, enfin lisibles... simples. Prismora Solutions — Data & BI, Bordeaux & remote." />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
@@ -30,42 +31,156 @@
       </button>
 
       <div class="menu" id="site-menu">
-        <a href="index.html">Accueil</a>  
+        <a href="index.html">Accueil</a>
         <a href="prismora-solutions.html">A propos</a>
         <a href="solutions-freelance.html">Freelance</a>
         <a href="index.html#profils">Pour Qui ?</a>
-        <a href="contact.html">Contact</a>
-
+        <a href="contact.html" aria-current="page">Contact</a>
       </div>
     </div>
   </nav>
 
+  <!-- ===================== HERO ===================== -->
   <header class="hero">
-    <div class="container">
-      <p class="kicker">Contact</p>
-      <h1>Parlons de votre besoin en toute simplicité.</h1>
-      <p class="lead">Un échange de 15 minutes pour comprendre votre contexte et voir comment avancer.</p>
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Échanger sur votre projet
+        </h1>
+
+        <div class="brand-line brand-line-hero" id="brandLineHero">
+          <img class="logo-tri" src="assets/img/logo/logo_triangle.png" alt="Logo Triangle" height="50"/>
+          <img class="logo-txt" src="assets/img/logo/logo_texte.png" alt="Logo Texte Prismora" height="50"/>
+          <p class="kicker">Contact</p>
+        </div>
+
+        <p class="sub-lead">
+          Dites-moi où vous en êtes (contexte, besoin, délai). Je reviens vers vous
+          <strong>sous 24–48 h ouvrées</strong> pour un premier échange simple et utile.
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <img src="assets/img/photos/consultant3.png" alt="Collaboration et synthèse visuelle">
+      </div>
     </div>
   </header>
 
+  <!-- ===================== FORMULAIRE ===================== -->
   <main class="section">
-    <div class="container grid grid-3">
-      <div class="card">
-        <h3>Prendre rendez-vous</h3>
-        <p>Choisissez un créneau :</p>
-        <p><a class="cta" href="#" target="_blank" rel="noopener">Calendly (bientôt)</a></p>
-      </div>
-      <div class="card">
-        <h3>Nous écrire</h3>
-        <p>Envoyez-nous un message :</p>
-        <p><a class="cta cta--ghost" href="#" target="_blank" rel="noopener">Formulaire (Google Forms)</a></p>
-      </div>
-      <div class="card">
-        <h3>Par email</h3>
-        <p><em>bientôt</em> @ prismora-solutions.fr</p>
+    <div class="container">
+      <div class="grid grid-2">
+        <!-- Colonne gauche : Formulaire -->
+        <section aria-labelledby="form-title">
+          <h2 id="form-title" class="visually-hidden">Formulaire de contact</h2>
+
+          <!-- Remplace ACTION_URL par l'URL de ton Apps Script (déployé en Application Web) -->
+          <form class="form" action="ACTION_URL" method="POST" accept-charset="utf-8" novalidate>
+
+            <!-- Honeypot anti-spam (ne pas supprimer) -->
+            <div style="position:absolute;left:-9999px;height:0;overflow:hidden;">
+              <label>Votre site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="grid grid-2">
+              <label>Votre nom (obligatoire)
+                <input type="text" name="nom" required autocomplete="name" />
+              </label>
+              <label>Votre email (obligatoire)
+                <input type="email" name="email" required autocomplete="email" />
+              </label>
+            </div>
+
+            <label>Organisation (facultatif)
+              <input type="text" name="organisation" />
+            </label>
+
+            <div class="grid grid-2">
+              <label>Vous êtes
+                <select name="profil">
+                  <option value="">—</option>
+                  <option>TPE</option>
+                  <option>PME-ETI</option>
+                  <option>Collectivité</option>
+                  <option>ESN-Intégrateur</option>
+                </select>
+              </label>
+
+              <label>Objet
+                <select name="objet">
+                  <option>Diagnostic</option>
+                  <option>Tableaux de bord</option>
+                  <option>Automatisation</option>
+                  <option>Mission freelance</option>
+                  <option>Autre</option>
+                </select>
+              </label>
+            </div>
+
+            <label>Votre message (obligatoire)
+              <textarea name="message" rows="7" required placeholder="Quelques lignes sur votre contexte, vos priorités et votre délai souhaité."></textarea>
+            </label>
+
+            <div class="grid grid-2">
+              <label>Budget indicatif
+                <select name="budget">
+                  <option value="">—</option>
+                  <option>≤ 1 000 €</option>
+                  <option>1 000 – 3 000 €</option>
+                  <option>3 000 – 6 000 €</option>
+                  <option>≥ 6 000 €</option>
+                </select>
+              </label>
+              <label>Délai souhaité
+                <input type="text" name="delai" placeholder="ex. sous 1 mois" />
+              </label>
+            </div>
+
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>J’accepte que mes informations soient utilisées pour me recontacter (aucun partage externe).</span>
+            </label>
+
+            <div class="cta-row">
+              <button id="btn-submit" class="cta" type="submit" disabled>Échanger sur votre projet</button>
+              <a class="cta cta--ghost" href="mailto:prismora.solutions@gmail.com">Ou nous écrire directement</a>
+            </div>
+
+            <p class="form-note">* Champs obligatoires. Vous recevrez un email de confirmation si l’adresse est valide.</p>
+          </form>
+        </section>
+
+        <!-- Colonne droite : Rassurance / Infos -->
+        <aside class="card" aria-labelledby="infos-title">
+          <h2 id="infos-title" class="h3">Infos utiles</h2>
+          <ul class="checklist">
+            <li>Retour sous <strong>24–48 h ouvrées</strong></li>
+            <li>Bordeaux & <strong>remote</strong> partout en France</li>
+            <li>RGPD : données utilisées <strong>uniquement</strong> pour répondre</li>
+            <li>Pas de démarchage, pas de spam</li>
+          </ul>
+          <hr>
+          <p><strong>Pas de téléphone public</strong> — nous privilégions un premier échange écrit pour cadrer au mieux votre besoin.</p>
+          <p>Besoin d’un NDA ? Ajoutez-le en pièce jointe à votre email, ou précisez-le dans le message.</p>
+        </aside>
       </div>
     </div>
   </main>
+
+  <!-- ===================== CONFIDENTIALITÉ ===================== -->
+  <section class="section" id="confidentialite">
+    <div class="container">
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Confidentialité & Données
+      </h2>
+      <p class="sub-lead">
+        Vos informations servent uniquement à traiter votre demande. Aucune cession à des tiers. Sur simple demande,
+        nous supprimons vos données de notre registre et de nos échanges.
+      </p>
+    </div>
+  </section>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
@@ -73,7 +188,7 @@
       <small>© Prismora Solutions 2025 — Bordeaux & Remote</small>
     </div>
   </footer>
-  
+
   <!-- ===================== SCRIPTS ===================== -->
   <script>
     // Burger
@@ -94,7 +209,38 @@
       }
     })();
 
-    // Ligne marque
+    // Micro anti-spam : tempo avant d’activer le bouton + validation basique
+    (function(){
+      const btn = document.getElementById('btn-submit');
+      const form = document.querySelector('form.form');
+      if (!btn || !form) return;
+
+      // tempo 1500 ms
+      setTimeout(() => btn.disabled = false, 1500);
+
+      form.addEventListener('submit', (e) => {
+        const nom    = form.querySelector('input[name="nom"]');
+        const email  = form.querySelector('input[name="email"]');
+        const msg    = form.querySelector('textarea[name="message"]');
+        const consent= form.querySelector('input[name="consent"]');
+        const errs = [];
+
+        function mark(el, ok){ el && el.setAttribute('aria-invalid', ok ? 'false' : 'true'); }
+
+        const emailOk = !!(email.value || '').match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        if (!nom.value.trim()) errs.push('nom'), mark(nom, false); else mark(nom, true);
+        if (!emailOk)          errs.push('email'), mark(email, false); else mark(email, true);
+        if (!msg.value.trim()) errs.push('message'), mark(msg, false); else mark(msg, true);
+        if (!consent.checked)  errs.push('consent'), mark(consent, false); else mark(consent, true);
+
+        if (errs.length){
+          e.preventDefault();
+          alert('Merci de compléter les champs obligatoires.');
+        }
+      });
+    })();
+
+    // Ligne marque (animation header)
     (function(){
       function brandLineSequence(){
         const tri  = document.querySelector('.brand-line-hero .logo-tri');
