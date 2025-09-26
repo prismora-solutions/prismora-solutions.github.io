@@ -88,6 +88,12 @@
     }
     /* (au cas où ta feuille globale impose des labels en ligne) */
     .contact-form label { display: block; }
+    #btn-submit{
+      font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
+      line-height: 1.2;
+      padding: 0.95rem 1.25rem;   /* un peu plus de “respiration” */
+      font-weight: 700;           /* optionnel : plus “impact” */
+    }
     @media (max-width:900px){.contact-layout{grid-template-columns:1fr}}
     .contact-aside{align-self:start}
     .contact-form .req{font-size:.85em;font-style:italic;opacity:.75}
@@ -174,7 +180,7 @@
             </label>
   
             <div class="cta-row full">
-              <button id="btn-submit" class="cta" type="submit" disabled>Échanger sur votre projet</button>
+              <button id="btn-submit" class="cta" type="submit" disabled>Envoyer votre demande</button>
             </div>
   
             <p class="form-note full">* Champs obligatoires. Vous recevrez un email de confirmation si l’adresse est valide.</p>
