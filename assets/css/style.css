@@ -163,6 +163,7 @@ a:hover{text-decoration:underline}
 /* Kicker animé en translation */
 .brand-line-hero .kicker{
   margin:0;
+  line-height:1;
   white-space:nowrap;          /* reste sur une ligne */
   opacity:0;
   transform:translateX(-12px);
