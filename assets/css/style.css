@@ -160,6 +160,13 @@ a:hover{text-decoration:underline}
   display:block;
 }
 
+/* Forcer l’empilement + aligner à gauche */
+.brand-line-hero{
+  flex-direction: column;      /* le kicker passe dessous */
+  align-items: flex-start;      /* aligné à gauche */
+  gap: 6px;
+}
+
 /* Kicker animé en translation + léger lift vertical */
 .brand-line-hero .kicker{
   margin:0;
