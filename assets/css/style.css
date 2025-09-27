@@ -90,7 +90,7 @@ a:hover{text-decoration:underline}
 }
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px var(--m)}
 .brand-link{display:inline-flex;align-items:center}
-.brand img{display:block;height:40px}
+.brand img{display:block;height:60px}
 
 /* Menu desktop */
 .menu{display:flex;gap:8px;flex-wrap:wrap}
