@@ -146,25 +146,45 @@ a:hover{text-decoration:underline}
 }
 
 /* ============ 5) Ligne Marque ============ */
+/* Ligne marque : triangle + kicker */
 .brand-line{
-  display:flex; align-items:center; gap: var(--brandline-gap);
+  display:flex;
+  align-items:center;          /* aligne verticalement */
+  gap: 10px;                   /* espace entre logo & kicker */
   margin: 8px 0 14px;
 }
-.logo-tri{height:60px; width:auto; display:block;}
-.logo-txt{
-  margin:0; opacity:0; transform:translateX(-10px);
-  transition: opacity var(--brandline-tri-duration) ease, transform var(--brandline-tri-duration) ease;
+
+.logo-tri{
+  height: 72px;                /* ajuste la taille souhaitée */
+  width:auto;
+  display:block;
 }
-.logo-txt.is-revealed{opacity:1; transform:translateX(0)}
+
+/* Kicker animé en translation */
 .brand-line-hero .kicker{
-  margin:0; opacity:0; transform:translateX(-8px);
-  transition: opacity var(--brandline-move-duration) ease, transform var(--brandline-move-duration) ease;
-  display:inline-block; align-self:flex-end;
+  margin:0;
+  white-space:nowrap;          /* reste sur une ligne */
+  opacity:0;
+  transform:translateX(-12px);
+  transition:
+    opacity var(--brandline-move-duration) ease,
+    transform var(--brandline-move-duration) ease;
 }
-.brand-line-hero .kicker.is-revealed{opacity:1; transform:translateX(0)}
+
+/* État révélé */
+.brand-line-hero .kicker.is-revealed{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* Mobile : on empile si besoin */
 @media (max-width:768px){
-  .brand-line{flex-direction:column; align-items:center; gap:6px}
-  .brand-line-hero .kicker{text-align:center; font-size:13px; align-self:center;}
+  .brand-line{
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
+  .logo-tri{ height: 56px; }
 }
 
 /* ============ 6) Grilles, cartes & éléments UI ============ */
