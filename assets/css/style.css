@@ -163,7 +163,7 @@ a:hover{text-decoration:underline}
 /* Forcer l’empilement + aligner à gauche */
 .brand-line-hero{
   flex-direction: column;      /* le kicker passe dessous */
-  align-items: flex-start;      /* aligné à gauche */
+  align-items: center;      /* aligné à gauche */
   gap: 6px;
 }
 
