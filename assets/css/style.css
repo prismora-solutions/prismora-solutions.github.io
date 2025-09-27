@@ -149,7 +149,7 @@ a:hover{text-decoration:underline}
 /* Ligne marque : triangle + kicker */
 .brand-line{
   display:flex;
-  align-items:center;          /* aligne verticalement */
+  align-items:flex-end;          /* aligne verticalement */
   gap: 10px;                   /* espace entre logo & kicker */
   margin: 8px 0 14px;
 }
