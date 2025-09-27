@@ -152,7 +152,7 @@ a:hover{text-decoration:underline}
 }
 .logo-tri{height:60px; width:auto; display:block;}
 .logo-txt{
-  opacity:0; transform:translateX(-10px);
+  height:60px; opacity:0; transform:translateX(-10px);
   transition: opacity var(--brandline-tri-duration) ease, transform var(--brandline-tri-duration) ease;
 }
 .logo-txt.is-revealed{opacity:1; transform:translateX(0)}
