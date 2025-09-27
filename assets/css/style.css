@@ -482,3 +482,20 @@ small{opacity:.85}
 /* Cache les vignettes utilisées comme sources de la lightbox */
 .gallery-sources { display: none !important; }
 
+/* Patch alignement kicker à côté du logo */
+#brandLineHero.brand-line-hero .kicker{
+  margin:0;
+  line-height:1;
+  white-space:nowrap;
+  opacity:0;
+  transform: translate(-12px, -4px);         /* X + Y dans la même propriété */
+  transition:
+    opacity var(--brandline-move-duration) ease,
+    transform var(--brandline-move-duration) ease;
+}
+
+/* Important : garder le nudge vertical dans l'état révélé */
+#brandLineHero.brand-line-hero .kicker.is-revealed{
+  opacity:1;
+  transform: translate(0, -4px);
+}
