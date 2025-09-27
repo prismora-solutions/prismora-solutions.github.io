@@ -167,6 +167,7 @@ a:hover{text-decoration:underline}
   white-space:nowrap;          /* reste sur une ligne */
   opacity:0;
   transform:translateX(-12px);
+  top:-3px; 
   transition:
     opacity var(--brandline-move-duration) ease,
     transform var(--brandline-move-duration) ease;
