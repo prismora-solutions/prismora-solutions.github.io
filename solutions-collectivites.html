@@ -379,21 +379,26 @@
         }));
       }
     })();
-
-    // Ligne marque
-    (function(){
+    // Ligne marque (triangle + kicker)
+    (() => {
       function brandLineSequence(){
         const tri  = document.querySelector('.brand-line-hero .logo-tri');
-        const txt  = document.querySelector('.brand-line-hero .logo-txt');
         const kick = document.querySelector('.brand-line-hero .kicker');
-        if (!tri || !txt || !kick) return;
+        if (!tri || !kick) return;
+    
+        // Si tu animes le triangle en CSS (classe .is-revealed), garde la ligne ci-dessous.
         tri.classList.add('is-revealed');
-        setTimeout(() => { txt.classList.add('is-revealed'); }, 500);
-        setTimeout(() => { kick.classList.add('is-revealed'); }, 900);
+    
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const delay  = reduce ? 0 : 600; // décalage avant l’apparition du kicker
+        setTimeout(() => { kick.classList.add('is-revealed'); }, delay);
       }
+    
       if (document.readyState === 'loading'){
         document.addEventListener('DOMContentLoaded', brandLineSequence);
-      } else { brandLineSequence(); }
+      } else {
+        brandLineSequence();
+      }
     })();
   </script>
 
