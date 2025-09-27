@@ -166,7 +166,7 @@ a:hover{text-decoration:underline}
   line-height:1;
   white-space:nowrap;
   opacity:0;
-  transform: translate(-12px, -3px);   /* ⬅️ X ET Y dans la même propriété */
+  transform: translate(-12px, 0px);   /* ⬅️ X ET Y dans la même propriété */
   transition:
     opacity var(--brandline-move-duration) ease,
     transform var(--brandline-move-duration) ease;
