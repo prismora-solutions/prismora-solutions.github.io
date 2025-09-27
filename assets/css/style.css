@@ -197,6 +197,7 @@ a:hover{text-decoration:underline}
   .logo-tri{ height:56px; }
   .brand-line-hero .kicker{
     transform: translate(0,0);         /* pas de nudge en mobile */
+    margin-left: 30px;
   }
   .brand-line-hero .kicker.is-revealed{
     transform: translate(0,0);
