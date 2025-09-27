@@ -165,11 +165,13 @@ a:hover{text-decoration:underline}
   flex-direction: column;      /* le kicker passe dessous */
   align-items: center;      /* aligné à gauche */
   gap: 6px;
+  --kicker-indent: 120px;
 }
 
 /* Kicker animé en translation + léger lift vertical */
 .brand-line-hero .kicker{
   margin:0;
+  margin-left: var(--kicker-indent);
   line-height:1;
   white-space:nowrap;
   opacity:0;
