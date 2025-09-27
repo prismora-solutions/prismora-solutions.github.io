@@ -126,7 +126,7 @@ a:hover{text-decoration:underline}
 
 @media (max-width:900px){
   .nav .wrap{padding:8px var(--m)}
-  .brand img{height:30px}
+  .brand img{height:60px}
   .burger{display:inline-flex}
   .menu{
     display:none; position:fixed; top:56px; right:12px; background:var(--brand);
