@@ -150,7 +150,7 @@ a:hover{text-decoration:underline}
   display:flex; align-items:center; gap: var(--brandline-gap);
   margin: 8px 0 14px;
 }
-.logo-tri{height:60px; width:auto; display:block;}
+.logo-tri{height:80px; width:auto; display:block;}
 .logo-txt{
   opacity:0; transform:translateX(-10px);
   transition: opacity var(--brandline-tri-duration) ease, transform var(--brandline-tri-duration) ease;
