@@ -165,7 +165,7 @@ a:hover{text-decoration:underline}
   flex-direction: column;      /* le kicker passe dessous */
   align-items: center;      /* aligné à gauche */
   gap: 6px;
-  --kicker-indent: 80px;
+  --kicker-indent: 70px;
 }
 
 /* Kicker animé en translation + léger lift vertical */
