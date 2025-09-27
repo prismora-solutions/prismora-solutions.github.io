@@ -149,44 +149,49 @@ a:hover{text-decoration:underline}
 /* Ligne marque : triangle + kicker */
 .brand-line{
   display:flex;
-  align-items:flex-end;          /* aligne verticalement */
-  gap: 10px;                   /* espace entre logo & kicker */
-  margin: 8px 0 14px;
+  align-items:flex-end;
+  gap:10px;
+  margin:8px 0 14px;
 }
 
 .logo-tri{
-  height: 72px;                /* ajuste la taille souhaitée */
+  height:72px;
   width:auto;
   display:block;
 }
 
-/* Kicker animé en translation */
+/* Kicker animé en translation + léger lift vertical */
 .brand-line-hero .kicker{
   margin:0;
   line-height:1;
-  white-space:nowrap;          /* reste sur une ligne */
+  white-space:nowrap;
   opacity:0;
-  transform:translateX(-12px);
-  transform: translateY(-3px);
+  transform: translate(-12px, -3px);   /* ⬅️ X ET Y dans la même propriété */
   transition:
     opacity var(--brandline-move-duration) ease,
     transform var(--brandline-move-duration) ease;
 }
 
-/* État révélé */
+/* État révélé – on garde le nudge vertical */
 .brand-line-hero .kicker.is-revealed{
   opacity:1;
-  transform:translateX(0);
+  transform: translate(0, -3px);       /* ⬅️ Y conservé */
 }
 
-/* Mobile : on empile si besoin */
+/* Mobile */
 @media (max-width:768px){
   .brand-line{
     flex-direction:column;
     align-items:center;
     gap:6px;
   }
-  .logo-tri{ height: 56px; }
+  .logo-tri{ height:56px; }
+  .brand-line-hero .kicker{
+    transform: translate(0,0);         /* pas de nudge en mobile */
+  }
+  .brand-line-hero .kicker.is-revealed{
+    transform: translate(0,0);
+  }
 }
 
 /* ============ 6) Grilles, cartes & éléments UI ============ */
