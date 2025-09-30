@@ -267,81 +267,96 @@
   </div>
 
 
- <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form  = document.querySelector('form.contact-form');
-  const btn   = document.getElementById('btn-submit');
-  const modal = document.getElementById('confirmModal');   // <div id="confirmModal">…</div>
-  const close = document.getElementById('modalClose');     // <button id="modalClose" type="button">OK</button>
-  if (!form || !btn) return;
-
-  // Activer le bouton après 1,2s (micro anti-bot)
-  setTimeout(() => { btn.disabled = false; }, 1200);
-
-  // Helpers
-  const $ = (n) => form.querySelector(`[name="${n}"]`);
-  const hasModal = !!(modal && close);
-
-  const onEsc = (ev) => { if (ev.key === 'Escape') hideModal(); };
-
-  function showModal() {
-    if (!hasModal) { alert('Demande envoyée ✅'); return; }
-    modal.setAttribute('aria-hidden','false');
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-    close.focus();
-    window.addEventListener('keydown', onEsc);
+<!-- CSS de la modale (override local, sûr à 100%) -->
+<style>
+  /* Recouvre tout l'écran et centre le contenu */
+  .modal{
+    position: fixed !important;
+    inset: 0 !important;             /* top:0; right:0; bottom:0; left:0 */
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(0,0,0,.45) !important;
+    z-index: 99999 !important;
+    padding: 16px !important;
   }
-
-  function hideModal() {
-    if (!hasModal) return;
-    modal.setAttribute('aria-hidden','true');
-    document.documentElement.style.overflow = '';
-    document.body.style.overflow = '';
-    window.removeEventListener('keydown', onEsc);
-    try { form.reset(); } catch(e){}
+  .modal[aria-hidden="false"]{ display:flex !important; }
+  .modal-box{
+    background:#fff; color:#22343b;
+    width:min(520px, calc(100% - 32px));
+    border-radius:12px; padding:20px 20px 16px;
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
   }
+</style>
 
-  if (hasModal) {
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    const form  = document.querySelector('form.contact-form');
+    const btn   = document.getElementById('btn-submit');
+    const modal = document.getElementById('confirmModal');
+    const close = document.getElementById('modalClose');
+    if (!form || !btn || !modal || !close) return;
+  
+    // Anti-bot doux
+    setTimeout(()=> btn.disabled = false, 1200);
+  
+    const $ = (n)=> form.querySelector(`[name="${n}"]`);
+  
+    // --- Helpers modal
+    const onEsc = (e)=>{ if(e.key === 'Escape') hideModal(); };
+    const showModal = ()=>{
+      modal.setAttribute('aria-hidden','false');
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      close.focus();
+      window.addEventListener('keydown', onEsc);
+    };
+    const hideModal = ()=>{
+      modal.setAttribute('aria-hidden','true');
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onEsc);
+      try{ form.reset(); }catch(_){}
+    };
+  
     close.addEventListener('click', (e)=>{ e.preventDefault(); hideModal(); });
-    modal.addEventListener('click', (e)=>{ if (e.target === modal) hideModal(); });
-  }
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Validation minimale
-    const nom=$('nom'), email=$('email'), msg=$('message'), consent=$('consent');
-    const emailOk = (email?.value || '').match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-    let ok = true;
-    const mark = (el, valid)=> el && el.setAttribute('aria-invalid', valid?'false':'true');
-
-    if(!nom?.value.trim()){ ok=false; mark(nom,false); }   else mark(nom,true);
-    if(!emailOk){            ok=false; mark(email,false); } else mark(email,true);
-    if(!msg?.value.trim()){  ok=false; mark(msg,false); }   else mark(msg,true);
-    if(!consent?.checked){   ok=false; mark(consent,false);} else mark(consent,true);
-
-    if(!ok){ alert('Merci de compléter les champs obligatoires.'); return; }
-
-    // Honeypot : si rempli, on fait comme si tout était OK, sans envoi
-    if (($('website')?.value || '').trim()) { form.reset(); showModal(); return; }
-
-    // Envoi AJAX vers Apps Script
-    btn.disabled = true;
-    try {
-      const fd = new FormData(form);
-      await fetch(form.action, { method: 'POST', body: fd, mode: 'no-cors' });
-      form.reset();
-      showModal();
-    } catch (err) {
-      console.error(err);
-      alert("Oups, l'envoi a échoué. Merci de réessayer dans un instant.");
-    } finally {
-      btn.disabled = false;
-    }
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) hideModal(); });
+  
+    // --- Envoi AJAX + validation
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+  
+      const nom=$('nom'), email=$('email'), msg=$('message'), consent=$('consent');
+      const emailOk = (email?.value||'').match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+      let ok = true;
+      const mark = (el, valid)=> el && el.setAttribute('aria-invalid', valid?'false':'true');
+  
+      if(!nom?.value.trim()){ ok=false; mark(nom,false);} else mark(nom,true);
+      if(!emailOk){            ok=false; mark(email,false);} else mark(email,true);
+      if(!msg?.value.trim()){  ok=false; mark(msg,false);} else mark(msg,true);
+      if(!consent?.checked){   ok=false; mark(consent,false);} else mark(consent,true);
+  
+      if(!ok){ alert('Merci de compléter les champs obligatoires.'); return; }
+  
+      // Honeypot
+      if(($('website')?.value||'').trim()){ form.reset(); showModal(); return; }
+  
+      btn.disabled = true;
+      try{
+        const fd = new FormData(form);
+        await fetch(form.action, { method:'POST', body:fd, mode:'no-cors' });
+        form.reset();
+        showModal(); // success
+      }catch(err){
+        console.error(err);
+        alert("Oups, l'envoi a échoué. Merci de réessayer dans un instant.");
+      }finally{
+        btn.disabled = false;
+      }
+    });
   });
-});
-</script>
+  </script>
+
 
 
 
