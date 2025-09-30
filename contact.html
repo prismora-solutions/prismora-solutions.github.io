@@ -285,35 +285,53 @@
     })();
   </script>
 
+
+  <!-- Popup de confirmation -->
+  <div id="confirmModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <h3 id="modalTitle" class="h3" style="margin-top:0">Demande envoyée ✅</h3>
+      <p>Merci, votre message a bien été transmis. Je vous réponds sous 24–48h ouvrées.</p>
+      <div style="text-align:right;margin-top:1rem">
+        <button id="modalClose" class="cta">OK</button>
+      </div>
+    </div>
+  </div>
+
   <script>
-  (function(){
-    const form = document.querySelector('form.contact-form');
-    const btn  = document.getElementById('btn-submit');
+  document.addEventListener('DOMContentLoaded', function(){
+    const form  = document.querySelector('form.contact-form');
+    const btn   = document.getElementById('btn-submit');
     const modal = document.getElementById('confirmModal');
     const close = document.getElementById('modalClose');
-    if (!form || !btn || !modal || !close) return;
   
+    // Si popup manquant, on intercepte quand même pour éviter la redirection
+    const hasModal = !!(modal && close);
+    if (!form || !btn) return;
+  
+    // Active le bouton après 1,2s (micro anti-bot)
     setTimeout(()=> btn.disabled = false, 1200);
   
     const $ = (n)=> form.querySelector(`[name="${n}"]`);
-    const showModal = ()=> { modal.setAttribute('aria-hidden','false'); close.focus(); }
-    const hideModal = ()=> modal.setAttribute('aria-hidden','true');
-    close.addEventListener('click', hideModal);
-    modal.addEventListener('click', (e)=>{ if(e.target===modal) hideModal(); });
+    const showModal = ()=> hasModal ? (modal.setAttribute('aria-hidden','false'), close.focus()) : alert('Demande envoyée ✅');
+    const hideModal = ()=> hasModal && modal.setAttribute('aria-hidden','true');
+    hasModal && close.addEventListener('click', hideModal);
+    hasModal && modal.addEventListener('click', (e)=>{ if(e.target===modal) hideModal(); });
   
     form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+      e.preventDefault();             // <-- Empêche la redirection vers /exec
+  
+      // Validation minimale
       const nom=$('nom'), email=$('email'), msg=$('message'), consent=$('consent');
-      const emailOk = (email.value||'').match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+      const emailOk = (email?.value||'').match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
       let ok = true;
-      function mark(el, valid){ el && el.setAttribute('aria-invalid', valid?'false':'true'); }
-      if(!nom.value.trim()){ ok=false; mark(nom,false); } else mark(nom,true);
+      const mark = (el, valid)=> el && el.setAttribute('aria-invalid', valid?'false':'true');
+      if(!nom?.value.trim()){ ok=false; mark(nom,false); } else mark(nom,true);
       if(!emailOk){ ok=false; mark(email,false); } else mark(email,true);
-      if(!msg.value.trim()){ ok=false; mark(msg,false); } else mark(msg,true);
-      if(!consent.checked){ ok=false; mark(consent,false); } else mark(consent,true);
+      if(!msg?.value.trim()){ ok=false; mark(msg,false); } else mark(msg,true);
+      if(!consent?.checked){ ok=false; mark(consent,false); } else mark(consent,true);
       if(!ok){ alert('Merci de compléter les champs obligatoires.'); return; }
   
-      // Honeypot
+      // Honeypot : si rempli, on fait comme si c’était OK, mais sans envoi
       if(($('website')?.value||'').trim()){ form.reset(); showModal(); return; }
   
       // Envoi AJAX vers Apps Script
@@ -330,20 +348,9 @@
         btn.disabled = false;
       }
     });
-  })();
+  });
   </script>
 
-
-  <!-- Popup de confirmation -->
-  <div id="confirmModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
-    <div class="modal-box">
-      <h3 id="modalTitle" class="h3" style="margin-top:0">Demande envoyée ✅</h3>
-      <p>Merci, votre message a bien été transmis. Je vous réponds sous 24–48h ouvrées.</p>
-      <div style="text-align:right;margin-top:1rem">
-        <button id="modalClose" class="cta">OK</button>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
