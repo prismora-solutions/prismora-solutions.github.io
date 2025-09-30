@@ -493,9 +493,6 @@ small{opacity:.85}
 .gallery-sources { display: none !important; }
 
 
-}
-
-
 /* Modal centré + scroll lock-friendly */
 .modal{
   position: fixed !important; /* force au-dessus de tout */
