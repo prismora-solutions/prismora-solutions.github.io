@@ -1,0 +1,144 @@
+<!-- gallery-garage.html — Galerie autonome du Garage -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galerie — Garage (Tableaux de bord)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" /> <!-- optionnel : pour ne pas référencer -->
+  <style>
+    :root{ --s:.6rem; --m:1.2rem; --l:2rem; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body{ margin:0; background:#0b0f14; color:#e8eef5; }
+    .wrap{ max-width:1100px; margin:0 auto; padding: clamp(16px, 4vw, 32px); }
+    h1{ font-size:clamp(1.4rem, 1.2rem + 1.2vw, 2rem); margin:0 0 var(--m); font-weight:800; letter-spacing:.2px; }
+    p{ opacity:.9 }
+    .grid{ display:grid; gap:var(--s); grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) ); }
+    .thumb{ display:block; border-radius:12px; overflow:hidden; background:#111a22; border:1px solid #1c2834 }
+    .thumb img{ width:100%; height:auto; display:block; transform: translateZ(0); }
+    .credits{ margin-top:var(--l); font-size:.9rem; opacity:.7 }
+    .cta-row{ margin-top:var(--m); display:flex; gap:var(--s); flex-wrap:wrap}
+    .btn{ display:inline-block; padding:.6rem .9rem; border:1px solid #334a61; border-radius:8px; text-decoration:none; color:#e8eef5; }
+    .btn:hover{ background:#132032; }
+
+    /* Lightbox minimaliste */
+    .lightbox{ position:fixed; inset:0; background:rgba(3,8,13,.9); display:none; align-items:center; justify-content:center; z-index:9999; }
+    .lightbox.open{ display:flex; }
+    .lb-viewport{ max-width:min(92vw,1200px); width:100%; padding: clamp(8px, 1.8vw, 18px); }
+    .lb-viewport img{ width:100%; height:auto; border-radius:12px; display:block; }
+    .lb-viewport figcaption{ color:#cfe3fb; margin-top:.5rem; opacity:.9; }
+    .lb-close, .lb-prev, .lb-next{
+      position:fixed; top: 14px; background:transparent; border:none; color:#fff; font-size:32px; cursor:pointer; padding:.2rem .6rem; line-height:1;
+    }
+    .lb-close{ right: 10px; }
+    .lb-prev{ left: 10px; top: 50%; transform: translateY(-50%); font-size:42px;}
+    .lb-next{ right:10px; top: 50%; transform: translateY(-50%); font-size:42px;}
+    .lb-close:hover, .lb-prev:hover, .lb-next:hover{ color:#cfe3fb; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Galerie — Captures Interface Streamlit - Tableau de Bord Garage</h1>
+
+    <!-- Vignettes (réutilise tes images existantes) -->
+    <div class="grid" id="galerie">
+      <a class="thumb" href="assets/img/exemples/garage-01-ca.png" data-gallery="garage" title="CA annuel & mensuel">
+        <img src="assets/img/exemples/garage-01-ca.png" alt="CA annuel & mensuel">
+      </a>
+      <a class="thumb" href="assets/img/exemples/garage-02-categories.png" data-gallery="garage" title="Répartition par catégories">
+        <img src="assets/img/exemples/garage-02-categories.png" alt="Répartition par catégories">
+      </a>
+      <a class="thumb" href="assets/img/exemples/garage-03-top20.png" data-gallery="garage" title="Top 20 articles">
+        <img src="assets/img/exemples/garage-03-top20.png" alt="Top 20 articles">
+      </a>
+      <a class="thumb" href="assets/img/exemples/garage-04-carte.png" data-gallery="garage" title="Carte clients">
+        <img src="assets/img/exemples/garage-04-carte.png" alt="Carte clients">
+      </a>
+      <a class="thumb" href="assets/img/exemples/garage-05-carte.png" data-gallery="garage" title="Carte clients">
+        <img src="assets/img/exemples/garage-05-carte.png" alt="Carte clients">
+      </a>
+      <a class="thumb" href="assets/img/exemples/garage-06-carte.png" data-gallery="garage" title="Carte clients">
+        <img src="assets/img/exemples/garage-06-carte.png" alt="Carte clients">
+      </a>
+      <a class="thumb" href="assets/img/exemples/garage-07-carte.png" data-gallery="garage" title="Carte clients">
+        <img src="assets/img/exemples/garage-07-carte.png" alt="Carte clients">
+      </a>
+    </div>
+
+    <div class="credits">
+      <span>Galerie autonome. Les images sont servies depuis <code>assets/img/exemples/</code>.</span>
+      <div class="cta-row">
+        <a class="btn" href="#" id="btnToutOuvrir">Diaporama</a>
+        <a class="btn" href="#" id="btnCopierLien">Copier le lien de cette page</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Galerie d'images">
+    <button class="lb-close" aria-label="Fermer">×</button>
+    <button class="lb-prev" aria-label="Précédent">‹</button>
+    <button class="lb-next" aria-label="Suivant">›</button>
+    <figure class="lb-viewport">
+      <img id="lb-image" src="" alt="">
+      <figcaption id="lb-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script>
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const imgEl = document.getElementById('lb-image');
+    const capEl = document.getElementById('lb-caption');
+    const btnClose = lb.querySelector('.lb-close');
+    const btnPrev  = lb.querySelector('.lb-prev');
+    const btnNext  = lb.querySelector('.lb-next');
+
+    const thumbs = Array.from(document.querySelectorAll('a[data-gallery="garage"]'))
+      .map(a => ({ href: a.getAttribute('href'), title: a.getAttribute('title') || a.querySelector('img')?.alt || '' }));
+
+    let index = 0;
+
+    function open(i){
+      index = (i+thumbs.length)%thumbs.length;
+      const {href, title} = thumbs[index];
+      imgEl.src = href; imgEl.alt = title; capEl.textContent = title;
+      lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('open'); lb.setAttribute('aria-hidden','true');
+      document.body.style.overflow = ''; imgEl.src = ''; capEl.textContent = '';
+    }
+    function prev(){ open(index-1); }
+    function next(){ open(index+1); }
+
+    // Ouvrir depuis une vignette
+    document.querySelectorAll('a[data-gallery="garage"]').forEach((a,i)=>{
+      a.addEventListener('click', e=>{ e.preventDefault(); open(i); });
+    });
+
+    // Contrôles
+    btnClose.addEventListener('click', close);
+    btnPrev .addEventListener('click', prev);
+    btnNext .addEventListener('click', next);
+    lb.addEventListener('click', e=>{ if(e.target===lb) close(); }); // clic fond
+
+    // Clavier
+    window.addEventListener('keydown', e=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowLeft') prev();
+      if(e.key==='ArrowRight') next();
+    });
+
+    // Boutons utilitaires
+    document.getElementById('btnToutOuvrir').addEventListener('click', e=>{
+      e.preventDefault(); open(0);
+    });
+    document.getElementById('btnCopierLien').addEventListener('click', e=>{
+      e.preventDefault(); navigator.clipboard?.writeText(location.href);
+    });
+  })();
+  </script>
+</body>
+</html>
