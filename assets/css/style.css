@@ -520,5 +520,28 @@ small{opacity:.85}
   from { opacity: 0; }
 }
 
+/* ---- Reset poids typo dans les cartes (liste/prices) ---- */
+.card .card-body,
+.card .card-body p,
+.card .card-body li,
+.card .card-body small {
+  font-weight: 400;         /* texte normal */
+}
+
+.card .card-body strong {
+  font-weight: 700;         /* gras uniquement sur <strong> */
+}
+
+.card h3 {
+  font-weight: 800;         /* titre bien marqué */
+}
+
+.card .card-body em {
+  font-style: italic;
+  font-weight: 400;         /* italique sans surgras */
+}
+
+/* au cas où : s'assurer que la liste n'est pas en gras par héritage */
+.card .liste-carre li { font-weight: 400; }
 
 
