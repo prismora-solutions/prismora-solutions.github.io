@@ -545,3 +545,71 @@ small{opacity:.85}
 .card .liste-carre li { font-weight: 400; }
 
 
+
+/* ============ Grille spécifique ============ */
+.who-grid2{
+  /* grille 12 colonnes pour un placement précis */
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+  align-items: stretch;
+}
+
+/* ============ Cartes plus petites ============ */
+.who-card2{
+  /* même largeur pour toutes : sur desktop chaque carte = 4 colonnes */
+  grid-column: span 4;
+  /* "plus petit" visuel */
+  padding: clamp(16px, 2.2vw, 22px);
+  border-radius: 14px;              /* plus compact que le style global */
+}
+.who-illus2{
+  width: clamp(56px, 7vw, 72px);     /* icônes réduites */
+  height: auto;
+  margin-inline: auto;
+  display:block;
+}
+.who-title2{
+  font-size: clamp(18px, 2.2vw, 22px);
+  text-align: center;
+  margin-top: 10px;
+}
+.text2 p{
+  font-size: clamp(14px, 1.8vw, 16px);
+  text-align: center;
+}
+.cta-row2{
+  justify-content: center;
+}
+.cta2{
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+/* ============ Placement Desktop ============ */
+@media (min-width: 992px){
+  /* Freelance centré seul sur la première ligne */
+  .who-card2.who-card--freelance{
+    grid-row: 1;          /* impose la 1ʳᵉ ligne */
+    grid-column: 5 / span 4;   /* colonnes 5 à 8 -> centré */
+  }
+  /* Les trois autres cartes s'alignent automatiquement sur la 2ᵉ ligne */
+  .who-card2.who-card--pme,
+  .who-card2.who-card--collectivites,
+  .who-card2.who-card--tpe{
+    grid-row: 2;          /* force la 2ᵉ ligne */
+    grid-column: span 4;  /* 3 cartes = 12 colonnes */
+  }
+}
+
+/* ============ Mobile / Tablette ============ */
+@media (max-width: 991.98px){
+  .who-grid2{
+    grid-template-columns: 1fr;     /* 1 colonne */
+  }
+  .who-card2{
+    grid-column: 1 / -1;            /* pleine largeur */
+    grid-row: auto;                 /* ordre naturel */
+  }
+}
+
