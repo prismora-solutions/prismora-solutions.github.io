@@ -33,8 +33,8 @@
 
 <body>
 
-  <!-- ===================== NAV (identique index) ===================== -->
-  <nav class="nav">
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" aria-label="Navigation principale">
     <div class="container wrap">
       <div class="brand">
         <a href="index.html" class="brand-link" aria-label="Retour à l'accueil">
@@ -44,17 +44,39 @@
           </picture>
         </a>
       </div>
-
+  
       <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
         <span></span><span></span><span></span>
       </button>
-
-      <div class="menu" id="site-menu">
-        <a href="index.html">Accueil</a>  
-        <a href="prismora-solutions.html">A propos</a>
-        <a href="solutions-freelance.html">Freelance</a>
-        <a href="index.html#profils">Pour Qui ?</a>
-        <a href="contact.html">Contact</a>
+  
+      <div class="menu" id="site-menu" role="menubar">
+        <!-- NO MORE: <a href="index.html">Accueil</a> -->
+  
+        <!-- Solutions + sous-menu -->
+        <div class="menu-item has-submenu" role="none">
+          <button class="menu-parent"
+                  role="menuitem"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="submenu-solutions">
+            Solutions
+          </button>
+          <ul class="submenu" id="submenu-solutions" role="menu">
+            <li role="none"><a role="menuitem" href="solutions-tpe.html">TPE – Indépendants</a></li>
+            <li role="none"><a role="menuitem" href="solutions-pme-eti.html">PME – ETI</a></li>
+            <li role="none"><a role="menuitem" href="solutions-collectivites.html">Collectivités – Assos</a></li>
+            <li role="none"><a role="menuitem" href="solutions-freelance.html">ESN – Intégrateurs</a></li>
+          </ul>
+        </div>
+  
+        <!-- On garde A propos -->
+        <a role="menuitem" href="prismora-solutions.html">À propos</a>
+  
+        <!-- Optionnel : Freelance si tu veux le garder (tu avais un lien) -->
+        <!-- <a role="menuitem" href="solutions-freelance.html">Freelance</a> -->
+  
+        <!-- On garde Contact -->
+        <a role="menuitem" href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
@@ -255,7 +277,7 @@
 
   <!-- ===================== SCRIPTS ===================== -->
   <script>
-    // Burger (identique index)
+    // Burger
     (function(){
       const burger = document.querySelector('.burger');
       const menu   = document.getElementById('site-menu');
@@ -271,6 +293,65 @@
           burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
         }));
       }
+    })();
+
+    // Sous-menu "Solutions" : toggle en mobile + ARIA
+    (function(){
+      const menu         = document.getElementById('site-menu');
+      const parentBtn    = document.querySelector('.menu-parent');
+      const submenu      = document.getElementById('submenu-solutions');
+  
+      if (!menu || !parentBtn || !submenu) return;
+  
+      // Accessibilité de base
+      parentBtn.setAttribute('aria-haspopup', 'true');
+      parentBtn.setAttribute('aria-expanded', 'false');
+      parentBtn.setAttribute('aria-controls', 'submenu-solutions');
+  
+      // Toggle par clic (utile surtout en mobile)
+      parentBtn.addEventListener('click', (e) => {
+        // En desktop le hover suffit ; le clic n'est pas nuisible
+        const willOpen = !submenu.classList.contains('is-open');
+        submenu.classList.toggle('is-open', willOpen);
+        parentBtn.classList.toggle('is-open', willOpen);
+        parentBtn.setAttribute('aria-expanded', String(willOpen));
+        e.preventDefault();
+        e.stopPropagation();
+      });
+  
+      // Fermer le sous-menu si on ferme le panneau mobile, via ton code existant
+      // (quand .menu perd .open on nettoie l'état du sous-menu)
+      const observer = new MutationObserver(() => {
+        if (!menu.classList.contains('open')){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      observer.observe(menu, { attributes:true, attributeFilter:['class'] });
+  
+      // Fermer si clic à l’extérieur (mobile ou desktop)
+      document.addEventListener('click', (e) => {
+        const clickInside = menu.contains(e.target) || parentBtn.contains(e.target);
+        if (!clickInside){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded','false');
+        }
+      });
+  
+      // Clavier : Enter/Espace = toggle ; Échap = fermer
+      parentBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          parentBtn.click();
+        } else if (e.key === 'Escape'){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded','false');
+          parentBtn.focus();
+        }
+      });
     })();
 
     // Ligne marque (triangle + kicker)
@@ -295,6 +376,7 @@
       }
     })();
   </script>
+  
   <script>
   /* ===== Stack auto-loader (GitHub Contents API, sans noms en dur) ===== */
   (function () {
