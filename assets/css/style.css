@@ -698,49 +698,66 @@ small{opacity:.85}
   }
 }
 
-/* ---------- Mobile < 900px : panneau blanc sous "Solutions" ---------- */
+/* ---------- Mobile < 900px : panneau burger étroit + sous-menu bloc ---------- */
 @media (max-width:900px){
-  /* Liens et boutons alignés à gauche, sur toute la largeur */
-  .menu { text-align: left; }
+
+  /* 1) Panneau burger : largeur fixe et centrage à droite (ajuste si besoin) */
+  .menu{
+    /* ton site applique déjà position/fond/arrondi sur .menu en mobile : on garde */
+    width: 340px;                 /* largeur fixe du panneau */
+    max-width: 92vw;              /* sécurité petits écrans */
+    right: 16px;                  /* ancrage à droite (garde ton design) */
+    left: auto;                   /* évite le plein écran */
+    padding: 14px 18px 16px;      /* respirations internes */
+    text-align: left;             /* liens à gauche */
+  }
+
+  /* 2) Liens & bouton parent : toujours à gauche, chevron à droite */
   .menu a,
   .menu button.menu-parent{
     width: 100%;
     text-align: left;
+    display: flex;
+    align-items: center;
     justify-content: space-between; /* garde le chevron à droite */
+    gap: 8px;
   }
   .menu .menu-item{
     width: 100%;
     align-items: flex-start;
   }
 
-  /* Sous-menu : card blanche sous le bouton (plus à droite) */
+  /* 3) Sous-menu : card blanche en flux normal SOUS “Solutions”
+        -> il occupe la largeur du panneau et FAIT DESCENDRE les éléments suivants */
   .menu .submenu{
-    position: static;                 /* s’empile sous le bouton */
-    display: none;                    /* fermé par défaut */
-    background: #fff;                 /* panneau blanc */
-    color: var(--brand);              /* texte bleu pétrole */
-    border: 1px solid rgba(15,76,92,.15);
-    border-radius: 12px;
-    box-shadow: 0 12px 28px rgba(0,0,0,.12);
-    padding: .5rem 0;
-    margin: .5rem .75rem 0;           /* léger retrait à l'intérieur du panneau */
-    width: auto;
+    position: static;                 /* en flux, pas en absolu */
+    display: none;                    /* fermé par défaut, ouvert via .is-open */
+    width: 100%;                      /* même largeur que le panneau */
     min-width: 0;                     /* annule le min-width desktop */
+    margin: 8px 0 0 0;                /* collé sous le bouton */
+    padding: 8px 0;
+
+    background: #fff;                 /* card blanche */
+    color: var(--brand);
+    border: 1px solid rgba(15,76,92,.15);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  }
+  .menu .submenu.is-open{
+    display: block;                   /* pousse le reste vers le bas */
   }
 
+  /* 4) Liens du sous-menu : bleu pétrole, hover doux */
   .menu .submenu a{
     color: var(--brand);
-    padding: .5rem 1rem;
+    padding: 10px 14px;
     border-radius: 8px;
   }
   .menu .submenu a:hover{
     background: rgba(15,76,92,.06);
   }
 
-  /* état ouvert piloté par JS */
-  .menu .submenu.is-open{ display: block; }
-
-  /* chevron ↑ quand ouvert */
+  /* 5) Chevron ↑ quand ouvert */
   .menu button.menu-parent.is-open::after{ content:"▴"; }
 }
 
