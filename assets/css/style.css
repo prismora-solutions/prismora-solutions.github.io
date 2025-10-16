@@ -613,3 +613,99 @@ small{opacity:.85}
   }
 }
 
+/* ========= NAV : bouton parent "Solutions" aligné sur les liens ========= */
+/* AJOUTER ces règles (ne remplace rien) */
+.menu button.menu-parent{
+  color:#fff;
+  padding:10px 12px;
+  border-radius:8px;
+  font-weight:600;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.menu button.menu-parent:hover{ background:rgba(255,255,255,.15) }
+
+/* Un petit chevron indicateur (optionnel) */
+.menu button.menu-parent::after{
+  content:"▾"; /* simple, compatible partout */
+  font-size:12px;
+  line-height:1;
+  opacity:.9;
+}
+
+/* ========= Sous-menu structure ========= */
+/* AJOUTER */
+.menu .has-submenu{ position:relative; }
+
+/* Base sous-menu (caché) */
+.menu .submenu{
+  list-style:none;
+  margin:0;
+  padding:.5rem 0;
+  display:none;
+  background:#fff;
+  border:1px solid rgba(15,76,92,.15);
+  border-radius:12px;
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+  min-width:260px;
+}
+.menu .submenu a{
+  color:var(--brand);
+  display:block;
+  padding:.5rem 1rem;
+  white-space:nowrap;
+  border-radius:8px;
+}
+.menu .submenu a:hover{
+  background:rgba(15,76,92,.06);
+  text-decoration:none;
+}
+
+/* Desktop ≥ 900px : dropdown absolu au survol/focus */
+@media (min-width:901px){
+  .menu .has-submenu:hover > .submenu,
+  .menu .has-submenu:focus-within > .submenu{
+    display:block;
+  }
+  .menu .submenu{
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:30;
+  }
+}
+
+/* Mobile < 900px : accordéon dans le panneau latéral existant */
+@media (max-width:900px){
+  /* ton .menu mobile est déjà en colonne/fixe : on intègre en accordéon */
+  .menu .submenu{
+    position:static;
+    display:none;                 /* fermé par défaut */
+    box-shadow:none;
+    border:0;
+    border-top:1px dashed rgba(255,255,255,.25);
+    background:transparent;
+    padding:.25rem 0 .5rem;
+    margin-left:.25rem;
+  }
+  .menu .submenu a{
+    color:#fff;                   /* lisible sur fond brand */
+    padding:.5rem .75rem .5rem 1rem;
+    border-radius:6px;
+  }
+  .menu .submenu a:hover{
+    background:rgba(255,255,255,.12);
+  }
+
+  /* état ouvert piloté par JS via .is-open */
+  .menu .submenu.is-open{ display:block; }
+
+  /* petit chevron qui pivote quand c’est ouvert (optionnel) */
+  .menu button.menu-parent.is-open::after{ content:"▴"; }
+}
+
+
