@@ -698,37 +698,52 @@ small{opacity:.85}
   }
 }
 
-/* ---------- Mobile < 900px : accordéon dans le panneau ---------- */
+/* ---------- Mobile < 900px : panneau blanc sous "Solutions" ---------- */
 @media (max-width:900px){
-  .menu .submenu{
-    position:static;
-    display:none;                 /* fermé par défaut */
-    box-shadow:none;
-    border:0;
-    border-top:1px dashed rgba(255,255,255,.25);
-    background:transparent;
-    padding:.25rem 0 .5rem;
-    margin-left:.25rem;
+  /* Liens et boutons alignés à gauche, sur toute la largeur */
+  .menu { text-align: left; }
+  .menu a,
+  .menu button.menu-parent{
+    width: 100%;
+    text-align: left;
+    justify-content: space-between; /* garde le chevron à droite */
   }
+  .menu .menu-item{
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  /* Sous-menu : card blanche sous le bouton (plus à droite) */
+  .menu .submenu{
+    position: static;                 /* s’empile sous le bouton */
+    display: none;                    /* fermé par défaut */
+    background: #fff;                 /* panneau blanc */
+    color: var(--brand);              /* texte bleu pétrole */
+    border: 1px solid rgba(15,76,92,.15);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+    padding: .5rem 0;
+    margin: .5rem .75rem 0;           /* léger retrait à l'intérieur du panneau */
+    width: auto;
+    min-width: 0;                     /* annule le min-width desktop */
+  }
+
   .menu .submenu a{
-    color:#fff;                   /* lisible sur fond brand */
-    padding:.5rem .75rem .5rem 1rem;
-    border-radius:6px;
+    color: var(--brand);
+    padding: .5rem 1rem;
+    border-radius: 8px;
   }
   .menu .submenu a:hover{
-    background:rgba(255,255,255,.12);
+    background: rgba(15,76,92,.06);
   }
 
-  /* état ouvert piloté par JS via .is-open */
-  .menu .submenu.is-open{
-    display:block;
-  }
+  /* état ouvert piloté par JS */
+  .menu .submenu.is-open{ display: block; }
 
   /* chevron ↑ quand ouvert */
-  .menu button.menu-parent.is-open::after{
-    content:"▴";
-  }
+  .menu button.menu-parent.is-open::after{ content:"▴"; }
 }
+
 
 
 
