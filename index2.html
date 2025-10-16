@@ -125,6 +125,20 @@
   </header>
 
   <!-- ===================== CE QUE ÇA CHANGE POUR VOUS ===================== -->
+  <style>
+    /* Layout local pour #benefices uniquement */
+    #benefices .who-grid{
+      display:grid;               /* au cas où .who-grid soit en flex ailleurs */
+      grid-template-columns: 1fr; /* mobile = 1 carte par ligne */
+      gap: var(--m);
+    }
+    @media (min-width: 901px){
+      #benefices .who-grid{
+        grid-template-columns: repeat(4, minmax(0, 1fr)); /* desktop = 4 cartes */
+      }
+    }
+  </style>
+  
   <section class="section" id="benefices">
     <div class="container">
       <h2 class="sect-title">
