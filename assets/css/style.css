@@ -614,8 +614,14 @@ small{opacity:.85}
 }
 
 /* ========= NAV : bouton parent "Solutions" aligné sur les liens ========= */
-/* AJOUTER ces règles (ne remplace rien) */
+.menu .menu-item{
+  display:inline-flex;
+  align-items:center;
+}
+
 .menu button.menu-parent{
+  font:inherit;                 /* même police/taille que les liens */
+  line-height:1;                /* même hauteur visuelle */
   color:#fff;
   padding:10px 12px;
   border-radius:8px;
@@ -626,20 +632,29 @@ small{opacity:.85}
   display:inline-flex;
   align-items:center;
   gap:8px;
+  -webkit-appearance:none;
+  appearance:none;
 }
-.menu button.menu-parent:hover{ background:rgba(255,255,255,.15) }
+.menu button.menu-parent:hover{
+  background:rgba(255,255,255,.15);
+}
+.menu button.menu-parent:focus-visible{
+  outline:2px solid rgba(255,255,255,.65);
+  outline-offset:2px;
+}
 
-/* Un petit chevron indicateur (optionnel) */
+/* Chevron indicateur */
 .menu button.menu-parent::after{
-  content:"▾"; /* simple, compatible partout */
+  content:"▾";
   font-size:12px;
   line-height:1;
   opacity:.9;
 }
 
 /* ========= Sous-menu structure ========= */
-/* AJOUTER */
-.menu .has-submenu{ position:relative; }
+.menu .has-submenu{
+  position:relative;
+}
 
 /* Base sous-menu (caché) */
 .menu .submenu{
@@ -664,8 +679,12 @@ small{opacity:.85}
   background:rgba(15,76,92,.06);
   text-decoration:none;
 }
+.menu .submenu a:focus-visible{
+  outline:2px solid rgba(15,76,92,.35);
+  outline-offset:2px;
+}
 
-/* Desktop ≥ 900px : dropdown absolu au survol/focus */
+/* ---------- Desktop ≥ 900px : dropdown au survol/focus ---------- */
 @media (min-width:901px){
   .menu .has-submenu:hover > .submenu,
   .menu .has-submenu:focus-within > .submenu{
@@ -679,9 +698,8 @@ small{opacity:.85}
   }
 }
 
-/* Mobile < 900px : accordéon dans le panneau latéral existant */
+/* ---------- Mobile < 900px : accordéon dans le panneau ---------- */
 @media (max-width:900px){
-  /* ton .menu mobile est déjà en colonne/fixe : on intègre en accordéon */
   .menu .submenu{
     position:static;
     display:none;                 /* fermé par défaut */
@@ -702,10 +720,15 @@ small{opacity:.85}
   }
 
   /* état ouvert piloté par JS via .is-open */
-  .menu .submenu.is-open{ display:block; }
+  .menu .submenu.is-open{
+    display:block;
+  }
 
-  /* petit chevron qui pivote quand c’est ouvert (optionnel) */
-  .menu button.menu-parent.is-open::after{ content:"▴"; }
+  /* chevron ↑ quand ouvert */
+  .menu button.menu-parent.is-open::after{
+    content:"▴";
+  }
 }
+
 
 
