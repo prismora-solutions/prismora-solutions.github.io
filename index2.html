@@ -84,6 +84,34 @@
 
 
   <!-- ===================== HERO ===================== -->
+
+  <style>
+    /* Desktop : plus d'espace entre brand-line et CTA */
+    @media (min-width: 769px){
+      .brand-cta-inline{
+        display:flex;
+        align-items:center;
+        gap:28px;             /* ← augmente l'espacement desktop */
+      }
+    }
+    
+    /* Mobile : centré */
+    @media (max-width: 768px){
+      .brand-cta-inline{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;  /* ← centre horizontalement */
+        align-items:center;
+        gap:12px;
+        text-align:center;       /* ← centre le texte de la kicker */
+      }
+      .brand-cta-inline .brand-line-hero,
+      .brand-cta-inline .cta-row{
+        margin:0 auto;           /* ← recentre les blocs s'ils avaient des marges */
+      }
+    }
+    </style>
+
   <header class="hero">
     <div class="container hero-split">
       <div class="hero-text">
@@ -106,7 +134,7 @@
             style="text-underline-offset: 3px; text-decoration-thickness: 2px;">Missions freelance</a></em>, remote ou sur site (Bordeaux).<br><br>
         </p>
         
-        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:12px;">
+        <div class="brand-cta-inline" style="margin-top:16px;">
           <div class="brand-line brand-line-hero" id="brandLineHero" style="margin:0;">
             <img class="logo-tri" src="assets/img/logo/logo_def2.png" alt="Logo Triangle"/>
             <p class="kicker" style="margin:0;">Partenaire Data &amp; BI</p>
