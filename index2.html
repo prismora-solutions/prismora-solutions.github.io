@@ -126,18 +126,38 @@
 
   <!-- ===================== CE QUE ÇA CHANGE POUR VOUS ===================== -->
   <style>
-    /* Layout local pour #benefices uniquement */
+    /* ====== Layout local pour #benefices uniquement ====== */
     #benefices .who-grid{
-      display:grid;               /* au cas où .who-grid soit en flex ailleurs */
-      grid-template-columns: 1fr; /* mobile = 1 carte par ligne */
+      display: grid;
       gap: var(--m);
     }
+  
+    /* Reset du span défini globalement sur .who-card2 (sinon 1 carte/ligne) */
+    #benefices .who-card2{
+      grid-column: auto;   /* annule le span 4 de la grille 12 colonnes globale */
+    }
+  
+    /* Mobile / tablette : 1 carte par ligne */
+    @media (max-width: 900px){
+      #benefices .who-grid{
+        grid-template-columns: 1fr;
+      }
+      #benefices .who-card2{
+        grid-column: 1 / -1;
+      }
+    }
+  
+    /* Desktop : 4 cartes par ligne */
     @media (min-width: 901px){
       #benefices .who-grid{
-        grid-template-columns: repeat(4, minmax(0, 1fr)); /* desktop = 4 cartes */
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      #benefices .who-card2{
+        grid-column: auto; /* une colonne = une carte */
       }
     }
   </style>
+
   
   <section class="section" id="benefices">
     <div class="container">
