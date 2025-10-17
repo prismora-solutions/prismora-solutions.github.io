@@ -80,6 +80,36 @@
   </div>
 </nav>
 
+<style>
+/* Split en grille + zones nommées uniquement pour #profils */
+#profils .hero-split{
+  display:grid;
+  grid-template-columns: 1fr 280px;
+  grid-template-areas: "text img";
+  gap:24px;
+  align-items:start;
+}
+#profils .hero-text{ grid-area:text; }
+#profils .hero-visual{ grid-area:img; }
+
+/* Mobile : 1 colonne, et on met l'image AU-DESSUS du texte */
+@media (max-width: 900px){
+  #profils .hero-split{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img"
+      "text";
+    gap:16px;
+  }
+  #profils .hero-visual{
+    max-width: 260px;
+    margin-inline: auto; /* centre l'image en mobile */
+    text-align: center;
+  }
+  #profils .hero-visual img{ width:100%; height:auto; display:block; }
+}
+</style>
+
 
   <!-- ===================== HERO ===================== -->
   <header class="hero">
@@ -181,36 +211,6 @@
   </section>
 
   <!-- ===================== UNE SOLUTION POUR TOUS ===================== -->
-  <style>
-    /* Split en grille + zones nommées uniquement pour #profils */
-    #profils .hero-split{
-      display:grid;
-      grid-template-columns: 1fr 280px;
-      grid-template-areas: "text img";
-      gap:24px;
-      align-items:start;
-    }
-    #profils .hero-text{ grid-area:text; }
-    #profils .hero-visual{ grid-area:img; }
-  
-    /* Mobile : 1 colonne, et on met l'image AU-DESSUS du texte */
-    @media (max-width: 900px){
-      #profils .hero-split{
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "img"
-          "text";
-        gap:16px;
-      }
-      #profils .hero-visual{
-        max-width: 260px;
-        margin-inline: auto; /* centre l'image en mobile */
-        text-align: center;
-      }
-      #profils .hero-visual img{ width:100%; height:auto; display:block; }
-    }
-  </style>
-  
   <section class="section" id="profils">
     <div class="container hero-split">
       <div class="hero-text">
