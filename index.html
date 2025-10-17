@@ -108,6 +108,31 @@
   }
   #profils .hero-visual img{ width:100%; height:auto; display:block; }
 }
+
+/* Scope: section "Pourquoi choisir Prismora ?" uniquement */
+section[aria-labelledby="confiance-title"] .hero-split{
+  display: grid;
+  grid-template-columns: 1fr auto;     /* desktop: texte à gauche, CTA à droite */
+  grid-template-areas: "text cta";
+  gap: 20px;
+  align-items: start;
+}
+section[aria-labelledby="confiance-title"] .hero-text{ grid-area: text; }
+section[aria-labelledby="confiance-title"] .cta-row{ grid-area: cta; }
+
+/* Mobile: une colonne -> CTA sous le texte */
+@media (max-width: 768px){
+  section[aria-labelledby="confiance-title"] .hero-split{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "cta";
+    gap: 12px;
+  }
+  section[aria-labelledby="confiance-title"] .cta-row{
+    justify-self: start;           /* reste aligné à gauche */
+  }
+}
 </style>
 
 
@@ -203,7 +228,7 @@
     </div>
   </section>
 
-  <!-- POURQUOI PRISMORA ? -->
+  <!-- ===================== POURQUOI PRISMORA ? ===================== -->
   <section class="section" aria-labelledby="confiance-title">
     <div class="container hero-split">
       <div class="hero-text">
