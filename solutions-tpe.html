@@ -628,6 +628,29 @@
         brandLineSequence();
       }
     })();
+       // Footer: sous-menu "Solutions" - clic seulement en environnements sans hover
+    (function(){
+      const canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+      if (canHover) return; // Desktop : le CSS :hover gère l'ouverture
+  
+      const footParent = document.querySelector('.footer .foot-parent');
+      const footWrapper = footParent ? footParent.closest('.has-sub') : null;
+      if (!footParent || !footWrapper) return;
+  
+      footParent.addEventListener('click', (e) => {
+        e.preventDefault();
+        const open = !footWrapper.classList.contains('is-open');
+        footWrapper.classList.toggle('is-open', open);
+        footParent.setAttribute('aria-expanded', String(open));
+      });
+  
+      document.addEventListener('click', (e) => {
+        if (!footWrapper.contains(e.target)){
+          footWrapper.classList.remove('is-open');
+          footParent.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
   </script>
 
   <!-- Lightbox Galerie -->
