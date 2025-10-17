@@ -112,56 +112,45 @@
 /* ===== Section "Pourquoi choisir Prismora ?" ===== */
 section[aria-labelledby="confiance-title"] .hero-split{
   display:grid;
-  grid-template-columns: min(640px,58%) 300px;  /* texte | colonne CTA */
-  grid-template-areas: "text cta";              /* ordre explicite */
+  grid-template-columns: min(640px,58%) 300px;   /* texte | colonne CTA */
+  grid-template-areas: "text cta";
   column-gap:56px;
-  align-items:start;
+  align-items:stretch;                            /* ← important: la cellule CTA prend la hauteur de la ligne */
 }
 section[aria-labelledby="confiance-title"] .hero-text{ grid-area:text; }
 
-/* Colonne CTA : pile centrée (logo au-dessus, bouton dessous) */
+/* Colonne CTA : centré HORIZONTALEMENT + VERTICALEMENT */
 section[aria-labelledby="confiance-title"] .cta-row{
   grid-area:cta;
   display:flex;
   flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  justify-self:center;
+  align-items:center;           /* centre horizontalement le contenu (logo+btn) */
+  justify-content:center;       /* ← centre VERTICALEMENT dans la colonne */
+  height:100%;                  /* ← occupe toute la hauteur de la cellule */
   gap:12px;
-  margin:0;                 /* neutralise d'éventuels marges héritées */
+  margin:0;
 }
 
-/* Optionnel : si tu mets un logo dans la colonne CTA */
+/* Optionnel: logo compact si présent */
 section[aria-labelledby="confiance-title"] .cta-row img{
-  display:block;
-  max-width:72px;
-  height:auto;
+  display:block; max-width:72px; height:auto;
 }
 
-/* Bouton plus compact + texte parfaitement centré */
+/* Bouton plus compact */
 section[aria-labelledby="confiance-title"] .cta-row .cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 16px !important;  /* réduit la hauteur */
-  line-height:1.2;
-  font-size:0.95rem;
-  min-height:auto;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 16px !important; line-height:1.2; font-size:0.95rem; min-height:auto;
 }
 
-/* Mobile : une seule colonne, CTA SOUS le texte et centré */
+/* Mobile: CTA sous le texte et centré */
 @media (max-width:768px){
   section[aria-labelledby="confiance-title"] .hero-split{
     grid-template-columns:1fr;
-    grid-template-areas:
-      "text"
-      "cta";
-    row-gap:12px;
-    column-gap:0;
+    grid-template-areas:"text" "cta";
+    row-gap:12px; column-gap:0;
   }
   section[aria-labelledby="confiance-title"] .cta-row{
-    justify-self:center;   /* bouton centré sous le texte */
-    align-items:center;
+    height:auto; justify-content:center; align-items:center; justify-self:center;
   }
 }
 </style>
