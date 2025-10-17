@@ -140,37 +140,6 @@ section[aria-labelledby="confiance-title"] .cta-row{
     align-self: start;
   }
 }
-
-/* Desktop : texte plus étroit, plus d’air avec le CTA */
-section[aria-labelledby="confiance-title"] .hero-split{
-  display: grid;
-  grid-template-columns: min(680px, 58%) 320px; /* ← colonne texte réduite */
-  column-gap: 48px;                              /* ← espace entre colonnes ↑ */
-  align-items: start;
-}
-section[aria-labelledby="confiance-title"] .hero-text{
-  max-width: 680px; /* borne la largeur réelle du paragraphe */
-}
-
-/* Palier intermédiaire : on resserre un peu le CTA */
-@media (max-width: 1200px){
-  section[aria-labelledby="confiance-title"] .hero-split{
-    grid-template-columns: min(620px, 60%) 280px;
-    column-gap: 40px;
-  }
-}
-
-/* Mobile : inchangé (CTA en dessous et centré) */
-@media (max-width: 768px){
-  section[aria-labelledby="confiance-title"] .hero-split{
-    grid-template-columns: 1fr;
-    column-gap: 0;
-    row-gap: 12px;
-  }
-  section[aria-labelledby="confiance-title"] .cta-row{
-    justify-self: center;
-  }
-}
 </style>
 
 
