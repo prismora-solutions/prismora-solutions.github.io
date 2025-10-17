@@ -109,59 +109,58 @@
   #profils .hero-visual img{ width:100%; height:auto; display:block; }
 }
 
-/* ===== Section "Pourquoi choisir Prismora ?" : colonne CTA propre ===== */
+/* ===== Section "Pourquoi choisir Prismora ?" ===== */
 section[aria-labelledby="confiance-title"] .hero-split{
   display:grid;
-  grid-template-columns: min(680px,58%) 320px; /* texte | colonne CTA */
-  column-gap:48px;
+  grid-template-columns: min(640px,58%) 300px;  /* texte | colonne CTA */
+  grid-template-areas: "text cta";              /* ordre explicite */
+  column-gap:56px;
   align-items:start;
 }
+section[aria-labelledby="confiance-title"] .hero-text{ grid-area:text; }
 
-/* Colonne droite : pile verticale centrée (logo au-dessus, bouton dessous) */
+/* Colonne CTA : pile centrée (logo au-dessus, bouton dessous) */
 section[aria-labelledby="confiance-title"] .cta-row{
-  grid-area: cta;
+  grid-area:cta;
   display:flex;
   flex-direction:column;
-  align-items:center;     /* centre horizontalement logo et bouton */
-  gap:12px;               /* espace logo ↔ bouton */
-  justify-self:center;    /* centre la colonne elle-même */
-}
-
-/* Si un visuel/logo se trouve dans cette colonne, on s'assure du centrage */
-section[aria-labelledby="confiance-title"] .cta-row img{
-  display:block;
-  max-width:72px;         /* ajuste si besoin */
-  height:auto;
-  margin:0 auto;
-}
-
-/* Bouton : taille plus compacte + texte bien centré */
-section[aria-labelledby="confiance-title"] .cta-row .cta{
-  display:inline-flex;            /* centre le texte dans le bouton */
   align-items:center;
   justify-content:center;
-  padding:10px 18px;              /* ↓ hauteur */
+  justify-self:center;
+  gap:12px;
+  margin:0;                 /* neutralise d'éventuels marges héritées */
+}
+
+/* Optionnel : si tu mets un logo dans la colonne CTA */
+section[aria-labelledby="confiance-title"] .cta-row img{
+  display:block;
+  max-width:72px;
+  height:auto;
+}
+
+/* Bouton plus compact + texte parfaitement centré */
+section[aria-labelledby="confiance-title"] .cta-row .cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px !important;  /* réduit la hauteur */
   line-height:1.2;
-  font-size:0.95rem;              /* optionnel: bouton un peu moins grand */
-  min-height:auto;                /* évite une hauteur imposée par un style global */
+  font-size:0.95rem;
+  min-height:auto;
 }
 
-/* Palier intermédiaire */
-@media (max-width:1200px){
-  section[aria-labelledby="confiance-title"] .hero-split{
-    grid-template-columns: min(620px,60%) 280px;
-    column-gap:40px;
-  }
-}
-
-/* Mobile : une seule colonne, CTA sous le texte et centré */
+/* Mobile : une seule colonne, CTA SOUS le texte et centré */
 @media (max-width:768px){
   section[aria-labelledby="confiance-title"] .hero-split{
     grid-template-columns:1fr;
+    grid-template-areas:
+      "text"
+      "cta";
     row-gap:12px;
+    column-gap:0;
   }
   section[aria-labelledby="confiance-title"] .cta-row{
-    justify-self:center;          /* bouton centré */
+    justify-self:center;   /* bouton centré sous le texte */
     align-items:center;
   }
 }
@@ -280,7 +279,7 @@ section[aria-labelledby="confiance-title"] .cta-row .cta{
           </ul>
         </div>
       </div>
-      <div class="cta-row" style="margin:0;">
+      <div class="cta-row">
         <img src="assets/img/logo/logo4.png" alt="Prismora Solutions" height="80">
         <a class="cta cta--ghost" href="prismora-solutions.html">À propos de Prismora</a>
       </div>
