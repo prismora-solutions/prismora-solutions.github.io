@@ -109,42 +109,60 @@
   #profils .hero-visual img{ width:100%; height:auto; display:block; }
 }
 
-/* Scope: uniquement la section "Pourquoi choisir Prismora ?" */
+/* ===== Section "Pourquoi choisir Prismora ?" : colonne CTA propre ===== */
 section[aria-labelledby="confiance-title"] .hero-split{
-  display: grid;
-  grid-template-columns: min(680px, 58%) 320px;  /* texte | colonne CTA */
-  grid-template-areas: "text cta";               /* ordre explicite en desktop */
-  column-gap: 48px;
-  align-items: start;
+  display:grid;
+  grid-template-columns: min(680px,58%) 320px; /* texte | colonne CTA */
+  column-gap:48px;
+  align-items:start;
 }
-section[aria-labelledby="confiance-title"] .hero-text{ grid-area: text; }
+
+/* Colonne droite : pile verticale centrée (logo au-dessus, bouton dessous) */
 section[aria-labelledby="confiance-title"] .cta-row{
   grid-area: cta;
-  display: inline-flex;
-  justify-self: center;   /* centré horizontalement dans sa colonne */
-  align-self: center;     /* centré verticalement dans sa colonne */
+  display:flex;
+  flex-direction:column;
+  align-items:center;     /* centre horizontalement logo et bouton */
+  gap:12px;               /* espace logo ↔ bouton */
+  justify-self:center;    /* centre la colonne elle-même */
+}
+
+/* Si un visuel/logo se trouve dans cette colonne, on s'assure du centrage */
+section[aria-labelledby="confiance-title"] .cta-row img{
+  display:block;
+  max-width:72px;         /* ajuste si besoin */
+  height:auto;
+  margin:0 auto;
+}
+
+/* Bouton : taille plus compacte + texte bien centré */
+section[aria-labelledby="confiance-title"] .cta-row .cta{
+  display:inline-flex;            /* centre le texte dans le bouton */
+  align-items:center;
+  justify-content:center;
+  padding:10px 18px;              /* ↓ hauteur */
+  line-height:1.2;
+  font-size:0.95rem;              /* optionnel: bouton un peu moins grand */
+  min-height:auto;                /* évite une hauteur imposée par un style global */
 }
 
 /* Palier intermédiaire */
-@media (max-width: 1200px){
+@media (max-width:1200px){
   section[aria-labelledby="confiance-title"] .hero-split{
-    grid-template-columns: min(620px, 60%) 280px;
-    column-gap: 40px;
+    grid-template-columns: min(620px,60%) 280px;
+    column-gap:40px;
   }
 }
 
-/* Mobile : 1 colonne -> CTA SOUS le texte et centré */
-@media (max-width: 768px){
+/* Mobile : une seule colonne, CTA sous le texte et centré */
+@media (max-width:768px){
   section[aria-labelledby="confiance-title"] .hero-split{
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "text"
-      "cta";               /* ordre forcé : texte puis CTA */
-    row-gap: 12px;
+    grid-template-columns:1fr;
+    row-gap:12px;
   }
   section[aria-labelledby="confiance-title"] .cta-row{
-    justify-self: center;  /* centre le bouton sous le texte */
-    align-self: start;
+    justify-self:center;          /* bouton centré */
+    align-items:center;
   }
 }
 </style>
