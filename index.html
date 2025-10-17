@@ -187,6 +187,14 @@ section[aria-labelledby="confiance-title"] .cta-row .cta{
     width: 100%; height: auto; display: block;
   }
 }
+
+@media (max-width: 900px){
+  #chiffres-clairs .hero-visual{
+    justify-self: center;    /* centre dans la colonne en grid */
+    margin-inline: auto;     /* sécurité pour centrer le bloc */
+    text-align: center;
+  }
+}
 </style>
 
 
@@ -257,7 +265,7 @@ section[aria-labelledby="confiance-title"] .cta-row .cta{
       </div>
   
       <!-- Visuel à gauche -->
-      <div class="hero-visual" style="max-width:300px; margin-inline:auto; text-align:center; align-self:center;">
+      <div class="hero-visual" style="max-width:300px; margin-inline:auto; text-align:center; align-self:center; justify-self:start; margin-inline:0;">
         <img src="assets/img/photos/on-avance.png" 
         alt="Accompagnement et tableaux de bord clairs" 
         style="width:100%; height:auto;">
