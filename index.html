@@ -200,6 +200,37 @@ section[aria-labelledby="confiance-title"] .cta-row .cta{
     margin: 0 auto;                   /* sécurité de centrage */
   }
 }
+
+/* ===== Alternance pour #profils : image à gauche, texte à droite ===== */
+#profils > .container.hero-split{
+  display:grid;
+  grid-template-columns: 320px 1fr;  /* image | texte (ajuste 320px si besoin) */
+  grid-template-areas: "img text";
+  column-gap:24px;
+  align-items:start;                 /* haut sur haut, propre */
+}
+#profils > .container.hero-split .hero-visual{ grid-area: img; }
+#profils > .container.hero-split .hero-text{   grid-area: text; }
+
+/* Mobile : pile, et image centrée (on surclasse l'inline si présent) */
+@media (max-width:900px){
+  #profils > .container.hero-split{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "text"
+      "img";
+    row-gap:16px;
+  }
+  #profils > .container.hero-split .hero-visual{
+    justify-self:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    text-align:center;
+  }
+  #profils > .container.hero-split .hero-visual img{
+    display:block; margin:0 auto;
+  }
+}
 </style>
 
 
@@ -384,7 +415,8 @@ section[aria-labelledby="confiance-title"] .cta-row .cta{
         </div>
       </div>
     
-      <div class="hero-visual">
+      <div class="hero-visual"
+        style="max-width:300px; align-self:center; justify-self:start; margin-inline:0; text-align:center;">
         <img src="assets/img/photos/choix-profil.png" alt="profil">
       </div>
     </div>
