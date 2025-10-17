@@ -123,6 +123,9 @@ section[aria-labelledby="confiance-title"] .hero-text{ grid-area:text; }
 section[aria-labelledby="confiance-title"] .cta-row{
   grid-area:cta;
   display:flex;
+  justify-self: center;   /* centre le bloc dans la colonne */
+  width: max-content;     /* largeur calée sur le contenu */
+  text-align: center;  
   flex-direction:column;
   align-items:center;           /* centre horizontalement le contenu (logo+btn) */
   justify-content:center;       /* ← centre VERTICALEMENT dans la colonne */
