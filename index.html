@@ -206,7 +206,7 @@ section[aria-labelledby="confiance-title"] .cta-row .cta{
   display:grid;
   grid-template-columns: 320px 1fr;  /* image | texte (ajuste 320px si besoin) */
   grid-template-areas: "img text";
-  column-gap:24px;
+  column-gap: clamp(28px, 3.5vw, 52px);
   align-items:start;                 /* haut sur haut, propre */
 }
 #profils > .container.hero-split .hero-visual{ grid-area: img; }
