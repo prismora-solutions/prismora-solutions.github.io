@@ -156,6 +156,37 @@ section[aria-labelledby="confiance-title"] .cta-row .cta{
     height:auto; justify-content:center; align-items:center; justify-self:center;
   }
 }
+
+/* ===== Alternance pour la section #chiffres-clairs ===== */
+/* Desktop : image à gauche, texte à droite */
+#chiffres-clairs .hero-split{
+  display: grid;
+  grid-template-columns: 350px 1fr;   /* adapte 350px à ton visuel */
+  grid-template-areas: "img text";
+  column-gap: 24px;
+  align-items: start;                  /* haut sur haut (comme tu observes) */
+}
+#chiffres-clairs .hero-visual{ grid-area: img; }
+#chiffres-clairs .hero-text{   grid-area: text; }
+
+/* Mobile : on repasse en pile (texte au-dessus, image en dessous ou l’inverse si tu préfères) */
+@media (max-width: 900px){
+  #chiffres-clairs .hero-split{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "img";
+    row-gap: 16px;
+  }
+  #chiffres-clairs .hero-visual{
+    max-width: 300px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  #chiffres-clairs .hero-visual img{
+    width: 100%; height: auto; display: block;
+  }
+}
 </style>
 
 
