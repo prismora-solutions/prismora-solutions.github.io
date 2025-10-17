@@ -112,31 +112,38 @@
 /* Scope: uniquement la section "Pourquoi choisir Prismora ?" */
 section[aria-labelledby="confiance-title"] .hero-split{
   display: grid;
-  grid-template-columns: 1fr 300px;   /* texte | colonne CTA à droite */
-  gap: 24px;
+  grid-template-columns: min(680px, 58%) 320px;  /* texte | colonne CTA */
+  grid-template-areas: "text cta";               /* ordre explicite en desktop */
+  column-gap: 48px;
   align-items: start;
 }
-@media (max-width: 1100px){
+section[aria-labelledby="confiance-title"] .hero-text{ grid-area: text; }
+section[aria-labelledby="confiance-title"] .cta-row{
+  grid-area: cta;
+  display: inline-flex;
+  justify-self: center;   /* centré horizontalement dans sa colonne */
+  align-self: center;     /* centré verticalement dans sa colonne */
+}
+
+/* Palier intermédiaire */
+@media (max-width: 1200px){
   section[aria-labelledby="confiance-title"] .hero-split{
-    grid-template-columns: 1fr 260px; /* un peu plus étroit si l'écran rétrécit */
+    grid-template-columns: min(620px, 60%) 280px;
+    column-gap: 40px;
   }
 }
 
-/* Colonne CTA : centré dans sa colonne en desktop */
-section[aria-labelledby="confiance-title"] .cta-row{
-  display: inline-flex;               /* s'assure de la taille au contenu */
-  align-self: center;                 /* centre verticalement dans la colonne */
-  justify-self: center;               /* centre horizontalement dans la colonne */
-}
-
-/* Mobile : une seule colonne, CTA en dessous et centré */
+/* Mobile : 1 colonne -> CTA SOUS le texte et centré */
 @media (max-width: 768px){
   section[aria-labelledby="confiance-title"] .hero-split{
     grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-areas:
+      "text"
+      "cta";               /* ordre forcé : texte puis CTA */
+    row-gap: 12px;
   }
   section[aria-labelledby="confiance-title"] .cta-row{
-    justify-self: center;             /* centre le bouton sous le texte */
+    justify-self: center;  /* centre le bouton sous le texte */
     align-self: start;
   }
 }
