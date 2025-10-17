@@ -190,9 +190,14 @@ section[aria-labelledby="confiance-title"] .cta-row .cta{
 
 @media (max-width: 900px){
   #chiffres-clairs .hero-visual{
-    justify-self: center;    /* centre dans la colonne en grid */
-    margin-inline: auto;     /* sécurité pour centrer le bloc */
-    text-align: center;
+    justify-self: center !important;  /* surclasse le inline justify-self:start */
+    margin-left: auto !important;     /* surclasse margin-inline:0 */
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  #chiffres-clairs .hero-visual img{
+    display: block;
+    margin: 0 auto;                   /* sécurité de centrage */
   }
 }
 </style>
