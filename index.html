@@ -109,28 +109,35 @@
   #profils .hero-visual img{ width:100%; height:auto; display:block; }
 }
 
-/* Scope: section "Pourquoi choisir Prismora ?" uniquement */
+/* Scope: uniquement la section "Pourquoi choisir Prismora ?" */
 section[aria-labelledby="confiance-title"] .hero-split{
   display: grid;
-  grid-template-columns: 1fr auto;     /* desktop: texte à gauche, CTA à droite */
-  grid-template-areas: "text cta";
-  gap: 20px;
+  grid-template-columns: 1fr 300px;   /* texte | colonne CTA à droite */
+  gap: 24px;
   align-items: start;
 }
-section[aria-labelledby="confiance-title"] .hero-text{ grid-area: text; }
-section[aria-labelledby="confiance-title"] .cta-row{ grid-area: cta; }
+@media (max-width: 1100px){
+  section[aria-labelledby="confiance-title"] .hero-split{
+    grid-template-columns: 1fr 260px; /* un peu plus étroit si l'écran rétrécit */
+  }
+}
 
-/* Mobile: une colonne -> CTA sous le texte */
+/* Colonne CTA : centré dans sa colonne en desktop */
+section[aria-labelledby="confiance-title"] .cta-row{
+  display: inline-flex;               /* s'assure de la taille au contenu */
+  align-self: center;                 /* centre verticalement dans la colonne */
+  justify-self: center;               /* centre horizontalement dans la colonne */
+}
+
+/* Mobile : une seule colonne, CTA en dessous et centré */
 @media (max-width: 768px){
   section[aria-labelledby="confiance-title"] .hero-split{
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "text"
-      "cta";
     gap: 12px;
   }
   section[aria-labelledby="confiance-title"] .cta-row{
-    justify-self: start;           /* reste aligné à gauche */
+    justify-self: center;             /* centre le bouton sous le texte */
+    align-self: start;
   }
 }
 </style>
