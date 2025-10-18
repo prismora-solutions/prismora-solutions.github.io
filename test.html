@@ -121,7 +121,15 @@
   #process .meta-band{ height:96px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
   #process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
   #process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
-
+  
+    /* Desktop : centre le bloc logo+CTA par rapport au bloc de gauche
+     et remonte-le légèrement pour être au milieu visuel H2 + texte */
+  @media (min-width: 901px){
+    #process .cta-col{
+      align-self: center;        /* centre dans la hauteur de la rangée */
+      transform: translateY(-18px); /* ajuste fin : -12 à -28px selon ton œil */
+    }
+  }
   /* ===== Mobile : CTA sous les cartes ===== */
   @media (max-width:900px){
     #process .process-wrap{
