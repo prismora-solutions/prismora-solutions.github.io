@@ -114,98 +114,147 @@
   <div class="container">
     <h2 class="sect-title">
       <span class="prism" aria-hidden="true"></span>
-      Le déroulé, en 4 étapes
+      Un accompagnement structuré, étape par étape
     </h2>
     <p class="sub-lead" style="max-width:60ch">
-      Un parcours simple pensé pour les TPE : on clarifie le besoin, on cadre, puis on met en place
-      ce qui vous sera utile au quotidien — sans compliquer votre organisation.
+      Un parcours simple pour TPE : on clarifie, on cadre, puis on déploie ce qui est utile au quotidien — sans alourdir l’organisation.
     </p>
 
-    <!-- Style local, uniquement pour #process -->
+    <!-- Style local, scope: #process uniquement -->
     <style>
-      /* grille "étape → flèche → étape → flèche ..." */
       #process .flow{
         display:grid;
-        grid-template-columns: 1fr 40px 1fr 40px 1fr 40px 1fr;
-        align-items:stretch;
-        gap: var(--s);
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--m);
+        align-items: stretch;         /* égalise la hauteur des cartes */
         margin-top: var(--m);
       }
-      /* réutilise la carte existante, on ajoute juste quelques finitions */
-      #process .step.card{
-        display:flex; flex-direction:column; justify-content:center;
-        text-align:left; padding: var(--m);
+      /* Wrapper d’étape : centre numéro + carte */
+      #process .step-wrap{
+        display:flex; flex-direction:column; align-items:center; gap:.5rem;
       }
-      #process .step h3{ margin: .25rem 0 .5rem; }
-      #process .step p{ margin:0; opacity:.9; }
-
-      /* icône ronde (facile à remplacer par un vrai picto plus tard) */
-      #process .step .ico{
-        width:44px; height:44px; border-radius:50%;
+      /* Numéro au-dessus de la carte (hors carte) */
+      #process .step-num{
+        font-weight:800; color:var(--brand, #0f4c5c);
+        font-size:clamp(22px, 2.4vw, 28px); line-height:1;
+        letter-spacing:.02em;
+      }
+      /* Carte (réutilise visuel "card" de ton site) */
+      #process .step-card{
+        width:100%;
+        height:100%;
+        display:flex; flex-direction:column; align-items:center;
+        text-align:center; padding: var(--m);
+      }
+      /* Bande méta à hauteur fixe pour aligner icônes/titres */
+      #process .meta-band{
+        height:96px;                      /* aligne les icônes/titres entre cartes */
+        display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+      }
+      /* Icône ronde centrée (remplaçable par SVG plus tard) */
+      #process .ico{
+        width:56px; height:56px; border-radius:50%;
         display:inline-flex; align-items:center; justify-content:center;
-        background: rgba(15,76,92,.08);
-        font-size:22px; margin-bottom:.35rem;
+        background: rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem;
+      }
+      #process h3{ margin:.15rem 0 .25rem; }
+
+      /* Liste en puces carrées, recentrée visuellement */
+      #process .step-card .liste-carre{
+        text-align:left;
+        margin-top:.5rem;
       }
 
-      /* flèches entre les cartes */
+      /* Flèches entre cartes */
       #process .arrow{
         display:flex; align-items:center; justify-content:center;
       }
-      #process .arrow svg{ width:28px; height:28px; opacity:.75; color: var(--brand, #0f4c5c); }
+      #process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand, #0f4c5c); }
 
-      /* Mobile : on empile les étapes, flèches verticales */
+      /* Mobile : empilement, flèches verticales */
       @media (max-width:900px){
-        #process .flow{
-          grid-template-columns: 1fr;
-          gap: .35rem;
-        }
+        #process .flow{ grid-template-columns: 1fr; gap:.5rem; }
         #process .arrow svg{ transform: rotate(90deg); }
       }
     </style>
 
-    <!-- Chemin en 4 étapes -->
     <div class="flow">
 
-      <!-- 1 -->
-      <article class="card step">
-        <div class="ico" aria-hidden="true">🧭</div>
-        <h3>1 — Poser les bases</h3>
-        <p>Un échange pour cadrer le projet, préciser les besoins, voir l’environnement et la faisabilité.</p>
-      </article>
-
-      <div class="arrow" aria-hidden="true">
-        <!-- flèche droite -->
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+      <!-- Étape 1 -->
+      <div class="step-wrap">
+        <div class="step-num">1</div>
+        <article class="card step-card">
+          <div class="meta-band">
+            <div class="ico" aria-hidden="true">🧭</div>
+            <h3>Poser les bases</h3>
+          </div>
+          <ul class="liste-carre">
+            <li>Cadrage du projet</li>
+            <li>Besoins et contexte</li>
+            <li>Environnement & faisabilité</li>
+          </ul>
+        </article>
       </div>
-
-      <!-- 2 -->
-      <article class="card step">
-        <div class="ico" aria-hidden="true">📝</div>
-        <h3>2 — Devis clair</h3>
-        <p>Une proposition qui cadre les actions à mener et les livrables, avec un planning simple.</p>
-      </article>
 
       <div class="arrow" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
       </div>
 
-      <!-- 3 -->
-      <article class="card step">
-        <div class="ico" aria-hidden="true">📌</div>
-        <h3>3 — Cadrage du projet</h3>
-        <p>Retour détaillé : ce qui sera fait, comment, avec les points d’attention et les priorités.</p>
-      </article>
+      <!-- Étape 2 -->
+      <div class="step-wrap">
+        <div class="step-num">2</div>
+        <article class="card step-card">
+          <div class="meta-band">
+            <div class="ico" aria-hidden="true">📝</div>
+            <h3>Devis clair</h3>
+          </div>
+          <ul class="liste-carre">
+            <li>Actions et périmètre</li>
+            <li>Livrables & planning</li>
+            <li>Budget sans surprise</li>
+          </ul>
+        </article>
+      </div>
 
       <div class="arrow" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
       </div>
 
-      <!-- 4 -->
-      <article class="card step">
-        <div class="ico" aria-hidden="true">⚙️</div>
-        <h3>4 — Mise en place</h3>
-        <p>Organisation des fichiers, tableau de bord lisible, astuces de gestion ; options possibles ensuite.</p>
-      </article>
+      <!-- Étape 3 -->
+      <div class="step-wrap">
+        <div class="step-num">3</div>
+        <article class="card step-card">
+          <div class="meta-band">
+            <div class="ico" aria-hidden="true">📌</div>
+            <h3>Cadrage du projet</h3>
+          </div>
+          <ul class="liste-carre">
+            <li>Méthode et priorités</li>
+            <li>Points d’attention</li>
+            <li>Validation simple</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+      </div>
+
+      <!-- Étape 4 -->
+      <div class="step-wrap">
+        <div class="step-num">4</div>
+        <article class="card step-card">
+          <div class="meta-band">
+            <div class="ico" aria-hidden="true">⚙️</div>
+            <h3>Mise en place</h3>
+          </div>
+          <ul class="liste-carre">
+            <li>Organisation des fichiers</li>
+            <li>Tableau de bord lisible</li>
+            <li>Astuces & options ensuite</li>
+          </ul>
+        </article>
+      </div>
 
     </div>
   </div>
