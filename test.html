@@ -76,7 +76,7 @@
       </div>
     </div>
   </nav>
-
+  
   <style>
   /* ===== Layout de la section Process ===== */
   #process .process-wrap{
@@ -91,22 +91,24 @@
   }
   #process .intro   { grid-area:intro; }
   #process .flow    { grid-area:flow; }
-  #process .cta-col { 
+  
+  /* Colonne logo + CTA (à droite) */
+  #process .cta-col{
     grid-area:cta;
-    display:flex; 
-    flex-direction:column; 
-    align-items:center; 
-    justify-content:center;       /* centre verticalement */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center; /* centre verticalement */
     text-align:center;
   }
   #process .cta-col img{
     width:80px; height:auto; margin-bottom:12px; display:block;
   }
-
-  /* ===== Grille des 4 cartes (inchangé si tu l'as déjà) ===== */
+  
+  /* ===== Grille des 4 cartes ===== */
   #process .flow{
     display:grid;
-    grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr; /* carte | flèche | ... */
+    grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr;
     column-gap: var(--m);
     row-gap: 0;
     align-items: stretch;
@@ -114,7 +116,7 @@
   }
   #process .arrow{ display:flex; align-items:center; justify-content:center; }
   #process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand,#0f4c5c); }
-
+  
   #process .step-wrap{ display:flex; flex-direction:column; align-items:center; gap:.5rem; }
   #process .step-num{ font-weight:800; color:var(--brand,#0f4c5c); font-size:clamp(22px,2.4vw,28px); line-height:1; }
   #process .step-card{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; text-align:center; padding:var(--m); }
@@ -122,26 +124,26 @@
   #process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
   #process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
   
-    /* Desktop : centre le bloc logo+CTA par rapport au bloc de gauche
-     et remonte-le légèrement pour être au milieu visuel H2 + texte */
-  @media (min-width: 901px){
+  /* Desktop : petit offset pour centrer visuellement par rapport au H2+intro */
+  @media (min-width:901px){
     #process .cta-col{
-      align-self: center;        /* centre dans la hauteur de la rangée */
-      transform: translateY(-18px); /* ajuste fin : -12 à -28px selon ton œil */
+      align-self:center;
+      transform: translateY(-16px); /* ajuste à -12/-20px selon ton œil */
     }
   }
-  /* ===== Mobile : CTA sous les cartes ===== */
+  
+  /* Mobile : CTA SOUS les cartes */
   @media (max-width:900px){
     #process .process-wrap{
       grid-template-columns: 1fr;
       grid-template-areas:
         "intro"
         "flow"
-        "cta";           /* ⬅️ le bloc logo+CTA passe APRES les cartes */
+        "cta";
       row-gap:12px;
     }
-    #process .flow{ grid-template-columns:1fr; gap:.5rem; }
-    #process .arrow svg{ transform:rotate(90deg); }
+    #process .flow{ grid-template-columns: 1fr; gap:.5rem; }
+    #process .arrow svg{ transform: rotate(90deg); }
     #process .cta-col{ justify-self:center; } /* centre horizontalement */
   }
   </style>
