@@ -68,13 +68,10 @@
           </ul>
         </div>
   
-        <!-- On garde A propos -->
+        <!-- A propos -->
         <a role="menuitem" href="prismora-solutions.html">À propos</a>
   
-        <!-- Optionnel : Freelance si tu veux le garder (tu avais un lien) -->
-        <!-- <a role="menuitem" href="solutions-freelance.html">Freelance</a> -->
-  
-        <!-- On garde Contact -->
+        <!-- Contact -->
         <a role="menuitem" href="contact.html">Contact</a>
       </div>
     </div>
@@ -111,6 +108,109 @@
       </div>
     </div>
   </header>
+
+<!-- ===================== PROCESS (déroulé) ===================== -->
+<section class="section" id="process">
+  <div class="container">
+    <h2 class="sect-title">
+      <span class="prism" aria-hidden="true"></span>
+      Le déroulé, en 4 étapes
+    </h2>
+    <p class="sub-lead" style="max-width:60ch">
+      Un parcours simple pensé pour les TPE : on clarifie le besoin, on cadre, puis on met en place
+      ce qui vous sera utile au quotidien — sans compliquer votre organisation.
+    </p>
+
+    <!-- Style local, uniquement pour #process -->
+    <style>
+      /* grille "étape → flèche → étape → flèche ..." */
+      #process .flow{
+        display:grid;
+        grid-template-columns: 1fr 40px 1fr 40px 1fr 40px 1fr;
+        align-items:stretch;
+        gap: var(--s);
+        margin-top: var(--m);
+      }
+      /* réutilise la carte existante, on ajoute juste quelques finitions */
+      #process .step.card{
+        display:flex; flex-direction:column; justify-content:center;
+        text-align:left; padding: var(--m);
+      }
+      #process .step h3{ margin: .25rem 0 .5rem; }
+      #process .step p{ margin:0; opacity:.9; }
+
+      /* icône ronde (facile à remplacer par un vrai picto plus tard) */
+      #process .step .ico{
+        width:44px; height:44px; border-radius:50%;
+        display:inline-flex; align-items:center; justify-content:center;
+        background: rgba(15,76,92,.08);
+        font-size:22px; margin-bottom:.35rem;
+      }
+
+      /* flèches entre les cartes */
+      #process .arrow{
+        display:flex; align-items:center; justify-content:center;
+      }
+      #process .arrow svg{ width:28px; height:28px; opacity:.75; color: var(--brand, #0f4c5c); }
+
+      /* Mobile : on empile les étapes, flèches verticales */
+      @media (max-width:900px){
+        #process .flow{
+          grid-template-columns: 1fr;
+          gap: .35rem;
+        }
+        #process .arrow svg{ transform: rotate(90deg); }
+      }
+    </style>
+
+    <!-- Chemin en 4 étapes -->
+    <div class="flow">
+
+      <!-- 1 -->
+      <article class="card step">
+        <div class="ico" aria-hidden="true">🧭</div>
+        <h3>1 — Poser les bases</h3>
+        <p>Un échange pour cadrer le projet, préciser les besoins, voir l’environnement et la faisabilité.</p>
+      </article>
+
+      <div class="arrow" aria-hidden="true">
+        <!-- flèche droite -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+      </div>
+
+      <!-- 2 -->
+      <article class="card step">
+        <div class="ico" aria-hidden="true">📝</div>
+        <h3>2 — Devis clair</h3>
+        <p>Une proposition qui cadre les actions à mener et les livrables, avec un planning simple.</p>
+      </article>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+      </div>
+
+      <!-- 3 -->
+      <article class="card step">
+        <div class="ico" aria-hidden="true">📌</div>
+        <h3>3 — Cadrage du projet</h3>
+        <p>Retour détaillé : ce qui sera fait, comment, avec les points d’attention et les priorités.</p>
+      </article>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+      </div>
+
+      <!-- 4 -->
+      <article class="card step">
+        <div class="ico" aria-hidden="true">⚙️</div>
+        <h3>4 — Mise en place</h3>
+        <p>Organisation des fichiers, tableau de bord lisible, astuces de gestion ; options possibles ensuite.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- PARCOURS -->
   <section class="section">
