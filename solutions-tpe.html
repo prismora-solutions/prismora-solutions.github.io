@@ -81,11 +81,11 @@
   /* ===== Layout de la section Process ===== */
   #process .process-wrap{
     display:grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: 320px 1fr;                 /* image | texte */
     grid-template-areas:
-      "intro cta"
+      "cta   intro"
       "flow  flow";
-    column-gap:24px;
+    column-gap: var(--process-gap, 24px);             /* ← espace ajustable */
     align-items:start;
     margin:8px 0 10px;
   }
@@ -97,9 +97,9 @@
     grid-area:cta;
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items:flex-start;
     justify-content:center; /* centre verticalement */
-    text-align:center;
+    text-align:left;
   }
   #process .cta-col img{
     width:280px; height:auto; margin-bottom:12px; display:block;
@@ -134,12 +134,12 @@
   
   /* Mobile : CTA SOUS les cartes */
   @media (max-width:900px){
+    #process .cta-col{ display:none !important; }  /* ← cache l’image */
     #process .process-wrap{
       grid-template-columns: 1fr;
       grid-template-areas:
         "intro"
         "flow"
-        "cta";
       row-gap:12px;
     }
     #process .flow{
@@ -175,7 +175,7 @@
         <h2 class="sect-title">
           <span class="prism" aria-hidden="true"></span>
           Artisan, Commerçant,<br>
-          Micro-entrepreneur, Indépendant :
+          Micro-entrepreneur, Indépendant
         </h2>
         <p class="sub-lead">
           <em>Passionné par votre métier, vous travaillez sans compter vos heures.<br>
@@ -214,7 +214,7 @@
     </h3>
     
    <!-- ⬇️ NOUVEAU WRAPPER -->
-    <div class="process-wrap">
+    <div class="process-wrap" style="--process-gap: 32px;">
       <!-- Intro texte -->
       <p class="sub-lead intro" style="max-width:60ch; margin:0;">
         On commence simplement :<br>
