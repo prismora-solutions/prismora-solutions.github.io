@@ -76,9 +76,9 @@
       </div>
     </div>
   </nav>
-  
+<style> 
 /* ====== PROCESS ====== */
-<style>
+
 /* Espace horizontal image↔texte : modifie la valeur ci-dessous si besoin */
 #process { --process-gap: 28px; }
 
@@ -134,6 +134,19 @@
 #process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
 #process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
 
+/* Titres à droite : respiration entre H2 / H3 / paragraphe */
+#process .intro .sect-title { margin: 0; }
+#process .intro .sect-title + .sect-title { margin-top: .4rem; }
+#process .intro .sub-lead { margin-top: .75rem; }
+
+/* Mobile : un peu plus d'air entre le texte et le “1” */
+@media (max-width:900px){
+  #process .intro { margin-bottom: var(--m); }
+  /* si besoin de + d’air, augmente: */
+  /* #process .flow { margin-top: calc(var(--m) * 1.5); } */
+}
+
+
 /* ---- Desktop only : on supprime l'ancien décalage vertical ---- */
 @media (min-width:901px){
   #process .cta-col{ align-self:center; transform:none; }
@@ -149,7 +162,6 @@
     row-gap:12px;
   }
   #process .cta-col{ display:none !important; }  /* cache l’image */
-  #process .intro{ margin:0; padding:0; margin-bottom: var(--m); }
   #process .flow{
     grid-template-columns:1fr;
     justify-items:center;
@@ -203,27 +215,33 @@
 <section class="section" id="process">
   <div class="container">
 
-    
-   <!-- ⬇️ NOUVEAU WRAPPER -->
     <div class="process-wrap" style="--process-gap: 32px;">
-      <h2 class="sect-title">
-        <span class="prism" aria-hidden="true"></span>
-        Un accompagnement structuré
-      </h2>
-      <br>
-      <h3 class="sect-title">
-        <span class="prism" aria-hidden="true"></span>
-        Un parcours pensé pour vous
-      </h3>
-      <!-- Intro texte -->
-      <p class="sub-lead intro" style="max-width:60ch; margin:0;">
-        On commence simplement :<br>
-        un échange pour comprendre votre activité, vos besoins et votre manière de travailler.<br><br>
-        L’objectif est clair : <strong>faciliter votre gestion au quotidien</strong> et <strong>vous accompagner là où vous voulez aller.</strong><br>
-        La mise en place, c'est l'<strong>organisation de vos données</strong>, un <strong>tableau de bord utile pour piloter</strong> et 
-        <strong>une aide concrète pour la prise en main</strong>.
-        <br>
-      </p>
+      <!-- Colonne image (gauche) -->
+      <div class="cta-col">
+        <img src="assets/img/photos/on-avance.png" alt="Prismora Solutions">
+      </div>
+
+      <!-- Colonne texte (droite) -->
+      <div class="intro">
+        <h2 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Un accompagnement structuré
+        </h2>
+        <h3 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Un parcours pensé pour vous
+        </h3>
+
+        <p class="sub-lead" style="max-width:60ch; margin:0;">
+          On commence simplement : un échange pour comprendre votre activité,
+          vos besoins et votre manière de travailler.<br><br>
+          L’objectif est clair : <strong>faciliter votre gestion au quotidien</strong>
+          et <strong>vous accompagner là où vous voulez aller.</strong><br>
+          La mise en place, c'est l'<strong>organisation de vos données</strong>, un
+          <strong>tableau de bord utile pour piloter</strong> et
+          <strong>une aide concrète pour la prise en main</strong>.
+        </p>
+ 
 
       <!-- Logo + CTA 
       <div class="cta-col">
