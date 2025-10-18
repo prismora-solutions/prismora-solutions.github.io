@@ -1,0 +1,774 @@
+<!-- solutions-tpe.html — Prismora Solutions (V2) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO principal -->
+  <title>Tableau de bord TPE – Pilotage CA, Marge & Trésorerie | Prismora Solutions</title>
+  <meta name="description" content="TPE & indépendants : suivi simple du CA, de la marge et de la trésorerie. Diagnostic rapide, tableau de bord utile, essai concret, formation & transfert.">
+  <link rel="canonical" href="https://prismora.fr/solutions-tpe.html">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Tableau de bord TPE – Pilotage CA, Marge & Trésorerie | Prismora Solutions">
+  <meta property="og:description" content="TPE & indépendants : suivi simple du CA, de la marge et de la trésorerie. Diagnostic rapide, tableau de bord utile, essai concret, formation & transfert.">
+  <meta property="og:url" content="https://prismora.fr/solutions-tpe.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://prismora.fr/assets/img/logo/logo_def2.png">
+  <meta property="og:site_name" content="Prismora Solutions">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Police + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css?v=15"/>
+
+  <!-- Couleur navigateur -->
+  <meta name="theme-color" content="#0f4c5c" />
+</head>
+<body>
+  
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="container wrap">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="Retour à l'accueil">
+          <picture>
+            <source media="(min-width: 769px)" srcset="assets/img/logo/logo_def2.png">
+            <img src="assets/img/logo/logo4.png" alt="Prismora Solutions" height="80">
+          </picture>
+        </a>
+      </div>
+  
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+  
+      <div class="menu" id="site-menu" role="menubar">
+        <!-- NO MORE: <a href="index.html">Accueil</a> -->
+  
+        <!-- Solutions + sous-menu -->
+        <div class="menu-item has-submenu" role="none">
+          <button class="menu-parent"
+                  role="menuitem"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="submenu-solutions">
+            Solutions
+          </button>
+          <ul class="submenu" id="submenu-solutions" role="menu">
+            <li role="none"><a role="menuitem" href="solutions-tpe.html">TPE – Indépendants</a></li>
+            <li role="none"><a role="menuitem" href="solutions-pme-eti.html">PME – ETI</a></li>
+            <li role="none"><a role="menuitem" href="solutions-collectivites.html">Collectivités – Assos</a></li>
+            <li role="none"><a role="menuitem" href="solutions-freelance.html">ESN – Intégrateurs</a></li>
+          </ul>
+        </div>
+  
+        <!-- On garde A propos -->
+        <a role="menuitem" href="prismora-solutions.html">À propos</a>
+  
+        <!-- Optionnel : Freelance si tu veux le garder (tu avais un lien) -->
+        <!-- <a role="menuitem" href="solutions-freelance.html">Freelance</a> -->
+  
+        <!-- On garde Contact -->
+        <a role="menuitem" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Solutions TPE / Indépendants
+        </h1>
+        <p class="sub-lead">
+          <strong style="font-size: 1.2em;">Artisan, Commerçant, Micro-entrepreneur, Indépendant :</strong><br><br>
+          <em>Passionné par votre activité, vous travaillez sans compter vos heures, vous saisissez factures et devis dans votre logiciel, puis le bilan arrive sans explication… 
+          Entre-temps, le temps file, difficile d’avoir une vision nette : est-ce que ça marche vraiment ?<br>
+          Les fichiers s’éparpillent, l’organisation se complique, et sans repères clairs, où mettre son énergie ? — Tout se fait à l’instinct, avec le risque de passer à côté de l’essentiel.</em>
+          <br><br>
+          <strong>Prismora Solutions</strong> propose <strong>une vue d’ensemble claire</strong> et une <strong>organisation simple de vos fichiers et données</strong> : ce qui rapporte, ce qui freine vos résultats, 
+          avec des repères concrets pour <strong>gérer au quotidien</strong>.
+        </p>
+        <div class="brand-line brand-line-hero" id="brandLineHero">
+          <img class="logo-tri" src="assets/img/logo/logo_def2.png" alt="Logo Triangle"/>
+          <p class="kicker">Partenaire Data & BI</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img
+          src="assets/img/photos/tpe-intro.png"
+          alt="Illustration TPE — solutions simples et utiles"
+          style="max-width: 280px !important; width: 100%; height: auto;"
+        >
+      </div>
+    </div>
+  </header>
+
+  <!-- PARCOURS -->
+  <section class="section">
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Mise en place</h1>
+        <div class="hero-text">
+          <p class="sub-lead">
+            <strong>Avant tout</strong>&nbsp;: on se rencontre, vous expliquez vos besoins (c’est essentiel).<br>
+            Ce premier échange permet de comprendre votre activité et de cadrer simplement la suite.<br><br>
+            <strong>L’objectif est clair&nbsp;:</strong> faciliter votre gestion au quotidien, vous accompagner là où vous voulez aller.<br><br>
+            <strong>Mise en place :</strong> on commence par mettre de l’ordre dans vos fichiers et données, puis on construit un <em>tableau de bord simple</em> pour voir l’essentiel de votre activité. Des conseils pratiques et des repères vous aident à mieux vous organiser.<br>
+            <strong>Pour la suite</strong>&nbsp;: des options peuvent s'ajouter en fonction de vos priorités.<br><br>
+            Découvrez ci-dessous ce qu'on peut mettre en place ensemble.</em>
+          </p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="contact.html">Echanger sur votre projet</a>
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="grid grid-2 cards-lift">
+        <!-- Diagnostic initial -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/diagnostic.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Diagnostic initial</h3>
+            <p>Comprendre votre activité et vos priorités.</p>
+            <ul class="liste-carre">
+              <li>Un échange pour cerner vos besoins</li>
+              <li>Étude de l'environnement logiciel et vos données</li>
+              <li>Validation du plan d'action</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Organisation & fichiers -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/organisation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Données et fichiers</h3>
+            <p>Mettre de l’ordre pour partir sur des bases fiables.</p>
+            <ul class="liste-carre">
+              <li>Rangement et organisation de vos fichiers</li>
+              <li>Nettoyage de vos données</li>
+              <li>Structuration claire pour faciliter l’analyse</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Tableaux de bord & dataviz -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Tableau de bord</h3>
+            <p>Une vue simple pour décider vite.</p>
+            <ul class="liste-carre">
+              <li>Indicateurs clairs (CA, marge, trésorerie, clients)</li>
+              <li>Filtres pratiques (période, client, produit)</li>
+              <li>Guide rapide pour bien l’utiliser</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Aide à la gestion quotidienne -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/gestion2.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Aide à la gestion quotidienne</h3>
+            <p>Des repères pratiques pour rester organisé.</p>
+            <ul class="liste-carre">
+              <li>Conseils adaptés à votre activité</li>
+              <li>Modèles simples pour le suivi</li>
+              <li>Rappels pour gagner du temps</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Tableaux de bord & dataviz -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/collecte.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Automatisation & mises à jour (option)</h3>
+            <p>Mise à jour manuelle simple au départ ; automatisation légère possible ensuite.</p>
+            <ul class="liste-carre">
+              <li>Connexion aux exports de votre logiciel (si disponible)</li>
+              <li>Rafraîchissement manuel au début</li>
+              <li>Planification automatique en option</li>
+            </ul>
+          </div>
+        </article>
+        
+        <!-- Formation & transfert -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/formation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Prise en Main & Autonomie</h3>
+            <p>Vous permettre une bonne utilisation au quotidien.</p>
+            <ul class="liste-carre">
+              <li>Démonstration guidée pas à pas</li>
+              <li>Modèle prêt à l’emploi livré chez vous</li>
+              <li>Conseils pratiques pour rester autonome</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION — PRÊT À AVANCER ? -->
+  <section class="section" id="pret-a-avancer">
+    <!-- 1) Texte de transition (gauche) + CTAs (droite) -->
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Prêt à avancer&nbsp;?</h1>
+        <p class="sub-lead">
+          <strong>On fait simple</strong> : un appel pour cadrer, puis un rendez-vous sur place. On regarde vos fichiers, on garde l’essentiel, et vos chiffres deviennent un <strong>tableau de bord lisible</strong> 
+          — pour voir d’un coup d’œil votre CA, votre marge, vos stocks ou vos clients...<br><br>
+          <strong>Objectif</strong> : <strong>des repères clairs pour piloter sans y passer des heures.</strong>
+        </p>
+
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="contact.html">Échanger sur votre projet</a>
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+      </div>
+    </div>
+  
+    <!-- 2) Carte tarif (gauche) + image (droite) -->
+    <div class="container hero-split" style="margin-top: var(--m);">
+      <div class="hero-text">
+        <article class="card">
+          <div class="card-body">
+            <h3>Mise en route — <span style="white-space:nowrap;">à&nbsp;partir&nbsp;de&nbsp;490&nbsp;€</span>*</h3>
+            <ul class="liste-carre">
+              <li><strong>Vos fichiers rangés et organisés</strong> pour partir sur une base claire</li>
+              <li><strong>Un tableau de bord simple</strong> : une vue lisible de votre activité</li>
+              <li><strong>Mise à jour en 2 clics</strong> (export → dépôt → actualisation)</li>
+              <li><strong>Guide des bonnes pratiques</strong> pour la gestion au quotidien</li>
+              <li><strong>1 ajustement inclus</strong> dans les 15 jours</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/img/photos/on-avance.png"
+             alt="Mise en route — à partir de 390 €"
+             style="max-width:320px; width:100%; height:auto;">
+      </div>
+    </div>
+  
+    <!-- 3) Carte plein largeur — options (phrase simple) -->
+    <div class="container" style="margin-top: var(--m);">
+      <article class="card">
+        <div class="card-body">
+          <p>
+            Selon vos besoins et votre environnement (logiciels, exports disponibles), <strong>des options sont possibles</strong> :<br>
+            automatisation de la mise à jour, ajout d’autres fichiers ou d’indicateurs, vues supplémentaires, export/partage, ou un accompagnement ponctuel.
+            Tout est défini et chiffré lors du premier échange.<br><br>
+            <small style="font-size:.65rem; line-height:1.35; display:block; opacity:.85;">
+              <em>*Tarifs indicatifs&nbsp;: un devis est établi après un premier échange. 
+              TVA non applicable. Zone : cantons Libournais-Fronsadais, Nord-Gironde, L’Estuaire, La Presqu’île. Au-delà, forfait déplacement au devis.<br>
+              Missions freelance / ESN : intervention en régie, facturation sur TJM.</em>
+            </small>
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXEMPLES (2 cas concrets : Streamlit + Power BI) -->
+  <section class="section">
+    <div class="container">
+      <h1 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Exemples concrets
+      </h1>
+  
+      <p class="sub-lead"> 
+        Deux <strong>tableaux de bord</strong>, déployés et opérationnels :<br><br>
+        • <strong>Cas réel</strong> (garage, interface Streamlit)&nbsp;: pilotage du CA, répartition par catégories, top articles et carte clients.<br>
+        • <strong>Démo vidéo</strong> (retail, interface Power&nbsp;BI)&nbsp;: cockpit direction &amp; commerce. (CA, Marge nette, Coûts)</p>
+  
+      <!-- Ligne 1 : 2 cartes équilibrées -->
+      <div class="grid grid-2 cards-lift" style="margin-top: var(--m);">
+        <!-- Cas #1 : Garage (Streamlit) -->
+        <article class="card card--split">
+          <img src="assets/img/exemples/garage-01-ca.png"
+               alt="Capture anonymisée : CA annuel & mensuel (garage)"
+               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
+          <div class="card-body">
+            <h3>Garage multi-activités (Streamlit)</h3>
+            <p>Pilotage du CA, répartition par catégories, top articles et carte clients.</p>
+            <p style="margin-top: var(--s);">
+              <a class="cta cta--ghost" href="#"
+                 data-open-gallery="garage"
+                 aria-haspopup="dialog">
+                Voir la galerie
+              </a>
+            </p>
+          </div>
+        </article>
+  
+        <!-- Cas #2 : Réseau retail (Power BI) -->
+        <article class="card card--split">
+          <img src="assets/img/exemples/retail.png"
+               alt="Miniature vidéo : cockpit direction & commerce"
+               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
+          <div class="card-body">
+            <h3>Réseau retail (Power&nbsp;BI)</h3>
+            <p>Cockpit direction & commerce : Démo vidéo</p>
+            <p style="margin-top: var(--s);">
+              <a class="cta cta--ghost" href="assets/video/retail360.mp4"
+                data-open-video aria-haspopup="dialog">Voir la démo</a>
+            </p>
+          </div>
+        </article>
+      </div>
+  
+      <!-- Bande de vignettes pour le cas Garage (claires, scannables) -->
+      <div class="gallery-sources">
+        <div class="grid grid-4" style="gap: var(--s); margin-top: var(--m);">
+          <a href="assets/img/exemples/garage-01-ca.png" data-gallery="garage" title="CA annuel & mensuel">
+            <img src="assets/img/exemples/garage-01-ca.png" alt="CA annuel & mensuel"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-02-categories.png" data-gallery="garage" title="Répartition par catégories">
+            <img src="assets/img/exemples/garage-02-categories.png" alt="Répartition par catégories"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-03-top20.png" data-gallery="garage" title="Top 20 articles">
+            <img src="assets/img/exemples/garage-03-top20.png" alt="Top 20 articles"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-04-carte.png" data-gallery="garage" title="Carte clients">
+            <img src="assets/img/exemples/garage-04-carte.png" alt="Carte clients"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-05-carte.png" data-gallery="garage" title="Carte clients">
+            <img src="assets/img/exemples/garage-05-carte.png" alt="Carte clients"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-06-carte.png" data-gallery="garage" title="Carte clients">
+            <img src="assets/img/exemples/garage-06-carte.png" alt="Carte clients"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/garage-07-carte.png" data-gallery="garage" title="Carte clients">
+            <img src="assets/img/exemples/garage-07-carte.png" alt="Carte clients"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+  <!-- CTA FINAL -->
+  <section class="section contact-band">
+    <div class="container contact-box">
+      <div class="cta-row">
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+        <a class="cta" href="contact.html">Échanger sur votre projet</a>
+        <a class="cta cta--ghost" href="prismora-solutions.html">A Propos de Prismora</a>
+      </div>   
+    </div>
+  </section>
+  
+<!-- ===================== FOOTER ===================== -->
+<style>
+  /* ===== Scope footer seulement ===== */
+  .footer .footer-grid{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr; /* gauche | centre | droite */
+    align-items:center;
+    gap:16px;
+  }
+
+  /* ----- Gauche : copyright + liens en dessous ----- */
+  .footer .legal{ font-size:.96rem; color:inherit; }
+  .footer .legal-main{ margin-bottom:.25rem; }              /* © Prismora… Bordeaux */
+  .footer .legal-links{ font-size:.86rem; opacity:.9; }      /* petite taille pour les liens */
+  .footer .legal-links a{ color:inherit; text-decoration:none; }
+  .footer .legal-links a:hover{ text-decoration:underline; }
+
+  /* ----- Centre : icônes ----- */
+  .footer .social{ display:flex; justify-content:center; gap:16px; }
+  .footer .social a{
+    display:inline-flex; width:36px; height:36px; border-radius:50%;
+    align-items:center; justify-content:center;
+    transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+    background:rgba(0,0,0,.04);
+  }
+  .footer .social a:hover{
+    transform:translateY(-2px);
+    background:rgba(15,76,92,.10);
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+  }
+  .footer .social svg{ width:18px; height:18px; fill:currentColor; opacity:.9; }
+
+  /* ----- Droite : menu ALIGNE en LIGNE ----- */
+  .footer .foot-nav{ justify-self:end; }
+  .footer .foot-menu{
+    display:flex; align-items:center; gap:18px;
+    list-style:none; margin:0; padding:0;
+  }
+  .footer .foot-menu > li{ position:relative; }
+  .footer .foot-nav a,
+  .footer .foot-nav button.foot-parent{
+    color:inherit; text-decoration:none; font-weight:600; /* même style pour tous */
+    font-size:1rem; background:transparent; border:0; padding:0; cursor:pointer;
+    display:inline-flex; align-items:center; gap:.35rem;
+  }
+
+  /* Sous-menu vers le haut */
+  .footer .foot-sub{
+    position:absolute; right:0; bottom:100%; transform:translateY(-8px);
+    list-style:none; margin:0; padding:.5rem 0;
+    background:#fff; border:1px solid rgba(15,76,92,.15);
+    border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,.12);
+    min-width:240px; display:none; z-index:5;
+  }
+  .footer .foot-sub a{
+    display:block; padding:.5rem .85rem; color:var(--brand, #0f4c5c); border-radius:8px;
+    white-space:nowrap;
+  }
+  .footer .foot-sub a:hover{ background:rgba(15,76,92,.06); }
+
+  /* Chevron discret */
+  .footer .foot-parent::after{ content:"▴"; font-size:.8rem; opacity:.9; }
+
+  /* Desktop : ouverture au survol/focus (pas besoin de cliquer) */
+  @media (hover:hover){
+    .footer .has-sub:hover .foot-sub,
+    .footer .has-sub:focus-within .foot-sub{ display:block; }
+  }
+  /* Mobile / touch : ouverture via classe .is-open (JS) */
+  .footer .has-sub.is-open .foot-sub{ display:block; }
+
+  /* ----- Mobile : ordre demandé ----- */
+  @media (max-width:900px){
+    .footer .footer-grid{
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "social"
+        "menu"
+        "copyright"
+        "links";
+      row-gap:10px; text-align:center;
+    }
+    .footer .social{ grid-area:social; }
+    .footer .foot-nav{ grid-area:menu; justify-self:center; }
+    .footer .legal{ grid-area:copyright; }
+    .footer .legal-links{ grid-area:links; }
+
+    /* le sous-menu centré sous le parent, mais vers le haut */
+    .footer .has-sub .foot-sub{ left:50%; right:auto; transform:translate(-50%,-8px); }
+  }
+</style>
+
+<footer class="footer" aria-label="Pied de page">
+  <div class="container footer-grid">
+
+    <!-- Gauche -->
+    <div class="legal">
+      <div class="legal-main">
+        © Prismora Solutions 2025 — Bordeaux
+      </div>
+      <div class="legal-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        &nbsp;•&nbsp;
+        <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      </div>
+    </div>
+
+    <!-- Centre -->
+    <nav class="social" aria-label="Réseaux & contact">
+      <a href="https://www.linkedin.com/company/prismora-solutions/" target="_blank" rel="noopener" aria-label="LinkedIn Prismora">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5v15.02H0zM8.99 8.98h4.79v2.05h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.66v8.91h-5v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.16v8.04h-4.94V8.98z"/>
+        </svg>
+      </a>
+      <a href="tel:+33000000000" aria-label="Appeler Prismora">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V21a1 1 0 01-1 1C10.07 22 2 13.93 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/>
+        </svg>
+      </a>
+      <a href="mailto:contact@prismora.fr" aria-label="Écrire à Prismora">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Droite -->
+    <nav class="foot-nav" aria-label="Pages du site">
+      <ul class="foot-menu">
+        <li class="has-sub">
+          <button class="foot-parent" aria-haspopup="true" aria-expanded="false" aria-controls="foot-sub-solutions">
+            Solutions
+          </button>
+          <ul id="foot-sub-solutions" class="foot-sub" role="menu" aria-label="Sous-menu solutions">
+            <li role="none"><a role="menuitem" href="solutions-tpe.html">TPE – Indépendants</a></li>
+            <li role="none"><a role="menuitem" href="solutions-pme-eti.html">PME – ETI</a></li>
+            <li role="none"><a role="menuitem" href="solutions-collectivites.html">Collectivités – Assos</a></li>
+            <li role="none"><a role="menuitem" href="solutions-freelance.html">ESN – Intégrateurs</a></li>
+          </ul>
+        </li>
+        <li><a href="prismora-solutions.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Burger
+    (function(){
+      const burger = document.querySelector('.burger');
+      const menu   = document.getElementById('site-menu');
+      if (burger && menu){
+        burger.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          burger.classList.toggle('open', open);
+          document.body.classList.toggle('no-scroll', open);
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          menu.classList.remove('open'); burger.classList.remove('open');
+          burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
+        }));
+      }
+    })();
+
+    // Sous-menu "Solutions" : toggle en mobile + ARIA
+    (function(){
+      const menu         = document.getElementById('site-menu');
+      const parentBtn    = document.querySelector('.menu-parent');
+      const submenu      = document.getElementById('submenu-solutions');
+  
+      if (!menu || !parentBtn || !submenu) return;
+  
+      // Accessibilité de base
+      parentBtn.setAttribute('aria-haspopup', 'true');
+      parentBtn.setAttribute('aria-expanded', 'false');
+      parentBtn.setAttribute('aria-controls', 'submenu-solutions');
+  
+      // Toggle par clic (utile surtout en mobile)
+      parentBtn.addEventListener('click', (e) => {
+        // En desktop le hover suffit ; le clic n'est pas nuisible
+        const willOpen = !submenu.classList.contains('is-open');
+        submenu.classList.toggle('is-open', willOpen);
+        parentBtn.classList.toggle('is-open', willOpen);
+        parentBtn.setAttribute('aria-expanded', String(willOpen));
+        e.preventDefault();
+        e.stopPropagation();
+      });
+  
+      // Fermer le sous-menu si on ferme le panneau mobile, via ton code existant
+      // (quand .menu perd .open on nettoie l'état du sous-menu)
+      const observer = new MutationObserver(() => {
+        if (!menu.classList.contains('open')){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      observer.observe(menu, { attributes:true, attributeFilter:['class'] });
+  
+      // Fermer si clic à l’extérieur (mobile ou desktop)
+      document.addEventListener('click', (e) => {
+        const clickInside = menu.contains(e.target) || parentBtn.contains(e.target);
+        if (!clickInside){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded','false');
+        }
+      });
+  
+      // Clavier : Enter/Espace = toggle ; Échap = fermer
+      parentBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          parentBtn.click();
+        } else if (e.key === 'Escape'){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded','false');
+          parentBtn.focus();
+        }
+      });
+    })();
+
+    // Ligne marque (triangle + kicker)
+    (() => {
+      function brandLineSequence(){
+        const tri  = document.querySelector('.brand-line-hero .logo-tri');
+        const kick = document.querySelector('.brand-line-hero .kicker');
+        if (!tri || !kick) return;
+    
+        // Si tu animes le triangle en CSS (classe .is-revealed), garde la ligne ci-dessous.
+        tri.classList.add('is-revealed');
+    
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const delay  = reduce ? 0 : 600; // décalage avant l’apparition du kicker
+        setTimeout(() => { kick.classList.add('is-revealed'); }, delay);
+      }
+    
+      if (document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', brandLineSequence);
+      } else {
+        brandLineSequence();
+      }
+    })();
+       // Footer: sous-menu "Solutions" - clic seulement en environnements sans hover
+    (function(){
+      const canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+      if (canHover) return; // Desktop : le CSS :hover gère l'ouverture
+  
+      const footParent = document.querySelector('.footer .foot-parent');
+      const footWrapper = footParent ? footParent.closest('.has-sub') : null;
+      if (!footParent || !footWrapper) return;
+  
+      footParent.addEventListener('click', (e) => {
+        e.preventDefault();
+        const open = !footWrapper.classList.contains('is-open');
+        footWrapper.classList.toggle('is-open', open);
+        footParent.setAttribute('aria-expanded', String(open));
+      });
+  
+      document.addEventListener('click', (e) => {
+        if (!footWrapper.contains(e.target)){
+          footWrapper.classList.remove('is-open');
+          footParent.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Lightbox Galerie -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Galerie d'images">
+    <button class="lb-close" aria-label="Fermer">×</button>
+    <button class="lb-prev" aria-label="Précédent">‹</button>
+    <button class="lb-next" aria-label="Suivant">›</button>
+    <figure class="lb-viewport">
+      <img id="lb-image" src="" alt="">
+      <figcaption id="lb-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script>
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const imgEl = document.getElementById('lb-image');
+    const capEl = document.getElementById('lb-caption');
+    const btnClose = lb.querySelector('.lb-close');
+    const btnPrev  = lb.querySelector('.lb-prev');
+    const btnNext  = lb.querySelector('.lb-next');
+  
+    // Récupère toutes les ancres de la galerie "garage"
+    const thumbs = Array.from(document.querySelectorAll('a[data-gallery="garage"]'))
+      .map(a => ({ href: a.getAttribute('href'), title: a.getAttribute('title') || a.querySelector('img')?.alt || '' }));
+  
+    let index = 0;
+  
+    function open(i){
+      index = (i+thumbs.length)%thumbs.length;
+      const {href, title} = thumbs[index];
+      imgEl.src = href;
+      imgEl.alt = title;
+      capEl.textContent = title;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      imgEl.src = ''; capEl.textContent = '';
+    }
+    function prev(){ open(index-1); }
+    function next(){ open(index+1); }
+  
+    // Ouvrir depuis le bouton "Voir la galerie"
+    document.querySelectorAll('[data-open-gallery="garage"]').forEach(btn=>{
+      btn.addEventListener('click', e=>{ e.preventDefault(); open(0); });
+    });
+  
+    // Ouvrir depuis une vignette (au bon index)
+    document.querySelectorAll('a[data-gallery="garage"]').forEach((a,i)=>{
+      a.addEventListener('click', e=>{ e.preventDefault(); open(i); });
+    });
+  
+    // Contrôles
+    btnClose.addEventListener('click', close);
+    btnPrev .addEventListener('click', prev);
+    btnNext .addEventListener('click', next);
+    lb.addEventListener('click', e=>{ if(e.target===lb) close(); }); // clic fond
+  
+    // Clavier
+    window.addEventListener('keydown', e=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowLeft') prev();
+      if(e.key==='ArrowRight') next();
+    });
+  })();
+  </script>  
+  <!-- Lightbox Vidéo -->
+  <div id="videobox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Démo vidéo">
+    <button class="lb-close" aria-label="Fermer">×</button>
+    <figure class="lb-viewport" style="width:min(92vw,1120px);">
+      <video id="vb-player" controls playsinline style="width:100%;height:auto;border-radius:12px;"></video>
+      <figcaption id="vb-caption" style="color:#fff;margin-top:.5rem;opacity:.9"></figcaption>
+    </figure>
+  </div>
+  <script>
+  (function(){
+    const vbox   = document.getElementById('videobox');
+    const player = document.getElementById('vb-player');
+    const cap    = document.getElementById('vb-caption');
+    const btnX   = vbox.querySelector('.lb-close');
+  
+    function openVideo(src, title){
+      player.src = src;
+      cap.textContent = title || 'Démo vidéo';
+      vbox.classList.add('open');
+      vbox.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      player.play()?.catch(()=>{ /* ignore autoplay block */ });
+    }
+    function closeVideo(){
+      player.pause();
+      player.currentTime = 0;
+      player.removeAttribute('src');
+      player.load();
+      vbox.classList.remove('open');
+      vbox.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+    // Ouvrir depuis le bouton
+    document.querySelectorAll('[data-open-video]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        openVideo(a.getAttribute('href'), a.getAttribute('title') || a.textContent.trim());
+      });
+    });
+    // Fermer (croix, clic fond, Échap)
+    btnX.addEventListener('click', closeVideo);
+    vbox.addEventListener('click', e=>{ if(e.target===vbox) closeVideo(); });
+    window.addEventListener('keydown', e=>{
+      if(e.key==='Escape' && vbox.classList.contains('open')) closeVideo();
+    });
+  })();
+  </script>
+</body>
+</html>
