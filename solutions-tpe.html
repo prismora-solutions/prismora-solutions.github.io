@@ -68,13 +68,10 @@
           </ul>
         </div>
   
-        <!-- On garde A propos -->
+        <!-- A propos -->
         <a role="menuitem" href="prismora-solutions.html">À propos</a>
   
-        <!-- Optionnel : Freelance si tu veux le garder (tu avais un lien) -->
-        <!-- <a role="menuitem" href="solutions-freelance.html">Freelance</a> -->
-  
-        <!-- On garde Contact -->
+        <!-- Contact -->
         <a role="menuitem" href="contact.html">Contact</a>
       </div>
     </div>
@@ -111,6 +108,165 @@
       </div>
     </div>
   </header>
+
+<!-- ===================== PROCESS (déroulé) ===================== -->
+<section class="section" id="process">
+  <div class="container">
+    <h2 class="sect-title">
+      <span class="prism" aria-hidden="true"></span>
+      Un accompagnement structuré
+    </h2>
+    <p class="sub-lead" style="max-width:60ch">
+      Un parcours simple pour TPE : on clarifie, on cadre, puis on déploie ce qui est utile au quotidien — sans alourdir l’organisation.
+    </p>
+
+    <!-- Style local, scope: #process uniquement -->
+    <style>
+      #process .flow{
+        display:grid;
+        grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr; /* carte | flèche étroite | ... */
+        column-gap: var(--m);
+        row-gap: 0;
+        align-items: stretch;                  /* égalise la hauteur des cartes */
+        margin-top: var(--m);
+      }
+      #process .arrow{
+        display:flex; align-items:center; justify-content:center;
+      }
+      #process .arrow svg{
+        width:26px; height:26px; opacity:.75; color:var(--brand, #0f4c5c);
+      }
+      /* Wrapper d’étape : centre numéro + carte */
+      #process .step-wrap{
+        display:flex; flex-direction:column; align-items:center; gap:.5rem;
+      }
+      /* Numéro au-dessus de la carte (hors carte) */
+      #process .step-num{
+        font-weight:800; color:var(--brand, #0f4c5c);
+        font-size:clamp(22px, 2.4vw, 28px); line-height:1;
+        letter-spacing:.02em;
+      }
+      /* Carte (réutilise visuel "card" de ton site) */
+      #process .step-card{
+        width:100%;
+        height:100%;
+        display:flex; flex-direction:column; align-items:center;
+        text-align:center; padding: var(--m);
+      }
+      /* Bande méta à hauteur fixe pour aligner icônes/titres */
+      #process .meta-band{
+        height:96px;                      /* aligne les icônes/titres entre cartes */
+        display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+      }
+      /* Icône ronde centrée (remplaçable par SVG plus tard) */
+      #process .ico{
+        width:56px; height:56px; border-radius:50%;
+        display:inline-flex; align-items:center; justify-content:center;
+        background: rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem;
+      }
+      #process h3{ margin:.15rem 0 .25rem; }
+
+      /* Liste en puces carrées, recentrée visuellement */
+      #process .step-card .liste-carre{
+        text-align:left;
+        margin-top:.5rem;
+      }
+
+      /* Flèches entre cartes */
+      #process .arrow{
+        display:flex; align-items:center; justify-content:center;
+      }
+      #process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand, #0f4c5c); }
+
+      /* Mobile : empilement, flèches verticales */
+      @media (max-width:900px){
+        #process .flow{ grid-template-columns: 1fr; gap:.5rem; }
+        #process .arrow svg{ transform: rotate(90deg); }
+      }
+    </style>
+
+    <div class="flow">
+
+      <!-- Étape 1 -->
+      <div class="step-wrap">
+        <div class="step-num">1</div>
+        <article class="card step-card">
+          <div class="meta-band">
+            <div class="ico" aria-hidden="true">🧭</div>
+            <h3>Poser les bases</h3>
+          </div>
+          <ul class="liste-carre">
+            <li>Premier échange</li>
+            <li>Vos besoins</li>
+            <li>Vos outils</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="step-wrap">
+        <div class="step-num">2</div>
+        <article class="card step-card">
+          <div class="meta-band">
+            <div class="ico" aria-hidden="true">📝</div>
+            <h3>Devis clair</h3>
+          </div>
+          <ul class="liste-carre">
+            <li>Actions prévues</li>
+            <li>Calendrier simple</li>
+            <li>Budget adapté</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="step-wrap">
+        <div class="step-num">3</div>
+        <article class="card step-card">
+          <div class="meta-band">
+            <div class="ico" aria-hidden="true">📌</div>
+            <h3>On s’organise</h3>
+          </div>
+          <ul class="liste-carre">
+            <li>Plan d’action</li>
+            <li>Points à valider</li>
+            <li>Top départ</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+      </div>
+
+      <!-- Étape 4 -->
+      <div class="step-wrap">
+        <div class="step-num">4</div>
+        <article class="card step-card">
+          <div class="meta-band">
+            <div class="ico" aria-hidden="true">⚙️</div>
+            <h3>Mise en place</h3>
+          </div>
+          <ul class="liste-carre">
+            <li>Fichiers organisés</li>
+            <li>Tableau de bord</li>
+            <li>Prise en main</li>
+          </ul>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- PARCOURS -->
   <section class="section">
