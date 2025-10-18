@@ -30,7 +30,7 @@
   <!-- Couleur navigateur -->
   <meta name="theme-color" content="#0f4c5c" />
 </head>
-<body>
+<body class="page-collectivites">
 
   <!-- ===================== NAV ===================== -->
   <nav class="nav" aria-label="Navigation principale">
@@ -450,96 +450,6 @@
   </section>
   
 <!-- ===================== FOOTER ===================== -->
-<style>
-  /* ===== Scope footer seulement ===== */
-  .footer .footer-grid{
-    display:grid;
-    grid-template-columns: 1fr auto 1fr; /* gauche | centre | droite */
-    align-items:center;
-    gap:16px;
-  }
-
-  /* ----- Gauche : copyright + liens en dessous ----- */
-  .footer .legal{ font-size:.96rem; color:inherit; }
-  .footer .legal-main{ margin-bottom:.25rem; }              /* © Prismora… Bordeaux */
-  .footer .legal-links{ font-size:.86rem; opacity:.9; }      /* petite taille pour les liens */
-  .footer .legal-links a{ color:inherit; text-decoration:none; }
-  .footer .legal-links a:hover{ text-decoration:underline; }
-
-  /* ----- Centre : icônes ----- */
-  .footer .social{ display:flex; justify-content:center; gap:16px; }
-  .footer .social a{
-    display:inline-flex; width:36px; height:36px; border-radius:50%;
-    align-items:center; justify-content:center;
-    transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
-    background:rgba(0,0,0,.04);
-  }
-  .footer .social a:hover{
-    transform:translateY(-2px);
-    background:rgba(15,76,92,.10);
-    box-shadow:0 4px 14px rgba(0,0,0,.12);
-  }
-  .footer .social svg{ width:18px; height:18px; fill:currentColor; opacity:.9; }
-
-  /* ----- Droite : menu ALIGNE en LIGNE ----- */
-  .footer .foot-nav{ justify-self:end; }
-  .footer .foot-menu{
-    display:flex; align-items:center; gap:18px;
-    list-style:none; margin:0; padding:0;
-  }
-  .footer .foot-menu > li{ position:relative; }
-  .footer .foot-nav a,
-  .footer .foot-nav button.foot-parent{
-    color:inherit; text-decoration:none; font-weight:600; /* même style pour tous */
-    font-size:1rem; background:transparent; border:0; padding:0; cursor:pointer;
-    display:inline-flex; align-items:center; gap:.35rem;
-  }
-
-  /* Sous-menu vers le haut */
-  .footer .foot-sub{
-    position:absolute; right:0; bottom:100%; transform:translateY(-8px);
-    list-style:none; margin:0; padding:.5rem 0;
-    background:#fff; border:1px solid rgba(15,76,92,.15);
-    border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,.12);
-    min-width:240px; display:none; z-index:5;
-  }
-  .footer .foot-sub a{
-    display:block; padding:.5rem .85rem; color:var(--brand, #0f4c5c); border-radius:8px;
-    white-space:nowrap;
-  }
-  .footer .foot-sub a:hover{ background:rgba(15,76,92,.06); }
-
-  /* Chevron discret */
-  .footer .foot-parent::after{ content:"▴"; font-size:.8rem; opacity:.9; }
-
-  /* Desktop : ouverture au survol/focus (pas besoin de cliquer) */
-  @media (hover:hover){
-    .footer .has-sub:hover .foot-sub,
-    .footer .has-sub:focus-within .foot-sub{ display:block; }
-  }
-  /* Mobile / touch : ouverture via classe .is-open (JS) */
-  .footer .has-sub.is-open .foot-sub{ display:block; }
-
-  /* ----- Mobile : ordre demandé ----- */
-  @media (max-width:900px){
-    .footer .footer-grid{
-      grid-template-columns:1fr;
-      grid-template-areas:
-        "social"
-        "menu"
-        "copyright"
-        "links";
-      row-gap:10px; text-align:center;
-    }
-    .footer .social{ grid-area:social; }
-    .footer .foot-nav{ grid-area:menu; justify-self:center; }
-    .footer .legal{ grid-area:copyright; }
-    .footer .legal-links{ grid-area:links; }
-
-    /* le sous-menu centré sous le parent, mais vers le haut */
-    .footer .has-sub .foot-sub{ left:50%; right:auto; transform:translate(-50%,-8px); }
-  }
-</style>
 
 <footer class="footer" aria-label="Pied de page">
   <div class="container footer-grid">

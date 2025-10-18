@@ -1,18 +1,36 @@
-<!-- contact.html — Prismora Solutions (V2) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Prismora Solutions – Partenaire Data & BI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Vos chiffres, enfin lisibles... simples. Prismora Solutions — Data & BI, Bordeaux & remote." />
+
+  <!-- SEO principal -->
+  <title>Mentions légales – Prismora Solutions</title>
+  <meta name="description" content="Mentions légales de Prismora Solutions : éditeur, hébergeur, propriété intellectuelle, données personnelles et responsabilité.">
+  <link rel="canonical" href="https://prismora.fr/mentions-legales.html">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Mentions légales – Prismora Solutions">
+  <meta property="og:description" content="Mentions légales de Prismora Solutions : éditeur, hébergeur, propriété intellectuelle, données personnelles et responsabilité.">
+  <meta property="og:url" content="https://prismora.fr/mentions-legales.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://prismora.fr/assets/img/logo/logo_def2.png">
+  <meta property="og:site_name" content="Prismora Solutions">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Police + CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/css/style.css?v=13"/>
+  <link rel="stylesheet" href="assets/css/style.css?v=15"/>
+
+  <!-- Couleur navigateur -->
   <meta name="theme-color" content="#0f4c5c" />
 </head>
-<body class="page-contact">
+
+<body>
 
   <!-- ===================== NAV ===================== -->
   <nav class="nav" aria-label="Navigation principale">
@@ -61,137 +79,195 @@
       </div>
     </div>
   </nav>
-
-  <!-- ===================== HERO ===================== -->
-  <header class="hero">
+  
+  <!-- SECTION HERO -->
+  <section class="section" id="mentions-legales">
     <div class="container hero-split">
       <div class="hero-text">
         <h1 class="sect-title">
-          <span class="prism" aria-hidden="true"></span>
-          Échanger sur votre projet
+          <span class="prism" aria-hidden="true"></span>Mentions légales
         </h1>
-
-        <div class="brand-line brand-line-hero" id="brandLineHero">
-          <img class="logo-tri" src="assets/img/logo/logo_def2.png" alt="Logo Triangle"/>
-          <p class="kicker">Partenaire Data & BI</p>
-        </div>
-        
         <p class="sub-lead">
-          <strong>Décrivez votre contexte</strong> en quelques lignes : votre activité, <strong>ce qui bloque aujourd’hui</strong>, vos <strong>priorités</strong> et votre <strong>échéance</strong>.<br>
-          Objectif du <strong>premier échange</strong> : comprendre vos contraintes et trouver des <strong>solutions simples, concrètes et adaptées</strong> à votre réalité.<br><br>
-          Pour une <strong>mission freelance</strong> ou un <strong>renfort ESN</strong>, précisez tous les éléments qui permettront un démarrage efficace !
+          Conformément aux dispositions des articles 6-III et 19 de la loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie numérique, il est précisé aux utilisateurs du site <strong>Prismora Solutions</strong> l’identité des différents intervenants dans le cadre de sa réalisation et de son suivi.
         </p>
-
       </div>
-
-      <div class="hero-visual" style="max-width:240px; margin-inline:auto">
-        <img src="assets/img/photos/consultant3.png" alt="Collaboration et synthèse visuelle">
+      <div class="hero-visual">
+        <img src="assets/img/photos/mentions.png" alt="Mentions légales" style="max-width:320px; width:100%; height:auto;">
       </div>
     </div>
-  </header>
-
-  <!-- ===== CONTACT – BLOC PRINCIPAL  ===== -->
+  </section>
   
-  <main class="section">
-    <div class="container contact-layout">
-      <!-- Colonne gauche : FORMULAIRE -->
-      <section aria-labelledby="form-title">
-        <h2 id="form-title" class="sect-title">
-          <span class="prism" aria-hidden="true"></span>
-          Formulaire de contact
-        </h2>
-  
-        <!-- Remplacez ACTION_URL par l’URL de votre Apps Script (Application Web) -->
-        <form class="form contact-form" action="https://script.google.com/macros/s/AKfycbyoBmlVtk36kEuMRN8o3NXxyfjzzv0FRywJtXd8k066rLrcODOJcUnn3yaQ0QGTWGnd/exec" method="POST" accept-charset="utf-8" novalidate>
-          <!-- Honeypot anti-spam -->
-          <div style="position:absolute;left:-9999px;height:0;overflow:hidden;">
-            <label>Votre site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-          </div>
-  
-          <div class="form-grid">
-            <label>Votre nom <span class="req">(obligatoire)</span>
-              <input type="text" name="nom" required autocomplete="name">
-            </label>
-  
-            <label>Votre email <span class="req">(obligatoire)</span>
-              <input type="email" name="email" required autocomplete="email">
-            </label>
-  
-            <label>Organisation <span class="req">(facultatif)</span>
-              <input type="text" name="organisation">
-            </label>
-  
-            <label>Vous êtes
-              <select name="profil">
-                <option value="">—</option>
-                <option>TPE</option><option>PME-ETI</option>
-                <option>Collectivité</option><option>ESN-Intégrateur</option>
-              </select>
-            </label>
-  
-            <label>Objet
-              <select name="objet">
-                <option>Diagnostic</option>
-                <option>Tableaux de bord</option>
-                <option>Automatisation</option>
-                <option>Mission freelance</option>
-                <option>Autre</option>
-              </select>
-            </label>
-  
-            <label>Délai souhaité
-              <input type="text" name="delai" placeholder="ex. sous 1 mois">
-            </label>
-  
-            <div class="full">
-              <label for="message">Votre message <span class="req">(obligatoire)</span></label>
-              <textarea id="message" name="message" rows="8" required
-                placeholder="Quelques lignes sur votre contexte, vos priorités et votre délai."></textarea>
-            </div>
-  
-            <div></div><!-- espace seconde colonne -->
-  
-            <label class="checkbox full">
-              <input type="checkbox" name="consent" required>
-              <span>J’accepte que mes informations soient utilisées pour me recontacter (aucun partage externe).</span>
-            </label>
-  
-            <div class="cta-row full">
-              <button id="btn-submit" class="cta" type="submit" disabled>Envoyer votre demande</button>
-            </div>
-          </div>
-        </form>
-      </section>
-  
-      <!-- Colonne droite : INFOS (compact) -->
-      <aside class="card contact-aside" aria-labelledby="infos-title">
-        <h3 id="infos-title" class="h3">Infos utiles</h3>
-        <ul class="checklist">
-          <li>Retour sous <strong>24–48 h ouvrées</strong></li>
-          <li>Bordeaux & <strong>remote</strong> partout en France</li>
-          <li>RGPD : données utilisées <strong>uniquement</strong> pour répondre</li>
-          <li>Pas de démarchage, pas de spam</li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-        </ul>
-      </aside>
-    </div>
-  </main>
-
-  <!-- ===================== CONFIDENTIALITÉ ===================== -->
-  <section class="section" id="confidentialite">
+  <!-- MENTIONS — Cartes centrées dans UNE seule section -->
+  <section class="section">
     <div class="container">
-      <h2 class="sect-title">
-        <span class="prism" aria-hidden="true"></span>
-        Confidentialité & Données
-      </h2>
-      <p class="sub-lead">
-        Vos informations servent uniquement à traiter votre demande. Aucune cession à des tiers. Sur simple demande,
-        nous supprimons vos données de notre registre et de nos échanges.
-      </p>
+      <!-- Wrapper commun : même largeur sur desktop & mobile -->
+      <div style="max-width:780px; width:100%; margin:0 auto;">
+  
+        <!-- Éditeur du site -->
+        <article class="card" style="margin-bottom:var(--m);">
+          <div class="card-body">
+            <h3>Éditeur du site</h3>
+            <p>
+              Nom / Prénom : Van Tongeren Jean Paul <br>
+              Statut : Entrepreneur Individuel (EI) <br>
+              Raison sociale : Prismora Solutions <br>
+              Adresse du siège social : 545, Route de Saint Romain, 33240 Asques <br>
+              Email : prismorasolutions@gmail.com <br>
+              Numéro SIRET : 990 867 715 00015 <br>
+              Directeur de la publication : Jean Paul Van Tongeren
+            </p>
+          </div>
+        </article>
+  
+        <!-- Hébergement -->
+        <article class="card" style="margin-bottom:var(--m);">
+          <div class="card-body">
+            <h3>Hébergement</h3>
+            <p>
+              Le site est hébergé par : GitHub, Inc. <br>
+              88 Colin P. Kelly Jr Street <br>
+              San Francisco, CA 94107, États-Unis <br>
+              Site web : <a href="https://github.com">https://github.com</a>
+            </p>
+          </div>
+        </article>
+  
+        <!-- Propriété intellectuelle -->
+        <article class="card" style="margin-bottom:var(--m);">
+          <div class="card-body">
+            <h3>Propriété intellectuelle</h3>
+            <p>
+              L’ensemble du contenu du site (textes, images, graphismes, logo, icônes, sons, logiciels) est la propriété de
+              <strong>Prismora Solutions</strong> ou fait l’objet d’une autorisation d’utilisation.
+              Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site,
+              quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable.
+            </p>
+          </div>
+        </article>
+  
+        <!-- Données personnelles -->
+        <article class="card" style="margin-bottom:var(--m);">
+          <div class="card-body">
+            <h3>Données personnelles</h3>
+            <p>
+              Les informations collectées via le formulaire de contact sont uniquement destinées à traiter les demandes des utilisateurs.
+              Aucune donnée n’est transmise à des tiers.
+              Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de vos données,
+              que vous pouvez exercer en écrivant à : prismorasolutions@gmail.com.
+            </p>
+          </div>
+        </article>
+  
+        <!-- Responsabilité -->
+        <article class="card">
+          <div class="card-body">
+            <h3>Responsabilité</h3>
+            <p>
+              Prismora Solutions met tout en œuvre pour fournir des informations exactes et mises à jour.
+              Toutefois, des erreurs ou omissions peuvent survenir. L’utilisateur doit s’assurer de l’exactitude des informations
+              et signaler toute modification utile. Prismora Solutions n’est en aucun cas responsable de l’utilisation faite de ces informations
+              ni de tout préjudice direct ou indirect pouvant en découler.
+            </p>
+          </div>
+        </article>
+  
+      </div>
     </div>
   </section>
 
+
+  
 <!-- ===================== FOOTER ===================== -->
+<style>
+  /* ===== Scope footer seulement ===== */
+  .footer .footer-grid{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr; /* gauche | centre | droite */
+    align-items:center;
+    gap:16px;
+  }
+
+  /* ----- Gauche : copyright + liens en dessous ----- */
+  .footer .legal{ font-size:.96rem; color:inherit; }
+  .footer .legal-main{ margin-bottom:.25rem; }              /* © Prismora… Bordeaux */
+  .footer .legal-links{ font-size:.86rem; opacity:.9; }      /* petite taille pour les liens */
+  .footer .legal-links a{ color:inherit; text-decoration:none; }
+  .footer .legal-links a:hover{ text-decoration:underline; }
+
+  /* ----- Centre : icônes ----- */
+  .footer .social{ display:flex; justify-content:center; gap:16px; }
+  .footer .social a{
+    display:inline-flex; width:36px; height:36px; border-radius:50%;
+    align-items:center; justify-content:center;
+    transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+    background:rgba(0,0,0,.04);
+  }
+  .footer .social a:hover{
+    transform:translateY(-2px);
+    background:rgba(15,76,92,.10);
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+  }
+  .footer .social svg{ width:18px; height:18px; fill:currentColor; opacity:.9; }
+
+  /* ----- Droite : menu ALIGNE en LIGNE ----- */
+  .footer .foot-nav{ justify-self:end; }
+  .footer .foot-menu{
+    display:flex; align-items:center; gap:18px;
+    list-style:none; margin:0; padding:0;
+  }
+  .footer .foot-menu > li{ position:relative; }
+  .footer .foot-nav a,
+  .footer .foot-nav button.foot-parent{
+    color:inherit; text-decoration:none; font-weight:600; /* même style pour tous */
+    font-size:1rem; background:transparent; border:0; padding:0; cursor:pointer;
+    display:inline-flex; align-items:center; gap:.35rem;
+  }
+
+  /* Sous-menu vers le haut */
+  .footer .foot-sub{
+    position:absolute; right:0; bottom:100%; transform:translateY(-8px);
+    list-style:none; margin:0; padding:.5rem 0;
+    background:#fff; border:1px solid rgba(15,76,92,.15);
+    border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,.12);
+    min-width:240px; display:none; z-index:5;
+  }
+  .footer .foot-sub a{
+    display:block; padding:.5rem .85rem; color:var(--brand, #0f4c5c); border-radius:8px;
+    white-space:nowrap;
+  }
+  .footer .foot-sub a:hover{ background:rgba(15,76,92,.06); }
+
+  /* Chevron discret */
+  .footer .foot-parent::after{ content:"▴"; font-size:.8rem; opacity:.9; }
+
+  /* Desktop : ouverture au survol/focus (pas besoin de cliquer) */
+  @media (hover:hover){
+    .footer .has-sub:hover .foot-sub,
+    .footer .has-sub:focus-within .foot-sub{ display:block; }
+  }
+  /* Mobile / touch : ouverture via classe .is-open (JS) */
+  .footer .has-sub.is-open .foot-sub{ display:block; }
+
+  /* ----- Mobile : ordre demandé ----- */
+  @media (max-width:900px){
+    .footer .footer-grid{
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "social"
+        "menu"
+        "copyright"
+        "links";
+      row-gap:10px; text-align:center;
+    }
+    .footer .social{ grid-area:social; }
+    .footer .foot-nav{ grid-area:menu; justify-self:center; }
+    .footer .legal{ grid-area:copyright; }
+    .footer .legal-links{ grid-area:links; }
+
+    /* le sous-menu centré sous le parent, mais vers le haut */
+    .footer .has-sub .foot-sub{ left:50%; right:auto; transform:translate(-50%,-8px); }
+  }
+</style>
 
 <footer class="footer" aria-label="Pied de page">
   <div class="container footer-grid">
@@ -372,92 +448,7 @@
         }
       });
     })();
-    
   </script>
-
-
-  <!-- Popup de confirmation -->
-  <div id="confirmModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
-    <div class="modal-box">
-      <h3 id="modalTitle" class="h3" style="margin-top:0">Demande envoyée ✅</h3>
-      <p>Merci, votre message a bien été transmis. Réponse sous 24–48h ouvrées.</p>
-      <div style="text-align:right;margin-top:1rem">
-        <button id="modalClose" class="cta" type="button">OK</button>
-      </div>
-    </div>
-  </div>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function(){
-    const form  = document.querySelector('form.contact-form');
-    const btn   = document.getElementById('btn-submit');
-    const modal = document.getElementById('confirmModal');
-    const close = document.getElementById('modalClose');
-    if (!form || !btn || !modal || !close) return;
   
-    // Anti-bot doux
-    setTimeout(()=> btn.disabled = false, 1200);
-  
-    const $ = (n)=> form.querySelector(`[name="${n}"]`);
-  
-    // --- Helpers modal
-    const onEsc = (e)=>{ if(e.key === 'Escape') hideModal(); };
-    const showModal = ()=>{
-      modal.setAttribute('aria-hidden','false');
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
-      close.focus();
-      window.addEventListener('keydown', onEsc);
-    };
-    const hideModal = ()=>{
-      modal.setAttribute('aria-hidden','true');
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', onEsc);
-      try{ form.reset(); }catch(_){}
-    };
-  
-    close.addEventListener('click', (e)=>{ e.preventDefault(); hideModal(); });
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) hideModal(); });
-  
-    // --- Envoi AJAX + validation
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-  
-      const nom=$('nom'), email=$('email'), msg=$('message'), consent=$('consent');
-      const emailOk = (email?.value||'').match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-      let ok = true;
-      const mark = (el, valid)=> el && el.setAttribute('aria-invalid', valid?'false':'true');
-  
-      if(!nom?.value.trim()){ ok=false; mark(nom,false);} else mark(nom,true);
-      if(!emailOk){            ok=false; mark(email,false);} else mark(email,true);
-      if(!msg?.value.trim()){  ok=false; mark(msg,false);} else mark(msg,true);
-      if(!consent?.checked){   ok=false; mark(consent,false);} else mark(consent,true);
-  
-      if(!ok){ alert('Merci de compléter les champs obligatoires.'); return; }
-  
-      // Honeypot
-      if(($('website')?.value||'').trim()){ form.reset(); showModal(); return; }
-  
-      btn.disabled = true;
-      try{
-        const fd = new FormData(form);
-        await fetch(form.action, { method:'POST', body:fd, mode:'no-cors' });
-        form.reset();
-        showModal(); // success
-      }catch(err){
-        console.error(err);
-        alert("Oups, l'envoi a échoué. Merci de réessayer dans un instant.");
-      }finally{
-        btn.disabled = false;
-      }
-    });
-  });
-  </script>
-
-
-
-
 </body>
 </html>

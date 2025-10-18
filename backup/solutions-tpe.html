@@ -1,4 +1,4 @@
-<!-- solutions-pme-eti.html — Prismora Solutions  -->
+<!-- solutions-tpe.html — Prismora Solutions (V2) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- SEO principal -->
-  <title>Business Intelligence PME & ETI – KPIs, Dataviz & Gouvernance | Prismora Solutions</title>
-  <meta name="description" content="PME & ETI : dashboards inter-équipes, KPIs partagés, pipelines automatisés, gouvernance & sécurité. Diagnostic, dataviz Power BI/Looker, intégrations SI, TMA.">
-  <link rel="canonical" href="https://prismora.fr/solutions-pme-eti.html">
+  <title>Tableau de bord TPE – Pilotage CA, Marge & Trésorerie | Prismora Solutions</title>
+  <meta name="description" content="TPE & indépendants : suivi simple du CA, de la marge et de la trésorerie. Diagnostic rapide, tableau de bord utile, essai concret, formation & transfert.">
+  <link rel="canonical" href="https://prismora.fr/solutions-tpe.html">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Business Intelligence PME & ETI – KPIs, Dataviz & Gouvernance | Prismora Solutions">
-  <meta property="og:description" content="Dashboards inter-équipes, KPIs partagés, pipelines automatisés, gouvernance & sécurité. Diagnostic, dataviz Power BI/Looker, intégrations SI, TMA.">
-  <meta property="og:url" content="https://prismora.fr/solutions-pme-eti.html">
+  <meta property="og:title" content="Tableau de bord TPE – Pilotage CA, Marge & Trésorerie | Prismora Solutions">
+  <meta property="og:description" content="TPE & indépendants : suivi simple du CA, de la marge et de la trésorerie. Diagnostic rapide, tableau de bord utile, essai concret, formation & transfert.">
+  <meta property="og:url" content="https://prismora.fr/solutions-tpe.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://prismora.fr/assets/img/logo/logo_def2.png">
   <meta property="og:site_name" content="Prismora Solutions">
@@ -30,9 +30,8 @@
   <!-- Couleur navigateur -->
   <meta name="theme-color" content="#0f4c5c" />
 </head>
-
-<body class="page-pme">
-
+<body>
+  
   <!-- ===================== NAV ===================== -->
   <nav class="nav" aria-label="Navigation principale">
     <div class="container wrap">
@@ -69,34 +68,117 @@
           </ul>
         </div>
   
-        <!-- On garde A propos -->
+        <!-- A propos -->
         <a role="menuitem" href="prismora-solutions.html">À propos</a>
   
-        <!-- Optionnel : Freelance si tu veux le garder (tu avais un lien) -->
-        <!-- <a role="menuitem" href="solutions-freelance.html">Freelance</a> -->
-  
-        <!-- On garde Contact -->
+        <!-- Contact -->
         <a role="menuitem" href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
+  
+  <style>
+  /* ===== Layout de la section Process ===== */
+  #process .process-wrap{
+    display:grid;
+    grid-template-columns: 1fr 320px;
+    grid-template-areas:
+      "intro cta"
+      "flow  flow";
+    column-gap:24px;
+    align-items:start;
+    margin:8px 0 10px;
+  }
+  #process .intro   { grid-area:intro; }
+  #process .flow    { grid-area:flow; }
+  
+  /* Colonne logo + CTA (à droite) */
+  #process .cta-col{
+    grid-area:cta;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center; /* centre verticalement */
+    text-align:center;
+  }
+  #process .cta-col img{
+    width:80px; height:auto; margin-bottom:12px; display:block;
+  }
+  
+  /* ===== Grille des 4 cartes ===== */
+  #process .flow{
+    display:grid;
+    grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr;
+    column-gap: var(--m);
+    row-gap: 0;
+    align-items: stretch;
+    margin-top: var(--s);
+  }
+  #process .arrow{ display:flex; align-items:center; justify-content:center; }
+  #process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand,#0f4c5c); }
+  
+  #process .step-wrap{ display:flex; flex-direction:column; align-items:center; gap:.5rem; }
+  #process .step-num{ font-weight:800; color:var(--brand,#0f4c5c); font-size:clamp(22px,2.4vw,28px); line-height:1; }
+  #process .step-card{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; text-align:center; padding:var(--m); }
+  #process .meta-band{ height:96px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
+  #process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
+  #process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
+  
+  /* Desktop : petit offset pour centrer visuellement par rapport au H2+intro */
+  @media (min-width:901px){
+    #process .cta-col{
+      align-self:center;
+      transform: translateY(-80px); /* ajuste à -12/-20px selon ton œil */
+    }
+  }
+  
+  /* Mobile : CTA SOUS les cartes */
+  @media (max-width:900px){
+    #process .process-wrap{
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "intro"
+        "flow"
+        "cta";
+      row-gap:12px;
+    }
+    #process .flow{
+      grid-template-columns: 1fr;
+      justify-items: center;   /* ⬅️ centre chaque “case” de la grille */
+      gap: 10px;
+    }
+    #process .step-wrap{
+      width: min(300px, 92vw); 
+      gap: 1rem;
+    }
+    /*#process .step-card{
+      width: 100%;
+    }*/
+    #process .arrow svg{ transform: rotate(90deg); }
+    #process .cta-col{ justify-self:center; } /* centre horizontalement */
+    #process .step-num{
+      font-size: clamp(28px, 7vw, 38px); /* ← ajuste la taille */
+      line-height: 1;
+    }
+  }
+  </style>
 
-  <!-- HERO (structure identique à la page TPE) -->
+  <!-- HERO -->
   <header class="hero">
     <div class="container hero-split">
       <div class="hero-text">
         <h1 class="sect-title">
           <span class="prism" aria-hidden="true"></span>
-          Solutions PME & ETI
+          Solutions TPE / Indépendants
         </h1>
         <p class="sub-lead">
-          <strong style="font-size: 1.2em;">Vous êtes une entreprise en croissance autour de Bordeaux :</strong><br><br>
-          <em>Plusieurs services, des outils différents, des tableaux avec trop d'infos… chacun a ses chiffres et l’organisation de vos données est difficile.<br> 
-          Au quotidien, la gestion terrain et l'opérationnel prennent le dessus.<br>
-          Résultat : arbitrages lents, manque de visibilité, opportunités manquées, risques de contre-performances.</em><br><br>
-          <strong>Prismora Solutions</strong> vous accompagne pour organiser vos données et vous donner de la visibilité, grâce à une approche progressive adaptée à votre structure.<br><br>
-          <strong>Objectif</strong> : <strong>des données organisées, une vue fiable et partagée</strong> pour décider plus vite et performer.<br><br>
-          Découvrez ci-dessous 2 exemples de solutions apportées, puis les étapes de mise en oeuvre ajustables à votre activité.
+          <strong style="font-size: 1.2em;">Artisan, Commerçant, Micro-entrepreneur, Indépendant :</strong><br><br>
+          <em>Passionné par votre activité, vous travaillez sans compter vos heures, vous saisissez factures et devis dans votre logiciel, puis le bilan arrive sans explication… 
+          Entre-temps, le temps file, difficile d’avoir une vision nette : est-ce que ça marche vraiment ?<br>
+          Les fichiers s’éparpillent, l’organisation se complique, et sans repères clairs, où mettre son énergie ? — Tout se fait à l’instinct, avec le risque de passer à côté de l’essentiel.</em>
+          <br><br>
+          <strong>Prismora Solutions</strong> propose <strong>une vue d’ensemble claire</strong> et une <strong>organisation simple de vos fichiers et données</strong> : ce qui rapporte, ce qui freine vos résultats, 
+          avec des repères concrets pour <strong>gérer au quotidien</strong>.
         </p>
         <div class="brand-line brand-line-hero" id="brandLineHero">
           <img class="logo-tri" src="assets/img/logo/logo_def2.png" alt="Logo Triangle"/>
@@ -105,190 +187,224 @@
       </div>
       <div class="hero-visual">
         <img
-          src="assets/img/photos/pme-eti.png"
-          alt="Illustration PME & ETI — socle data, KPIs partagés, automatisations"
+          src="assets/img/photos/tpe-intro.png"
+          alt="Illustration TPE — solutions simples et utiles"
           style="max-width: 280px !important; width: 100%; height: auto;"
         >
       </div>
     </div>
   </header>
 
-  <!-- PARCOURS / MISE EN PLACE (même bloc que TPE, ton adapté PME/ETI) -->
+<!-- ===================== PROCESS (déroulé) ===================== -->
+<section class="section" id="process">
+  <div class="container">
+    <h2 class="sect-title">
+      <span class="prism" aria-hidden="true"></span>
+      Un accompagnement structuré
+    </h2>
+   <!-- ⬇️ NOUVEAU WRAPPER -->
+    <div class="process-wrap">
+      <!-- Intro texte -->
+      <p class="sub-lead intro" style="max-width:60ch; margin:0;">
+        <strong>Un parcours simple, pensé pour vous :</strong><br>
+        on échange pour définir vos besoins et vos priorités, puis on met en place ce qui vous sera réellement utile au quotidien.
+      </p>
+
+      <!-- Logo + CTA -->
+      <div class="cta-col">
+        <img src="assets/img/logo/logo4.png" alt="Prismora Solutions">
+        <a class="cta" href="contact.html">Prêt à avancer&nbsp;?</a>
+      </div>
+
+
+      <div class="flow">
+  
+        <!-- Étape 1 -->
+        <div class="step-wrap">
+          <div class="step-num">1</div>
+          <article class="card step-card">
+            <div class="meta-band">
+              <div class="ico" aria-hidden="true">🧭</div>
+              <h3>Poser les bases</h3>
+            </div>
+            <ul class="liste-carre">
+              <li>Premier échange</li>
+              <li>Vos besoins</li>
+              <li>Vos outils</li>
+            </ul>
+          </article>
+        </div>
+  
+        <div class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+        </div>
+  
+        <!-- Étape 2 -->
+        <div class="step-wrap">
+          <div class="step-num">2</div>
+          <article class="card step-card">
+            <div class="meta-band">
+              <div class="ico" aria-hidden="true">📝</div>
+              <h3>Devis clair</h3>
+            </div>
+            <ul class="liste-carre">
+              <li>Actions prévues</li>
+              <li>Calendrier simple</li>
+              <li>Budget adapté</li>
+            </ul>
+          </article>
+        </div>
+  
+        <div class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+        </div>
+  
+        <!-- Étape 3 -->
+        <div class="step-wrap">
+          <div class="step-num">3</div>
+          <article class="card step-card">
+            <div class="meta-band">
+              <div class="ico" aria-hidden="true">📌</div>
+              <h3>On s’organise</h3>
+            </div>
+            <ul class="liste-carre">
+              <li>Plan d’action</li>
+              <li>Points à valider</li>
+              <li>Top départ</li>
+            </ul>
+          </article>
+        </div>
+  
+        <div class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+        </div>
+  
+        <!-- Étape 4 -->
+        <div class="step-wrap">
+          <div class="step-num">4</div>
+          <article class="card step-card">
+            <div class="meta-band">
+              <div class="ico" aria-hidden="true">⚙️</div>
+              <h3>Mise en place</h3>
+            </div>
+            <ul class="liste-carre">
+              <li>Fichiers organisés</li>
+              <li>Tableau de bord</li>
+              <li>Prise en main</li>
+            </ul>
+          </article>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- PARCOURS -->
   <section class="section">
     <div class="container hero-split">
       <div class="hero-text">
         <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Mise en place</h1>
         <div class="hero-text">
           <p class="sub-lead">
-            <strong>Objectif :</strong> mettre en place un socle de données fiable et partagé, 
-            qui serve de base aux décisions de l’entreprise.<br><br>
-            Le parcours avance par étapes simples : compréhension des besoins, structuration des chiffres, 
-            définition des bons indicateurs et mise en visibilité dans des tableaux de bord adaptés 
-            à chaque équipe.<br><br>
-            Le dispositif est évolutif et s’adapte à chaque contexte : outils existants, 
-            priorités et moyens. L’ambition est de choisir la solution la plus pertinente 
-            et de faire évoluer progressivement les usages, en gardant la maîtrise, 
-            sans complexité inutile.
+            <strong>Avant tout</strong>&nbsp;: on se rencontre, vous expliquez vos besoins (c’est essentiel).<br>
+            Ce premier échange permet de comprendre votre activité et de cadrer simplement la suite.<br><br>
+            <strong>L’objectif est clair&nbsp;:</strong> faciliter votre gestion au quotidien, vous accompagner là où vous voulez aller.<br><br>
+            <strong>Mise en place :</strong> on commence par mettre de l’ordre dans vos fichiers et données, puis on construit un <em>tableau de bord simple</em> pour voir l’essentiel de votre activité. Des conseils pratiques et des repères vous aident à mieux vous organiser.<br>
+            <strong>Pour la suite</strong>&nbsp;: des options peuvent s'ajouter en fonction de vos priorités.<br><br>
+            Découvrez ci-dessous ce qu'on peut mettre en place ensemble.</em>
           </p>
         </div>
       </div>
       <div class="cta-row">
-        <a class="cta" href="contact.html">Échanger sur votre projet</a>
+        <a class="cta" href="contact.html">Echanger sur votre projet</a>
         <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
       </div>
     </div>
-
-    <!-- Cartes : même grille, contenus renforcés pour PME/ETI -->
+    
     <div class="container">
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Poser les bases</h2>
       <div class="grid grid-2 cards-lift">
-        <!-- Diagnostic stratégique → Diagnostic éclair (1–2 jours) -->
+        <!-- Diagnostic initial -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/diagnostic.png" alt="" aria-hidden="true">
           <div class="card-body">
             <h3>Diagnostic initial</h3>
-            <p>Comprendre vos chiffres et cibler les actions à mener.</p>
+            <p>Comprendre votre activité et vos priorités.</p>
             <ul class="liste-carre">
-              <li>Recueil des besoins et des priorités</li>
-              <li>Inventaire des sources de données existantes</li>
-              <li>Plan d’actions simple et partagé</li>
+              <li>Un échange pour cerner vos besoins</li>
+              <li>Étude de l'environnement logiciel et vos données</li>
+              <li>Validation du plan d'action</li>
             </ul>
           </div>
         </article>
-        <!-- Essai concret -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/essai-concret.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Étude de l’environnement logiciel</h3>
-            <p>Choix de l'outil adapté</p>
-            <ul class="liste-carre">
-              <li>Analyse de l’existant (Logiciels métiers, ERP, Office, etc.)</li>
-              <li>Contraintes & budget (licences, compétences internes)</li>
-              <li>Recommandation outillée (Power BI, Looker, Solution OpenSource)</li>
-            </ul>
-          </div>
-        </article>
-      </div>
 
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Données fiables</h2>
-      <div class="grid grid-2 cards-lift"> 
-        <!-- Modélisation & qualité -->
+        <!-- Organisation & fichiers -->
         <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/modelisation.png" alt="" aria-hidden="true">
+          <img class="card-ico" src="assets/img/photos/organisation.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Modélisation & qualité</h3>
-            <p>Structurer vos données et sécuriser les calculs.</p>
+            <h3>Données et fichiers</h3>
+            <p>Mettre de l’ordre pour partir sur des bases fiables.</p>
             <ul class="liste-carre">
-              <li>Modèle métier clair (ventes, clients, stocks)</li>
-              <li>Règles de calcul documentées (CA net, marge, délais)</li>
-              <li>Contrôles de cohérence (doublons, formats, manquants)</li>
+              <li>Rangement et organisation de vos fichiers</li>
+              <li>Nettoyage de vos données</li>
+              <li>Structuration claire pour faciliter l’analyse</li>
             </ul>
           </div>
         </article>
-        
-        <!-- Automatisation légère -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Automatisation</h3>
-            <p>Actualiser vos chiffres sans manipulations répétitives.</p>
-            <ul class="liste-carre">
-              <li>Imports planifiés depuis vos sources</li>
-              <li>Vérifications automatiques & journal des mises à jour</li>
-              <li>Alerte en cas d’oubli ou d’anomalie</li>
-            </ul>
-          </div>
-        </article>
-      </div>
 
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>KPI & Tableaux de Bord</h2>
-      <div class="grid grid-2 cards-lift">
-        <!-- Référentiel KPI  → KPIs communs & mini-glossaire -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/kpi.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Indicateurs clés (KPI)</h3>
-            <p>Un socle de KPI partagés, complété par des besoins spécifiques.</p>
-            <ul class="liste-carre">
-              <li>Indicateurs transverses (CA, marge, stock, etc.)</li>
-              <li>KPIs adaptés à chaque service (commerce, finance, opérations...)</li>
-              <li>Définitions claires et glossaire commun</li>
-            </ul>
-          </div>
-        </article>
-        <!-- Dataviz multi-équipes → Tableaux de bord clairs par équipe -->
+        <!-- Tableaux de bord & dataviz -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Tableaux de bord clairs par équipe</h3>
-            <p>Une vue direction, une vue commerce, une vue finance — lisibles.</p>
+            <h3>Tableau de bord</h3>
+            <p>Une vue simple pour décider vite.</p>
             <ul class="liste-carre">
-              <li>Filtres utiles (périodes, agences, familles)</li>
-              <li>Indicateurs et alertes visuelles</li>
-              <li>Export PDF en un clic</li>
+              <li>Indicateurs clairs (CA, marge, trésorerie, clients)</li>
+              <li>Filtres pratiques (période, client, produit)</li>
+              <li>Guide rapide pour bien l’utiliser</li>
             </ul>
           </div>
         </article>
-      </div>
 
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Conformité & intégration</h2>
-      <div class="grid grid-2 cards-lift">
-      <!-- Sécurité, SSO & conformité → RGPD & partages maîtrisés -->
+        <!-- Aide à la gestion quotidienne -->
         <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/rgpd.png" alt="" aria-hidden="true">
+          <img class="card-ico" src="assets/img/photos/gestion2.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>RGPD & partages maîtrisés</h3>
-            <p>Partager vos données en toute sécurité</p>
+            <h3>Aide à la gestion quotidienne</h3>
+            <p>Des repères pratiques pour rester organisé.</p>
             <ul class="liste-carre">
-              <li>Droits d’accès par service</li>
-              <li>Partages conformes</li>
-              <li>Traçabilité des exports partagés</li>
+              <li>Conseils adaptés à votre activité</li>
+              <li>Modèles simples pour le suivi</li>
+              <li>Rappels pour gagner du temps</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Tableaux de bord & dataviz -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/collecte.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Automatisation & mises à jour (option)</h3>
+            <p>Mise à jour manuelle simple au départ ; automatisation légère possible ensuite.</p>
+            <ul class="liste-carre">
+              <li>Connexion aux exports de votre logiciel (si disponible)</li>
+              <li>Rafraîchissement manuel au début</li>
+              <li>Planification automatique en option</li>
             </ul>
           </div>
         </article>
         
-        <!-- Intégrations & diffusion → Connexions multi-outils (simples) -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/integration.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Connexions multi-outils</h3>
-            <p>Relier vos outils sans tout refaire.</p>
-            <ul class="liste-carre">
-              <li>Exports comptables/CRM/point de vente</li>
-              <li>Liaisons légères (Power Query, Google Sheets, CSV)</li>
-              <li>Portail d’accès basique (liens & notices)</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Adoption & Suivi</h2>
-      <div class="grid grid-2 cards-lift">
-        
-        <!-- Adoption & formation (identique, texte clarifié) -->
+        <!-- Formation & transfert -->
         <article class="card card--split">
           <img class="card-ico" src="assets/img/photos/formation.png" alt="" aria-hidden="true">
           <div class="card-body">
-            <h3>Adoption & formation</h3>
-            <p>Rendre vos équipes autonomes rapidement.</p>
+            <h3>Prise en Main & Autonomie</h3>
+            <p>Vous permettre une bonne utilisation au quotidien.</p>
             <ul class="liste-carre">
-              <li>Parcours de Prise en Main</li>
-              <li>Guides d'usage & modèles réutilisables</li>
-              <li>Bonnes pratiques pour l’usage quotidien</li>
-            </ul>
-          </div>
-        </article>
-        
-        <!-- TMA & évolutions → Suivi & petites évolutions -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/evolution.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Suivi & petites évolutions</h3>
-            <p>Corriger, faire évoluer et garder le cap.</p>
-            <ul class="liste-carre">
-              <li>Corrections et ajustements rapides</li>
-              <li>Petites features à la demande</li>
-              <li>Bilan régulier (mensuel, trimestriel)</li>
+              <li>Démonstration guidée pas à pas</li>
+              <li>Modèle prêt à l’emploi livré chez vous</li>
+              <li>Conseils pratiques pour rester autonome</li>
             </ul>
           </div>
         </article>
@@ -303,12 +419,10 @@
       <div class="hero-text">
         <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Prêt à avancer&nbsp;?</h1>
         <p class="sub-lead">
-          Après un <strong>premier échange</strong> pour écouter vos besoins, un <strong>diagnostic sur place</strong> va permettre d'étudier environnement et outils, puis définir le plan d'action.<br><br>
-          À partir de là, on <strong>définit ensemble les indicateurs</strong>, on <strong>organise les données</strong>, on <strong>connecte simplement vos outils</strong> puis on <strong>crée et diffuse les tableaux de bord</strong> adaptés à chaque service. 
-          Si besoin, on <strong>automatise</strong> les mises à jour et on accompagne vos équipes pour l'utilisation quotidienne.<br><br>
-          <strong>Objectif</strong> : <strong>transformer la donnée en info utile, fiabiliser vos reportings et gagner en efficacité dans le pilotage quotidien.</strong>
+          <strong>On fait simple</strong> : un appel pour cadrer, puis un rendez-vous sur place. On regarde vos fichiers, on garde l’essentiel, et vos chiffres deviennent un <strong>tableau de bord lisible</strong> 
+          — pour voir d’un coup d’œil votre CA, votre marge, vos stocks ou vos clients...<br><br>
+          <strong>Objectif</strong> : <strong>des repères clairs pour piloter sans y passer des heures.</strong>
         </p>
-
 
       </div>
       <div class="cta-row">
@@ -351,8 +465,7 @@
             <small style="font-size:.65rem; line-height:1.35; display:block; opacity:.85;">
               <em>*Tarifs indicatifs&nbsp;: un devis est établi après un premier échange. 
               TVA non applicable. Zone : cantons Libournais-Fronsadais, Nord-Gironde, L’Estuaire, La Presqu’île. Au-delà, forfait déplacement au devis.<br>
-              Missions freelance / ESN : intervention en régie, facturation sur TJM. 
-              Chaque projet fait l’objet d’un devis après le premier échange. Prestations PME/ETI d’un côté&nbsp;; missions freelance/ESN en régie (TJM) de l’autre.</em>
+              Missions freelance / ESN : intervention en régie, facturation sur TJM.</em>
             </small>
           </p>
         </div>
@@ -443,7 +556,7 @@
         </div>
       </div>
     </div>
-  </section>  
+  </section> 
 
   <!-- CTA FINAL -->
   <section class="section contact-band">
@@ -455,8 +568,98 @@
       </div>   
     </div>
   </section>
-
+  
 <!-- ===================== FOOTER ===================== -->
+<style>
+  /* ===== Scope footer seulement ===== */
+  .footer .footer-grid{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr; /* gauche | centre | droite */
+    align-items:center;
+    gap:16px;
+  }
+
+  /* ----- Gauche : copyright + liens en dessous ----- */
+  .footer .legal{ font-size:.96rem; color:inherit; }
+  .footer .legal-main{ margin-bottom:.25rem; }              /* © Prismora… Bordeaux */
+  .footer .legal-links{ font-size:.86rem; opacity:.9; }      /* petite taille pour les liens */
+  .footer .legal-links a{ color:inherit; text-decoration:none; }
+  .footer .legal-links a:hover{ text-decoration:underline; }
+
+  /* ----- Centre : icônes ----- */
+  .footer .social{ display:flex; justify-content:center; gap:16px; }
+  .footer .social a{
+    display:inline-flex; width:36px; height:36px; border-radius:50%;
+    align-items:center; justify-content:center;
+    transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+    background:rgba(0,0,0,.04);
+  }
+  .footer .social a:hover{
+    transform:translateY(-2px);
+    background:rgba(15,76,92,.10);
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+  }
+  .footer .social svg{ width:18px; height:18px; fill:currentColor; opacity:.9; }
+
+  /* ----- Droite : menu ALIGNE en LIGNE ----- */
+  .footer .foot-nav{ justify-self:end; }
+  .footer .foot-menu{
+    display:flex; align-items:center; gap:18px;
+    list-style:none; margin:0; padding:0;
+  }
+  .footer .foot-menu > li{ position:relative; }
+  .footer .foot-nav a,
+  .footer .foot-nav button.foot-parent{
+    color:inherit; text-decoration:none; font-weight:600; /* même style pour tous */
+    font-size:1rem; background:transparent; border:0; padding:0; cursor:pointer;
+    display:inline-flex; align-items:center; gap:.35rem;
+  }
+
+  /* Sous-menu vers le haut */
+  .footer .foot-sub{
+    position:absolute; right:0; bottom:100%; transform:translateY(-8px);
+    list-style:none; margin:0; padding:.5rem 0;
+    background:#fff; border:1px solid rgba(15,76,92,.15);
+    border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,.12);
+    min-width:240px; display:none; z-index:5;
+  }
+  .footer .foot-sub a{
+    display:block; padding:.5rem .85rem; color:var(--brand, #0f4c5c); border-radius:8px;
+    white-space:nowrap;
+  }
+  .footer .foot-sub a:hover{ background:rgba(15,76,92,.06); }
+
+  /* Chevron discret */
+  .footer .foot-parent::after{ content:"▴"; font-size:.8rem; opacity:.9; }
+
+  /* Desktop : ouverture au survol/focus (pas besoin de cliquer) */
+  @media (hover:hover){
+    .footer .has-sub:hover .foot-sub,
+    .footer .has-sub:focus-within .foot-sub{ display:block; }
+  }
+  /* Mobile / touch : ouverture via classe .is-open (JS) */
+  .footer .has-sub.is-open .foot-sub{ display:block; }
+
+  /* ----- Mobile : ordre demandé ----- */
+  @media (max-width:900px){
+    .footer .footer-grid{
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "social"
+        "menu"
+        "copyright"
+        "links";
+      row-gap:10px; text-align:center;
+    }
+    .footer .social{ grid-area:social; }
+    .footer .foot-nav{ grid-area:menu; justify-self:center; }
+    .footer .legal{ grid-area:copyright; }
+    .footer .legal-links{ grid-area:links; }
+
+    /* le sous-menu centré sous le parent, mais vers le haut */
+    .footer .has-sub .foot-sub{ left:50%; right:auto; transform:translate(-50%,-8px); }
+  }
+</style>
 
 <footer class="footer" aria-label="Pied de page">
   <div class="container footer-grid">
@@ -639,7 +842,7 @@
     })();
   </script>
 
-    <!-- Lightbox Galerie -->
+  <!-- Lightbox Galerie -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Galerie d'images">
     <button class="lb-close" aria-label="Fermer">×</button>
     <button class="lb-prev" aria-label="Précédent">‹</button>
@@ -756,6 +959,5 @@
     });
   })();
   </script>
-
 </body>
 </html>
