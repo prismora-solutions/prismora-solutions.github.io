@@ -124,10 +124,17 @@
     <style>
       #process .flow{
         display:grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--m);
-        align-items: stretch;         /* égalise la hauteur des cartes */
+        grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr; /* carte | flèche étroite | ... */
+        column-gap: var(--m);
+        row-gap: 0;
+        align-items: stretch;                  /* égalise la hauteur des cartes */
         margin-top: var(--m);
+      }
+      #process .arrow{
+        display:flex; align-items:center; justify-content:center;
+      }
+      #process .arrow svg{
+        width:26px; height:26px; opacity:.75; color:var(--brand, #0f4c5c);
       }
       /* Wrapper d’étape : centre numéro + carte */
       #process .step-wrap{
