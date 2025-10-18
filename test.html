@@ -142,7 +142,17 @@
         "cta";
       row-gap:12px;
     }
-    #process .flow{ grid-template-columns: 1fr; gap:.5rem; }
+    #process .flow{
+      grid-template-columns: 1fr;
+      justify-items: center;   /* ⬅️ centre chaque “case” de la grille */
+      gap: 10px;
+    }
+    #process .step-wrap{
+      width: min(340px, 92vw); /* même largeur, centrée, responsive */
+    }
+    #process .step-card{
+      width: 100%;
+    }
     #process .arrow svg{ transform: rotate(90deg); }
     #process .cta-col{ justify-self:center; } /* centre horizontalement */
   }
