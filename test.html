@@ -76,75 +76,66 @@
       </div>
     </div>
   </nav>
-  <!-- Style local, scope: #process uniquement -->
+
   <style>
-    #process .flow{
-      display:grid;
-      grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr; /* carte | flèche étroite | ... */
-      column-gap: var(--m);
-      row-gap: 0;
-      align-items: stretch;                  /* égalise la hauteur des cartes */
-      margin-top: var(--m);
-    }
-    #process .arrow{
-      display:flex; align-items:center; justify-content:center;
-    }
-    #process .arrow svg{
-      width:26px; height:26px; opacity:.75; color:var(--brand, #0f4c5c);
-    }
-    /* Wrapper d’étape : centre numéro + carte */
-    #process .step-wrap{
-      display:flex; flex-direction:column; align-items:center; gap:.5rem;
-    }
-    /* Numéro au-dessus de la carte (hors carte) */
-    #process .step-num{
-      font-weight:800; color:var(--brand, #0f4c5c);
-      font-size:clamp(22px, 2.4vw, 28px); line-height:1;
-      letter-spacing:.02em;
-    }
-    /* Carte (réutilise visuel "card" de ton site) */
-    #process .step-card{
-      width:100%;
-      height:100%;
-      display:flex; flex-direction:column; align-items:center;
-      text-align:center; padding: var(--m);
-    }
-    /* Bande méta à hauteur fixe pour aligner icônes/titres */
-    #process .meta-band{
-      height:96px;                      /* aligne les icônes/titres entre cartes */
-      display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
-    }
-    /* Icône ronde centrée (remplaçable par SVG plus tard) */
-    #process .ico{
-      width:56px; height:56px; border-radius:50%;
-      display:inline-flex; align-items:center; justify-content:center;
-      background: rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem;
-    }
-    #process h3{ margin:.15rem 0 .25rem; }
+  /* ===== Layout de la section Process ===== */
+  #process .process-wrap{
+    display:grid;
+    grid-template-columns: 1fr 320px;
+    grid-template-areas:
+      "intro cta"
+      "flow  flow";
+    column-gap:24px;
+    align-items:start;
+    margin:8px 0 24px;
+  }
+  #process .intro   { grid-area:intro; }
+  #process .flow    { grid-area:flow; }
+  #process .cta-col { 
+    grid-area:cta;
+    display:flex; 
+    flex-direction:column; 
+    align-items:center; 
+    justify-content:center;       /* centre verticalement */
+    text-align:center;
+  }
+  #process .cta-col img{
+    width:80px; height:auto; margin-bottom:12px; display:block;
+  }
 
-    /* Liste en puces carrées, recentrée visuellement */
-    #process .step-card .liste-carre{
-      text-align:left;
-      margin-top:.5rem;
-    }
+  /* ===== Grille des 4 cartes (inchangé si tu l'as déjà) ===== */
+  #process .flow{
+    display:grid;
+    grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr; /* carte | flèche | ... */
+    column-gap: var(--m);
+    row-gap: 0;
+    align-items: stretch;
+    margin-top: var(--m);
+  }
+  #process .arrow{ display:flex; align-items:center; justify-content:center; }
+  #process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand,#0f4c5c); }
 
-    /* Flèches entre cartes */
-    #process .arrow{
-      display:flex; align-items:center; justify-content:center;
-    }
-    #process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand, #0f4c5c); }
+  #process .step-wrap{ display:flex; flex-direction:column; align-items:center; gap:.5rem; }
+  #process .step-num{ font-weight:800; color:var(--brand,#0f4c5c); font-size:clamp(22px,2.4vw,28px); line-height:1; }
+  #process .step-card{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; text-align:center; padding:var(--m); }
+  #process .meta-band{ height:96px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
+  #process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
+  #process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
 
-    /* Mobile : empilement, flèches verticales */
-    @media (max-width:900px){
-      #process .flow{ grid-template-columns: 1fr; gap:.5rem; }
-      #process .arrow svg{ transform: rotate(90deg); }
+  /* ===== Mobile : CTA sous les cartes ===== */
+  @media (max-width:900px){
+    #process .process-wrap{
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "intro"
+        "flow"
+        "cta";           /* ⬅️ le bloc logo+CTA passe APRES les cartes */
+      row-gap:12px;
     }
-    #process .process-intro{
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    }
-    #process .cta-col{ justify-self: center !important; }
-    }
+    #process .flow{ grid-template-columns:1fr; gap:.5rem; }
+    #process .arrow svg{ transform:rotate(90deg); }
+    #process .cta-col{ justify-self:center; } /* centre horizontalement */
+  }
   </style>
 
   <!-- HERO -->
@@ -186,104 +177,99 @@
       <span class="prism" aria-hidden="true"></span>
       Un accompagnement structuré
     </h2>
-    <!-- Intro + CTA : texte à gauche / bloc logo + bouton centré dans sa colonne -->
-    <div class="process-intro"
-         style="display:grid; grid-template-columns: 1fr 320px; align-items:center; gap:24px; margin:8px 0 24px;">
-      
-      <!-- Texte à gauche -->
-      <p class="sub-lead" style="max-width:60ch; margin:0;">
+   <!-- ⬇️ NOUVEAU WRAPPER -->
+    <div class="process-wrap">
+      <!-- Intro texte -->
+      <p class="sub-lead intro" style="max-width:60ch; margin:0;">
         Un parcours simple pour TPE : on clarifie, on cadre, puis on déploie ce qui est utile au quotidien — sans alourdir l’organisation.
       </p>
-    
-      <!-- Logo + CTA à droite -->
-      <div class="cta-col"
-           style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; height:100%; place-self:center;">
-        <img src="assets/img/logo/logo4.png"
-             alt="Prismora Solutions"
-             style="width:80px; height:auto; margin-bottom:12px;">
+
+      <!-- Logo + CTA -->
+      <div class="cta-col">
+        <img src="assets/img/logo/logo4.png" alt="Prismora Solutions">
         <a class="cta" href="contact.html">Prêt à avancer&nbsp;?</a>
       </div>
-    </div>
 
 
-    <div class="flow">
-
-      <!-- Étape 1 -->
-      <div class="step-wrap">
-        <div class="step-num">1</div>
-        <article class="card step-card">
-          <div class="meta-band">
-            <div class="ico" aria-hidden="true">🧭</div>
-            <h3>Poser les bases</h3>
-          </div>
-          <ul class="liste-carre">
-            <li>Premier échange</li>
-            <li>Vos besoins</li>
-            <li>Vos outils</li>
-          </ul>
-        </article>
+      <div class="flow">
+  
+        <!-- Étape 1 -->
+        <div class="step-wrap">
+          <div class="step-num">1</div>
+          <article class="card step-card">
+            <div class="meta-band">
+              <div class="ico" aria-hidden="true">🧭</div>
+              <h3>Poser les bases</h3>
+            </div>
+            <ul class="liste-carre">
+              <li>Premier échange</li>
+              <li>Vos besoins</li>
+              <li>Vos outils</li>
+            </ul>
+          </article>
+        </div>
+  
+        <div class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+        </div>
+  
+        <!-- Étape 2 -->
+        <div class="step-wrap">
+          <div class="step-num">2</div>
+          <article class="card step-card">
+            <div class="meta-band">
+              <div class="ico" aria-hidden="true">📝</div>
+              <h3>Devis clair</h3>
+            </div>
+            <ul class="liste-carre">
+              <li>Actions prévues</li>
+              <li>Calendrier simple</li>
+              <li>Budget adapté</li>
+            </ul>
+          </article>
+        </div>
+  
+        <div class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+        </div>
+  
+        <!-- Étape 3 -->
+        <div class="step-wrap">
+          <div class="step-num">3</div>
+          <article class="card step-card">
+            <div class="meta-band">
+              <div class="ico" aria-hidden="true">📌</div>
+              <h3>On s’organise</h3>
+            </div>
+            <ul class="liste-carre">
+              <li>Plan d’action</li>
+              <li>Points à valider</li>
+              <li>Top départ</li>
+            </ul>
+          </article>
+        </div>
+  
+        <div class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
+        </div>
+  
+        <!-- Étape 4 -->
+        <div class="step-wrap">
+          <div class="step-num">4</div>
+          <article class="card step-card">
+            <div class="meta-band">
+              <div class="ico" aria-hidden="true">⚙️</div>
+              <h3>Mise en place</h3>
+            </div>
+            <ul class="liste-carre">
+              <li>Fichiers organisés</li>
+              <li>Tableau de bord</li>
+              <li>Prise en main</li>
+            </ul>
+          </article>
+        </div>
+  
       </div>
-
-      <div class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
-      </div>
-
-      <!-- Étape 2 -->
-      <div class="step-wrap">
-        <div class="step-num">2</div>
-        <article class="card step-card">
-          <div class="meta-band">
-            <div class="ico" aria-hidden="true">📝</div>
-            <h3>Devis clair</h3>
-          </div>
-          <ul class="liste-carre">
-            <li>Actions prévues</li>
-            <li>Calendrier simple</li>
-            <li>Budget adapté</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
-      </div>
-
-      <!-- Étape 3 -->
-      <div class="step-wrap">
-        <div class="step-num">3</div>
-        <article class="card step-card">
-          <div class="meta-band">
-            <div class="ico" aria-hidden="true">📌</div>
-            <h3>On s’organise</h3>
-          </div>
-          <ul class="liste-carre">
-            <li>Plan d’action</li>
-            <li>Points à valider</li>
-            <li>Top départ</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
-      </div>
-
-      <!-- Étape 4 -->
-      <div class="step-wrap">
-        <div class="step-num">4</div>
-        <article class="card step-card">
-          <div class="meta-band">
-            <div class="ico" aria-hidden="true">⚙️</div>
-            <h3>Mise en place</h3>
-          </div>
-          <ul class="liste-carre">
-            <li>Fichiers organisés</li>
-            <li>Tableau de bord</li>
-            <li>Prise en main</li>
-          </ul>
-        </article>
-      </div>
-
     </div>
   </div>
 </section>
