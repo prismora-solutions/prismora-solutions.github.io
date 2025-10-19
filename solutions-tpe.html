@@ -450,41 +450,82 @@
       Voici deux exemples récents, pensés et déployés avec eux.
       </p>
   
-      <!-- Ligne 1 : 2 cartes équilibrées -->
-      <div class="grid grid-2 cards-lift" style="margin-top: var(--m);">
-        <!-- Cas #1 : Garage (Streamlit) -->
-        <article class="card card--split">
-          <img src="assets/img/exemples/garage-01-ca.png"
-               alt="Capture anonymisée : CA annuel & mensuel (garage)"
-               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
+      <!-- === Deck responsive (1 → 2 → 3 colonnes) === -->
+      <div class="cards-deck cards-lift" style="margin-top: var(--m);">
+      
+        <!-- Cas #1 -->
+        <article class="card card--showcase">
           <div class="card-body">
             <h3>Garage multi-activités</h3>
-            <p>Organisation des fichiers et création d’un tableau de bord pour suivre ventes, marges, stock, clients en temps réel.</p>
-            <p style="margin-top: var(--s);">
-              <a class="cta cta--ghost" href="#"
+            <p>
+              Organisation des fichiers et création d’un tableau de bord pour suivre
+              ventes, marges, stock et clients en temps réel.
+            </p>
+      
+            <!-- Rangée image + bouton (miniature à gauche, CTA à droite) -->
+            <div class="card-foot">
+              <img class="mini-shot"
+                   src="assets/img/exemples/garage-01-ca.png"
+                   alt="Aperçu du tableau de bord garage">
+              <a class="cta cta--ghost"
+                 href="#"
                  data-open-gallery="garage"
                  aria-haspopup="dialog">
                 Voir la galerie
               </a>
-            </p>
+            </div>
           </div>
         </article>
-  
-        <!-- Cas #2 : Réseau retail (Power BI) -->
-        <article class="card card--split">
-          <img src="assets/img/exemples/retail.png"
-               alt="Miniature vidéo : cockpit direction & commerce"
-               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
+      
+        <!-- Cas #2 -->
+        <article class="card card--showcase">
           <div class="card-body">
             <h3>Réseau retail (Power&nbsp;BI)</h3>
-            <p>Cockpit direction & commerce : Démo vidéo</p>
-            <p style="margin-top: var(--s);">
-              <a class="cta cta--ghost" href="assets/video/retail360.mp4"
-                data-open-video aria-haspopup="dialog">Voir la démo</a>
+            <p>
+              Cockpit direction &amp; commerce : CA, marge nette, coûts — une vue claire
+              pour décider vite.
             </p>
+      
+            <div class="card-foot">
+              <img class="mini-shot"
+                   src="assets/img/exemples/retail.png"
+                   alt="Aperçu cockpit retail">
+              <a class="cta cta--ghost"
+                 href="assets/video/retail360.mp4"
+                 data-open-video
+                 aria-haspopup="dialog">
+                Voir la démo
+              </a>
+            </div>
           </div>
         </article>
+      
+        <!-- (Optionnel) Cas #3 — s’insère automatiquement sur la même ligne ≥1400px -->
+        <!--
+        <article class="card card--showcase">
+          <div class="card-body">
+            <h3>Le Caféier (galerie)</h3>
+            <p>
+              Suivi des ventes & stocks, indicateurs utiles au quotidien, le tout
+              accessible simplement.
+            </p>
+            <div class="card-foot">
+              <img class="mini-shot"
+                   src="assets/img/exemples/cafeier-mini.png"
+                   alt="Aperçu Caféier">
+              <a class="cta cta--ghost"
+                 href="#"
+                 data-open-gallery="cafeier"
+                 aria-haspopup="dialog">
+                Voir la galerie
+              </a>
+            </div>
+          </div>
+        </article>
+        -->
+      
       </div>
+
   
       <!-- Bande de vignettes pour le cas Garage (claires, scannables) -->
       <div class="gallery-sources">
