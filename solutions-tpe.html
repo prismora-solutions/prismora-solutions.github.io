@@ -140,10 +140,21 @@
 #process .process-wrap .intro .sect-title + .sect-title { margin-top: .4rem; }
 #process .process-wrap .intro .sub-lead { margin-top: .75rem; }
 #process .process-wrap .intro { margin-bottom: var(--m); }
+/* H2 → H3 : plus d'espace */
+#process .intro h2.sect-title{
+  margin: 0 0 1.1rem;         /* ↑ espace sous le H2 */
+}
+
+/* H3 → paragraphe : encore un peu d'air */
+#process .intro h3.sect-title{
+  margin: 0 0 1.25rem;        /* ↑ espace sous le H3 */
+}
 
 /* Mobile : un peu plus d'air entre le texte et le “1” */
 @media (max-width:900px){
   #process .intro { margin-bottom: var(--m); }
+  #process .intro h2.sect-title{ margin-bottom: .9rem; }
+  #process .intro h3.sect-title{ margin-bottom: 1rem; }
   /* si besoin de + d’air, augmente: */
   /* #process .flow { margin-top: calc(var(--m) * 1.5); } */
 }
