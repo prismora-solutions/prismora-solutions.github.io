@@ -875,5 +875,79 @@ small{opacity:.85}
   margin-top: var(--l);
 }
 
+/* ===== FAQ (commune aux pages) ===== */
+.section-faq .sub-lead{ margin-top: var(--s); margin-bottom: var(--m); }
+
+.faq{
+  width: min(900px, 100%);
+  margin: 0 auto;                           /* bloc centré */
+  display: grid;
+  gap: var(--s);
+}
+
+.faq-item{
+  background:#fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0;                                /* on gère via summary / contenu */
+  overflow: hidden;                          /* coupe la bordure au rayon */
+}
+
+/* Barre question */
+.faq-item > summary{
+  list-style: none;                          /* masque le triangle natif */
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;           /* texte | icône */
+  align-items: center;
+  gap: var(--s);
+  padding: calc(var(--m) - 2px) calc(var(--m) + 2px);
+  font-weight: 700;
+  color: var(--brand);
+  position: relative;
+}
+
+/* Icône + / – (pictogramme simple en CSS) */
+.faq-toggle{
+  width: 22px; height: 22px; position: relative; display:inline-block;
+}
+.faq-toggle::before,
+.faq-toggle::after{
+  content:""; position:absolute; left:50%; top:50%;
+  width: 16px; height: 2px; background: var(--brand); border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform .18s ease, opacity .18s ease;
+}
+.faq-toggle::after{ transform: translate(-50%, -50%) rotate(90deg); }  /* la barre verticale = + */
+
+/* Contenu réponse */
+.faq-a{
+  padding: 0 calc(var(--m) + 2px) calc(var(--m) + 2px);
+  color: var(--text);
+  line-height: 1.65;
+  opacity: .95;
+}
+
+/* État "ouvert" : le + devient – (on masque la barre verticale) */
+.faq-item[open] > summary .faq-toggle::after{ opacity: 0; transform: translate(-50%, -50%) rotate(90deg) scale(.5); }
+
+/* Petite ligne séparatrice quand c'est ouvert */
+.faq-item[open] > summary{ border-bottom:1px solid var(--border); }
+
+/* Focus clavier visible sur la barre question */
+.faq-item > summary:focus-visible{
+  outline: 2px solid rgba(15,76,92,.35);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Mobile : respirations */
+@media (max-width: 768px){
+  .faq{ gap: 12px; }
+  .faq-item > summary{ padding: 16px; }
+  .faq-a{ padding: 10px 16px 16px; }
+}
+
 
 
