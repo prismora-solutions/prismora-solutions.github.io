@@ -1037,6 +1037,78 @@
       if(e.key==='Escape' && vbox.classList.contains('open')) closeVideo();
     });
   })();
+  // Script pour FAQ
+  (function(){
+    const faqs = document.querySelectorAll('.section-faq .faq-item');
+    if(!faqs.length) return;
+  
+    // Ferme toutes les autres avec animation
+    function closeOthers(current){
+      faqs.forEach(d => {
+        if(d !== current && d.open){
+          slideClose(d);
+        }
+      });
+    }
+  
+    function slideOpen(details){
+      const box = details.querySelector('.faq-a');
+      // préparer l'ouverture
+      details.open = true;
+      details.setAttribute('data-expanded', 'true');
+      box.style.height = '0px';
+      // forcer un reflow pour démarrer depuis 0
+      box.getBoundingClientRect();
+      // animer vers la hauteur naturelle
+      box.style.height = box.scrollHeight + 'px';
+  
+      // à la fin, verrouiller à auto
+      const end = () => {
+        box.style.height = 'auto';
+        box.removeEventListener('transitionend', end);
+      };
+      box.addEventListener('transitionend', end);
+    }
+  
+    function slideClose(details){
+      const box = details.querySelector('.faq-a');
+      // si déjà auto, figer la hauteur courante pour partir d'une valeur fixe
+      if(getComputedStyle(box).height === 'auto'){
+        box.style.height = box.scrollHeight + 'px';
+      }
+      // forcer reflow puis animer vers 0
+      box.getBoundingClientRect();
+      details.removeAttribute('data-expanded');
+      box.style.height = '0px';
+  
+      const end = () => {
+        details.open = false;
+        box.removeEventListener('transitionend', end);
+      };
+      box.addEventListener('transitionend', end);
+    }
+  
+    // On gère nous-mêmes le toggle pour pouvoir animer
+    faqs.forEach(details => {
+      const summary = details.querySelector('summary');
+      summary.addEventListener('click', (e) => {
+        e.preventDefault(); // on neutralise le toggle natif
+        if(details.open){
+          slideClose(details);
+        }else{
+          closeOthers(details);
+          slideOpen(details);
+        }
+      });
+  
+      // Accessibilité : Enter/Space déjà géré par click sur summary
+      // État initial : tout fermé
+      details.open = false;
+      details.removeAttribute('data-expanded');
+      const box = details.querySelector('.faq-a');
+      box.style.height = '0px';
+    });
+  })();
   </script>
 </body>
 </html>
