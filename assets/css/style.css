@@ -878,9 +878,12 @@ small{opacity:.85}
 /* ===== FAQ (commune aux pages) ===== */
 .section-faq .sub-lead{ margin-top: var(--s); margin-bottom: var(--m); }
 
+/* Neutralise un éventuel max-width inline restant dans la FAQ */
+.section-faq .faq-a .sub-lead{ max-width: none !important; }
+
 .faq{
   width: min(900px, 100%);
-  margin: 0 auto;                           /* bloc centré */
+  margin: 0 auto;
   display: grid;
   gap: var(--s);
 }
@@ -890,16 +893,16 @@ small{opacity:.85}
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 0;                                /* on gère via summary / contenu */
-  overflow: hidden;                          /* coupe la bordure au rayon */
+  padding: 0;
+  overflow: hidden;
 }
 
 /* Barre question */
 .faq-item > summary{
-  list-style: none;                          /* masque le triangle natif */
+  list-style: none;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 1fr auto;           /* texte | icône */
+  grid-template-columns: 1fr auto;     /* texte | icône */
   align-items: center;
   gap: var(--s);
   padding: calc(var(--m) - 2px) calc(var(--m) + 2px);
@@ -921,32 +924,47 @@ small{opacity:.85}
 }
 .faq-toggle::after{ transform: translate(-50%, -50%) rotate(90deg); }  /* la barre verticale = + */
 
-/* Contenu réponse */
+/* Contenu réponse : on anime la hauteur + padding */
 .faq-a{
-  padding: 0 calc(var(--m) + 2px) calc(var(--m) + 2px);
+  height: 0;
+  overflow: hidden;
+  padding: 0 calc(var(--m) + 2px);       /* marges latérales constantes */
+  transition: height .28s ease, padding .28s ease;
   color: var(--text);
   line-height: 1.65;
   opacity: .95;
 }
 
-/* État "ouvert" : le + devient – (on masque la barre verticale) */
-.faq-item[open] > summary .faq-toggle::after{ opacity: 0; transform: translate(-50%, -50%) rotate(90deg) scale(.5); }
+/* État visuel quand "ouvert" (padding vertical) — piloté par le JS via data-expanded */
+.faq-item[data-expanded="true"] .faq-a{
+  padding-top: calc(var(--m) + 2px);
+  padding-bottom: calc(var(--m) + 2px);
+}
+
+/* Le + devient – quand le <details> est ouvert */
+.faq-item[open] > summary .faq-toggle::after{
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg) scale(.5);
+}
 
 /* Petite ligne séparatrice quand c'est ouvert */
 .faq-item[open] > summary{ border-bottom:1px solid var(--border); }
 
-/* Focus clavier visible sur la barre question */
+/* Focus clavier visible */
 .faq-item > summary:focus-visible{
   outline: 2px solid rgba(15,76,92,.35);
   outline-offset: 2px;
   border-radius: 10px;
 }
 
-/* Mobile : respirations */
+/* Mobile */
 @media (max-width: 768px){
   .faq{ gap: 12px; }
   .faq-item > summary{ padding: 16px; }
-  .faq-a{ padding: 10px 16px 16px; }
+  .faq-a{ padding-left: 16px; padding-right: 16px; } /* mêmes latérales en mobile */
+  .faq-item[data-expanded="true"] .faq-a{
+    padding-top: 16px; padding-bottom: 16px;
+  }
 }
 
 
