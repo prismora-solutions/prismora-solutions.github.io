@@ -172,6 +172,19 @@
   opacity: .85;
 }
 
+/* Cacher ce visuel en mobile (ne touche pas les autres .hero-visual) */
+@media (max-width: 900px){
+  .hero-visual--tarif{ display:none !important; }
+}
+
+/* Décalage vertical du visuel tarif (desktop) */
+.hero-visual--tarif img{
+  transform: translateY(var(--tarif-shift, 0));
+  transition: transform .25s ease; /* doux si tu modifies la valeur */
+  will-change: transform;
+}
+
+
 
 /* Mobile : un peu plus d'air entre le texte et le “1” */
 @media (max-width:900px){
@@ -401,7 +414,7 @@
           </div>
         </article>
       </div>
-      <div class="hero-visual">
+      <div class="hero-visual hero-visual--tarif" style="--tarif-shift: 24px;">
         <img src="assets/img/photos/mise_en_route.png"
              alt="Mise en route — à partir de "
              style="max-width:320px; width:100%; height:auto;">
