@@ -150,6 +150,29 @@
   margin: 0 0 1.25rem;        /* ↑ espace sous le H3 */
 }
 
+/* Carte "mentions tarifaires" */
+.card--legal { 
+  margin-top: var(--m);              /* espace avec la carte tarif au-dessus */
+}
+
+.card--legal .card-body{
+  padding-block: 8px;                /* haut/bas plus serré (garde le padding latéral existant) */
+  /* padding-inline reste inchangé (hérite de .card-body) */
+}
+
+.card--legal .sub-lead{ 
+  margin: 0;                         /* retire les marges verticales du <p> */
+}
+
+.card--legal .legal-text{
+  display: block;
+  margin: 0;                         /* pas de marge supplémentaire */
+  font-size: .65rem;                 /* garde la petite taille */
+  line-height: 1.35;
+  opacity: .85;
+}
+
+
 /* Mobile : un peu plus d'air entre le texte et le “1” */
 @media (max-width:900px){
   #process .intro { margin-bottom: var(--m); }
@@ -364,13 +387,14 @@
               <a class="cta cta--ghost" href="contact.html">Planifier un échange</a>
             </div>
           </div>
-          </article>
-                <article class="card">
+        </article>
+        <article class="card card--legal">
           <div class="card-body">
             <p class="sub-lead">
-              <small style="font-size:.65rem; line-height:1.35; display:block; opacity:.85;">
-                <em>*Tarifs indicatifs&nbsp;: un devis est établi après un premier échange selon les actions à mener. 
-                TVA non applicable. Zone : cantons Libournais-Fronsadais, Nord-Gironde, L’Estuaire, La Presqu’île. Au-delà, forfait déplacement au devis.<br>
+              <small class="legal-text">
+                <em>*Tarifs indicatifs : un devis est établi après un premier échange selon les actions à mener.
+                TVA non applicable. Zone : cantons Libournais-Fronsadais, Nord-Gironde, L’Estuaire, La Presqu’île.
+                Au-delà, forfait déplacement au devis.<br>
                 Missions freelance / ESN : intervention en régie, facturation sur TJM.</em>
               </small>
             </p>
