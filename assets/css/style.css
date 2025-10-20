@@ -1120,3 +1120,13 @@ small{opacity:.85}
     margin-bottom: var(--m); /* espace régulier (≈ 24px si ta variable est standard) */
   }
 }
+
+.link-inline {
+  color: var(--brand, #0f4c5c);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.link-inline:hover {
+  opacity: .85;
+}
+
