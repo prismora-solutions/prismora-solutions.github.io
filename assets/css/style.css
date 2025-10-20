@@ -841,8 +841,14 @@ small{opacity:.85}
   display:grid; grid-template-columns:auto auto;
   align-items:center; justify-content:center; gap:var(--m);
 }
-@media (max-width:620px){
-  .card--showcase .card-foot{ grid-template-columns:1fr; justify-items:center; gap:calc(var(--m)*.75); }
+
+/* Empilement propre en mobile : image puis bouton, tous deux centrés */
+@media (max-width: 620px){
+  .card--showcase .card-foot{
+    grid-template-columns: 1fr;                /* passe en colonne */
+    justify-items: center;                     /* centre image et bouton */
+    gap: calc(var(--m) * .75);
+  }
 }
 
 /* Miniature : petite image carrée/rectangulaire */
