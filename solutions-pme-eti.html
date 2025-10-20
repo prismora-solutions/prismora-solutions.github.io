@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- SEO principal -->
-  <title>Business Intelligence PME & ETI – KPIs, Dataviz & Gouvernance | Prismora Solutions</title>
+  <title>Prismora Solutions | Business Intelligence PME & ETI – KPIs, Dataviz & Gouvernance</title>
   <meta name="description" content="PME & ETI : dashboards inter-équipes, KPIs partagés, pipelines automatisés, gouvernance & sécurité. Diagnostic, dataviz Power BI/Looker, intégrations SI, TMA.">
   <link rel="canonical" href="https://prismora.fr/solutions-pme-eti.html">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Business Intelligence PME & ETI – KPIs, Dataviz & Gouvernance | Prismora Solutions">
+  <meta property="og:title" content="Prismora Solutions | Business Intelligence PME & ETI – KPIs, Dataviz & Gouvernance">
   <meta property="og:description" content="Dashboards inter-équipes, KPIs partagés, pipelines automatisés, gouvernance & sécurité. Diagnostic, dataviz Power BI/Looker, intégrations SI, TMA.">
   <meta property="og:url" content="https://prismora.fr/solutions-pme-eti.html">
   <meta property="og:type" content="website">
@@ -69,17 +69,157 @@
           </ul>
         </div>
   
-        <!-- On garde A propos -->
+        <!-- A propos -->
         <a role="menuitem" href="prismora-solutions.html">À propos</a>
   
-        <!-- Optionnel : Freelance si tu veux le garder (tu avais un lien) -->
-        <!-- <a role="menuitem" href="solutions-freelance.html">Freelance</a> -->
-  
-        <!-- On garde Contact -->
+        <!-- Contact -->
         <a role="menuitem" href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
+
+  <style> 
+  /* ====== PROCESS ====== */
+
+  /* Espace horizontal image↔texte : modifie la valeur ci-dessous si besoin */
+  #process { --process-gap: 28px; }
+
+  /* ---- Layout principal ---- */
+  #process .process-wrap{
+    display:grid;
+    grid-template-columns: 320px 1fr;        /* image | texte */
+    grid-template-areas:
+      "cta   intro"
+      "flow  flow";
+    column-gap:var(--process-gap,50px);
+    row-gap:var(--intro-flow-gap,50px);
+    align-items:start;
+    margin:8px 0 10px;
+  }
+
+  #process .cta-col{                         /* Colonne IMAGE (à gauche) */
+    grid-area: cta;
+    display:flex; flex-direction:column;
+    align-items:flex-start;                  /* bord gauche */
+    justify-content:flex-start;                  /* centrage vertical */
+    text-align:left;
+  }
+  #process .cta-col img{
+    width:280px; height:auto;
+    display:block; margin:0 0 12px 0;
+  }
+
+  #process .intro{                           /* Colonne TEXTE (à droite) */
+    grid-area: intro;
+    margin:0; text-align:left; max-width:60ch;
+  }
+
+  /* Légère respiration entre H2 et H3 au-dessus du grid */
+  #process h2.sect-title + h3.sect-title{ margin-top:.4rem; }
+
+  /* ---- Grille des 4 cartes ---- */
+  #process .flow{
+    grid-area: flow;
+    display:grid;
+    grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr;
+    column-gap: var(--m);
+    row-gap: 0;
+    align-items:stretch;
+    margin-top:0;
+  }
+  #process .arrow{ display:flex; align-items:center; justify-content:center; }
+  #process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand,#0f4c5c); }
+
+  #process .step-wrap{ display:flex; flex-direction:column; align-items:center; gap:.5rem; }
+  #process .step-num{ font-weight:800; color:var(--brand,#0f4c5c); font-size:clamp(22px,2.4vw,28px); line-height:1; }
+  #process .step-card{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; text-align:center; padding:var(--m); }
+  #process .meta-band{ height:96px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
+  #process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
+  #process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
+
+  /* Carte "mentions tarifaires" */
+  .card--legal { 
+    margin-top: var(--m);              /* espace avec la carte tarif au-dessus */
+  }
+
+  .card--legal .card-body{
+    padding-block: 8px;                /* haut/bas plus serré (garde le padding latéral existant) */
+    /* padding-inline reste inchangé (hérite de .card-body) */
+  }
+
+  .card--legal .sub-lead{ 
+    margin: 0;                         /* retire les marges verticales du <p> */
+  }
+
+  .card--legal .legal-text{
+    display: block;
+    margin: 0;                         /* pas de marge supplémentaire */
+    font-size: .65rem;                 /* garde la petite taille */
+    line-height: 1.35;
+    opacity: .85;
+  }
+
+  /* Cacher ce visuel en mobile (ne touche pas les autres .hero-visual) */
+  @media (max-width: 900px){
+    .hero-visual--tarif{ display:none !important; }
+  }
+
+  /* Décalage vertical du visuel tarif (desktop) */
+  .hero-visual--tarif img{
+    transform: translateY(var(--tarif-shift, 0));
+    transition: transform .25s ease; /* doux si tu modifies la valeur */
+    will-change: transform;
+  }
+
+
+
+  /* Mobile : un peu plus d'air entre le texte et le “1” */
+  @media (max-width:900px){
+    #process .intro { margin-bottom: var(--m); }
+    #process .intro h2.sect-title{ margin-bottom: .9rem; }
+    #process .intro h3.sect-title{ margin-bottom: 1rem; }
+    /* si besoin de + d’air, augmente: */
+    /* #process .flow { margin-top: calc(var(--m) * 1.5); } */
+  }
+
+
+  /* ---- Desktop only : on supprime l'ancien décalage vertical ---- */
+  @media (min-width:901px){
+    #process .cta-col{ align-self:center; transform:none; }
+  }
+
+  /* ---- Mobile : image masquée, texte aligné, + air avant le “1” ---- */
+  @media (max-width:900px){
+    #process .process-wrap{
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "intro"
+        "flow";               /* image retirée en mobile */
+      row-gap:var(--intro-flow-gap-m,16px);
+    }
+    #process .cta-col{ display:none !important; }  /* cache l’image */
+    #process .flow{
+      grid-template-columns:1fr;
+      justify-items:center;
+      gap:10px;
+      margin-top: calc(var(--m) * 1.25);   /* espace entre texte et “1” */
+    }
+    #process .step-wrap{ width:min(300px,92vw); gap:1rem; }
+    #process .arrow svg{ transform:rotate(90deg); }
+    #process .step-num{ font-size:clamp(28px,7vw,38px); line-height:1; }
+  }
+
+  /* Empêche H1 et H2 .sect-title d'être en inline dans CETTE section */
+  .section .sect-title {
+    display: block;     
+    width: 100%; 
+  }
+
+  /* Petite respiration entre H1 et H2 ici */
+  .section h1.sect-title { margin-bottom: .35em; }
+  .section h2.sect-title { margin-top: 0; }
+
+  </style>
 
   <!-- HERO (structure identique à la page TPE) -->
   <header class="hero">
@@ -87,16 +227,22 @@
       <div class="hero-text">
         <h1 class="sect-title">
           <span class="prism" aria-hidden="true"></span>
-          Solutions PME & ETI
+          Solutions Data<br>
+          Tableaux de bord<br>
+          PME et ETI
         </h1>
+        <br>
+        <h2 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+            Pilotage d’activité, indicateurs<br>
+            et reporting automatisé
+        </h2>
         <p class="sub-lead">
           <strong style="font-size: 1.2em;">Vous êtes une entreprise en croissance autour de Bordeaux :</strong><br><br>
           <em>Plusieurs services, des outils différents, des tableaux avec trop d'infos… chacun a ses chiffres et l’organisation de vos données est difficile.<br> 
           Au quotidien, la gestion terrain et l'opérationnel prennent le dessus.<br>
           Résultat : arbitrages lents, manque de visibilité, opportunités manquées, risques de contre-performances.</em><br><br>
-          <strong>Prismora Solutions</strong> vous accompagne pour organiser vos données et vous donner de la visibilité, grâce à une approche progressive adaptée à votre structure.<br><br>
-          <strong>Objectif</strong> : <strong>des données organisées, une vue fiable et partagée</strong> pour décider plus vite et performer.<br><br>
-          Découvrez ci-dessous 2 exemples de solutions apportées, puis les étapes de mise en oeuvre ajustables à votre activité.
+          <strong>Prismora Solutions</strong> aide les PME à structurer leurs données, automatiser leurs reportings et rendre les indicateurs clairs pour décider plus vite et performer.<br><br>
         </p>
         <div class="brand-line brand-line-hero" id="brandLineHero">
           <img class="logo-tri" src="assets/img/logo/logo_def2.png" alt="Logo Triangle"/>
@@ -107,256 +253,179 @@
         <img
           src="assets/img/photos/pme-eti.png"
           alt="Illustration PME & ETI — socle data, KPIs partagés, automatisations"
-          style="max-width: 280px !important; width: 100%; height: auto;"
+          style="max-width: 320px !important; width: 100%; height: auto;"
         >
       </div>
     </div>
   </header>
 
-  <!-- PARCOURS / MISE EN PLACE (même bloc que TPE, ton adapté PME/ETI) -->
-  <section class="section">
-    <div class="container hero-split">
-      <div class="hero-text">
-        <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Mise en place</h1>
-        <div class="hero-text">
-          <p class="sub-lead">
-            <strong>Objectif :</strong> mettre en place un socle de données fiable et partagé, 
-            qui serve de base aux décisions de l’entreprise.<br><br>
-            Le parcours avance par étapes simples : compréhension des besoins, structuration des chiffres, 
-            définition des bons indicateurs et mise en visibilité dans des tableaux de bord adaptés 
-            à chaque équipe.<br><br>
-            Le dispositif est évolutif et s’adapte à chaque contexte : outils existants, 
-            priorités et moyens. L’ambition est de choisir la solution la plus pertinente 
-            et de faire évoluer progressivement les usages, en gardant la maîtrise, 
-            sans complexité inutile.
+  <!-- ===================== PROCESS (déroulé) ===================== -->
+  <section class="section" id="process">
+    <div class="container">
+  
+      <div class="process-wrap" style="--process-gap: 50px;">
+        <!-- Colonne image (gauche) -->
+        <div class="cta-col">
+          <img src="assets/img/photos/on-avance.png" alt="Prismora Solutions">
+        </div>
+  
+        <!-- Colonne texte (droite) -->
+        <div class="intro">
+          <h2 class="sect-title">
+            <span class="prism" aria-hidden="true"></span>
+            Un accompagnement structuré
+          </h2>
+          <h3 class="sect-title">
+            <span class="prism" aria-hidden="true"></span>
+            Un parcours pensé pour vous
+          </h3>
+  
+          <p class="sub-lead" style="max-width:60ch; margin:0;">
+            On démarre par un <strong>échange de cadrage</strong> pour comprendre votre activité, vos outils et les indicateurs qui comptent pour vos équipes.<br><br>
+            L’objectif est clair&nbsp;: <strong>structurer vos données pour fiabiliser le pilotage</strong> et 
+            <strong>fournir à chacun une vision commune et utile</strong>.<br><br>
+            La mise en place comprend <strong>l’organisation de vos sources de données</strong>, la création d’un <strong>tableau de bord opérationnel et stratégique</strong>,
+            ainsi qu’un <strong>transfert de compétences</strong> pour l'utilisation quotidienne.
           </p>
         </div>
-      </div>
-      <div class="cta-row">
-        <a class="cta" href="contact.html">Échanger sur votre projet</a>
-        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
-      </div>
-    </div>
-
-    <!-- Cartes : même grille, contenus renforcés pour PME/ETI -->
-    <div class="container">
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Poser les bases</h2>
-      <div class="grid grid-2 cards-lift">
-        <!-- Diagnostic stratégique → Diagnostic éclair (1–2 jours) -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/diagnostic.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Diagnostic initial</h3>
-            <p>Comprendre vos chiffres et cibler les actions à mener.</p>
-            <ul class="liste-carre">
-              <li>Recueil des besoins et des priorités</li>
-              <li>Inventaire des sources de données existantes</li>
-              <li>Plan d’actions simple et partagé</li>
-            </ul>
-          </div>
-        </article>
-        <!-- Essai concret -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/essai-concret.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Étude de l’environnement logiciel</h3>
-            <p>Choix de l'outil adapté</p>
-            <ul class="liste-carre">
-              <li>Analyse de l’existant (Logiciels métiers, ERP, Office, etc.)</li>
-              <li>Contraintes & budget (licences, compétences internes)</li>
-              <li>Recommandation outillée (Power BI, Looker, Solution OpenSource)</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Données fiables</h2>
-      <div class="grid grid-2 cards-lift"> 
-        <!-- Modélisation & qualité -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/modelisation.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Modélisation & qualité</h3>
-            <p>Structurer vos données et sécuriser les calculs.</p>
-            <ul class="liste-carre">
-              <li>Modèle métier clair (ventes, clients, stocks)</li>
-              <li>Règles de calcul documentées (CA net, marge, délais)</li>
-              <li>Contrôles de cohérence (doublons, formats, manquants)</li>
-            </ul>
-          </div>
-        </article>
         
-        <!-- Automatisation légère -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Automatisation</h3>
-            <p>Actualiser vos chiffres sans manipulations répétitives.</p>
-            <ul class="liste-carre">
-              <li>Imports planifiés depuis vos sources</li>
-              <li>Vérifications automatiques & journal des mises à jour</li>
-              <li>Alerte en cas d’oubli ou d’anomalie</li>
-            </ul>
+        <div class="flow">
+    
+          <!-- Étape 1 -->
+          <div class="step-wrap">
+            <div class="step-num">1</div>
+            <article class="card step-card">
+              <div class="meta-band">
+                <div class="ico" aria-hidden="true">🧭</div>
+                <h3>Cadrer vos besoins</h3>
+              </div>
+              <ul class="liste-carre">
+                <li>Premier échange</li>
+                <li>Vos besoins</li>
+                <li>Vos outils</li>
+              </ul>
+            </article>
           </div>
-        </article>
-      </div>
-
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>KPI & Tableaux de Bord</h2>
-      <div class="grid grid-2 cards-lift">
-        <!-- Référentiel KPI  → KPIs communs & mini-glossaire -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/kpi.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Indicateurs clés (KPI)</h3>
-            <p>Un socle de KPI partagés, complété par des besoins spécifiques.</p>
-            <ul class="liste-carre">
-              <li>Indicateurs transverses (CA, marge, stock, etc.)</li>
-              <li>KPIs adaptés à chaque service (commerce, finance, opérations...)</li>
-              <li>Définitions claires et glossaire commun</li>
-            </ul>
+    
+          <div class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
           </div>
-        </article>
-        <!-- Dataviz multi-équipes → Tableaux de bord clairs par équipe -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Tableaux de bord clairs par équipe</h3>
-            <p>Une vue direction, une vue commerce, une vue finance — lisibles.</p>
-            <ul class="liste-carre">
-              <li>Filtres utiles (périodes, agences, familles)</li>
-              <li>Indicateurs et alertes visuelles</li>
-              <li>Export PDF en un clic</li>
-            </ul>
+    
+          <!-- Étape 2 -->
+          <div class="step-wrap">
+            <div class="step-num">2</div>
+            <article class="card step-card">
+              <div class="meta-band">
+                <div class="ico" aria-hidden="true">📝</div>
+                <h3>Périmètre & budget</h3>
+              </div>
+              <ul class="liste-carre">
+                <li>Actions prévues</li>
+                <li>Calendrier simple</li>
+                <li>Budget adapté</li>
+              </ul>
+            </article>
           </div>
-        </article>
-      </div>
-
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Conformité & intégration</h2>
-      <div class="grid grid-2 cards-lift">
-      <!-- Sécurité, SSO & conformité → RGPD & partages maîtrisés -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/rgpd.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>RGPD & partages maîtrisés</h3>
-            <p>Partager vos données en toute sécurité</p>
-            <ul class="liste-carre">
-              <li>Droits d’accès par service</li>
-              <li>Partages conformes</li>
-              <li>Traçabilité des exports partagés</li>
-            </ul>
+    
+          <div class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
           </div>
-        </article>
-        
-        <!-- Intégrations & diffusion → Connexions multi-outils (simples) -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/integration.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Connexions multi-outils</h3>
-            <p>Relier vos outils sans tout refaire.</p>
-            <ul class="liste-carre">
-              <li>Exports comptables/CRM/point de vente</li>
-              <li>Liaisons légères (Power Query, Google Sheets, CSV)</li>
-              <li>Portail d’accès basique (liens & notices)</li>
-            </ul>
+    
+          <!-- Étape 3 -->
+          <div class="step-wrap">
+            <div class="step-num">3</div>
+            <article class="card step-card">
+              <div class="meta-band">
+                <div class="ico" aria-hidden="true">📌</div>
+                <h3>Structurer les données</h3>
+              </div>
+              <ul class="liste-carre">
+                <li>Plan d’action</li>
+                <li>Points à valider</li>
+                <li>Top départ</li>
+              </ul>
+            </article>
           </div>
-        </article>
-      </div>
-
-      <br><h2 class="sect-title"><span class="prism" aria-hidden="true"></span>Adoption & Suivi</h2>
-      <div class="grid grid-2 cards-lift">
-        
-        <!-- Adoption & formation (identique, texte clarifié) -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/formation.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Adoption & formation</h3>
-            <p>Rendre vos équipes autonomes rapidement.</p>
-            <ul class="liste-carre">
-              <li>Parcours de Prise en Main</li>
-              <li>Guides d'usage & modèles réutilisables</li>
-              <li>Bonnes pratiques pour l’usage quotidien</li>
-            </ul>
+    
+          <div class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12L7.05 5.879l1.414-1.415L16 12l-7.536 7.536-1.414-1.415z"/></svg>
           </div>
-        </article>
-        
-        <!-- TMA & évolutions → Suivi & petites évolutions -->
-        <article class="card card--split">
-          <img class="card-ico" src="assets/img/photos/evolution.png" alt="" aria-hidden="true">
-          <div class="card-body">
-            <h3>Suivi & petites évolutions</h3>
-            <p>Corriger, faire évoluer et garder le cap.</p>
-            <ul class="liste-carre">
-              <li>Corrections et ajustements rapides</li>
-              <li>Petites features à la demande</li>
-              <li>Bilan régulier (mensuel, trimestriel)</li>
-            </ul>
+    
+          <!-- Étape 4 -->
+          <div class="step-wrap">
+            <div class="step-num">4</div>
+            <article class="card step-card">
+              <div class="meta-band">
+                <div class="ico" aria-hidden="true">⚙️</div>
+                <h3>Déployer & former</h3>
+              </div>
+              <ul class="liste-carre">
+                <li>Fichiers organisés</li>
+                <li>Tableau de bord</li>
+                <li>Prise en main</li>
+              </ul>
+            </article>
           </div>
-        </article>
+    
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SECTION — PRÊT À AVANCER ? -->
   <section class="section" id="pret-a-avancer">
-    <!-- 1) Texte de transition (gauche) + CTAs (droite) -->
+
+    <!-- 2) Carte tarif (gauche) + image (droite) -->
     <div class="container hero-split">
       <div class="hero-text">
-        <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Prêt à avancer&nbsp;?</h1>
-        <p class="sub-lead">
-          Après un <strong>premier échange</strong> pour écouter vos besoins, un <strong>diagnostic sur place</strong> va permettre d'étudier environnement et outils, puis définir le plan d'action.<br><br>
-          À partir de là, on <strong>définit ensemble les indicateurs</strong>, on <strong>organise les données</strong>, on <strong>connecte simplement vos outils</strong> puis on <strong>crée et diffuse les tableaux de bord</strong> adaptés à chaque service. 
-          Si besoin, on <strong>automatise</strong> les mises à jour et on accompagne vos équipes pour l'utilisation quotidienne.<br><br>
-          <strong>Objectif</strong> : <strong>transformer la donnée en info utile, fiabiliser vos reportings et gagner en efficacité dans le pilotage quotidien.</strong>
-        </p>
-
-
-      </div>
-      <div class="cta-row">
-        <a class="cta" href="contact.html">Échanger sur votre projet</a>
-        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
-      </div>
-    </div>
-  
-    <!-- 2) Carte tarif (gauche) + image (droite) -->
-    <div class="container hero-split" style="margin-top: var(--m);">
-      <div class="hero-text">
-        <article class="card">
+        <h2 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Prêt à avancer ?
+        </h2>
+        <article class="card card--pricing" style="--pricing-pad:10px; transform:translateY(15px);">
           <div class="card-body">
-            <h3>Mise en route — <span style="white-space:nowrap;">à&nbsp;partir&nbsp;de&nbsp;490&nbsp;€</span>*</h3>
+            <h3><span class="badge-amber pricing-badge">Offre de mise en route</span></h3>
+            <!-- <h3>Mise en route — <span style="white-space:nowrap;">à&nbsp;partir&nbsp;de&nbsp;690&nbsp;€</span>*</h3> -->
+        
+            <!-- pastille prix (optionnelle, peut rester même si le h3 indique déjà le prix) -->
+            <div class="price-tag">
+              à partir de 690 €<span class="price-suffix">*</span>
+            </div>
             <ul class="liste-carre">
-              <li><strong>Vos fichiers rangés et organisés</strong> pour partir sur une base claire</li>
-              <li><strong>Un tableau de bord simple</strong> : une vue lisible de votre activité</li>
-              <li><strong>Mise à jour en 2 clics</strong> (export → dépôt → actualisation)</li>
-              <li><strong>Guide des bonnes pratiques</strong> pour la gestion au quotidien</li>
-              <li><strong>1 ajustement inclus</strong> dans les 15 jours</li>
+              <li>Diagnostic</li>
+              <li>Organisation des données</li>
+              <li>KPIs prioritaires</li>
+              <li>Dashboard (1 vue, 6 indicateurs max)</li>
             </ul>
+            <br>
+            <h3><span class="badge-amber pricing-badge">Socle PME</span></h3>
+            <div class="price-tag">à partir de 1 490€</div>
+            <ul class="liste-carre">
+              <li>2 sources de données (ex : ventes + compta)</li>
+              <li>Tableau de bord direction + équipe</li>
+              <li>Formation & transfert</li>
+            </ul>
+        
+            <div class="cta-row">
+              <a class="cta cta--ghost" href="contact.html">Planifier un échange</a>
+            </div>
+            <p>
+              <small style="font-size:.65rem; line-height:1.35; display:block; opacity:.85;">
+                <em>
+                  *Tarifs indicatifs : Le pack 690 € correspond à une mise en route légère. un devis est établi après un premier échange selon les actions à mener. 
+                  TVA non applicable. Zone : cantons Libournais-Fronsadais, Nord-Gironde, L’Estuaire, La Presqu’île.
+                  Au-delà, forfait déplacement au devis.
+                </em>
+              </small>
+            </p>
           </div>
         </article>
       </div>
-      <div class="hero-visual">
-        <img src="assets/img/photos/on-avance.png"
-             alt="Mise en route — à partir de 390 €"
+      <div class="hero-visual hero-visual--tarif" style="--tarif-shift: 45px; transform:translateY(5px);"">
+        <img src="assets/img/photos/mise_en_route.png"
+             alt="Mise en route — à partir de "
              style="max-width:320px; width:100%; height:auto;">
       </div>
-    </div>
-  
-    <!-- 3) Carte plein largeur — options (phrase simple) -->
-    <div class="container" style="margin-top: var(--m);">
-      <article class="card">
-        <div class="card-body">
-          <p>
-            Selon vos besoins et votre environnement (logiciels, exports disponibles), <strong>des options sont possibles</strong> :<br>
-            automatisation de la mise à jour, ajout d’autres fichiers ou d’indicateurs, vues supplémentaires, export/partage, ou un accompagnement ponctuel.
-            Tout est défini et chiffré lors du premier échange.<br><br>
-            <small style="font-size:.65rem; line-height:1.35; display:block; opacity:.85;">
-              <em>*Tarifs indicatifs&nbsp;: un devis est établi après un premier échange. 
-              TVA non applicable. Zone : cantons Libournais-Fronsadais, Nord-Gironde, L’Estuaire, La Presqu’île. Au-delà, forfait déplacement au devis.<br>
-              Missions freelance / ESN : intervention en régie, facturation sur TJM. 
-              Chaque projet fait l’objet d’un devis après le premier échange. Prestations PME/ETI d’un côté&nbsp;; missions freelance/ESN en régie (TJM) de l’autre.</em>
-            </small>
-          </p>
-        </div>
-      </article>
     </div>
   </section>
 
@@ -365,49 +434,94 @@
     <div class="container">
       <h1 class="sect-title">
         <span class="prism" aria-hidden="true"></span>
-        Exemples concrets
+        Prismora en action
       </h1>
+      <h2 class="sect-title">
+        <span class="prism" aria-hidden="true"></span>
+        Ils nous ont fait confiance
+      </h2>
   
-      <p class="sub-lead"> 
-        Deux <strong>tableaux de bord</strong>, déployés et opérationnels :<br><br>
-        • <strong>Cas réel</strong> (garage, interface Streamlit)&nbsp;: pilotage du CA, répartition par catégories, top articles et carte clients.<br>
-        • <strong>Démo vidéo</strong> (retail, interface Power&nbsp;BI)&nbsp;: cockpit direction &amp; commerce. (CA, Marge nette, Coûts)</p>
-  
-      <!-- Ligne 1 : 2 cartes équilibrées -->
-      <div class="grid grid-2 cards-lift" style="margin-top: var(--m);">
-        <!-- Cas #1 : Garage (Streamlit) -->
-        <article class="card card--split">
-          <img src="assets/img/exemples/garage-01-ca.png"
-               alt="Capture anonymisée : CA annuel & mensuel (garage)"
-               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
+      <p class="sub-lead" style="max-width:none;">
+      Autour de Bordeaux, plusieurs PME nous ont fait confiance pour <strong>structurer leurs données et faciliter le pilotage de leur activité</strong>.<br><br>
+      Voici deux exemples concrets de solutions déployées, adaptées à leurs besoins et à leur organisation.
+      </p>
+
+      <!-- === Deck responsive (1 → 2 → 3 colonnes) === -->
+      <div class="cards-deck cards-lift" style="margin-top: var(--m);">
+      
+        <!-- Cas #1 -->
+        <article class="card card--showcase">
           <div class="card-body">
-            <h3>Garage multi-activités (Streamlit)</h3>
-            <p>Pilotage du CA, répartition par catégories, top articles et carte clients.</p>
-            <p style="margin-top: var(--s);">
-              <a class="cta cta--ghost" href="#"
+            <h3>Garage multi-activités</h3>
+            <p>
+              Organisation des fichiers et création d’un tableau de bord pour suivre
+              ventes, marges, stock et clients en temps réel.
+            </p>
+      
+            <!-- Rangée image + bouton (miniature à gauche, CTA à droite) -->
+            <div class="card-foot">
+              <img class="mini-shot"
+                   src="assets/img/exemples/garage-01-ca.png"
+                   alt="Aperçu du tableau de bord garage">
+              <a class="cta cta--ghost"
+                 href="#"
                  data-open-gallery="garage"
                  aria-haspopup="dialog">
                 Voir la galerie
               </a>
-            </p>
+            </div>
           </div>
         </article>
-  
-        <!-- Cas #2 : Réseau retail (Power BI) -->
-        <article class="card card--split">
-          <img src="assets/img/exemples/retail.png"
-               alt="Miniature vidéo : cockpit direction & commerce"
-               style="width:100%;height:auto;border-radius:12px;margin-bottom:var(--s);" />
+      
+        <!-- Cas #2 -->
+        <article class="card card--showcase">
           <div class="card-body">
-            <h3>Réseau retail (Power&nbsp;BI)</h3>
-            <p>Cockpit direction & commerce : Démo vidéo</p>
-            <p style="margin-top: var(--s);">
-              <a class="cta cta--ghost" href="assets/video/retail360.mp4"
-                data-open-video aria-haspopup="dialog">Voir la démo</a>
+            <h3>Mobilier & fournitures - PME</h3>
+            <p>
+              Un tableau de bord complet pour la direction et les équipes,
+              Un outil simple pour comprendre, comparer et décider.
             </p>
+      
+            <div class="card-foot">
+              <img class="mini-shot"
+                   src="assets/img/exemples/retail.png"
+                   alt="Aperçu cockpit retail">
+              <a class="cta cta--ghost"
+                 href="assets/video/retail360.mp4"
+                 data-open-video
+                 aria-haspopup="dialog">
+                Voir la démo
+              </a>
+            </div>
           </div>
         </article>
+      
+        <!-- (Optionnel) Cas #3 — s’insère automatiquement sur la même ligne ≥1400px -->
+        <!--
+        <article class="card card--showcase">
+          <div class="card-body">
+            <h3>Le Caféier (galerie)</h3>
+            <p>
+              Suivi des ventes & stocks, indicateurs utiles au quotidien, le tout
+              accessible simplement.
+            </p>
+            <div class="card-foot">
+              <img class="mini-shot"
+                   src="assets/img/exemples/cafeier-mini.png"
+                   alt="Aperçu Caféier">
+              <a class="cta cta--ghost"
+                 href="#"
+                 data-open-gallery="cafeier"
+                 aria-haspopup="dialog">
+                Voir la galerie
+              </a>
+            </div>
+          </div>
+        </article>
+        -->
+      
       </div>
+
   
       <!-- Bande de vignettes pour le cas Garage (claires, scannables) -->
       <div class="gallery-sources">
@@ -443,18 +557,118 @@
         </div>
       </div>
     </div>
-  </section>  
+  </section> 
 
-  <!-- CTA FINAL -->
-  <section class="section contact-band">
-    <div class="container contact-box">
-      <div class="cta-row">
-        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
-        <a class="cta" href="contact.html">Échanger sur votre projet</a>
-        <a class="cta cta--ghost" href="prismora-solutions.html">A Propos de Prismora</a>
-      </div>   
+<!-- ===================== FAQ ===================== -->
+<section class="section section-faq" id="faq">
+  <div class="container">
+    <h2 class="sect-title">
+      <span class="prism" aria-hidden="true" style="max-width:none;"></span>
+      FAQ<br>
+    </h2>
+    <h3 class="sect-title">
+      <span class="prism" aria-hidden="true" style="max-width:none;"></span>
+      Accompagnement Data<br>
+      Business Intelligence<br>
+      PME – Bordeaux, Gironde
+    </h3>
+
+    <div class="faq">
+      <!-- Q1 -->
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Comment se déroule la mise en place&nbsp;?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p class="sub-lead" style="max-width:70ch;">
+            L’accompagnement se fait à distance et, si besoin, sur site dans vos locaux.<br>
+            On démarre toujours par <strong>un échange de cadrage</strong> pour comprendre votre organisation, vos outils et vos indicateurs clés.<br>
+            Selon la taille du périmètre, la mise en place s’effectue en plusieurs étapes&nbsp;: <strong>structuration des données, création du tableau de bord, transfert de compétences</strong>.<br>
+            Le déploiement complet dure en moyenne <strong>trois à quatre semaines</strong>, selon le volume de données et les ajustements à prévoir.<br>
+            Les interventions sur place sont incluses <strong>dans la zone de proximité</strong> (voir page Contact).
+          </p>
+        </div>
+      </details>
+
+      <!-- Q1bis -->      
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Peut-on commencer petit ?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p class="sub-lead">
+            Oui. Le pack Mise en route permet de cadrer vos besoins et de livrer une première vue rapide.<br>
+            Vous pouvez ensuite étendre progressivement : nouveaux KPIs, automatisations, vues direction/équipe.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q2 -->
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">À quoi sert un tableau de bord en entreprise&nbsp;?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p class="sub-lead" style="max-width:70ch;">
+            Un tableau de bord permet de <strong>centraliser les indicateurs clés (KPI) de votre activité</strong> — ventes, marge, trésorerie, production, RH… — pour offrir une <strong>vision globale et fiable</strong> à la direction comme aux équipes.<br><br>
+            Il consolide automatiquement les données issues de vos différents outils (Excel, ERP, CRM, comptabilité) et les présente de façon <strong>lisible, interactive et mise à jour en temps réel</strong>.<br><br>
+            L’objectif&nbsp;: <strong>disposer d’une base commune pour décider plus vite, piloter efficacement et aligner les équipes</strong>.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q2bis -->
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Qu’est-ce qu’un indicateur de performance (KPI) et à quoi ça sert&nbsp;?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p class="sub-lead" style="max-width:70ch;">
+            Un KPI est un <strong>indicateur de performance</strong> qui mesure l’avancement ou la réussite d’un objectif clé de votre entreprise : chiffre d’affaires, marge, rotation de stock, satisfaction client, délai de traitement, etc.<br><br>
+            L'accompagnement de <strong>Prismora Solutions</strong> consiste à <strong>identifier les bons indicateurs</strong> avec vous et vos équipes, puis à <strong>les traduire en tableaux de bord lisibles</strong>.<br><br>
+            En combinant <strong>l’analyse data</strong> et la <strong>connaissance opérationnelle</strong>, on obtient des KPIs utiles au quotidien : ils permettent de <strong>comprendre, anticiper et décider</strong> sans perdre de temps dans les fichiers.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q3 -->
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Comment se passe la récupération et la structuration des données&nbsp;?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p class="sub-lead" style="max-width:70ch;">
+            On travaille à partir de vos sources existantes&nbsp;: <strong>fichiers Excel, exports ERP ou comptables, outils de gestion ou CRM</strong>.<br><br>
+            Après un premier cadrage, on <strong>centralise, nettoie et organise</strong> ces données pour les rendre exploitables dans un tableau de bord unique.<br><br>
+            Selon les besoins, il est possible de <strong>connecter plusieurs sources (ventes, finance, RH…)</strong> et d’automatiser les mises à jour pour que les indicateurs se rafraîchissent sans intervention.<br><br>
+            L’ensemble est stocké dans un espace partagé et sécurisé dans votre environnement avec <strong>contrôles d’accès et connexions chiffrées</strong>.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q6 -->
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Y a-t-il un accompagnement après la mise en place&nbsp;?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p class="sub-lead" style="max-width:70ch;">
+            Oui. Une fois la solution déployée, vous disposez d’un <strong>tableau de bord pleinement opérationnel</strong>, accompagné d’un <strong>guide de prise en main et de bonnes pratiques</strong> pour vos équipes.<br><br>
+            Un point de suivi est prévu dans les 15 jours pour valider les premiers usages et affiner certains indicateurs si nécessaire.<br><br>
+            Par la suite, on reste disponible pour <strong>faire évoluer le tableau de bord, ajouter de nouvelles vues métiers ou automatiser certaines mises à jour</strong> au fil du temps.<br><br>
+            Plusieurs clients choisissent également un <strong>accompagnement récurrent</strong> (abonnement mensuel ou trimestriel) pour assurer la maintenance, le reporting automatisé et l’évolution continue des KPIs.
+          </p>
+        </div>
+      </details>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- ===================== FOOTER ===================== -->
 <style>
@@ -843,6 +1057,78 @@
     vbox.addEventListener('click', e=>{ if(e.target===vbox) closeVideo(); });
     window.addEventListener('keydown', e=>{
       if(e.key==='Escape' && vbox.classList.contains('open')) closeVideo();
+    });
+  })();
+    // Script pour FAQ
+  (function(){
+    const faqs = document.querySelectorAll('.section-faq .faq-item');
+    if(!faqs.length) return;
+  
+    // Ferme toutes les autres avec animation
+    function closeOthers(current){
+      faqs.forEach(d => {
+        if(d !== current && d.open){
+          slideClose(d);
+        }
+      });
+    }
+  
+    function slideOpen(details){
+      const box = details.querySelector('.faq-a');
+      // préparer l'ouverture
+      details.open = true;
+      details.setAttribute('data-expanded', 'true');
+      box.style.height = '0px';
+      // forcer un reflow pour démarrer depuis 0
+      box.getBoundingClientRect();
+      // animer vers la hauteur naturelle
+      box.style.height = box.scrollHeight + 'px';
+  
+      // à la fin, verrouiller à auto
+      const end = () => {
+        box.style.height = 'auto';
+        box.removeEventListener('transitionend', end);
+      };
+      box.addEventListener('transitionend', end);
+    }
+  
+    function slideClose(details){
+      const box = details.querySelector('.faq-a');
+      // si déjà auto, figer la hauteur courante pour partir d'une valeur fixe
+      if(getComputedStyle(box).height === 'auto'){
+        box.style.height = box.scrollHeight + 'px';
+      }
+      // forcer reflow puis animer vers 0
+      box.getBoundingClientRect();
+      details.removeAttribute('data-expanded');
+      box.style.height = '0px';
+  
+      const end = () => {
+        details.open = false;
+        box.removeEventListener('transitionend', end);
+      };
+      box.addEventListener('transitionend', end);
+    }
+  
+    // On gère nous-mêmes le toggle pour pouvoir animer
+    faqs.forEach(details => {
+      const summary = details.querySelector('summary');
+      summary.addEventListener('click', (e) => {
+        e.preventDefault(); // on neutralise le toggle natif
+        if(details.open){
+          slideClose(details);
+        }else{
+          closeOthers(details);
+          slideOpen(details);
+        }
+      });
+  
+      // Accessibilité : Enter/Space déjà géré par click sur summary
+      // État initial : tout fermé
+      details.open = false;
+      details.removeAttribute('data-expanded');
+      const box = details.querySelector('.faq-a');
+      box.style.height = '0px';
     });
   })();
   </script>
