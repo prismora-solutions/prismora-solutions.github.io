@@ -223,14 +223,20 @@
 }
 
 /* Empêche H1 et H2 .sect-title d'être en inline dans CETTE section */
-.section .sect-title {
-  display: block;       /* redevient bloc → passage à la ligne */
-  width: 100%;
+/* .section .sect-title {
+  display: block;     
+  width: 100%; 
 }
 
 /* Petite respiration entre H1 et H2 ici */
-.section h1.sect-title { margin-bottom: .35em; }
-.section h2.sect-title { margin-top: 0; }
+/*.section h1.sect-title { margin-bottom: .35em; }
+.section h2.sect-title { margin-top: 0; }*/
+
+/* Scope process seulement (ne touche pas le reste du site) */
+#process .sect-title{ display:block; width:100%; }
+#process h1.sect-title{ margin-bottom:.35em; }
+#process h2.sect-title{ margin-top:0; }
+
 </style>
 
   <!-- HERO -->
