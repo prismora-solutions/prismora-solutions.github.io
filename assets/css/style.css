@@ -845,6 +845,16 @@ small{opacity:.85}
   .card--showcase .card-foot{ grid-template-columns:1fr; justify-items:center; gap:calc(var(--m)*.75); }
 }
 
+/* Miniature : petite image carrée/rectangulaire */
+.card--showcase .mini-shot{
+  width: 200px;                                /* adapte si tu veux plus petit/large */
+  max-width: 38vw;                             /* sécurité en mobile paysage */
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 6px 20px rgba(0,0,0,.10);
+}
+
 /* Un peu d’air sous le deck si un autre bloc suit */
 .cards-deck + *{ margin-top: var(--l); }
 
