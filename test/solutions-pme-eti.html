@@ -1,4 +1,4 @@
-<!-- solutions-tpe.html — Prismora Solutions (V2) -->
+<!-- solutions-pme-eti.html — Prismora Solutions  -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- SEO principal -->
-  <title>Prismora Solutions | Accompagnement à la gestion des données TPE Bordeaux Gironde</title>
-  <meta name="description" content="TPE & indépendants : suivi simple du CA, de la marge et de la trésorerie. Diagnostic rapide, tableau de bord utile, essai concret, formation & transfert.">
-  <link rel="canonical" href="https://prismora.fr/solutions-tpe.html">
+  <title>Prismora Solutions | Business Intelligence PME & ETI – KPIs, Dataviz & Gouvernance</title>
+  <meta name="description" content="PME & ETI : dashboards inter-équipes, KPIs partagés, pipelines automatisés, gouvernance & sécurité. Diagnostic, dataviz Power BI/Looker, intégrations SI, TMA.">
+  <link rel="canonical" href="https://prismora.fr/solutions-pme-eti.html">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Prismora Solutions | Accompagnement à la gestion des données TPE Bordeaux Gironde">
-  <meta property="og:description" content="TPE & indépendants : suivi simple du CA, de la marge et de la trésorerie. Diagnostic rapide, tableau de bord utile, essai concret, formation & transfert.">
-  <meta property="og:url" content="https://prismora.fr/solutions-tpe.html">
+  <meta property="og:title" content="Prismora Solutions | Business Intelligence PME & ETI – KPIs, Dataviz & Gouvernance">
+  <meta property="og:description" content="Dashboards inter-équipes, KPIs partagés, pipelines automatisés, gouvernance & sécurité. Diagnostic, dataviz Power BI/Looker, intégrations SI, TMA.">
+  <meta property="og:url" content="https://prismora.fr/solutions-pme-eti.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://prismora.fr/assets/img/logo/logo_def2.png">
   <meta property="og:site_name" content="Prismora Solutions">
@@ -30,8 +30,9 @@
   <!-- Couleur navigateur -->
   <meta name="theme-color" content="#0f4c5c" />
 </head>
+
 <body>
-  
+
   <!-- ===================== NAV ===================== -->
   <nav class="nav" aria-label="Navigation principale">
     <div class="container wrap">
@@ -76,170 +77,173 @@
       </div>
     </div>
   </nav>
-<style> 
-/* ====== PROCESS ====== */
 
-/* Espace horizontal image↔texte : modifie la valeur ci-dessous si besoin */
-#process { --process-gap: 28px; }
+  <style> 
+  /* ====== PROCESS ====== */
 
-/* ---- Layout principal ---- */
-#process .process-wrap{
-  display:grid;
-  grid-template-columns: 320px 1fr;        /* image | texte */
-  grid-template-areas:
-    "cta   intro"
-    "flow  flow";
-  column-gap:var(--process-gap,50px);
-  row-gap:var(--intro-flow-gap,50px);
-  align-items:start;
-  margin:8px 0 10px;
-}
+  /* Espace horizontal image↔texte : modifie la valeur ci-dessous si besoin */
+  #process { --process-gap: 28px; }
 
-#process .cta-col{                         /* Colonne IMAGE (à gauche) */
-  grid-area: cta;
-  display:flex; flex-direction:column;
-  align-items:flex-start;                  /* bord gauche */
-  justify-content:flex-start;                  /* centrage vertical */
-  text-align:left;
-}
-#process .cta-col img{
-  width:280px; height:auto;
-  display:block; margin:0 0 12px 0;
-}
-
-#process .intro{                           /* Colonne TEXTE (à droite) */
-  grid-area: intro;
-  margin:0; text-align:left; max-width:60ch;
-}
-
-/* Légère respiration entre H2 et H3 au-dessus du grid */
-#process h2.sect-title + h3.sect-title{ margin-top:.4rem; }
-
-/* ---- Grille des 4 cartes ---- */
-#process .flow{
-  grid-area: flow;
-  display:grid;
-  grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr;
-  column-gap: var(--m);
-  row-gap: 0;
-  align-items:stretch;
-  margin-top:0;
-}
-#process .arrow{ display:flex; align-items:center; justify-content:center; }
-#process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand,#0f4c5c); }
-
-#process .step-wrap{ display:flex; flex-direction:column; align-items:center; gap:.5rem; }
-#process .step-num{ font-weight:800; color:var(--brand,#0f4c5c); font-size:clamp(22px,2.4vw,28px); line-height:1; }
-#process .step-card{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; text-align:center; padding:var(--m); }
-#process .meta-band{ height:96px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
-#process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
-#process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
-
-/* Carte "mentions tarifaires" */
-.card--legal { 
-  margin-top: var(--m);              /* espace avec la carte tarif au-dessus */
-}
-
-.card--legal .card-body{
-  padding-block: 8px;                /* haut/bas plus serré (garde le padding latéral existant) */
-  /* padding-inline reste inchangé (hérite de .card-body) */
-}
-
-.card--legal .sub-lead{ 
-  margin: 0;                         /* retire les marges verticales du <p> */
-}
-
-.card--legal .legal-text{
-  display: block;
-  margin: 0;                         /* pas de marge supplémentaire */
-  font-size: .65rem;                 /* garde la petite taille */
-  line-height: 1.35;
-  opacity: .85;
-}
-
-/* Cacher ce visuel en mobile (ne touche pas les autres .hero-visual) */
-@media (max-width: 900px){
-  .hero-visual--tarif{ display:none !important; }
-}
-
-/* Décalage vertical du visuel tarif (desktop) */
-.hero-visual--tarif img{
-  transform: translateY(var(--tarif-shift, 0));
-  transition: transform .25s ease; /* doux si tu modifies la valeur */
-  will-change: transform;
-}
-
-
-
-/* Mobile : un peu plus d'air entre le texte et le “1” */
-@media (max-width:900px){
-  #process .intro { margin-bottom: var(--m); }
-  #process .intro h2.sect-title{ margin-bottom: .9rem; }
-  #process .intro h3.sect-title{ margin-bottom: 1rem; }
-  /* si besoin de + d’air, augmente: */
-  /* #process .flow { margin-top: calc(var(--m) * 1.5); } */
-}
-
-
-/* ---- Desktop only : on supprime l'ancien décalage vertical ---- */
-@media (min-width:901px){
-  #process .cta-col{ align-self:center; transform:none; }
-}
-
-/* ---- Mobile : image masquée, texte aligné, + air avant le “1” ---- */
-@media (max-width:900px){
+  /* ---- Layout principal ---- */
   #process .process-wrap{
-    grid-template-columns: 1fr;
+    display:grid;
+    grid-template-columns: 320px 1fr;        /* image | texte */
     grid-template-areas:
-      "intro"
-      "flow";               /* image retirée en mobile */
-    row-gap:var(--intro-flow-gap-m,16px);
+      "cta   intro"
+      "flow  flow";
+    column-gap:var(--process-gap,50px);
+    row-gap:var(--intro-flow-gap,50px);
+    align-items:start;
+    margin:8px 0 10px;
   }
-  #process .cta-col{ display:none !important; }  /* cache l’image */
+
+  #process .cta-col{                         /* Colonne IMAGE (à gauche) */
+    grid-area: cta;
+    display:flex; flex-direction:column;
+    align-items:flex-start;                  /* bord gauche */
+    justify-content:flex-start;                  /* centrage vertical */
+    text-align:left;
+  }
+  #process .cta-col img{
+    width:280px; height:auto;
+    display:block; margin:0 0 12px 0;
+  }
+
+  #process .intro{                           /* Colonne TEXTE (à droite) */
+    grid-area: intro;
+    margin:0; text-align:left; max-width:60ch;
+  }
+
+  /* Légère respiration entre H2 et H3 au-dessus du grid */
+  #process h2.sect-title + h3.sect-title{ margin-top:.4rem; }
+
+  /* ---- Grille des 4 cartes ---- */
   #process .flow{
-    grid-template-columns:1fr;
-    justify-items:center;
-    gap:10px;
-    margin-top: calc(var(--m) * 1.25);   /* espace entre texte et “1” */
+    grid-area: flow;
+    display:grid;
+    grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr;
+    column-gap: var(--m);
+    row-gap: 0;
+    align-items:stretch;
+    margin-top:0;
   }
-  #process .step-wrap{ width:min(300px,92vw); gap:1rem; }
-  #process .arrow svg{ transform:rotate(90deg); }
-  #process .step-num{ font-size:clamp(28px,7vw,38px); line-height:1; }
-}
+  #process .arrow{ display:flex; align-items:center; justify-content:center; }
+  #process .arrow svg{ width:26px; height:26px; opacity:.75; color:var(--brand,#0f4c5c); }
 
-/* Empêche H1 et H2 .sect-title d'être en inline dans CETTE section */
-.section .sect-title {
-  display: block;     
-  width: 100%; 
-}
+  #process .step-wrap{ display:flex; flex-direction:column; align-items:center; gap:.5rem; }
+  #process .step-num{ font-weight:800; color:var(--brand,#0f4c5c); font-size:clamp(22px,2.4vw,28px); line-height:1; }
+  #process .step-card{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; text-align:center; padding:var(--m); }
+  #process .meta-band{ height:96px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
+  #process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
+  #process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
 
-/* Petite respiration entre H1 et H2 ici */
-.section h1.sect-title { margin-bottom: .35em; }
-.section h2.sect-title { margin-top: 0; }
+  /* Carte "mentions tarifaires" */
+  .card--legal { 
+    margin-top: var(--m);              /* espace avec la carte tarif au-dessus */
+  }
 
-</style>
+  .card--legal .card-body{
+    padding-block: 8px;                /* haut/bas plus serré (garde le padding latéral existant) */
+    /* padding-inline reste inchangé (hérite de .card-body) */
+  }
 
-  <!-- HERO -->
+  .card--legal .sub-lead{ 
+    margin: 0;                         /* retire les marges verticales du <p> */
+  }
+
+  .card--legal .legal-text{
+    display: block;
+    margin: 0;                         /* pas de marge supplémentaire */
+    font-size: .65rem;                 /* garde la petite taille */
+    line-height: 1.35;
+    opacity: .85;
+  }
+
+  /* Cacher ce visuel en mobile (ne touche pas les autres .hero-visual) */
+  @media (max-width: 900px){
+    .hero-visual--tarif{ display:none !important; }
+  }
+
+  /* Décalage vertical du visuel tarif (desktop) */
+  .hero-visual--tarif img{
+    transform: translateY(var(--tarif-shift, 0));
+    transition: transform .25s ease; /* doux si tu modifies la valeur */
+    will-change: transform;
+  }
+
+
+
+  /* Mobile : un peu plus d'air entre le texte et le “1” */
+  @media (max-width:900px){
+    #process .intro { margin-bottom: var(--m); }
+    #process .intro h2.sect-title{ margin-bottom: .9rem; }
+    #process .intro h3.sect-title{ margin-bottom: 1rem; }
+    /* si besoin de + d’air, augmente: */
+    /* #process .flow { margin-top: calc(var(--m) * 1.5); } */
+  }
+
+
+  /* ---- Desktop only : on supprime l'ancien décalage vertical ---- */
+  @media (min-width:901px){
+    #process .cta-col{ align-self:center; transform:none; }
+  }
+
+  /* ---- Mobile : image masquée, texte aligné, + air avant le “1” ---- */
+  @media (max-width:900px){
+    #process .process-wrap{
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "intro"
+        "flow";               /* image retirée en mobile */
+      row-gap:var(--intro-flow-gap-m,16px);
+    }
+    #process .cta-col{ display:none !important; }  /* cache l’image */
+    #process .flow{
+      grid-template-columns:1fr;
+      justify-items:center;
+      gap:10px;
+      margin-top: calc(var(--m) * 1.25);   /* espace entre texte et “1” */
+    }
+    #process .step-wrap{ width:min(300px,92vw); gap:1rem; }
+    #process .arrow svg{ transform:rotate(90deg); }
+    #process .step-num{ font-size:clamp(28px,7vw,38px); line-height:1; }
+  }
+
+  /* Empêche H1 et H2 .sect-title d'être en inline dans CETTE section */
+  .section .sect-title {
+    display: block;     
+    width: 100%; 
+  }
+
+  /* Petite respiration entre H1 et H2 ici */
+  .section h1.sect-title { margin-bottom: .35em; }
+  .section h2.sect-title { margin-top: 0; }
+
+  </style>
+
+  <!-- HERO (structure identique à la page TPE) -->
   <header class="hero">
     <div class="container hero-split">
       <div class="hero-text">
-        <h1 class="sect-title" style="margin-bottom:30px;">
+        <h1 class="sect-title">
           <span class="prism" aria-hidden="true"></span>
-          Les solutions pour TPE
+          Solutions Data & Tableaux de bord<br>
+          pour PME et ETI
         </h1>
         <br>
         <h2 class="sect-title">
           <span class="prism" aria-hidden="true"></span>
-          Artisan, Commerçant,<br>
-          Micro-entrepreneur, Indépendant
+            Pilotage d’activité, indicateurs<br>
+            et reporting automatisé
         </h2>
         <p class="sub-lead">
-          <em>Passionné par votre métier, vous travaillez sans compter vos heures.<br>
-          Les devis, factures et tableaux s’enchaînent, et le bilan arrive sans explication claire.<br>
-          Peu à peu, les fichiers s’éparpillent, l’organisation se complique, et la vision d’ensemble se brouille : <strong>est-ce que ça marche vraiment ?</strong></em>
-          <br><br>
-          <strong>Prismora Solutions</strong> propose une <strong>organisation simple de vos fichiers et données</strong> et <strong>une vue d’ensemble claire</strong> :<br>
-          ce qui rapporte, ce qui freine vos résultats, avec des repères concrets pour <strong>gérer au quotidien</strong>.
+          <strong style="font-size: 1.2em;">Vous êtes une entreprise en croissance autour de Bordeaux :</strong><br><br>
+          <em>Plusieurs services, des outils différents, des tableaux avec trop d'infos… chacun a ses chiffres et l’organisation de vos données est difficile.<br> 
+          Au quotidien, la gestion terrain et l'opérationnel prennent le dessus.<br>
+          Résultat : arbitrages lents, manque de visibilité, opportunités manquées, risques de contre-performances.</em><br><br>
+          <strong>Prismora Solutions</strong> vous accompagne pour organiser vos données et vous donner de la visibilité, grâce à une approche progressive adaptée à votre structure.<br><br>
+          <strong>Objectif</strong> : <strong>des données organisées, une vue fiable et partagée</strong> pour décider plus vite et performer.<br><br>
+          Découvrez ci-dessous 2 exemples de solutions apportées, puis les étapes de mise en oeuvre ajustables à votre activité.
         </p>
         <div class="brand-line brand-line-hero" id="brandLineHero">
           <img class="logo-tri" src="assets/img/logo/logo_def2.png" alt="Logo Triangle"/>
@@ -248,9 +252,9 @@
       </div>
       <div class="hero-visual">
         <img
-          src="assets/img/photos/tpe-intro.png"
-          alt="Illustration TPE — solutions simples et utiles"
-          style="max-width: 300px !important; width: 100%; height: auto;"
+          src="assets/img/photos/pme-eti.png"
+          alt="Illustration PME & ETI — socle data, KPIs partagés, automatisations"
+          style="max-width: 280px !important; width: 100%; height: auto;"
         >
       </div>
     </div>
@@ -651,7 +655,6 @@
   </div>
 </section>
 
-  
 <!-- ===================== FOOTER ===================== -->
 <style>
   /* ===== Scope footer seulement ===== */
@@ -925,7 +928,7 @@
     })();
   </script>
 
-  <!-- Lightbox Galerie -->
+    <!-- Lightbox Galerie -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Galerie d'images">
     <button class="lb-close" aria-label="Fermer">×</button>
     <button class="lb-prev" aria-label="Précédent">‹</button>
@@ -1041,7 +1044,7 @@
       if(e.key==='Escape' && vbox.classList.contains('open')) closeVideo();
     });
   })();
-  // Script pour FAQ
+    // Script pour FAQ
   (function(){
     const faqs = document.querySelectorAll('.section-faq .faq-item');
     if(!faqs.length) return;
@@ -1114,5 +1117,6 @@
     });
   })();
   </script>
+
 </body>
 </html>
