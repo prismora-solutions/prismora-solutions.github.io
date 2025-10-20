@@ -137,9 +137,9 @@
   #process .ico{ width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(15,76,92,.08); font-size:28px; margin-bottom:.35rem; }
   #process .step-card .liste-carre{ text-align:left; margin-top:.5rem; }
 
-  /* Carte "mentions tarifaires" */
+  /* Carte "mentions aires" */
   .card--legal { 
-    margin-top: var(--m);              /* espace avec la carte tarif au-dessus */
+    margin-top: var(--m);              /* espace avec la carte  au-dessus */
   }
 
   .card--legal .card-body{
@@ -161,12 +161,12 @@
 
   /* Cacher ce visuel en mobile (ne touche pas les autres .hero-visual) */
   @media (max-width: 900px){
-    .hero-visual--tarif{ display:none !important; }
+    .hero-visual--{ display:none !important; }
   }
 
-  /* Décalage vertical du visuel tarif (desktop) */
-  .hero-visual--tarif img{
-    transform: translateY(var(--tarif-shift, 0));
+  /* Décalage vertical du visuel  (desktop) */
+  .hero-visual-- img{
+    transform: translateY(var(---shift, 0));
     transition: transform .25s ease; /* doux si tu modifies la valeur */
     will-change: transform;
   }
@@ -375,7 +375,7 @@
   <!-- SECTION — PRÊT À AVANCER ? -->
   <section class="section" id="pret-a-avancer">
 
-    <!-- 2) Carte tarif (gauche) + image (droite) -->
+    <!-- 2) Carte  (gauche) + image (droite) -->
     <div class="container hero-split">
       <div class="hero-text">
         <h2 class="sect-title">
@@ -412,7 +412,7 @@
             <p>
               <small style="font-size:.65rem; line-height:1.35; display:block; opacity:.85;">
                 <em>
-                  *Tarifs indicatifs : Le pack 690 € correspond à une mise en route légère. un devis est établi après un premier échange selon les actions à mener. 
+                  *s indicatifs : Le pack 690 € correspond à une mise en route légère. un devis est établi après un premier échange selon les actions à mener. 
                   TVA non applicable. Zone : cantons Libournais-Fronsadais, Nord-Gironde, L’Estuaire, La Presqu’île.
                   Au-delà, forfait déplacement au devis.
                 </em>
@@ -425,6 +425,9 @@
         <img src="assets/img/photos/mise_en_route.png"
              alt="Mise en route — à partir de "
              style="max-width:320px; width:100%; height:auto;">
+        <div class="cta-row">
+          <a class="cta cta--ghost" href="prismora-solutions.html">A propos de Prismora</a>
+        </div>
       </div>
     </div>
   </section>
