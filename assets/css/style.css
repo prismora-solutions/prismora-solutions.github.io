@@ -807,27 +807,30 @@ small{opacity:.85}
   display: grid;
   grid-template-columns: 1fr;                 /* mobile par défaut */
   gap: var(--l);
-  justify-content: center;                    /* centre le deck dans la page */
+  justify-content: center; 
+  width: auto;             /* + */
+  margin-inline: auto;/* centre le deck dans la page */
 }
 
-/* ≥ 900px : 2 colonnes confort */
+/* ≥ 900px : 2 colonnes centrées */
 @media (min-width: 900px){
   .cards-deck{
-    grid-template-columns: repeat(2, minmax(420px, 1fr));
+    grid-template-columns: repeat(2, minmax(420px, 520px));
   }
 }
 
-/* ≥ 1400px : 3 colonnes si la place le permet */
+/* ≥ 1400px : 3 colonnes centrées */
 @media (min-width: 1400px){
   .cards-deck{
-    grid-template-columns: repeat(3, minmax(420px, 1fr));
+    grid-template-columns: repeat(3, minmax(420px, 520px));
   }
 }
+
 
 /* Harmonisation largeur/alignement de chaque carte */
 .cards-deck > .card{
   width: 100%;
-  max-width: 620px;                            /* largeur visuelle max d'une carte */
+  max-width: 520px;                            /* largeur visuelle max d'une carte */
   margin: 0 auto;                              /* centre la carte dans sa colonne */
   display: flex;                               /* pour étirer le body */
   flex-direction: column;
