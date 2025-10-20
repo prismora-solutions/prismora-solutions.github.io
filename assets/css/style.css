@@ -802,81 +802,51 @@ small{opacity:.85}
   .menu button.menu-parent.is-open::after{ content:"▴"; }
 }
 
-/* === Deck responsive : 1 → 2 → 3 colonnes === */
+/* === Deck responsive : 1 → 2 → 3 colonnes (centré strict) === */
 .cards-deck{
   display: grid;
-  grid-template-columns: 1fr;                 /* mobile par défaut */
   gap: var(--l);
-  justify-content: center; 
-  width: auto;             /* + */
-  margin-inline: auto;/* centre le deck dans la page */
+  width: fit-content;          /* la grille ne prend que la place de ses colonnes */
+  margin-inline: auto;         /* ...du coup on peut la centrer parfaitement */
+  grid-template-columns: 1fr;  /* mobile par défaut : 1 carte */
 }
 
-/* ≥ 900px : 2 colonnes centrées */
-@media (min-width: 900px){
+/* ≥ 900px : 2 colonnes fixes, deck toujours centré */
+@media (min-width:900px){
   .cards-deck{
-    grid-template-columns: repeat(2, minmax(420px, 520px));
+    grid-template-columns: repeat(2, 520px);
   }
 }
 
-/* ≥ 1400px : 3 colonnes centrées */
-@media (min-width: 1400px){
+/* ≥ 1400px : 3 colonnes fixes, deck toujours centré */
+@media (min-width:1400px){
   .cards-deck{
-    grid-template-columns: repeat(3, minmax(420px, 520px));
+    grid-template-columns: repeat(3, 520px);
   }
 }
 
-
-/* Harmonisation largeur/alignement de chaque carte */
+/* Cartes : pas de largeur max qui perturbe le calcul */
 .cards-deck > .card{
-  width: 100%;
-  max-width: 520px;                            /* largeur visuelle max d'une carte */
-  margin: 0 auto;                              /* centre la carte dans sa colonne */
-  display: flex;                               /* pour étirer le body */
-  flex-direction: column;
-}
-
-/* Variante de carte pour la mise en page souhaitée */
-.card--showcase .card-body{
+  width: 520px;        /* même largeur que les colonnes */
+  max-width: none;     /* on neutralise l’ancienne limite */
+  margin: 0;           /* plus besoin de margin auto dans ce mode */
   display: flex;
   flex-direction: column;
-  gap: var(--s);
-  flex: 1;                                     /* étire le body pour un pied stable */
 }
 
-/* Rangée "miniature + bouton" : miniature à gauche, CTA à droite */
+/* “miniature + bouton” déjà OK */
+.card--showcase .card-body{ display:flex; flex-direction:column; gap:var(--s); flex:1; }
 .card--showcase .card-foot{
   margin-top: var(--m);
-  display: grid;
-  grid-template-columns: auto auto;            /* image | bouton */
-  align-items: center;
-  justify-content: center;                     /* centre l'ensemble sous le texte */
-  gap: var(--m);
+  display:grid; grid-template-columns:auto auto;
+  align-items:center; justify-content:center; gap:var(--m);
+}
+@media (max-width:620px){
+  .card--showcase .card-foot{ grid-template-columns:1fr; justify-items:center; gap:calc(var(--m)*.75); }
 }
 
-/* Miniature : petite image carrée/rectangulaire */
-.card--showcase .mini-shot{
-  width: 200px;                                /* adapte si tu veux plus petit/large */
-  max-width: 38vw;                             /* sécurité en mobile paysage */
-  height: auto;
-  border-radius: 10px;
-  display: block;
-  box-shadow: 0 6px 20px rgba(0,0,0,.10);
-}
-
-/* Empilement propre en mobile : image puis bouton, tous deux centrés */
-@media (max-width: 620px){
-  .card--showcase .card-foot{
-    grid-template-columns: 1fr;                /* passe en colonne */
-    justify-items: center;                     /* centre image et bouton */
-    gap: calc(var(--m) * .75);
-  }
-}
-
-/* Un peu plus d’air sous le deck si une carte suit */
-.cards-deck + *{
-  margin-top: var(--l);
-}
+/* Un peu d’air sous le deck si un autre bloc suit */
+.cards-deck + *{ margin-top: var(--l); }
 
 /* ===== FAQ (commune aux pages) ===== */
 .section-faq .sub-lead{ margin-top: var(--s); margin-bottom: var(--m); }
