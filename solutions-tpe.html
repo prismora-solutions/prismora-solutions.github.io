@@ -164,7 +164,10 @@
   will-change: transform;
 }
 
-
+/* Cacher ce visuel en mobile (ne touche pas les autres .hero-visual) */
+@media (max-width: 900px){
+  .hero-visual--tarif{ display:none !important; }
+}
 
 /* Mobile : un peu plus d'air entre le texte et le “1” */
 @media (max-width:900px){
