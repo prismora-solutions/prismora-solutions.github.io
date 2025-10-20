@@ -844,6 +844,14 @@ small{opacity:.85}
 
 /* Empilement propre en mobile : image puis bouton, tous deux centrés */
 @media (max-width: 620px){
+  .cards-deck{
+    width: 100%;              /* la grille prend toute la largeur dispo */
+    grid-template-columns: 1fr;
+    justify-items: center;    /* centre les items à l’intérieur de la grille */
+  }
+  .cards-deck > .card{
+    width: min(520px, 92vw);  /* rétrécit la carte sous 520px si besoin */
+  }
   .card--showcase .card-foot{
     grid-template-columns: 1fr;                /* passe en colonne */
     justify-items: center;                     /* centre image et bouton */
