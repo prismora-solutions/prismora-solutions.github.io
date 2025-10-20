@@ -1117,3 +1117,9 @@ small{opacity:.85}
   }
 }
 
+/* ====== Ajustement espacement H2 / carte — Prêt à avancer ====== */
+@media (min-width: 901px){
+  #pret-a-avancer .hero-text .sect-title{
+    margin-bottom: var(--m); /* espace régulier (≈ 24px si ta variable est standard) */
+  }
+}
