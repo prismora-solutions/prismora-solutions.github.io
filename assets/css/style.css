@@ -1049,4 +1049,41 @@ small{opacity:.85}
   .card--pricing .price-tag{ margin-bottom: var(--s); }
 }
 
+/* ====== Section Prêt à avancer : centrage + largeur carte (desktop only) ====== */
+@media (min-width: 901px){
+  /* Le duo "carte + image" se centre dans la grille */
+  #pret-a-avancer .hero-split{
+    display: grid;
+    grid-template-columns: auto auto;                 /* largeur auto des 2 colonnes */
+    justify-content: center;                           /* centré dans le container */
+    align-items: center;
+    gap: clamp(24px, 5vw, 64px);                       /* espace entre carte et image */
+  }
+
+  /* La colonne texte n'étire pas la carte : on centre la carte dans sa colonne */
+  #pret-a-avancer .hero-text{
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Carte tarif : largeur pilotable + padding uniforme */
+  #pret-a-avancer .card--pricing{
+    /* Ajuste ici la largeur souhaitée de la carte (ex : 460/520/560px) */
+    --pricing-width: 520px;
+    --pricing-pad: 22px;                               /* padding interne uniforme */
+
+    width: var(--pricing-width);
+    max-width: 100%;
+  }
+
+  /* Marges internes égales tout autour */
+  #pret-a-avancer .card--pricing .card-body{
+    padding: var(--pricing-pad);
+  }
+
+  /* Un poil d’air subtil sous la pastille prix */
+  #pret-a-avancer .card--pricing .price-tag{
+    margin-bottom: var(--s);
+  }
+}
 
