@@ -1091,3 +1091,29 @@ small{opacity:.85}
     margin-bottom: var(--s);
   }
 }
+
+/* ====== Prêt à avancer — ajustements desktop ====== */
+@media (min-width: 901px){
+
+  /* H2 aligné à gauche + colonne gauche non centrée */
+  #pret-a-avancer .hero-text{
+    align-items: flex-start;         /* au lieu de center */
+  }
+  #pret-a-avancer .hero-text .sect-title{
+    text-align: left;                /* au lieu de center */
+    margin: 0 0 var(--s) 0;
+    width: auto;
+  }
+
+  /* Réduire l'espace sous le <small> (bloc conditions) */
+  #pret-a-avancer .card--pricing .card-body p:last-child{
+    /* c'est le <p> qui contient le <small> */
+    margin: 6px 0 0;                /* au lieu de la marge par défaut */
+  }
+  #pret-a-avancer .card--pricing .card-body small{
+    display: block;
+    line-height: 1.35;
+    opacity: .85;
+  }
+}
+
