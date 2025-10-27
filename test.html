@@ -133,23 +133,52 @@
     <!-- Bloc 2 — Image gauche (logo) / Texte droite (méthode) -->
     <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-top:24px;">
     
-      <!-- Colonne image (logo, centrée en mobile) -->
-      <div style="flex:0 1 420px; text-align:center;">
-        <img src="assets/img/logo/logo_def2.png" alt="Logo Prismora Solutions"
-             style="
-               width:clamp(160px, 28vw, 280px);
-               height:auto;
-               display:block;
-               margin:0 auto;">
-      </div>
+<!-- Colonne image (logo + icônes, centrée en mobile) -->
+<div style="flex:0 1 420px; text-align:center;">
+  <!-- Rangée d'icônes : Portfolio + LinkedIn -->
+  <div style="
+    display:flex; align-items:center; justify-content:center;
+    gap:16px; margin-bottom:12px; flex-wrap:wrap;
+  ">
+    <!-- Portfolio -->
+    <a href="https://jpvt-data.github.io/" target="_blank" rel="noopener"
+       aria-label="Voir le portfolio"
+       style="display:inline-flex; width:40px; height:40px; border-radius:50%;
+              align-items:center; justify-content:center;
+              background:rgba(0,0,0,.06); text-decoration:none;">
+      <!-- Icône “portfolio” (dossier) en SVG inline -->
+      <svg viewBox="0 0 24 24" aria-hidden="true" style="width:20px; height:20px;">
+        <path fill="currentColor"
+              d="M10 4h4a2 2 0 012 2h2a2 2 0 012 2v2H4V8a2 2 0 012-2h2a2 2 0 012-2zm10 8v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6h16z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn (même SVG que ton footer, re-utilisé ici) -->
+    <a href="https://www.linkedin.com/in/jpvt33/" target="_blank" rel="noopener"
+       aria-label="Profil LinkedIn"
+       style="display:inline-flex; width:40px; height:40px; border-radius:50%;
+              align-items:center; justify-content:center;
+              background:rgba(0,0,0,.06); text-decoration:none;">
+      <svg viewBox="0 0 24 24" aria-hidden="true" style="width:20px; height:20px;">
+        <path fill="currentColor"
+              d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5v15.02H0zM8.99 8.98h4.79v2.05h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.66v8.91h-5v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.16v8.04h-4.94V8.98z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Logo Prismora en dessous -->
+  <img src="assets/img/logo/logo_def2.png" alt="Logo Prismora Solutions"
+       style="width:clamp(160px, 28vw, 280px); height:auto; display:block; margin:0 auto;">
+</div>
+
     
       <!-- Colonne texte (narrow comme au-dessus) -->
       <div style="flex:1 1 520px; max-width:60ch; min-width:280px;">
         <p class="sub-lead">
-          Aujourd’hui, je mets à profit cette <strong>double compétence</strong> — <strong>pilotage opérationnel</strong> et <strong>analyse de données</strong> — au service des <strong>TPE, entreprises en croissance, collectivités et associations</strong>.<br>
-          Mon approche est simple et pragmatique&nbsp;: <strong>comprendre le besoin, organiser les données, outiller utilement, transmettre</strong>.<br> 
+          Aujourd’hui, je mets à profit cette <strong>double compétence</strong> — <strong>pilotage opérationnel</strong> et <strong>analyse de données</strong> — au service des <strong>TPE, entreprises en croissance, collectivités et associations</strong>.<br><br>
+          Mon approche est simple et pragmatique&nbsp;: <strong>comprendre le besoin, organiser les données, outiller utilement, transmettre</strong>.<br><br>
           J’interviens également en <strong>missions freelance</strong> pour <strong>ESN, intégrateurs et cabinets</strong>, sur site ou <strong>à distance</strong> selon les projets.<br><br>
-          Mon objectif&nbsp;: <strong>mettre cette expérience au service de votre structure</strong>, pour vous faire gagner du temps et simplifier le pilotage de votre activité.
+          Mon objectif&nbsp;: <strong>mettre mon expérience au service de votre structure</strong>, pour vous faire gagner du temps et simplifier le pilotage de votre activité.
         </p>
       </div>
     </div>
@@ -397,7 +426,7 @@
   
       <div class="cta-row" style="margin-top:var(--m);">
         <a class="cta" href="contact.html">Échanger</a>
-        <a class="cta cta--ghost" href="solutions-freelance.html">Voir les missions freelance</a>
+        <a class="cta cta--ghost" href="solutions-freelance.html">Périmètre freelance</a>
       </div>
     </div>
   </section>
