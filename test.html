@@ -101,9 +101,14 @@
       </div>
     
       <!-- Colonne image (centrée en mobile) -->
-      <div style="flex:0 1 300px; text-align:center; margin-left:auto;">
+      <div style="flex:0 1 340px; text-align:center; margin-left:auto;">
         <img src="assets/img/jpvt.png" alt="Jean-Paul Van Tongeren"
-             style="width:100%; max-width:300px; height:auto; display:block; margin:0 auto; border-radius:6px;">
+             style="
+               width:clamp(170px, 28vw, 300px);
+               height:auto;
+               display:block;
+               margin:0 auto;
+               border-radius:6px;">
       </div>
     </div>
 
@@ -114,7 +119,11 @@
       <!-- Colonne image (logo, centrée en mobile) -->
       <div style="flex:0 1 260px; text-align:center;">
         <img src="assets/img/logo/logo_def2.png" alt="Logo Prismora Solutions"
-             style="width:80%; max-width:200px; height:auto; display:block; margin:0 auto;">
+             style="
+               width:clamp(110px, 20vw, 200px);
+               height:auto;
+               display:block;
+               margin:0 auto;">
       </div>
     
       <!-- Colonne texte (narrow comme au-dessus) -->
