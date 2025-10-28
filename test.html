@@ -1,0 +1,877 @@
+<!-- solutions-freelance.html — Prismora Solutions (V4) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO principal -->
+  <title>Freelance Data Analyst & BI à Bordeaux – KPIs, Dataviz & AMOA | Prismora Solutions</title>
+  <meta name="description" content="Freelance Data Analyst & BI à Bordeaux pour ESN & intégrateurs : dashboards Power BI / Looker, KPIs, automatisations légères (Python/SQL), PMO & AMOA light.">
+  <link rel="canonical" href="https://prismora.fr/solutions-freelance.html">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Freelance Data Analyst & BI à Bordeaux – KPIs, Dataviz & AMOA | Prismora Solutions">
+  <meta property="og:description" content="Freelance Data Analyst & BI à Bordeaux pour ESN & intégrateurs : dashboards Power BI / Looker, KPIs, automatisations légères (Python/SQL), PMO & AMOA light.">
+  <meta property="og:url" content="https://prismora.fr/solutions-freelance.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://prismora.fr/assets/img/logo/logo_def2.png">
+  <meta property="og:site_name" content="Prismora Solutions">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Police + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css?v=15"/>
+
+  <!-- Couleur navigateur -->
+  <meta name="theme-color" content="#0f4c5c" />
+</head>
+
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="container wrap">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="Retour à l'accueil">
+          <picture>
+            <source media="(min-width: 769px)" srcset="assets/img/logo/logo_def2.png">
+            <img src="assets/img/logo/logo4.png" alt="Prismora Solutions" height="80">
+          </picture>
+        </a>
+      </div>
+  
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+  
+      <div class="menu" id="site-menu" role="menubar">
+        <!-- NO MORE: <a href="index.html">Accueil</a> -->
+  
+        <!-- Solutions + sous-menu -->
+        <div class="menu-item has-submenu" role="none">
+          <button class="menu-parent"
+                  role="menuitem"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="submenu-solutions">
+            Solutions
+          </button>
+          <ul class="submenu" id="submenu-solutions" role="menu">
+            <li role="none"><a role="menuitem" href="solutions-tpe.html">TPE – Indépendants</a></li>
+            <li role="none"><a role="menuitem" href="solutions-pme-eti.html">PME – ETI</a></li>
+            <li role="none"><a role="menuitem" href="solutions-collectivites.html">Collectivités – Assos</a></li>
+            <li role="none"><a role="menuitem" href="solutions-freelance.html">ESN – Intégrateurs</a></li>
+          </ul>
+        </div>
+  
+        <!-- On garde A propos -->
+        <a role="menuitem" href="prismora-solutions.html">À propos</a>
+  
+        <!-- Optionnel : Freelance si tu veux le garder (tu avais un lien) -->
+        <!-- <a role="menuitem" href="solutions-freelance.html">Freelance</a> -->
+  
+        <!-- On garde Contact -->
+        <a role="menuitem" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>
+          Missions Freelance
+        </h1>
+        <div style="display:flex; align-items:baseline; gap:.75rem; flex-wrap: wrap;">
+          <h2 style="margin:0;">Data Analyst / BI</h2>
+          <h3 style="margin:0;">AMOA &amp; PMO light<br><br></h3>
+        </div>
+        <div class="brand-line brand-line-hero" id="brandLineHero">
+          <img class="logo-tri" src="assets/img/logo/logo_def2.png" alt="Logo Triangle"/>
+          <p class="kicker">Partenaire Data & BI</p>
+        </div>
+        <p class="sub-lead">
+            <br>
+            Du cadrage métier à la structuration et visualisation des données, <strong>Prismora Solutions</strong> s’intègre aux projets pour livrer des dispositifs <strong>clairs, fiables et performants</strong>.<br><br>
+            Interventions en <strong>autonomie</strong> (<strong>KPI</strong>, <strong>dataviz</strong>, <strong>PMO/AMOA light</strong>, <strong>automatisations légères</strong>) ou en <strong>co&#8209;
+            intervention</strong> avec vos leads (<strong>architecture</strong>, <strong>sécurité avancée</strong>, <strong>pipelines complexes</strong>).
+        </p>
+        <div class="cta-row">
+          <a class="cta" href="contact.html">Echanger sur votre projet</a>
+          <a class="cta cta--ghost" href="prismora-solutions.html">A propos de Prismora Solutions</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/img/photos/solutions.png" alt="Illustration Freelance — cadrage & delivery">
+      </div>
+    </div>
+  </header>
+
+  <!-- POINTS FORTS -->
+  <section class="section">
+    <div class="container">
+      <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Points forts</h1>
+
+      <div class="grid grid-2 cards-lift">
+        <!-- Data Analyst / BI -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Data Analyst / BI</h3>
+            <p>KPIs utiles, vues lisibles, analyses actionnables pour décider vite.</p>
+            <ul class="liste-carre">
+              <li>Cadrage besoins & dictionnaire</li>
+              <li>KPI essentiels (définitions partagées)</li>
+              <li>Dashboards Power BI / Looker Studio, Apps Web (Python, Streamlit, Dash)</li>
+              <li>Analyses stratégiques ad hoc (multi secteurs)</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- PMO/AMOA light -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/projet.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>PMO / AMOA light</h3>
+            <p>Cadrage simple, jalons, suivi des risques, CR courts.</p>
+            <ul class="liste-carre">
+              <li>Backlog priorisé (lot 1 utile)</li>
+              <li>Rituels courts & décisions</li>
+              <li>Visibilité sponsors</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Automatisations légères -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Automatisations légères</h3>
+            <p>CSV/API → Python/SQL → planification (GH Actions/cron).</p>
+            <ul class="liste-carre">
+              <li>Ingestion & contrôles</li>
+              <li>Logs & alertes simples</li>
+              <li>Publication propre</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Migration & modernisation pragmatiques -->
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/modernisation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Migration & modernisation</h3>
+            <p>Du tableur vers une base claire (PostgreSQL/MySQL).</p>
+            <ul class="liste-carre">
+              <li>Modèle “suffisant”</li>
+              <li>Plan de bascule & recettage</li>
+              <li>Gains visibles</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAMPS D’INTERVENTION (catalogue reclassé) -->
+  <section class="section" id="catalogue-freelance">
+    <div class="container">
+      <h1 class="sect-title"><span class="prism" aria-hidden="true"></span>Champs d’intervention</h1>
+          <div class="container hero-split">
+            <div class="hero-text">
+              <div class="hero-text">
+                <p class="sub-lead">
+                  Les cartes ci-dessous présentent les <strong>périmètres d’intervention</strong> en freelance. 
+                  Activez ce qui est utile maintenant (seul ou combiné) : cadrage, fiabilisation, KPIs, dashboards, automatisations, adoption. 
+                  Livrables concrets, rythme simple — sur site (Bordeaux) ou à distance.
+                </p>
+              </div>
+            </div>
+            <div class="cta-row">
+              <a class="cta" href="contact.html">Échanger sur votre projet</a>
+              <a class="cta cta--ghost" href="index.html">Retour Accueil</a>
+            </div>
+          </div>
+      <!-- Groupe A : Poser les bases -->
+      <br><h2>Poser les bases</h2>
+      <div class="grid grid-2 cards-lift">
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/diagnostic.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Diagnostic initial</h3>
+            <p>Comprendre votre activité et vos priorités.</p>
+            <ul class="liste-carre">
+              <li>Recueil des besoins</li>
+              <li>Cartographie des données clés</li>
+              <li>Premier tableau de bord</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/essai-concret.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Essai concret</h3>
+            <p>POC ciblé pour démontrer l’intérêt.</p>
+            <ul class="liste-carre">
+              <li>Mini-prototype</li>
+              <li>Essai en conditions réelles</li>
+              <li>Bilan clair</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Groupe B : Cadrage & gouvernance -->
+      <br><h2>Cadrage & gouvernance</h2>
+      <div class="grid grid-2 cards-lift">
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/projet.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>PMO / AMOA light</h3>
+            <p>Cadre, jalons, reporting.</p>
+            <ul class="liste-carre">
+              <li>Plan de jalons</li>
+              <li>Suivi visuel</li>
+              <li>CR courts</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/datalead.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Appui lead data (co-pilotage)</h3>
+            <p>Cap, priorisation, feuille de route.</p>
+            <ul class="liste-carre">
+              <li>Roadmap pragmatique</li>
+              <li>Priorisation des chantiers</li>
+              <li>Améliorations continues</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Groupe C : Données fiables -->
+      <br><h2>Données fiables</h2>
+      <div class="grid grid-2 cards-lift">
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/collecte.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Collecte & consolidation</h3>
+            <p>Rassembler vos données en une base fiable.</p>
+            <ul class="liste-carre">
+              <li>Brancher les sources</li>
+              <li>Tout réunir</li>
+              <li>Traçabilité</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/modelisation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Modélisation & qualité</h3>
+            <p>Organiser et fiabiliser.</p>
+            <ul class="liste-carre">
+              <li>Modèle clair</li>
+              <li>Contrôles</li>
+              <li>Base à jour</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Groupe D : Mesure & décision -->
+      <br><h2>Mesure & décision</h2>
+      <div class="grid grid-2 cards-lift">
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/kpi.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>KPIs & gouvernance</h3>
+            <p>Mêmes définitions pour tous.</p>
+            <ul class="liste-carre">
+              <li>Fiches KPI simples</li>
+              <li>Référentiel partagé</li>
+              <li>Comparabilité</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/dataviz.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Tableaux de bord & dataviz</h3>
+            <p>Vues claires orientées action.</p>
+            <ul class="liste-carre">
+              <li>Dashboards lisibles</li>
+              <li>Filtres & légendes</li>
+              <li>Guide d’usage</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Groupe E : Opérations & intégration -->
+      <br><h2>Opérations & intégration</h2>
+      <div class="grid grid-2 cards-lift">
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/pipeline.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Automatisations légères</h3>
+            <p>Données à jour sans reporting manuel.</p>
+            <ul class="liste-carre">
+              <li>Imports planifiés CSV/API</li>
+              <li>Alertes simples</li>
+              <li>Accès aux données fraîches</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/rgpd.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>RGPD & partages maîtrisés</h3>
+            <p>Accès maîtrisés, cadre RGPD.</p>
+            <ul class="liste-carre">
+              <li>Rôles & permissions</li>
+              <li>Prévention des risques</li>
+              <li>Partages conformes</li>
+            </ul>
+            <small>Avec votre référent IT/DPO.</small>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/modernisation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Migration & modernisation</h3>
+            <p>Du tableur vers une base durable.</p>
+            <ul class="liste-carre">
+              <li>Feuille de route</li>
+              <li>Gains visibles</li>
+              <li>Données consolidées</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/integration.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Intégrations & diffusion</h3>
+            <p>Données accessibles aux équipes.</p>
+            <ul class="liste-carre">
+              <li>Accès centralisé</li>
+              <li>Exports réutilisables</li>
+              <li>Guide court</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/evolution.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Maintenance & évolutions</h3>
+            <p>Corrections & améliorations légères.</p>
+            <ul class="liste-carre">
+              <li>Suivi des corrections</li>
+              <li>Historique MAJ</li>
+              <li>Évolutions à la demande</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Groupe F : Adoption & autonomie -->
+      <br><h2>Adoption & autonomie</h2>
+      <div class="grid grid-2 cards-lift">
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/atelier.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Ateliers & adoption</h3>
+            <p>Tester, ajuster, ancrer les usages.</p>
+            <ul class="liste-carre">
+              <li>Supports prêts à l’emploi</li>
+              <li>Ateliers ciblés</li>
+              <li>Feedback rapide</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card card--split">
+          <img class="card-ico" src="assets/img/photos/formation.png" alt="" aria-hidden="true">
+          <div class="card-body">
+            <h3>Formation & transfert</h3>
+            <p>Prise en main guidée.</p>
+            <ul class="liste-carre">
+              <li>Parcours de prise en main</li>
+              <li>Guides & modèles</li>
+              <li>Check-list d’autonomie</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="cta-row" style="margin-top:var(--xl)">
+        <a class="cta" href="contact.html">Echanger sur votre projet</a>
+        <a class="cta cta--ghost" href="index.html">Retour Accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK (lite) -->
+  <section class="section section-method">
+    <div class="container hero-split">
+      <div class="hero-text"> 
+        <h1 class="sect-title">
+          <span class="prism" aria-hidden="true" margin-bottom="0"></span>
+          Outils & Approche métier
+        </h1>
+        <p class="sub-lead">
+          Socle technique éprouvé pour traiter, visualiser et automatiser les flux,
+          avec une approche projet claire et transférable.
+        </p>
+      </div>
+      <!-- Bande d’outils auto -->
+      <div class="stack-scroller"
+           aria-label="Technologies utilisées"
+           data-gh-owner="prismora-solutions"
+           data-gh-repo="prismora-solutions.github.io"
+           data-dir="assets/img/stack">
+        <ul class="stack-track" id="stack-track"></ul>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="method-grid">
+        <article class="card method-card">
+          <img src="assets/img/outils.png" alt="" aria-hidden="true" height="100" width="100" style="display:block; margin:0 auto var(--s)">
+          <h3 style="text-align:center">Outils</h3>
+          <div class="text">
+            <ul class="liste-carre">
+              <li>SQL/MySQL, PostgreSQL</li>
+              <li>Python</li>
+              <li>Power BI, Looker Studio</li>
+              <li>Excel avancé, Sheets</li>
+              <li>ML (scikit-learn, NLP)</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card method-card">
+          <img src="assets/img/automatisation.png" alt="" aria-hidden="true" height="100" width="100" style="display:block; margin:0 auto var(--s)">
+          <h3 style="text-align:center">Pipelines / Automatisation</h3>
+          <div class="text">
+            <ul class="liste-carre">
+              <li>Airflow, Docker, dbt</li>
+              <li>Git/GitHub + Actions</li>
+              <li>Data Vault / modèles décisionnels</li>
+              <li>Scraping / API</li>
+              <li>Historisation, contrôles qualité</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card method-card">
+          <img src="assets/img/projet.png" alt="" aria-hidden="true" height="100" width="100" style="display:block; margin:0 auto var(--s)">
+          <h3 style="text-align:center">Projet / Méthodologie</h3>
+          <div class="text">
+            <ul class="liste-carre">
+              <li>Agile / Scrum / Kanban</li>
+              <li>Jira / Trello / GitHub</li>
+              <li>Cadrage → jalons → itérations</li>
+              <li>KPIs ciblés</li>
+              <li>Gouvernance & docs — RGPD</li>
+            </ul>
+          </div>
+        </article>
+      </div> 
+    </div>
+  </section>
+
+  <!-- SECTION — CADRE & TJM -->
+  <section class="section" id="cadre-tjm">
+    <!-- 1) Titre + pitch + CTAs -->
+    <div class="container hero-split">
+      <div class="hero-text">
+        <h1 class="sect-title">
+          <span class="prism" aria-hidden="true"></span>Cadre &amp; TJM
+        </h1>
+        <p class="sub-lead">
+          <strong>TJM&nbsp;: à partir de 400&nbsp;€</strong> — mission en <strong>régie</strong> prioritairement (forfait possible par lots).<br>
+          <strong>Remote</strong> ou <strong>on-site</strong> possible selon contexte (Bordeaux &amp; proximité).<br>
+          <strong>Essai rapide</strong>&nbsp;: 1–2 itérations pour valider le rythme (pipeline léger + mini-dashboard + fiches KPI).
+        </p>
+      </div>
+      <div class="hero-visual" style="max-width:320px;">
+        <img src="assets/img/photos/on-avance.png"
+             alt="Intervention en régie — TJM freelance"
+             style="max-width:320px; width:100%; height:auto;">
+      </div>
+    </div>
+  
+    <!-- 3) Carte plein largeur — précisions -->
+    <div class="container" style="margin-top: var(--m);">
+      <article class="card">
+        <div class="card-body">
+          <p class="sub-lead" style="margin:0 0 var(--s)">
+            <strong>Forfait par lots</strong> possible (définition claire du périmètre, jalons, livrables).
+          </p>
+          <p>
+            <small style="font-size:.72rem; line-height:1.4; display:block; opacity:.9;">
+              <em>
+                Tarifs indicatifs : un devis est établi après un premier échange. TVA non applicable. 
+                Déplacements éventuels chiffrés au devis. Démarrage par un essai court recommandé (1–2 itérations) pour caler le rythme et les livrables.
+              </em>
+            </small>
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section contact-band">
+    <div class="container contact-box">
+      <div class="cta-row">
+        <a class="cta cta--ghost" href="index.html">Retour à l’accueil</a>
+        <a class="cta" href="contact.html">Échanger sur votre projet</a>
+        <a class="cta cta--ghost" href="prismora-solutions.html">A Propos de Prismora</a>
+      </div>   
+    </div>
+  </section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<style>
+  /* ===== Scope footer seulement ===== */
+  .footer .footer-grid{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr; /* gauche | centre | droite */
+    align-items:center;
+    gap:16px;
+  }
+
+  /* ----- Gauche : copyright + liens en dessous ----- */
+  .footer .legal{ font-size:.96rem; color:inherit; }
+  .footer .legal-main{ margin-bottom:.25rem; }              /* © Prismora… Bordeaux */
+  .footer .legal-links{ font-size:.86rem; opacity:.9; }      /* petite taille pour les liens */
+  .footer .legal-links a{ color:inherit; text-decoration:none; }
+  .footer .legal-links a:hover{ text-decoration:underline; }
+
+  /* ----- Centre : icônes ----- */
+  .footer .social{ display:flex; justify-content:center; gap:16px; }
+  .footer .social a{
+    display:inline-flex; width:36px; height:36px; border-radius:50%;
+    align-items:center; justify-content:center;
+    transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+    background:rgba(0,0,0,.04);
+  }
+  .footer .social a:hover{
+    transform:translateY(-2px);
+    background:rgba(15,76,92,.10);
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+  }
+  .footer .social svg{ width:18px; height:18px; fill:currentColor; opacity:.9; }
+
+  /* ----- Droite : menu ALIGNE en LIGNE ----- */
+  .footer .foot-nav{ justify-self:end; }
+  .footer .foot-menu{
+    display:flex; align-items:center; gap:18px;
+    list-style:none; margin:0; padding:0;
+  }
+  .footer .foot-menu > li{ position:relative; }
+  .footer .foot-nav a,
+  .footer .foot-nav button.foot-parent{
+    color:inherit; text-decoration:none; font-weight:600; /* même style pour tous */
+    font-size:1rem; background:transparent; border:0; padding:0; cursor:pointer;
+    display:inline-flex; align-items:center; gap:.35rem;
+  }
+
+  /* Sous-menu vers le haut */
+  .footer .foot-sub{
+    position:absolute; right:0; bottom:100%; transform:translateY(-8px);
+    list-style:none; margin:0; padding:.5rem 0;
+    background:#fff; border:1px solid rgba(15,76,92,.15);
+    border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,.12);
+    min-width:240px; display:none; z-index:5;
+  }
+  .footer .foot-sub a{
+    display:block; padding:.5rem .85rem; color:var(--brand, #0f4c5c); border-radius:8px;
+    white-space:nowrap;
+  }
+  .footer .foot-sub a:hover{ background:rgba(15,76,92,.06); }
+
+  /* Chevron discret */
+  .footer .foot-parent::after{ content:"▴"; font-size:.8rem; opacity:.9; }
+
+  /* Desktop : ouverture au survol/focus (pas besoin de cliquer) */
+  @media (hover:hover){
+    .footer .has-sub:hover .foot-sub,
+    .footer .has-sub:focus-within .foot-sub{ display:block; }
+  }
+  /* Mobile / touch : ouverture via classe .is-open (JS) */
+  .footer .has-sub.is-open .foot-sub{ display:block; }
+
+  /* ----- Mobile : ordre demandé ----- */
+  @media (max-width:900px){
+    .footer .footer-grid{
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "social"
+        "menu"
+        "copyright"
+        "links";
+      row-gap:10px; text-align:center;
+    }
+    .footer .social{ grid-area:social; }
+    .footer .foot-nav{ grid-area:menu; justify-self:center; }
+    .footer .legal{ grid-area:copyright; }
+    .footer .legal-links{ grid-area:links; }
+
+    /* le sous-menu centré sous le parent, mais vers le haut */
+    .footer .has-sub .foot-sub{ left:50%; right:auto; transform:translate(-50%,-8px); }
+  }
+</style>
+
+<footer class="footer" aria-label="Pied de page">
+  <div class="container footer-grid">
+
+    <!-- Gauche -->
+    <div class="legal">
+      <div class="legal-main">
+        © Prismora Solutions 2025 — Bordeaux
+      </div>
+      <div class="legal-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        &nbsp;•&nbsp;
+        <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      </div>
+    </div>
+
+    <!-- Centre -->
+    <nav class="social" aria-label="Réseaux & contact">
+      <a href="https://www.linkedin.com/company/prismora-solutions/" target="_blank" rel="noopener" aria-label="LinkedIn Prismora">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5v15.02H0zM8.99 8.98h4.79v2.05h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.66v8.91h-5v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.16v8.04h-4.94V8.98z"/>
+        </svg>
+      </a>
+      <a href="tel:+33686776514" aria-label="Appeler Prismora">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V21a1 1 0 01-1 1C10.07 22 2 13.93 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/>
+        </svg>
+      </a>
+      <a href="mailto:contact@prismora.fr" aria-label="Écrire à Prismora">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Droite -->
+    <nav class="foot-nav" aria-label="Pages du site">
+      <ul class="foot-menu">
+        <li class="has-sub">
+          <button class="foot-parent" aria-haspopup="true" aria-expanded="false" aria-controls="foot-sub-solutions">
+            Solutions
+          </button>
+          <ul id="foot-sub-solutions" class="foot-sub" role="menu" aria-label="Sous-menu solutions">
+            <li role="none"><a role="menuitem" href="solutions-tpe.html">TPE – Indépendants</a></li>
+            <li role="none"><a role="menuitem" href="solutions-pme-eti.html">PME – ETI</a></li>
+            <li role="none"><a role="menuitem" href="solutions-collectivites.html">Collectivités – Assos</a></li>
+            <li role="none"><a role="menuitem" href="solutions-freelance.html">ESN – Intégrateurs</a></li>
+          </ul>
+        </li>
+        <li><a href="prismora-solutions.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Burger
+    (function(){
+      const burger = document.querySelector('.burger');
+      const menu   = document.getElementById('site-menu');
+      if (burger && menu){
+        burger.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          burger.classList.toggle('open', open);
+          document.body.classList.toggle('no-scroll', open);
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          menu.classList.remove('open'); burger.classList.remove('open');
+          burger.setAttribute('aria-expanded','false'); document.body.classList.remove('no-scroll');
+        }));
+      }
+    })();
+
+    // Sous-menu "Solutions" : toggle en mobile + ARIA
+    (function(){
+      const menu         = document.getElementById('site-menu');
+      const parentBtn    = document.querySelector('.menu-parent');
+      const submenu      = document.getElementById('submenu-solutions');
+  
+      if (!menu || !parentBtn || !submenu) return;
+  
+      // Accessibilité de base
+      parentBtn.setAttribute('aria-haspopup', 'true');
+      parentBtn.setAttribute('aria-expanded', 'false');
+      parentBtn.setAttribute('aria-controls', 'submenu-solutions');
+  
+      // Toggle par clic (utile surtout en mobile)
+      parentBtn.addEventListener('click', (e) => {
+        // En desktop le hover suffit ; le clic n'est pas nuisible
+        const willOpen = !submenu.classList.contains('is-open');
+        submenu.classList.toggle('is-open', willOpen);
+        parentBtn.classList.toggle('is-open', willOpen);
+        parentBtn.setAttribute('aria-expanded', String(willOpen));
+        e.preventDefault();
+        e.stopPropagation();
+      });
+  
+      // Fermer le sous-menu si on ferme le panneau mobile, via ton code existant
+      // (quand .menu perd .open on nettoie l'état du sous-menu)
+      const observer = new MutationObserver(() => {
+        if (!menu.classList.contains('open')){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      observer.observe(menu, { attributes:true, attributeFilter:['class'] });
+  
+      // Fermer si clic à l’extérieur (mobile ou desktop)
+      document.addEventListener('click', (e) => {
+        const clickInside = menu.contains(e.target) || parentBtn.contains(e.target);
+        if (!clickInside){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded','false');
+        }
+      });
+  
+      // Clavier : Enter/Espace = toggle ; Échap = fermer
+      parentBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          parentBtn.click();
+        } else if (e.key === 'Escape'){
+          submenu.classList.remove('is-open');
+          parentBtn.classList.remove('is-open');
+          parentBtn.setAttribute('aria-expanded','false');
+          parentBtn.focus();
+        }
+      });
+    })();
+
+    // Ligne marque (triangle + kicker)
+    (() => {
+      function brandLineSequence(){
+        const tri  = document.querySelector('.brand-line-hero .logo-tri');
+        const kick = document.querySelector('.brand-line-hero .kicker');
+        if (!tri || !kick) return;
+    
+        // Si tu animes le triangle en CSS (classe .is-revealed), garde la ligne ci-dessous.
+        tri.classList.add('is-revealed');
+    
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const delay  = reduce ? 0 : 600; // décalage avant l’apparition du kicker
+        setTimeout(() => { kick.classList.add('is-revealed'); }, delay);
+      }
+    
+      if (document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', brandLineSequence);
+      } else {
+        brandLineSequence();
+      }
+    })();
+       // Footer: sous-menu "Solutions" - clic seulement en environnements sans hover
+    (function(){
+      const canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+      if (canHover) return; // Desktop : le CSS :hover gère l'ouverture
+  
+      const footParent = document.querySelector('.footer .foot-parent');
+      const footWrapper = footParent ? footParent.closest('.has-sub') : null;
+      if (!footParent || !footWrapper) return;
+  
+      footParent.addEventListener('click', (e) => {
+        e.preventDefault();
+        const open = !footWrapper.classList.contains('is-open');
+        footWrapper.classList.toggle('is-open', open);
+        footParent.setAttribute('aria-expanded', String(open));
+      });
+  
+      document.addEventListener('click', (e) => {
+        if (!footWrapper.contains(e.target)){
+          footWrapper.classList.remove('is-open');
+          footParent.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Stack auto-loader (repris d'À propos) -->
+  <script>
+  (function () {
+    const scroller = document.querySelector('.stack-scroller[data-dir]');
+    if (!scroller) return;
+
+    const owner = scroller.dataset.ghOwner || '';
+    const repo  = scroller.dataset.ghRepo  || '';
+    const dir   = scroller.dataset.dir || 'assets/img/stack';
+    const speed = Number(scroller.dataset.speed || 28);
+    const api   = `https://api.github.com/repos/${owner}/${repo}/contents/${dir}`;
+    const track = scroller.querySelector('#stack-track');
+    const exts  = /\.(png|jpe?g|svg|webp)$/i;
+
+    function niceAlt(name){
+      return name.replace(exts,'').replace(/[-_]+/g,' ').trim().replace(/^./, c => c.toUpperCase());
+    }
+    function addLogos(urls){
+      urls.forEach(u => {
+        const li  = document.createElement('li');
+        const img = document.createElement('img');
+        img.className = 'stack-logo';
+        img.loading   = 'lazy';
+        img.src       = u.download_url || u;
+        img.alt       = niceAlt((u.name || u).split('/').pop());
+        li.appendChild(img);
+        track.appendChild(li);
+      });
+      urls.forEach(u => {
+        const li  = document.createElement('li');
+        const img = document.createElement('img');
+        img.className = 'stack-logo';
+        img.loading   = 'lazy';
+        img.src       = u.download_url || u;
+        img.alt       = '';
+        li.appendChild(img);
+        track.appendChild(li);
+      });
+      track.style.animationDuration = speed + 's';
+      if (urls.length < 3) track.style.animation = 'none';
+    }
+
+    async function load(){
+      try{
+        const res = await fetch(api, { headers: { 'Accept': 'application/vnd.github+json' }});
+        if (!res.ok) throw new Error('GitHub API ' + res.status);
+        const data = await res.json();
+        const files = (Array.isArray(data) ? data : [])
+          .filter(f => f.type === 'file' && exts.test(f.name));
+        if (!files.length) { scroller.hidden = true; return; }
+        addLogos(files);
+      }catch(e){
+        console.warn('Stack loader: API indisponible → masquer la bande', e);
+        scroller.hidden = true;
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', load);
+    } else { load(); }
+  })();
+  </script>
+</body>
+</html>
