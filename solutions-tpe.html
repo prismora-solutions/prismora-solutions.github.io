@@ -981,22 +981,31 @@
   </div>
 
   <script>
+  // Lightbox multi-galeries (garage, cafeier, etc.)
   (function(){
-    const lb = document.getElementById('lightbox');
-    const imgEl = document.getElementById('lb-image');
-    const capEl = document.getElementById('lb-caption');
+    const lb       = document.getElementById('lightbox');
+    const imgEl    = document.getElementById('lb-image');
+    const capEl    = document.getElementById('lb-caption');
     const btnClose = lb.querySelector('.lb-close');
     const btnPrev  = lb.querySelector('.lb-prev');
     const btnNext  = lb.querySelector('.lb-next');
   
-    // Récupère toutes les ancres de la galerie "garage"
-    const thumbs = Array.from(document.querySelectorAll('a[data-gallery="garage"]'))
-      .map(a => ({ href: a.getAttribute('href'), title: a.getAttribute('title') || a.querySelector('img')?.alt || '' }));
+    // Indexe toutes les vignettes par nom de galerie
+    const galleries = {};
+    document.querySelectorAll('a[data-gallery]').forEach(a=>{
+      const name = a.getAttribute('data-gallery');
+      (galleries[name] ||= []).push({
+        href:  a.getAttribute('href'),
+        title: a.getAttribute('title') || a.querySelector('img')?.alt || ''
+      });
+    });
   
-    let index = 0;
+    let active = null;  // galerie active
+    let index  = 0;     // index courant
   
-    function open(i){
-      index = (i+thumbs.length)%thumbs.length;
+    function openAt(i){
+      const thumbs = galleries[active];
+      index = (i + thumbs.length) % thumbs.length;
       const {href, title} = thumbs[index];
       imgEl.src = href;
       imgEl.alt = title;
@@ -1005,101 +1014,57 @@
       lb.setAttribute('aria-hidden','false');
       document.body.style.overflow = 'hidden';
     }
+  
+    function openGallery(name, i){
+      if(!galleries[name] || !galleries[name].length) return;
+      active = name;
+      openAt(i);
+    }
+  
     function close(){
       lb.classList.remove('open');
       lb.setAttribute('aria-hidden','true');
       document.body.style.overflow = '';
-      imgEl.src = ''; capEl.textContent = '';
+      imgEl.src = '';
+      capEl.textContent = '';
+      active = null;
     }
-    function prev(){ open(index-1); }
-    function next(){ open(index+1); }
   
-    // Ouvrir depuis le bouton "Voir la galerie"
-    document.querySelectorAll('[data-open-gallery="garage"]').forEach(btn=>{
-      btn.addEventListener('click', e=>{ e.preventDefault(); open(0); });
+    function prev(){ if(active) openAt(index - 1); }
+    function next(){ if(active) openAt(index + 1); }
+  
+    // Boutons "Voir la galerie"
+    document.querySelectorAll('[data-open-gallery]').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        e.preventDefault();
+        openGallery(btn.getAttribute('data-open-gallery'), 0);
+      });
     });
   
-    // Ouvrir depuis une vignette (au bon index)
-    document.querySelectorAll('a[data-gallery="garage"]').forEach((a,i)=>{
-      a.addEventListener('click', e=>{ e.preventDefault(); open(i); });
+    // Clic sur vignettes
+    Object.keys(galleries).forEach(name=>{
+      document.querySelectorAll(`a[data-gallery="${name}"]`).forEach((a,i)=>{
+        a.addEventListener('click', e=>{
+          e.preventDefault();
+          openGallery(name, i);
+        });
+      });
     });
   
-    // Contrôles
+    // Contrôles uniques
     btnClose.addEventListener('click', close);
     btnPrev .addEventListener('click', prev);
     btnNext .addEventListener('click', next);
-    lb.addEventListener('click', e=>{ if(e.target===lb) close(); }); // clic fond
-  
-    // Clavier
+    lb.addEventListener('click', e=>{ if(e.target === lb) close(); });
     window.addEventListener('keydown', e=>{
       if(!lb.classList.contains('open')) return;
-      if(e.key==='Escape') close();
-      if(e.key==='ArrowLeft') prev();
-      if(e.key==='ArrowRight') next();
+      if(e.key === 'Escape')     close();
+      if(e.key === 'ArrowLeft')  prev();
+      if(e.key === 'ArrowRight') next();
     });
   })();
+  </script>
 
-    // === Galerie Caféier ===
-  (function(){
-    const lb = document.getElementById('lightbox');
-    const imgEl = document.getElementById('lb-image');
-    const capEl = document.getElementById('lb-caption');
-    const btnClose = lb.querySelector('.lb-close');
-    const btnPrev  = lb.querySelector('.lb-prev');
-    const btnNext  = lb.querySelector('.lb-next');
-  
-    // Récupère toutes les ancres de la galerie "cafeier"
-    const thumbs = Array.from(document.querySelectorAll('a[data-gallery="cafeier"]'))
-      .map(a => ({ href: a.getAttribute('href'), title: a.getAttribute('title') || a.querySelector('img')?.alt || '' }));
-  
-    if (!thumbs.length) return;
-  
-    let index = 0;
-  
-    function open(i){
-      index = (i+thumbs.length)%thumbs.length;
-      const {href, title} = thumbs[index];
-      imgEl.src = href;
-      imgEl.alt = title;
-      capEl.textContent = title;
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-    }
-    function close(){
-      lb.classList.remove('open');
-      lb.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-      imgEl.src = ''; capEl.textContent = '';
-    }
-    function prev(){ open(index-1); }
-    function next(){ open(index+1); }
-  
-    // Ouvrir depuis le bouton "Voir la galerie"
-    document.querySelectorAll('[data-open-gallery="cafeier"]').forEach(btn=>{
-      btn.addEventListener('click', e=>{ e.preventDefault(); open(0); });
-    });
-  
-    // Ouvrir depuis une vignette
-    document.querySelectorAll('a[data-gallery="cafeier"]').forEach((a,i)=>{
-      a.addEventListener('click', e=>{ e.preventDefault(); open(i); });
-    });
-  
-    // Contrôles Lightbox
-    btnClose.addEventListener('click', close);
-    btnPrev .addEventListener('click', prev);
-    btnNext .addEventListener('click', next);
-    lb.addEventListener('click', e=>{ if(e.target===lb) close(); });
-  
-    // Clavier
-    window.addEventListener('keydown', e=>{
-      if(!lb.classList.contains('open')) return;
-      if(e.key==='Escape') close();
-      if(e.key==='ArrowLeft') prev();
-      if(e.key==='ArrowRight') next();
-    });
-  })();
-  </script>  
   <!-- Lightbox Vidéo -->
   <div id="videobox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Démo vidéo">
     <button class="lb-close" aria-label="Fermer">×</button>
