@@ -471,25 +471,27 @@
         <!-- Cas #2 -->
         <article class="card card--showcase">
           <div class="card-body">
-            <h3>Mobilier & fournitures - PME</h3>
+            <h3>Le Caféier — Boutique & Torréfacteur</h3>
             <p>
-              Un tableau de bord complet pour la direction et les équipes,
-              Un outil simple pour comprendre, comparer et décider.
+              Organisation des fichiers de ventes et création d’un tableau de bord clair pour suivre
+              les ventes café, thé et épicerie fine.  
+              Une vue simple pour gérer stock, marges et produits phares.
             </p>
-      
+        
             <div class="card-foot">
               <img class="mini-shot"
-                   src="assets/img/exemples/retail.png"
-                   alt="Aperçu cockpit retail">
+                   src="assets/img/exemples/cafe3.png"
+                   alt="Aperçu du tableau de bord Caféier">
               <a class="cta cta--ghost"
-                 href="assets/video/retail360.mp4"
-                 data-open-video
+                 href="#"
+                 data-open-gallery="cafeier"
                  aria-haspopup="dialog">
-                Voir la démo
+                Voir la galerie
               </a>
             </div>
           </div>
         </article>
+
       
         <!-- (Optionnel) Cas #3 — s’insère automatiquement sur la même ligne ≥1400px -->
         <!--
@@ -515,6 +517,28 @@
         </article>
         -->
       
+      </div>
+      
+      <!-- Bande de vignettes pour le cas Caféier -->
+      <div class="gallery-sources">
+        <div class="grid grid-4" style="gap: var(--s); margin-top: var(--m);">
+          <a href="assets/img/exemples/cafe1.png" data-gallery="cafeier" title="Ventes par catégorie">
+            <img src="assets/img/exemples/cafe1.png" alt="Ventes par catégorie"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/cafe2.png" data-gallery="cafeier" title="Suivi du chiffre d’affaires">
+            <img src="assets/img/exemples/cafe2.png" alt="Suivi du chiffre d’affaires"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/cafe3.png" data-gallery="cafeier" title="Top produits vendus">
+            <img src="assets/img/exemples/cafe3.png" alt="Top produits vendus"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+          <a href="assets/img/exemples/cafe4.png" data-gallery="cafeier" title="Tableau de bord global">
+            <img src="assets/img/exemples/cafe4.png" alt="Tableau de bord global"
+                 style="width:100%;height:auto;border-radius:12px;" />
+          </a>
+        </div>
       </div>
 
   
@@ -1005,6 +1029,67 @@
     btnPrev .addEventListener('click', prev);
     btnNext .addEventListener('click', next);
     lb.addEventListener('click', e=>{ if(e.target===lb) close(); }); // clic fond
+  
+    // Clavier
+    window.addEventListener('keydown', e=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowLeft') prev();
+      if(e.key==='ArrowRight') next();
+    });
+  })();
+
+    // === Galerie Caféier ===
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const imgEl = document.getElementById('lb-image');
+    const capEl = document.getElementById('lb-caption');
+    const btnClose = lb.querySelector('.lb-close');
+    const btnPrev  = lb.querySelector('.lb-prev');
+    const btnNext  = lb.querySelector('.lb-next');
+  
+    // Récupère toutes les ancres de la galerie "cafeier"
+    const thumbs = Array.from(document.querySelectorAll('a[data-gallery="cafeier"]'))
+      .map(a => ({ href: a.getAttribute('href'), title: a.getAttribute('title') || a.querySelector('img')?.alt || '' }));
+  
+    if (!thumbs.length) return;
+  
+    let index = 0;
+  
+    function open(i){
+      index = (i+thumbs.length)%thumbs.length;
+      const {href, title} = thumbs[index];
+      imgEl.src = href;
+      imgEl.alt = title;
+      capEl.textContent = title;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      imgEl.src = ''; capEl.textContent = '';
+    }
+    function prev(){ open(index-1); }
+    function next(){ open(index+1); }
+  
+    // Ouvrir depuis le bouton "Voir la galerie"
+    document.querySelectorAll('[data-open-gallery="cafeier"]').forEach(btn=>{
+      btn.addEventListener('click', e=>{ e.preventDefault(); open(0); });
+    });
+  
+    // Ouvrir depuis une vignette
+    document.querySelectorAll('a[data-gallery="cafeier"]').forEach((a,i)=>{
+      a.addEventListener('click', e=>{ e.preventDefault(); open(i); });
+    });
+  
+    // Contrôles Lightbox
+    btnClose.addEventListener('click', close);
+    btnPrev .addEventListener('click', prev);
+    btnNext .addEventListener('click', next);
+    lb.addEventListener('click', e=>{ if(e.target===lb) close(); });
   
     // Clavier
     window.addEventListener('keydown', e=>{
