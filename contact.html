@@ -606,7 +606,11 @@
       btn.disabled = true;
       try{
         const fd = new FormData(form);
-        await fetch(form.action, { method:'POST', body:fd, mode:'no-cors' });
+        // ➜ on log le user-agent pour diagnostiquer mobile/desktop côté Apps Script
+        fd.append('_ua', navigator.userAgent || '');
+      
+        await fetch(form.action, { method:'POST', body: fd, mode:'no-cors' });
+      
         form.reset();
         showModal(); // success
       }catch(err){
